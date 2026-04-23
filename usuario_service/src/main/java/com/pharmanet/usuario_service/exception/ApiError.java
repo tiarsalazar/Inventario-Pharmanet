@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Error {
-    private int error;
-    private String nombre;
-    private String mensaje;
+public class ApiError {
+    private int status;
+    private String error;
+    private String menssage;
 }
