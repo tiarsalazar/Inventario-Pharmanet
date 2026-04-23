@@ -1,34 +1,7 @@
-package com.pharmanet.usuario_service.entity;
-
-import java.time.LocalDate;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-
-@Entity
-@Table(name = "usuario")
-public class Usuario {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long usuarioId;
-
-    @Column(name = "numrun", nullable = false)
-    private int numRun;
+CREATE TABLE usuario
+    usuario_id BIGINT CONSTRAINT USUARIO_PK PRIMARY KEY;
+    numrun INTEGER(8) NOT NULL;
+    dvrun CHAR(1) NOT NULL;
     @Column(name = "dvrun", nullable = false, length = 1)
     private String dvRun;
 
@@ -58,4 +31,3 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name = "sucursal_id")
     private Sucursal sucursal;
-}
