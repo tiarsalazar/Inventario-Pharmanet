@@ -1,0 +1,2 @@
+ALTER TABLE usuarios
+    CONSTRAINT USUARIO_SUCURSAL_FK FOREIGN KEY (region_id) REFERENCES sucursal(sucursal_id);

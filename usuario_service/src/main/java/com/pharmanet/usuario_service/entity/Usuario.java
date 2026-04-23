@@ -32,11 +32,11 @@ public class Usuario {
     @Column(name = "dvrun", nullable = false, length = 1)
     private String dvRun;
 
-    @Column(name = "appaterno", nullable = false, length = 25)
+    @Column(name = "appaterno", nullable = false, length = 20)
     private String apPaterno;
-    @Column(name = "apmaterno", nullable = false, length = 25)
+    @Column(name = "apmaterno", nullable = false, length = 20)
     private String apMaterno;
-    @Column(nullable = false, length = 40)
+    @Column(nullable = false, length = 30)
     private String nombres;
 
     @Column(nullable = false)
@@ -44,9 +44,8 @@ public class Usuario {
 
     @Column(length = 100)
     private String direccion;
-    @ManyToOne
-    @JoinColumn(name = "region_id")
-    private Region region;
+    @Column(nullable = false)
+    private String region;
 
     @Column(nullable = false, length = 12)
     private String telefono;
