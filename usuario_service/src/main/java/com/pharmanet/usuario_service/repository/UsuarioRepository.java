@@ -16,7 +16,5 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
     
     List<Usuario> findByProfesionOrderByApPaternoAsc(String profesion);
 
-    List<Usuario> findBySucursalIdOrderByApPaternoAsc(Long sucursal_id);
-
-    void deleteBySucursalId(Long id);
+    List<Usuario> findBySucursal_IdOrderByApPaternoAsc(Long sucursal_id);
 }
