@@ -1,6 +1,6 @@
-package com.pharmanet.exception;
+package com.pharmanet.sucursal_service.dto;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ErrorResponse {
 
-    private LocalDate fecha = LocalDate.now();
+    private LocalDateTime fecha = LocalDateTime.now();
     private int estado;
     private String error;
     private String mensaje;

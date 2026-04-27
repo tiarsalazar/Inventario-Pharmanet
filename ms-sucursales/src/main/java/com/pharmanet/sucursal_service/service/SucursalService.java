@@ -1,15 +1,14 @@
-package com.pharmanet.service;
+package com.pharmanet.sucursal_service.service;
 
-import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.pharmanet.dto.SucursalDTO;
-import com.pharmanet.dto.SucursalMapper;
-import com.pharmanet.entity.Sucursal;
-import com.pharmanet.exception.ResourceNotFoundException;
-import com.pharmanet.repository.SucursalRepository;
+import com.pharmanet.sucursal_service.dto.SucursalDTO;
+import com.pharmanet.sucursal_service.dto.SucursalMapper;
+import com.pharmanet.sucursal_service.entity.Sucursal;
+import com.pharmanet.sucursal_service.exception.ResourceNotFoundException;
+import com.pharmanet.sucursal_service.repository.SucursalRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -30,10 +29,7 @@ public class SucursalService {
     }
 
     public SucursalDTO buscarSucursal(String codInterno) {
-        
-        if(codInterno == null || codInterno.isEmpty() || codInterno.length() > 10) {
-            throw new ResourceNotFoundException("No se encuentra la sucursal");
-        }
+
         Sucursal sucursal = sucursalRepository.findByCodInterno(codInterno)
             .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal"));
 
@@ -42,40 +38,31 @@ public class SucursalService {
 
     public List<SucursalDTO> buscarPorRegion(String region) {
         
-        List<SucursalDTO> sucursalesEnRegion = sucursalRepository.findByRegionOrderByComunaAscCodInternoAsc(region).stream()
-            .map(x -> SucursalMapper.toDTO(x))
+        return sucursalRepository.findByRegionOrderByComunaAscCodInternoAsc(region).stream()
+            .map(SucursalMapper::toDTO)
             .toList();
-
-        if (listaPorRegion.isEmpty()) {
-            throw new ListEmptyException("No hay sucursales disponibles en la región");
-        }
-
-        return sucursalesEnRegion;
     }
 
     public List<SucursalDTO> mostrarTodasLasSucursales() {
 
-        List<SucursalDTO> sucursales = sucursalRepository.findAll().stream()
-            .map(x -> SucursalMapper.toDTO(x))
-            .sorted(Comparator.comparing(SucursalDTO::getCodInterno))
+        return sucursalRepository.findAll().stream()
+            .map(SucursalMapper::toDTO)
             .toList();
-        
-        if (sucursales.isEmpty()) {
-            throw new ListEmptyException("No hay sucursales disponibles");
-        }
-
-        return sucursales;
     }
 
-    public SucursalDTO actualizarSucursal(SucursalDTO sucursalDTO) {
+    public void actualizarSucursal(SucursalDTO sucursalDTO) {
 
-        Sucursal sucursal = sucursalRepository.findByCodInterno(sucursalDTO.getCodInterno())
+        // Verifica la existencia de la sucursal
+        Sucursal verificarSucursal = sucursalRepository.findByCodInterno(sucursalDTO.getCodInterno())
             .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal"));
 
-        sucursal = SucursalMapper.toModel(sucursalDTO);
+        // Convierte la sucursalDTO en sucursal
+        Sucursal sucursal = SucursalMapper.toModel(sucursalDTO);
+        sucursal.setId(verificarSucursal.getId());
+        sucursal.setEstado(verificarSucursal.getEstado());
+
+        // Guarda la entidad en la BD
         sucursalRepository.save(sucursal);
-        
-        return SucursalMapper.toDTO(sucursal);
     }
 
     public void eliminarSucursal(String codInterno) {

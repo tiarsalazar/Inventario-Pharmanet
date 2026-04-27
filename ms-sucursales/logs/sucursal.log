@@ -1,0 +1,50 @@
+2026-04-27T12:54:01.278-04:00  INFO 13760 --- [sucursal_service] [restartedMain] c.p.s.SucursalServiceApplication         : Starting SucursalServiceApplication using Java 21.0.9 with PID 13760 (C:\Users\bobip\Documents\TERCER SEMESTRE\Inventario-y-Logistica\ms-sucursales\target\classes started by bobip in C:\Users\bobip\Documents\TERCER SEMESTRE\Inventario-y-Logistica\ms-sucursales)
+2026-04-27T12:54:01.294-04:00  INFO 13760 --- [sucursal_service] [restartedMain] c.p.s.SucursalServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-27T12:54:01.542-04:00  INFO 13760 --- [sucursal_service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-27T12:54:01.545-04:00  INFO 13760 --- [sucursal_service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-27T12:54:05.205-04:00  INFO 13760 --- [sucursal_service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-27T12:54:05.501-04:00  INFO 13760 --- [sucursal_service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 209 ms. Found 1 JPA repository interface.
+2026-04-27T12:54:06.176-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=251af410-862e-3f0f-b7cd-4b94ad60db53
+2026-04-27T12:54:08.252-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-04-27T12:54:08.376-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-27T12:54:08.376-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-04-27T12:54:08.596-04:00  INFO 13760 --- [sucursal_service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7048 ms
+2026-04-27T12:54:10.658-04:00  INFO 13760 --- [sucursal_service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-27T12:54:11.425-04:00  INFO 13760 --- [sucursal_service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@71279c0c
+2026-04-27T12:54:11.425-04:00  INFO 13760 --- [sucursal_service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-27T12:54:13.392-04:00  INFO 13760 --- [sucursal_service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_sucursal (MySQL 5.5)
+2026-04-27T12:54:13.569-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `bd_sucursal`.`flyway_schema_history` does not exist yet
+2026-04-27T12:54:13.580-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.085s)
+2026-04-27T12:54:13.704-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `bd_sucursal`.`flyway_schema_history` ...
+2026-04-27T12:54:14.626-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_sucursal`: << Empty Schema >>
+2026-04-27T12:54:14.673-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_sucursal` to version "1 - crear tabla sucursal"
+2026-04-27T12:54:15.036-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_sucursal` to version "2 - checks"
+2026-04-27T12:54:18.563-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_sucursal` to version "3 - insertar sucursales"
+2026-04-27T12:54:18.870-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 3 migrations to schema `bd_sucursal`, now at version v3 (execution time 00:03.660s)
+2026-04-27T12:54:19.403-04:00  INFO 13760 --- [sucursal_service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-27T12:54:19.873-04:00  INFO 13760 --- [sucursal_service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-04-27T12:54:22.611-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-27T12:54:22.939-04:00  WARN 13760 --- [sucursal_service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-04-27T12:54:23.028-04:00  INFO 13760 --- [sucursal_service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_sucursal]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_sucursal/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-27T12:54:27.206-04:00  INFO 13760 --- [sucursal_service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-27T12:54:27.245-04:00  INFO 13760 --- [sucursal_service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-27T12:54:27.876-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-27T12:54:30.764-04:00  WARN 13760 --- [sucursal_service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-27T12:54:33.786-04:00  INFO 13760 --- [sucursal_service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-04-27T12:54:33.846-04:00  INFO 13760 --- [sucursal_service] [restartedMain] c.p.s.SucursalServiceApplication         : Started SucursalServiceApplication in 35.171 seconds (process running for 38.311)
+2026-04-27T12:55:32.426-04:00  INFO 13760 --- [sucursal_service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-27T12:55:32.518-04:00  INFO 13760 --- [sucursal_service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-27T12:55:32.528-04:00  INFO 13760 --- [sucursal_service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-27T12:55:32.541-04:00  INFO 13760 --- [sucursal_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-27T12:55:32.592-04:00  INFO 13760 --- [sucursal_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

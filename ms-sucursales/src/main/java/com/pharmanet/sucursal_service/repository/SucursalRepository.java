@@ -1,4 +1,4 @@
-package com.pharmanet.repository;
+package com.pharmanet.sucursal_service.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.pharmanet.entity.Sucursal;
+import com.pharmanet.sucursal_service.entity.Sucursal;
 
 
 @Repository

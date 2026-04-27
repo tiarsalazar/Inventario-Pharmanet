@@ -1,4 +1,4 @@
-package com.pharmanet.entity;
+package com.pharmanet.sucursal_service.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,17 +25,17 @@ public class Sucursal {
     @Column(name = "id_sucursal")
     private Long id;
 
-    @Column(nullable = false, unique = true, length = 10)
+    @Column(name = "cod_interno", nullable = false, unique = true, length = 10)
     private String codInterno;
 
-    @Column(unique = true, length = 30)
+    @Column(name = "nombre_sucursal", unique = true, length = 30)
     private String nombreSucursal;
-    @Column(nullable = false, length = 20)
+    @Column(name = "tipo_sucursal", nullable = false, length = 20)
     private String tipoSucursal;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 30)
     private String region;
-    @Column(nullable = false, length = 25)
+    @Column(nullable = false, length = 40)
     private String comuna;
     @Column(nullable = false, length = 100)
     private String direccion;

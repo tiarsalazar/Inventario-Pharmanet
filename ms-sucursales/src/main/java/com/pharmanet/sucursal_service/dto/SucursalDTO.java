@@ -1,4 +1,5 @@
-package com.pharmanet.dto;
+package com.pharmanet.sucursal_service.dto;
+
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -13,27 +14,27 @@ import lombok.NoArgsConstructor;
 public class SucursalDTO {
 
     @NotBlank(message = "El código interno no puede estar vacío")
-    @Size(max = 10, message = "Largo máximo de código interno 10 caracteres")
+    @Size(min = 6, max = 10, message = "El campo debe tener entre 6 y 10 caracteres")
+    @Pattern(regexp = "^[A-Z0-9]+$", message = "Solo mayúsculas y números")
     private String codInterno;
 
-    @Size(max = 30, message = "Largo máximo de nombre de la sucursal 30 caracteres")
+    @Size(min = 5, max = 30, message = "El campo debe tener entre 5 y 30 caracteres")
     private String nombreSucursal;
 
-    @NotBlank(message = "El tipo de sucursal no puede estar vacío")
-    @Pattern(
-        regexp = "(?i)farmacia|bodega",
-        message = "El tipo de sucursal no es válido. Entradas válidas: Farmacia, Bodega")
+    @NotBlank(message = "El tipo de sucursal es obligatorio")
+    @Pattern(regexp = "(?i)^(farmacia|bodega)$",
+        message = "El tipo de sucursal no es válido. Entradas válidas: farmacia, bodega")
     private String tipoSucursal;
 
     @NotBlank(message = "La región no puede estar vacía")
-    @Size(max = 20, message = "Largo máximo de la región 20 caracteres")
+    @Size(max = 30, message = "Largo máximo 30 caracteres")
     private String region;
 
     @NotBlank(message = "La comuna no puede estar vacía")
-    @Size(max = 25, message = "Largo máximo de la comuna 25 caracteres")
+    @Size(max = 40, message = "Largo máximo 40 caracteres")
     private String comuna;
 
     @NotBlank(message = "La dirección no puede estar vacía")
-    @Size(max = 100, message = "Largo máximo de la dirección 100 carácteres")
+    @Size(max = 100, message = "Largo máximo 100 carácteres")
     private String direccion;
 }

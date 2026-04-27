@@ -1,4 +1,4 @@
-package com.pharmanet.exception;
+package com.pharmanet.sucursal_service.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
 
