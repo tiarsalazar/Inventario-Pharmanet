@@ -15,7 +15,7 @@ public class SucursalDTO {
 
     @NotBlank(message = "El código interno no puede estar vacío")
     @Size(min = 6, max = 10, message = "El campo debe tener entre 6 y 10 caracteres")
-    @Pattern(regexp = "^[A-Z0-9]+$", message = "Solo mayúsculas y números")
+    @Pattern(regexp = "^[A-Z0-9]", message = "Solo mayúsculas y números")
     private String codInterno;
 
     @Size(min = 5, max = 30, message = "El campo debe tener entre 5 y 30 caracteres")

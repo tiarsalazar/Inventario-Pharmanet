@@ -7,37 +7,52 @@ import org.springframework.stereotype.Service;
 import com.pharmanet.sucursal_service.dto.SucursalDTO;
 import com.pharmanet.sucursal_service.dto.SucursalMapper;
 import com.pharmanet.sucursal_service.entity.Sucursal;
+import com.pharmanet.sucursal_service.exception.NotUniqueSucursalException;
 import com.pharmanet.sucursal_service.exception.ResourceNotFoundException;
 import com.pharmanet.sucursal_service.repository.SucursalRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
 @Transactional
+@Slf4j
 public class SucursalService {
 
     private final SucursalRepository sucursalRepository;
 
     public SucursalDTO agregarSucursal(SucursalDTO sucursalDTO) {
+        log.info("Inicia guardado de sucursal.");
+        log.debug("sucursalDTO: " + sucursalDTO);
+
+        log.info("Verifica que la sucursal no exista");
+        if(sucursalRepository.findByCodInterno(sucursalDTO.getCodInterno()) != null) {
+            throw new NotUniqueSucursalException("Ya existe la sucursal en la base de datos.");
+        }
 
         Sucursal sucursal = SucursalMapper.toModel(sucursalDTO);
         sucursalRepository.save(sucursal);
-        
+        log.debug("sucursal guardada:" + sucursal);
+
         return SucursalMapper.toDTO(sucursal);
     }
 
     public SucursalDTO buscarSucursal(String codInterno) {
+        log.info("Inicia busqueda de sucursal.");
+        log.debug("codInterno: " + codInterno);
 
         Sucursal sucursal = sucursalRepository.findByCodInterno(codInterno)
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal"));
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal."));
+        log.debug("sucursal: " + sucursal);
 
         return SucursalMapper.toDTO(sucursal);
     }
 
     public List<SucursalDTO> buscarPorRegion(String region) {
-        
+        log.info("Inicia búsqueda de sucursal por región.");
+        log.debug("region: " + region);
         return sucursalRepository.findByRegionOrderByComunaAscCodInternoAsc(region).stream()
             .map(SucursalMapper::toDTO)
             .toList();
@@ -51,29 +66,33 @@ public class SucursalService {
     }
 
     public void actualizarSucursal(SucursalDTO sucursalDTO) {
+        log.info("Inicia actualización de la sucursal.");
+        log.debug("sucursalDTO: " + sucursalDTO);
 
-        // Verifica la existencia de la sucursal
+        log.info("Verifica que la sucursal ya exista");
         Sucursal verificarSucursal = sucursalRepository.findByCodInterno(sucursalDTO.getCodInterno())
             .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal"));
 
-        // Convierte la sucursalDTO en sucursal
+        log.info("Convierte el dto a model");
         Sucursal sucursal = SucursalMapper.toModel(sucursalDTO);
+        log.debug("id: " +  verificarSucursal.getId());
         sucursal.setId(verificarSucursal.getId());
+        log.debug("estado: " + verificarSucursal.getEstado());
         sucursal.setEstado(verificarSucursal.getEstado());
 
-        // Guarda la entidad en la BD
+        log.debug("sucursal: " + sucursal);
         sucursalRepository.save(sucursal);
     }
 
     public void eliminarSucursal(String codInterno) {
-        
-        if(codInterno == null || codInterno.isEmpty() || codInterno.length() > 10) {
-            throw new ResourceNotFoundException("No se encuentra la sucursal");
-        }
+        log.info("Inicia borrado de la sucursal.");
+        log.debug("codInterno: " + codInterno);
 
+        log.info("Verifica existencia de la sucursal");
         Sucursal sucursal = sucursalRepository.findByCodInterno(codInterno)
             .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal"));
 
         sucursalRepository.delete(sucursal);
+        log.debug("sucursal eliminada: " + sucursal);
     }
 }

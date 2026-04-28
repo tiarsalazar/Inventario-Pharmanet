@@ -21,7 +21,9 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/sucursales")
 @RequiredArgsConstructor
@@ -32,6 +34,7 @@ public class SucursalController {
     @GetMapping
     public ResponseEntity<List<SucursalDTO>> mostrarTodasLasSucursales() {
         
+        log.info("Inicia búsqueda de todas las sucursales.");
         List<SucursalDTO> sucursales = sucursalService.mostrarTodasLasSucursales();
         return ResponseEntity.status(HttpStatus.OK).body(sucursales);
     }

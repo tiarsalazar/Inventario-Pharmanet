@@ -22,6 +22,12 @@ public class GlobalHandlerException {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 
+    @ExceptionHandler(NotUniqueSucursalException.class)
+    public ResponseEntity<ErrorResponse> handlerNotUniqueSucursalException(NotUniqueSucursalException ex) {
+        ErrorResponse error = new ErrorResponse(409, "Conflict", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+    }
+
     // Captura duplicados en atributos únicos
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ErrorResponse> handlerDataIntegrityViolationException(DataIntegrityViolationException ex) {
