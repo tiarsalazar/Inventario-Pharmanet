@@ -29,7 +29,7 @@ public class SucursalService {
 
         log.info("Verifica que la sucursal no exista");
         if(sucursalRepository.findByCodInterno(sucursalDTO.getCodInterno()) != null) {
-            throw new NotUniqueSucursalException("Ya existe la sucursal en la base de datos.");
+            throw new NotUniqueSucursalException("Ya existe la sucursal en la base de datos: " + sucursalDTO.getCodInterno());
         }
 
         Sucursal sucursal = SucursalMapper.toModel(sucursalDTO);
@@ -44,7 +44,7 @@ public class SucursalService {
         log.debug("codInterno: " + codInterno);
 
         Sucursal sucursal = sucursalRepository.findByCodInterno(codInterno)
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal."));
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal: " + codInterno));
         log.debug("sucursal: " + sucursal);
 
         return SucursalMapper.toDTO(sucursal);
@@ -71,7 +71,7 @@ public class SucursalService {
 
         log.info("Verifica que la sucursal ya exista");
         Sucursal verificarSucursal = sucursalRepository.findByCodInterno(sucursalDTO.getCodInterno())
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal"));
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal: " + sucursalDTO.getCodInterno()));
 
         log.info("Convierte el dto a model");
         Sucursal sucursal = SucursalMapper.toModel(sucursalDTO);
@@ -90,7 +90,7 @@ public class SucursalService {
 
         log.info("Verifica existencia de la sucursal");
         Sucursal sucursal = sucursalRepository.findByCodInterno(codInterno)
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal"));
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la sucursal: " + codInterno));
 
         sucursalRepository.delete(sucursal);
         log.debug("sucursal eliminada: " + sucursal);
