@@ -28,7 +28,7 @@ public class SucursalService {
         log.debug("sucursalDTO: " + sucursalDTO);
 
         log.info("Verifica que la sucursal no exista");
-        if(sucursalRepository.findByCodInterno(sucursalDTO.getCodInterno()) != null) {
+        if(sucursalRepository.findByCodInterno(sucursalDTO.getCodInterno()).isPresent()) {
             throw new NotUniqueSucursalException("Ya existe la sucursal en la base de datos: " + sucursalDTO.getCodInterno());
         }
 
