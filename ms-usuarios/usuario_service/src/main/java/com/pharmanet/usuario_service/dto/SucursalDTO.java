@@ -1,5 +1,4 @@
-package com.pharmanet.sucursal_service.dto;
-
+package com.pharmanet.usuario_service.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

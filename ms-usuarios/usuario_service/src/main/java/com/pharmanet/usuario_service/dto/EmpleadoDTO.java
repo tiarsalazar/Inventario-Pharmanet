@@ -1,6 +1,8 @@
 package com.pharmanet.usuario_service.dto;
 
-import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,16 +12,24 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class EmpleadoDTO {
 
-    @Column(nullable = false, unique = true, length = 12)
-    private String run;
-    @Column(nullable = false, length = 80)
+    @NotBlank(message = "Este campo no puede estar vacío")
+    @Size(max = 10, message = "Máximo 10 caracteres")
+    @Pattern(regexp = "(?i)[K0-9]+-", message = "Sin puntos y con guión")
+    private String run; // RUN sin puntos y con guión
+
+    @NotBlank(message = "Este campo no puede estar vacío")
+    @Size(max  = 80, message = "Máximo 80 caracteres")
     private String nombre_completo;
 
-    @Column(nullable = false, unique = true, length = 30)
-    private String correo;
-    @Column(nullable = false, length = 12)
+    @NotBlank(message = "Esta campo no puede estar vacío")
+    @Size(max = 30, message = "Máximo 30 caracteres")
+    private String correo_institucional;
+
+    @NotBlank(message = "Esta campo no puede estar vacío")
+    @Size(max = 12, message = "Máximo 12 caracteres")
     private String telefono;
 
-    @Column(nullable = false, length = 30)
+    @NotBlank(message = "Esta campo no puede estar vacío")
+    @Size(max = 30, message = "Máximo 30 caracteres")
     private String profesion;
 }

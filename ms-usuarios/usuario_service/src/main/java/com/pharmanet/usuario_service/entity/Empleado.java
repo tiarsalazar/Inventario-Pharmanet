@@ -29,8 +29,8 @@ public class Empleado {
     @Column(nullable = false, length = 20)
     private String password;
 
-    @Column(nullable = false, unique = true, length = 12)
-    private String run;
+    @Column(nullable = false, unique = true, length = 10)
+    private String run; // RUN sin puntos y con guión
     @Column(nullable = false, length = 80)
     private String nombre_completo;
 
@@ -41,6 +41,8 @@ public class Empleado {
 
     @Column(nullable = false, length = 30)
     private String profesion;
+    @Column(nullable = false)
+    private Long id_sucursal;
     
     @Column(nullable = false, length = 100)
     private String direccion;
