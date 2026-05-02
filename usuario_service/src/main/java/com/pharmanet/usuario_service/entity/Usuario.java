@@ -26,7 +26,7 @@ public class Usuario {
     @Id
     @MapsId
     @OneToOne
-    @JoinColumn(name ="id")
+    @JoinColumn(name ="id", nullable = false)
     private Empleado empleado;
 
     @Column(name = "nombre_usuario", nullable = false, unique = true, length = 30)

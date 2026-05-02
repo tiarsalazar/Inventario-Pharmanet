@@ -9,7 +9,7 @@ public class EmpleadoMapper {
             empleado.getNombreCompleto(),
             empleado.getCorreoInstitucional(),
             empleado.getTelefono(),
-            empleado.getIdSucursal(),
+            empleado.getCodInterno(),
             empleado.getProfesion()
         );
     }
@@ -19,7 +19,7 @@ public class EmpleadoMapper {
             empleadoDTO.getNombreCompleto(),
             empleadoDTO.getCorreoInstitucional(),
             empleadoDTO.getTelefono(),
-            empleadoDTO.getIdSucursal(),
+            empleadoDTO.getCodInterno(),
             empleadoDTO.getProfesion()
         );
     }

@@ -1,5 +1,6 @@
 package com.pharmanet.usuario_service.service;
 
+import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.Optional;
 
@@ -7,12 +8,15 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.pharmanet.usuario_service.client.SucursalFeignClient;
 import com.pharmanet.usuario_service.dto.EmpleadoDTO;
 import com.pharmanet.usuario_service.dto.EmpleadoMapper;
 import com.pharmanet.usuario_service.entity.Empleado;
+import com.pharmanet.usuario_service.entity.Usuario;
 import com.pharmanet.usuario_service.exception.NotUniqueEmpleado;
 import com.pharmanet.usuario_service.exception.ResourceNotFoundException;
 import com.pharmanet.usuario_service.repository.EmpleadoRepository;
+import com.pharmanet.usuario_service.repository.UsuarioRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +30,10 @@ public class EmpleadoService {
 
     private final EmpleadoRepository empleadoRepository;
 
+    private final UsuarioRepository usuarioRepository;
+
+    private final SucursalFeignClient sucursalFeignClient;
+
     public EmpleadoDTO agregarEmpleado(EmpleadoDTO empleadoDTO) {
         log.info("Se inicia funcionalidad de agregar empleado");
         log.debug("empladoDTO: " + empleadoDTO);
@@ -36,17 +44,45 @@ public class EmpleadoService {
             throw new NotUniqueEmpleado("El empleado ya existe en la bd");
         }
 
-        log.info("Se transforma el dto a modelo")
+        log.info("Se verifica la existencia de la FK de sucursal (código interno)");
+        log.debug("codInterno: " + empleadoDTO.getCodInterno());
+        try {
+            sucursalFeignClient.findByCodInterno(empleadoDTO.getCodInterno());
+        } catch (Feign.FeignException.NotFoundException e) {
+            throw new ResourceNotFoundException("No se encuentra la sucursal: " + empleadoDTO.getCodInterno());
+        }
+
+        log.info("Se transforma el dto a modelo");
         Empleado empleado = EmpleadoMapper.toModel(empleadoDTO);
         log.info("Se agrega empleado");
         empleadoRepository.save(empleado);
 
-        // Crear usuario
-
-        // Setear usuario en empleado
+        agregarUsuario(empleado);
 
         log.info("Se transforma modelo a dto");
         return EmpleadoMapper.toDTO(empleado);
+    }
+
+    public Usuario agregarUsuario(Empleado empleado) {
+        log.info("Se inicia funcionalidad de agregar usuario");
+
+        // Nombre de Usuario: Primeras 3 letras del nombre, primeras 4 siglas del RUN más el año y mes de creación
+        log.info("Se crea nombre de usuario");
+        String nombreUsuario = empleado.getNombreCompleto().substring(0, 3).toLower() +
+            empleado.getRun().substring(0, 4) +
+            LocalDate.now().getYear() +
+            LocalDate.now().getMonth();
+
+        // Contraseña: Le cuarta a sexta letra del nombre sin espacios y las 4 últimas siglas del RUN
+        log.info("Se crea contraseña");
+        String password = empleado.getNombreCompleto().replace(" ", "").substring(3, 6) +
+            empleado.getRun().substring(empleado.getRun().length(), -4);
+
+        log.info("Se inicia usuario nuevo");
+        Usuario usuario = new Usuario(empleado, nombreUsuario, password);
+
+        log.info("Se agrega usuario");
+        usuarioRepository.save(usuario);
     }
 
     public EmpleadoDTO buscarPorRun(String run) {
@@ -75,7 +111,7 @@ public class EmpleadoService {
     }
 
     public Page<EmpleadoDTO> mostrarTodos(Pageable pageable) {
-        log.info("Inicia búsqueda de todos los empleados");
+        log.info("Inicia búsqueda de todos los empleados"); // cambiarlo a controller
         return empleadoRepository.findAll(pageable)
             .map(EmpleadoMapper::toDTO);
     }
@@ -114,6 +150,12 @@ public class EmpleadoService {
         log.info("Verificar que el empleado exista");
         Empleado empleado = empleadoRepository.findByRun(run)
             .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el empleado: " + run));
+
+        try {
+            usuarioRepository.delete(usuarioRepository.findById(empleado.getId()));
+        } catch (NotFoundException e) {
+            log.warn("No existe usuario de empleado: " + empleado.getId());
+        }
 
         empleadoRepository.delete(empleado);
 

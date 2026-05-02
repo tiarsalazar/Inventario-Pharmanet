@@ -17,4 +17,5 @@ public interface EmpleadoRepository extends JpaRepository<Empleado, Long> {
     Page<Empleado> findByProfesion(String profesion, Pageable pageable);
 
     Page<Empleado> findByIdSucursal(Long idSucursal, Pageable pageable);
+
 }

@@ -31,7 +31,7 @@ public class EmpleadoDTO {
     private String telefono;
 
     @NotNull(message = "Este campo no puede estar vacío")
-    private Long idSucursal;
+    private String codInterno;
 
     @NotBlank(message = "Esta campo no puede estar vacío")
     @Size(max = 30, message = "Máximo 30 caracteres")
