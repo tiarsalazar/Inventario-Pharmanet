@@ -110,7 +110,7 @@ public class EmpleadoService {
             .map(EmpleadoMapper::toDTO);
     }
 
-    public Page<EmpleadoDTO> buscarPorSucursal(Long idSucursal, Pageable pageable) {
+    public Page<EmpleadoDTO> buscarPorSucursal(String codInterno, Pageable pageable) {
         log.info("Inicia búsqueda por ID de sucursal");
         log.debug("idSucursal: {}", idSucursal);
         return empleadoRepository.findByCodInterno(codInterno, pageable)
