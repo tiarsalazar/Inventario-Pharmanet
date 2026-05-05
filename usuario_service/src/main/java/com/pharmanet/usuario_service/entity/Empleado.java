@@ -36,7 +36,6 @@ public class Empleado {
     private String nombreCompleto;
 
     @Column(name = "correo_institucional", nullable = false, unique = true, length = 30)
-    @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "Solo se aceptan letras y números")
     private String correoInstitucional;
     @Column(nullable = false, length = 12)
     private String telefono;

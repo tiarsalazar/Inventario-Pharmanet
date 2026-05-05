@@ -1,8 +1,6 @@
 package com.pharmanet.usuario_service.service;
 
 import java.time.LocalDate;
-import java.util.Comparator;
-import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,7 +16,6 @@ import com.pharmanet.usuario_service.exception.ResourceNotFoundException;
 import com.pharmanet.usuario_service.repository.EmpleadoRepository;
 import com.pharmanet.usuario_service.repository.UsuarioRepository;
 
-import feign.Feign;
 import feign.FeignException.FeignClientException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -76,7 +73,7 @@ public class EmpleadoService {
         String nombreUsuario = empleado.getNombreCompleto().replace(" ", "").substring(0, 3).toLowerCase() +
             empleado.getRun().substring(0, 4) +
             LocalDate.now().getYear() +
-            LocalDate.now().getMonth();
+            LocalDate.now().getMonthValue();
 
         // Contraseña: Le cuarta a sexta letra del nombre sin espacios y las 4 últimas siglas del RUN
         log.info("Se crea contraseña");
@@ -111,8 +108,8 @@ public class EmpleadoService {
     }
 
     public Page<EmpleadoDTO> buscarPorSucursal(String codInterno, Pageable pageable) {
-        log.info("Inicia búsqueda por ID de sucursal");
-        log.debug("idSucursal: {}", idSucursal);
+        log.info("Inicia búsqueda por código interno de sucursal");
+        log.debug("codInterno: {}", codInterno);
         return empleadoRepository.findByCodInterno(codInterno, pageable)
             .map(EmpleadoMapper::toDTO);
     }

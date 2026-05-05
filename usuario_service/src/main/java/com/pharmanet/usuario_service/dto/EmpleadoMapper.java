@@ -10,7 +10,7 @@ public class EmpleadoMapper {
             empleado.getCorreoInstitucional(),
             empleado.getTelefono(),
             empleado.getCodInterno(),
-            empleado.getProfesion()
+            empleado.getProfesion().toLowerCase()
         );
     }
 
@@ -20,7 +20,7 @@ public class EmpleadoMapper {
             empleadoDTO.getCorreoInstitucional(),
             empleadoDTO.getTelefono(),
             empleadoDTO.getCodInterno(),
-            empleadoDTO.getProfesion()
+            empleadoDTO.getProfesion().toLowerCase()
         );
     }
 }
