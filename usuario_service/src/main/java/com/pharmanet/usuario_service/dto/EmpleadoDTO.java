@@ -15,11 +15,11 @@ public class EmpleadoDTO {
 
     @NotBlank(message = "Este campo no puede estar vacío")
     @Size(max = 10, message = "Máximo 10 caracteres")
-    @Pattern(regexp = "(?i)[K0-9]+-", message = "Sin puntos y con guión")
+    @Pattern(regexp = "^[0-9]{7,8}-[0-9kK]$", message = "RUN inválido")
     private String run; // RUN sin puntos y con guión
 
     @NotBlank(message = "Este campo no puede estar vacío")
-    @Size(max  = 80, message = "Máximo 80 caracteres")
+    @Size(min = 12, max  = 80, message = "Entre 12 y 80 caracteres")
     private String nombreCompleto;
 
     @NotBlank(message = "Esta campo no puede estar vacío")
@@ -27,7 +27,7 @@ public class EmpleadoDTO {
     private String correoInstitucional;
 
     @NotBlank(message = "Esta campo no puede estar vacío")
-    @Size(max = 12, message = "Máximo 12 caracteres")
+    @Pattern(regexp = "^\\+569\\d{8}$", message = "Formato válido: +569XXXXXXXX")
     private String telefono;
 
     @NotNull(message = "Este campo no puede estar vacío")

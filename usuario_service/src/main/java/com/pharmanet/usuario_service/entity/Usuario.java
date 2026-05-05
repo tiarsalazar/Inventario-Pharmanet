@@ -4,9 +4,10 @@ package com.pharmanet.usuario_service.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -24,7 +25,9 @@ import lombok.Setter;
 public class Usuario {
 
     @Id
-    @MapsId
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @OneToOne
     @JoinColumn(name ="id", nullable = false)
     private Empleado empleado;
@@ -33,4 +36,10 @@ public class Usuario {
     private String nombreUsuario;
     @Column(nullable = false, length = 60)
     private String password;
+
+    public Usuario(Empleado empleado, String nombreUsuario, String password) {
+        this.empleado = empleado;
+        this.nombreUsuario = nombreUsuario;
+        this.password = password;
+    }
 }
