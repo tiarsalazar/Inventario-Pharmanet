@@ -336,3 +336,42 @@ Caused by: java.net.ConnectException: Connection refused: getsockopt
 2026-05-01T17:02:50.959-04:00  INFO 16296 --- [sucursal_service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-01T17:02:50.979-04:00  INFO 16296 --- [sucursal_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-05-01T17:02:51.092-04:00  INFO 16296 --- [sucursal_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-06T00:55:22.766-04:00  INFO 16404 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : Starting SucursalServiceApplication using Java 21.0.9 with PID 16404 (C:\Users\bobip\Documents\TERCER SEMESTRE\Inventario-y-Logistica\sucursal_service\target\classes started by bobip in C:\Users\bobip\Documents\TERCER SEMESTRE\Inventario-y-Logistica\sucursal_service)
+2026-05-06T00:55:22.782-04:00  INFO 16404 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T00:55:23.107-04:00  INFO 16404 --- [sucursal-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T00:55:23.107-04:00  INFO 16404 --- [sucursal-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T00:55:27.381-04:00  INFO 16404 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T00:55:27.822-04:00  INFO 16404 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 320 ms. Found 1 JPA repository interface.
+2026-05-06T00:55:31.360-04:00  INFO 16404 --- [sucursal-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-05-06T00:55:31.474-04:00  INFO 16404 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T00:55:31.474-04:00  INFO 16404 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-06T00:55:31.813-04:00  INFO 16404 --- [sucursal-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 8700 ms
+2026-05-06T00:55:34.829-04:00  INFO 16404 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T00:55:35.941-04:00  INFO 16404 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b835658
+2026-05-06T00:55:35.958-04:00  INFO 16404 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-06T00:55:39.018-04:00  INFO 16404 --- [sucursal-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_sucursal (MySQL 5.5)
+2026-05-06T00:55:39.637-04:00  INFO 16404 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.457s)
+2026-05-06T00:55:39.712-04:00  INFO 16404 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_sucursal`: 3
+2026-05-06T00:55:39.730-04:00  INFO 16404 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_sucursal` is up to date. No migration necessary.
+2026-05-06T00:55:40.547-04:00  INFO 16404 --- [sucursal-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-06T00:55:41.124-04:00  INFO 16404 --- [sucursal-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-06T00:55:45.639-04:00  INFO 16404 --- [sucursal-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-06T00:55:46.266-04:00  WARN 16404 --- [sucursal-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-06T00:55:46.406-04:00  INFO 16404 --- [sucursal-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_sucursal]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_sucursal/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06T00:55:52.538-04:00  INFO 16404 --- [sucursal-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06T00:55:52.592-04:00  INFO 16404 --- [sucursal-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T00:55:53.294-04:00  INFO 16404 --- [sucursal-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-06T00:55:55.851-04:00  WARN 16404 --- [sucursal-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06T00:55:58.344-04:00  INFO 16404 --- [sucursal-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-05-06T00:55:58.375-04:00  INFO 16404 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : Started SucursalServiceApplication in 38.552 seconds (process running for 41.966)
