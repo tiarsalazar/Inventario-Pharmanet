@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/v1/usuarios")
 @RequiredArgsConstructor
 @Slf4j
 public class EmpleadoController {
