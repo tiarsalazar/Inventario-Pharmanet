@@ -2,6 +2,13 @@
 
 package com.pharmanet.usuario_service.entity;
 
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +29,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario implements UserDetails{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,13 +40,18 @@ public class Usuario {
     private Empleado empleado;
 
     @Column(name = "nombre_usuario", nullable = false, unique = true, length = 30)
-    private String nombreUsuario;
+    private String username;
     @Column(nullable = false, length = 60)
     private String password;
 
-    public Usuario(Empleado empleado, String nombreUsuario, String password) {
+    public Usuario(Empleado empleado, String username, String password) {
         this.empleado = empleado;
-        this.nombreUsuario = nombreUsuario;
+        this.username = username;
         this.password = password;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 }
