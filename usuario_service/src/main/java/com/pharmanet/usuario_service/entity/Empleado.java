@@ -2,13 +2,11 @@
 
 package com.pharmanet.usuario_service.entity;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
@@ -51,9 +49,6 @@ public class Empleado {
     private String comuna;
     @Column(length = 30)
     private String region;
-
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.REMOVE)
-    private Usuario usuario;
 
     public Empleado(String run, String nombreCompleto, String correoInstitucional, String telefono, String codInterno, String profesion) {
         this.run = run;

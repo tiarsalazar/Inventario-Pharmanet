@@ -57,15 +57,13 @@ public class EmpleadoService {
         log.info("Se agrega empleado");
         empleadoRepository.save(empleado);
 
-        Usuario usuario = agregarUsuario(empleado);
-
-        empleado.setUsuario(usuario);
+        agregarUsuario(empleado);
 
         log.info("Se transforma modelo a dto");
         return EmpleadoMapper.toDTO(empleado);
     }
 
-    public Usuario agregarUsuario(Empleado empleado) {
+    private void agregarUsuario(Empleado empleado) {
         log.info("Se inicia funcionalidad de agregar usuario");
 
         // Nombre de Usuario: Primeras 3 letras del nombre, primeras 4 siglas del RUN más el año y mes de creación
@@ -85,8 +83,6 @@ public class EmpleadoService {
 
         log.info("Se agrega usuario");
         usuarioRepository.save(usuario);
-
-        return usuario;
     }
 
     public EmpleadoDTO buscarPorRun(String run) {

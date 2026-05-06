@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.pharmanet.usuario_service.dto.SucursalDTO;
 
-@FeignClient(name = "sucursal-service")
+@FeignClient(name = "sucursal-service", url = "http://localhost:8081")
 public interface SucursalFeignClient {
 
     @GetMapping("/{codInterno}")
