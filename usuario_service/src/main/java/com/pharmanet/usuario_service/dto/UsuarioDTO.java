@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmpleadoDTO {
+public class UsuarioDTO {
 
     @NotBlank(message = "Este campo no puede estar vacío")
     @Size(max = 10, message = "Máximo 10 caracteres")

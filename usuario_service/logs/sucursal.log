@@ -2537,3 +2537,828 @@ This generated password is for development use only. Your security configuration
 2026-05-06T14:43:53.553-04:00  INFO 14592 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-06T14:43:53.587-04:00  INFO 14592 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-05-06T14:43:53.926-04:00  INFO 14592 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-06T21:37:43.998-04:00  INFO 26908 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.8 with PID 26908 (C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service)
+2026-05-06T21:37:44.001-04:00  INFO 26908 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T21:37:44.051-04:00  INFO 26908 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\VI-Alumno\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/VI-Alumno/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-06T21:37:44.051-04:00  INFO 26908 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T21:37:44.052-04:00  INFO 26908 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T21:37:46.346-04:00  INFO 26908 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T21:37:47.225-04:00  INFO 26908 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 871 ms. Found 1 JPA repository interface.
+2026-05-06T21:37:47.342-04:00  INFO 26908 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-06T21:37:47.664-04:00  INFO 26908 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-06T21:37:47.676-04:00  INFO 26908 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T21:37:47.677-04:00  INFO 26908 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-06T21:37:47.713-04:00  INFO 26908 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3661 ms
+2026-05-06T21:37:48.124-04:00  INFO 26908 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T21:37:49.268-04:00  WARN 26908 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+2026-05-06T21:37:49.273-04:00  INFO 26908 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-06T21:37:49.278-04:00  INFO 26908 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-06T21:37:49.295-04:00 ERROR 26908 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLException: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+	at oracle.net.resolver.TNSNamesNamingAdapter.resolve(TNSNamesNamingAdapter.java:143) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.NameResolver.resolveName(NameResolver.java:178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:920) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 38 common frames omitted
+	Suppressed: oracle.net.ns.NetException: ORA-17866: Formato numérico no válido para el número de puerto
+https://docs.oracle.com/error-help/db/ora-17866/
+		at oracle.net.resolver.HostnameNamingAdapter.resolve(HostnameNamingAdapter.java:192) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+		... 45 common frames omitted
+
+2026-05-06T21:42:58.832-04:00  INFO 25708 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.8 with PID 25708 (C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service)
+2026-05-06T21:42:58.835-04:00  INFO 25708 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T21:42:58.886-04:00  INFO 25708 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\VI-Alumno\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/VI-Alumno/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-06T21:42:58.886-04:00  INFO 25708 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T21:42:58.886-04:00  INFO 25708 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T21:42:59.438-04:00  INFO 25708 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T21:42:59.478-04:00  INFO 25708 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 JPA repository interface.
+2026-05-06T21:42:59.605-04:00  INFO 25708 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-06T21:42:59.950-04:00  INFO 25708 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-06T21:42:59.962-04:00  INFO 25708 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T21:42:59.963-04:00  INFO 25708 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-06T21:43:00.000-04:00  INFO 25708 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1113 ms
+2026-05-06T21:43:00.409-04:00  INFO 25708 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T21:43:01.549-04:00  WARN 25708 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+2026-05-06T21:43:01.553-04:00  INFO 25708 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-06T21:43:01.559-04:00  INFO 25708 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-06T21:43:01.577-04:00 ERROR 25708 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLException: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+	at oracle.net.resolver.TNSNamesNamingAdapter.resolve(TNSNamesNamingAdapter.java:143) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.NameResolver.resolveName(NameResolver.java:178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:920) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 38 common frames omitted
+	Suppressed: oracle.net.ns.NetException: ORA-17866: Formato numérico no válido para el número de puerto
+https://docs.oracle.com/error-help/db/ora-17866/
+		at oracle.net.resolver.HostnameNamingAdapter.resolve(HostnameNamingAdapter.java:192) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+		... 45 common frames omitted
+
+2026-05-06T21:43:52.918-04:00  INFO 27228 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.8 with PID 27228 (C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service)
+2026-05-06T21:43:52.921-04:00  INFO 27228 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T21:43:52.972-04:00  INFO 27228 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\VI-Alumno\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/VI-Alumno/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-06T21:43:52.972-04:00  INFO 27228 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T21:43:52.973-04:00  INFO 27228 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T21:43:53.512-04:00  INFO 27228 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T21:43:53.556-04:00  INFO 27228 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interface.
+2026-05-06T21:43:53.677-04:00  INFO 27228 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-06T21:43:53.991-04:00  INFO 27228 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-06T21:43:54.003-04:00  INFO 27228 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T21:43:54.004-04:00  INFO 27228 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-06T21:43:54.040-04:00  INFO 27228 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1067 ms
+2026-05-06T21:43:54.438-04:00  INFO 27228 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T21:43:55.588-04:00  WARN 27228 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+2026-05-06T21:43:55.591-04:00  INFO 27228 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-06T21:43:55.597-04:00  INFO 27228 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-06T21:43:55.612-04:00 ERROR 27228 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLException: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:UsersVI-AlumnoInventario-y-LogisticaWallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+	at oracle.net.resolver.TNSNamesNamingAdapter.resolve(TNSNamesNamingAdapter.java:143) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.NameResolver.resolveName(NameResolver.java:178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:920) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 38 common frames omitted
+	Suppressed: oracle.net.ns.NetException: ORA-17866: Formato numérico no válido para el número de puerto
+https://docs.oracle.com/error-help/db/ora-17866/
+		at oracle.net.resolver.HostnameNamingAdapter.resolve(HostnameNamingAdapter.java:192) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+		... 45 common frames omitted
+
+2026-05-06T21:44:52.103-04:00  INFO 26424 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.8 with PID 26424 (C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service)
+2026-05-06T21:44:52.106-04:00  INFO 26424 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T21:44:52.155-04:00  INFO 26424 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\VI-Alumno\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/VI-Alumno/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-06T21:44:52.155-04:00  INFO 26424 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T21:44:52.155-04:00  INFO 26424 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T21:44:52.690-04:00  INFO 26424 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T21:44:52.731-04:00  INFO 26424 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 JPA repository interface.
+2026-05-06T21:44:52.852-04:00  INFO 26424 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-06T21:44:53.171-04:00  INFO 26424 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-06T21:44:53.183-04:00  INFO 26424 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T21:44:53.183-04:00  INFO 26424 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-06T21:44:53.221-04:00  INFO 26424 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1065 ms
+2026-05-06T21:44:53.619-04:00  INFO 26424 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T21:44:54.653-04:00  WARN 26424 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : null
+Error Code : 0
+Message    : oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+
+2026-05-06T21:44:54.657-04:00  INFO 26424 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-06T21:44:54.664-04:00  INFO 26424 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-06T21:44:54.681-04:00 ERROR 26424 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : null
+Error Code : 0
+Message    : oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : null
+Error Code : 0
+Message    : oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : null
+Error Code : 0
+Message    : oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLException: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+	at oracle.jdbc.driver.OracleDriver.resolveNonSimpleURL(OracleDriver.java:1103) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:861) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+	at oracle.net.resolver.EZConnectResolver.parseExtendedProperties(EZConnectResolver.java:716) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.EZConnectResolver.parseExtendedSettings(EZConnectResolver.java:683) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.EZConnectResolver.parse(EZConnectResolver.java:265) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.EZConnectResolver.<init>(EZConnectResolver.java:199) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.EZConnectResolver.newInstance(EZConnectResolver.java:232) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.resolveNonSimpleURL(OracleDriver.java:1098) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 36 common frames omitted
+
+2026-05-06T21:47:41.711-04:00  INFO 25692 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.8 with PID 25692 (C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service)
+2026-05-06T21:47:41.714-04:00  INFO 25692 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T21:47:41.760-04:00  INFO 25692 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\VI-Alumno\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/VI-Alumno/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-06T21:47:41.761-04:00  INFO 25692 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T21:47:41.761-04:00  INFO 25692 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T21:47:42.297-04:00  INFO 25692 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T21:47:42.346-04:00  INFO 25692 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
+2026-05-06T21:47:42.466-04:00  INFO 25692 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-06T21:47:42.800-04:00  INFO 25692 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-06T21:47:42.811-04:00  INFO 25692 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T21:47:42.812-04:00  INFO 25692 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-06T21:47:42.848-04:00  INFO 25692 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1086 ms
+2026-05-06T21:47:43.236-04:00  INFO 25692 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T21:47:44.264-04:00  WARN 25692 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : null
+Error Code : 0
+Message    : oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+
+2026-05-06T21:47:44.267-04:00  INFO 25692 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-06T21:47:44.273-04:00  INFO 25692 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-06T21:47:44.290-04:00 ERROR 25692 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : null
+Error Code : 0
+Message    : oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : null
+Error Code : 0
+Message    : oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : null
+Error Code : 0
+Message    : oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLException: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+	at oracle.jdbc.driver.OracleDriver.resolveNonSimpleURL(OracleDriver.java:1103) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:861) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12261: No se puede conectar a la base de datos. Error de sintaxis en la cadena de conexión sencilla bdusuario_high?TNS_ADMIN=C:\Users\VI-Alumno\Inventario-y-Logistica\Wallet_bdUsuario.: Invalid character at 27 : \
+https://docs.oracle.com/error-help/db/ora-12261/
+	at oracle.net.resolver.EZConnectResolver.parseExtendedProperties(EZConnectResolver.java:716) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.EZConnectResolver.parseExtendedSettings(EZConnectResolver.java:683) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.EZConnectResolver.parse(EZConnectResolver.java:265) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.EZConnectResolver.<init>(EZConnectResolver.java:199) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.EZConnectResolver.newInstance(EZConnectResolver.java:232) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.resolveNonSimpleURL(OracleDriver.java:1098) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 36 common frames omitted
+
+2026-05-06T21:48:24.104-04:00  INFO 22544 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.8 with PID 22544 (C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service)
+2026-05-06T21:48:24.107-04:00  INFO 22544 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T21:48:24.157-04:00  INFO 22544 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\VI-Alumno\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/VI-Alumno/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-06T21:48:24.157-04:00  INFO 22544 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T21:48:24.157-04:00  INFO 22544 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T21:48:24.723-04:00  INFO 22544 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T21:48:24.767-04:00  INFO 22544 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
+2026-05-06T21:48:24.887-04:00  INFO 22544 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-06T21:48:25.222-04:00  INFO 22544 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-06T21:48:25.233-04:00  INFO 22544 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T21:48:25.234-04:00  INFO 22544 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-06T21:48:25.271-04:00  INFO 22544 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1113 ms
+2026-05-06T21:48:25.672-04:00  INFO 22544 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T21:48:26.951-04:00  WARN 22544 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=9dt6vLcbRZW1hvJOHD94iQ==)
+https://docs.oracle.com/error-help/db/ora-17957/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 22023
+Error Code : 17957
+Message    : ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=9dt6vLcbRZW1hvJOHD94iQ==)
+https://docs.oracle.com/error-help/db/ora-17957/
+
+2026-05-06T21:48:26.964-04:00  INFO 22544 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-06T21:48:26.971-04:00  INFO 22544 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-06T21:48:26.988-04:00 ERROR 22544 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=9dt6vLcbRZW1hvJOHD94iQ==)
+https://docs.oracle.com/error-help/db/ora-17957/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 22023
+Error Code : 17957
+Message    : ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=9dt6vLcbRZW1hvJOHD94iQ==)
+https://docs.oracle.com/error-help/db/ora-17957/
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=9dt6vLcbRZW1hvJOHD94iQ==)
+https://docs.oracle.com/error-help/db/ora-17957/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 22023
+Error Code : 17957
+Message    : ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=9dt6vLcbRZW1hvJOHD94iQ==)
+https://docs.oracle.com/error-help/db/ora-17957/
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=9dt6vLcbRZW1hvJOHD94iQ==)
+https://docs.oracle.com/error-help/db/ora-17957/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 22023
+Error Code : 17957
+Message    : ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=9dt6vLcbRZW1hvJOHD94iQ==)
+https://docs.oracle.com/error-help/db/ora-17957/
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLException: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=9dt6vLcbRZW1hvJOHD94iQ==)
+https://docs.oracle.com/error-help/db/ora-17957/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=9dt6vLcbRZW1hvJOHD94iQ==)
+https://docs.oracle.com/error-help/db/ora-17957/
+	at oracle.net.nt.ExtendedSSLContext.handleException(ExtendedSSLContext.java:190) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.createSSLContext(ExtendedSSLContext.java:166) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.<init>(ExtendedSSLContext.java:110) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.newInstance(ExtendedSSLContext.java:92) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.CustomSSLSocketFactory.newSSLContext(CustomSSLSocketFactory.java:201) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.CustomSSLSocketFactory.getSSLContext(CustomSSLSocketFactory.java:189) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.SSLContextCache.createSSLContext(SSLContextCache.java:242) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.SSLContextCache.createCacheEntry(SSLContextCache.java:195) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.SSLContextCache.get(SSLContextCache.java:153) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.TcpsNTAdapter.newSSLEngine(TcpsNTAdapter.java:607) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.TcpsNTAdapter.connect(TcpsNTAdapter.java:227) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:357) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1296) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:791) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:724) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:972) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:341) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3507) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1091) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 38 common frames omitted
+Caused by: java.security.KeyStoreException: SSO not found
+	at java.base/java.security.KeyStore.getInstance(KeyStore.java:873) ~[na:na]
+	at oracle.net.nt.CustomSSLSocketFactory.getKeyStoreInstance(CustomSSLSocketFactory.java:335) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.createKeyStore(ExtendedSSLContext.java:288) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.initKeyStore(ExtendedSSLContext.java:196) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.createSSLContext(ExtendedSSLContext.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 55 common frames omitted
+Caused by: java.security.NoSuchAlgorithmException: SSO KeyStore not available
+	at java.base/sun.security.jca.GetInstance.getInstance(GetInstance.java:159) ~[na:na]
+	at java.base/java.security.Security.getImpl(Security.java:655) ~[na:na]
+	at java.base/java.security.KeyStore.getInstance(KeyStore.java:870) ~[na:na]
+	... 59 common frames omitted
+
+2026-05-06T21:50:07.936-04:00  INFO 16772 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.8 with PID 16772 (C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-y-Logistica\usuario_service)
+2026-05-06T21:50:07.939-04:00  INFO 16772 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T21:50:07.989-04:00  INFO 16772 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\VI-Alumno\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/VI-Alumno/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-06T21:50:07.990-04:00  INFO 16772 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T21:50:07.990-04:00  INFO 16772 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T21:50:08.536-04:00  INFO 16772 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T21:50:08.578-04:00  INFO 16772 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 1 JPA repository interface.
+2026-05-06T21:50:08.703-04:00  INFO 16772 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-06T21:50:09.045-04:00  INFO 16772 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-06T21:50:09.056-04:00  INFO 16772 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T21:50:09.057-04:00  INFO 16772 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-06T21:50:09.095-04:00  INFO 16772 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1104 ms
+2026-05-06T21:50:09.506-04:00  INFO 16772 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T21:50:10.801-04:00  WARN 16772 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=WVge3AZARIi+IW4zEnbhmg==)
+https://docs.oracle.com/error-help/db/ora-17957/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 22023
+Error Code : 17957
+Message    : ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=WVge3AZARIi+IW4zEnbhmg==)
+https://docs.oracle.com/error-help/db/ora-17957/
+
+2026-05-06T21:50:10.806-04:00  INFO 16772 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-06T21:50:10.813-04:00  INFO 16772 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-06T21:50:10.830-04:00 ERROR 16772 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=WVge3AZARIi+IW4zEnbhmg==)
+https://docs.oracle.com/error-help/db/ora-17957/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 22023
+Error Code : 17957
+Message    : ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=WVge3AZARIi+IW4zEnbhmg==)
+https://docs.oracle.com/error-help/db/ora-17957/
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=WVge3AZARIi+IW4zEnbhmg==)
+https://docs.oracle.com/error-help/db/ora-17957/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 22023
+Error Code : 17957
+Message    : ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=WVge3AZARIi+IW4zEnbhmg==)
+https://docs.oracle.com/error-help/db/ora-17957/
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=WVge3AZARIi+IW4zEnbhmg==)
+https://docs.oracle.com/error-help/db/ora-17957/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 22023
+Error Code : 17957
+Message    : ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=WVge3AZARIi+IW4zEnbhmg==)
+https://docs.oracle.com/error-help/db/ora-17957/
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLException: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=WVge3AZARIi+IW4zEnbhmg==)
+https://docs.oracle.com/error-help/db/ora-17957/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-17957: No se ha podido inicializar el almacén de claves. (CONNECTION_ID=WVge3AZARIi+IW4zEnbhmg==)
+https://docs.oracle.com/error-help/db/ora-17957/
+	at oracle.net.nt.ExtendedSSLContext.handleException(ExtendedSSLContext.java:190) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.createSSLContext(ExtendedSSLContext.java:166) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.<init>(ExtendedSSLContext.java:110) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.newInstance(ExtendedSSLContext.java:92) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.CustomSSLSocketFactory.newSSLContext(CustomSSLSocketFactory.java:201) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.CustomSSLSocketFactory.getSSLContext(CustomSSLSocketFactory.java:189) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.SSLContextCache.createSSLContext(SSLContextCache.java:242) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.SSLContextCache.createCacheEntry(SSLContextCache.java:195) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.SSLContextCache.get(SSLContextCache.java:153) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.TcpsNTAdapter.newSSLEngine(TcpsNTAdapter.java:607) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.TcpsNTAdapter.connect(TcpsNTAdapter.java:227) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:357) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1296) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:791) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:724) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:972) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:341) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3507) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1091) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 38 common frames omitted
+Caused by: java.security.KeyStoreException: SSO not found
+	at java.base/java.security.KeyStore.getInstance(KeyStore.java:873) ~[na:na]
+	at oracle.net.nt.CustomSSLSocketFactory.getKeyStoreInstance(CustomSSLSocketFactory.java:335) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.createKeyStore(ExtendedSSLContext.java:288) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.initKeyStore(ExtendedSSLContext.java:196) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.nt.ExtendedSSLContext.createSSLContext(ExtendedSSLContext.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 55 common frames omitted
+Caused by: java.security.NoSuchAlgorithmException: SSO KeyStore not available
+	at java.base/sun.security.jca.GetInstance.getInstance(GetInstance.java:159) ~[na:na]
+	at java.base/java.security.Security.getImpl(Security.java:655) ~[na:na]
+	at java.base/java.security.KeyStore.getInstance(KeyStore.java:870) ~[na:na]
+	... 59 common frames omitted
+

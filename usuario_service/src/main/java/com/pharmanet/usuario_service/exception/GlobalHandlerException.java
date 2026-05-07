@@ -22,8 +22,8 @@ public class GlobalHandlerException {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 
-    @ExceptionHandler(NotUniqueEmpleadoException.class)
-    public ResponseEntity<ErrorResponse> handlerNotUniqueSucursalException(NotUniqueEmpleadoException ex) {
+    @ExceptionHandler(NotUniqueUsuarioException.class)
+    public ResponseEntity<ErrorResponse> handlerNotUniqueSucursalException(NotUniqueUsuarioException ex) {
         ErrorResponse error = new ErrorResponse(409, "Conflict", ex.getMessage());
         log.error("Objeto no encontrado: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
