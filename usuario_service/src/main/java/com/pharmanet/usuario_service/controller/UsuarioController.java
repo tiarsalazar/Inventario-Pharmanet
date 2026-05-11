@@ -55,9 +55,9 @@ public class UsuarioController {
     
     @GetMapping("sucursal")
     public ResponseEntity<Page<UsuarioDTO>> buscarPorSucursal(@RequestParam String codInterno, @PageableDefault(size = 10, sort = "nombreCompleto") Pageable pageable) {
-        Page<UsuarioDTO> usuariosPorProfesion = usuarioService.buscarPorSucursal(codInterno, pageable);
+        Page<UsuarioDTO> usuariosPorSucursal = usuarioService.buscarPorSucursal(codInterno, pageable);
         
-        return ResponseEntity.status(HttpStatus.OK).body(usuariosPorProfesion);
+        return ResponseEntity.status(HttpStatus.OK).body(usuariosPorSucursal);
     }
 
     @PostMapping

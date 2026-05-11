@@ -10,9 +10,9 @@ import com.pharmanet.usuario_service.dto.UsuarioMapper;
 import com.pharmanet.usuario_service.entity.Usuario;
 import com.pharmanet.usuario_service.exception.NotUniqueUsuarioException;
 import com.pharmanet.usuario_service.exception.ResourceNotFoundException;
-import com.pharmanet.usuario_service.repository.UsuarioRepository; 
+import com.pharmanet.usuario_service.repository.UsuarioRepository;
 
-import feign.FeignException.FeignClientException;
+import feign.FeignException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -40,8 +40,8 @@ public class UsuarioService {
         log.info("Se verifica la existencia de la FK de sucursal (código interno)");
         log.debug("codInterno: {}", usuarioDTO.getCodInterno());
         try {
-            sucursalFeignClient.buscarSucursalPorCodInterno(usuarioDTO.getCodInterno());
-        } catch (FeignClientException e) {
+            sucursalFeignClient.buscarSucursal(usuarioDTO.getCodInterno());
+        } catch (FeignException.InternalServerError e) {
             log.info("No se encuentra sucursal {} asociada al usuario {}", usuarioDTO.getCodInterno(), usuarioDTO.getRun());
             throw new ResourceNotFoundException("No se encuentra la sucursal: " + usuarioDTO.getCodInterno());
         }

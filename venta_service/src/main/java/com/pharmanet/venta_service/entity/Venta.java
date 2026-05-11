@@ -6,6 +6,8 @@ import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,7 +31,7 @@ public class Venta {
     @Column(name = "venta_id")
     private Long id;
 
-    @Column(name = "codProd", nullable = false)
+    @Column(name = "cod_prod", nullable = false)
     private String codProd; // PUEDE EDITARSE EL NOMBRE
 
     @Column(name = "cod_interno", nullable = false)
@@ -38,17 +40,21 @@ public class Venta {
     @Column(nullable = false)
     private int cantidad;
 
+    @Column(name = "run_vendedor", nullable = false)
+    private String runVendedor;
+
     @Column(name = "fecha_venta", nullable = false)
     private LocalDate fechaVenta;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private boolean estado;
+    private EstadoPago estadoPago;
 
-    public Venta(String codProd, String codInterno, int cantidad) {
+    public Venta(String codProd, String codInterno, int cantidad, String runVendedor, LocalDate fechaVenta) {
         this.codProd = codProd;
         this.codInterno = codInterno;
         this.cantidad = cantidad;
-        this.fechaVenta = LocalDate.now();
-        this.estado = false;
+        this.runVendedor = runVendedor;
+        this.fechaVenta = fechaVenta;
     }
 }
