@@ -12,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,16 +33,17 @@ public class Venta {
     private Long id;
 
     @Column(name = "cod_prod", nullable = false)
-    private String codProd; // PUEDE EDITARSE EL NOMBRE
+    private String codProd;
 
-    @Column(name = "cod_interno", nullable = false)
-    private String codInterno;
-
-    @Column(nullable = false)
-    private int cantidad;
+    @Column(name = "cod_inventario", nullable = false)
+    private String codInventario;
 
     @Column(name = "run_vendedor", nullable = false)
+    @Pattern(regexp = "^[0-9]{7,8}-[0-9kK]$", message = "RUN inválido")
     private String runVendedor;
+    
+    @Column(nullable = false)
+    private int cantidad;
 
     @Column(name = "fecha_venta", nullable = false)
     private LocalDate fechaVenta;
@@ -50,9 +52,18 @@ public class Venta {
     @Column(nullable = false)
     private EstadoPago estadoPago;
 
-    public Venta(String codProd, String codInterno, int cantidad, String runVendedor, LocalDate fechaVenta) {
+    public Venta(Long id, String codProd, String codInventario, String runVendedor, int cantidad, LocalDate fechaVenta) {
+        this.id = id;
         this.codProd = codProd;
-        this.codInterno = codInterno;
+        this.codInventario = codInventario;
+        this.cantidad = cantidad;
+        this.runVendedor = runVendedor;
+        this.fechaVenta = fechaVenta;
+    }
+    
+    public Venta(String codProd, String codInventario, int cantidad, String runVendedor, LocalDate fechaVenta) {
+        this.codProd = codProd;
+        this.codInventario = codInventario;
         this.cantidad = cantidad;
         this.runVendedor = runVendedor;
         this.fechaVenta = fechaVenta;

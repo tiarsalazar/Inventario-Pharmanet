@@ -7,9 +7,9 @@ public class VentaMapper {
     public static VentaDto toDto(Venta venta) {
         VentaDto ventaDto = new VentaDto(venta.getId(),
             venta.getCodProd(),
-            venta.getCodInterno(),
-            venta.getCantidad(),
+            venta.getCodInventario(),
             venta.getRunVendedor(),
+            venta.getCantidad(),
             venta.getFechaVenta()    
         );
 
@@ -18,11 +18,13 @@ public class VentaMapper {
 
     public static Venta toModel(VentaDto ventaDto) {
         Venta venta = new Venta(ventaDto.getId(),
-            ventaDto.getProd(),
-            ventaDto.getCodSucursal(),
+            ventaDto.getCodProd(),
+            ventaDto.getCodInventario(),
+            ventaDto.getRunEmpleado(),
             ventaDto.getCantidad(),
-            ventaDto.getRunVendedor(),
             ventaDto.getFechaVenta()
         );
+
+        return venta;
     }
 }

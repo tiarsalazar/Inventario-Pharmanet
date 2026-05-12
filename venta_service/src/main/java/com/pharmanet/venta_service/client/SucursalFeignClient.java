@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-@FeignClient(name = "sucursal_service", url = "http://localhost:8081")
+@FeignClient(name = "inventario_service", url = "http://localhost:8081")
 public class SucursalFeignClient {
 
     @GetMapping("/api/v1/sucursales/{codInterno}")

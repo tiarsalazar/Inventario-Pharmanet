@@ -2,12 +2,13 @@ package com.pharmanet.venta_service.dto;
 
 import java.time.LocalDate;
 
-import jakarta.validation.constraint.Min;
-import jakarta.validation.constraint.NotBlank;
-import jakarta.validation.constraint.NotNull;
-import lombook.AllArgsConstructor;
-import lombook.Data;
-import lombook.NoArgsConstructor;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
@@ -18,13 +19,17 @@ public class VentaDto {
     private Long id;
 
     @NotBlank(message = "Este campo no puede estar vacío.")
-    private String codProd; // PUEDE EDITARSE EL NOMBRE
+    private String codProd;
 
-    @NotBlank(message = "Este campo no puede estar vacío.")
-    private String codInterno;
+    @NotBlank(message = "Este campo no puede estar vacío")
+    private String codInventario;
+
+    @NotBlank(message = "Este campo no puede estar vacío")
+    @Pattern(regexp = "^[0-9]{7,8}-[0-9kK]$", message = "RUN inválido")
+    private String runEmpleado;
 
     @NotNull(message = "Este campo no puede estar vacío.")
-    @Min(min = 1, message = "Ingrese al menos un producto.")
+    @Min(value = 1, message = "Ingrese al menos un producto.")
     private int cantidad;
 
     @NotNull(message = "Este campo no puede estar vacío.")

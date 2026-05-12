@@ -12,6 +12,7 @@ import com.pharmanet.venta_service.dto.VentaMapper;
 import com.pharmanet.venta_service.entity.EstadoPago;
 import com.pharmanet.venta_service.entity.Venta;
 import com.pharmanet.venta_service.exception.ResourceNotFoundException;
+import com.pharmanet.venta_service.exception.VentaNotUniqueException;
 import com.pharmanet.venta_service.repository.VentaRepository;
 
 import feign.FeignException.FeignClientException;
@@ -39,7 +40,7 @@ public class VentaService {
         }
 
         try {
-            sucursalFeignClient.buscarSucursalPorCodigoInterno(ventaDto.getCodInterno());
+            sucursalFeignClient.buscarSucursalPorCodigoInterno(ventaDto.getCodInventario());
         } catch (FeignClientException e){
             throw new ResourceNotFoundException("No existe una sucursal con el coódigo interno: " + ventaDto.getCodInterno());
         }
@@ -66,11 +67,16 @@ public class VentaService {
         return ventaRepository.save(venta);
     }
 
-    public VentaDto buscarPorId(VentaDto ventaDto) {
+    public Page<VentaDto> mostrarTodos(Pageable pageable) {
+        return ventaRepository.findAll(pageable)
+            .map(VentaMapper::toDto);
+    }
+
+    public VentaDto buscarPorId(Long id) {
         log.info("Inicia búsqueda de venta por ID");
-        log.debug("ID: {}", ventaDto.getId());
+        log.debug("ID: {}", id);
     
-        Venta venta = ventaRepository.findBydId(ventaDto.getId())
+        Venta venta = ventaRepository.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("No existe una venta con el id: " + ventaDto.getId()));
         
         log.info("Convierte a dto y retorna");
