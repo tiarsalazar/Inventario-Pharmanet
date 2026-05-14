@@ -42,7 +42,7 @@ public class ProductoMapper {
         producto.setPrincipioActivo(dto.getPrincipioActivo());
         producto.setPrecioVenta(dto.getPrecioVenta());
         producto.setReceta(dto.getReceta());
-        producto.setConcentracion(dto.getConcetracion());
+        producto.setConcentracion(dto.getConcentracion());
 
         return producto;
     }

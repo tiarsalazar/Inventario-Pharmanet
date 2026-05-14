@@ -48,13 +48,12 @@ public class ProductoService {
             .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto: " + sku));
     }
 
-    public Page<ProductoDto> buscarPorPrincipioActivo(string principioActivo, Pageable pageable) {
+    public Page<ProductoDto> buscarPorPrincipioActivo(String principioActivo, Pageable pageable) {
         log.info("Inicia búsqueda por principio activo");
         log.debug("principioActivo: {}", principtioActivo);
 
         return productoRepository.findByPrincipioActivoContainingIgnoreCase(principioActivo, pageable)
-            .map(ProductoMapper::toDto)
-            .sorted(Comparator.comparing(Producto::getNombreComercial));
+            .map(ProductoMapper::toDto);
     }
 
     public Page<ProductoDto> buscarPorPrecioVenta(int min, int max, Pageable pageable) {
@@ -72,8 +71,7 @@ public class ProductoService {
 
     public Page<ProductoDto> mostrarTodos(Pageable pageable) {
         return productoRepository.findAll()
-            .map(ProductoMapper::toDto)
-            .sorted(Comparator.comparing(Producto::getNombreComercial));
+            .map(ProductoMapper::toDto);
     }
 
     public void actualizarProducto(ProductoDto productoDto) {
@@ -97,12 +95,12 @@ public class ProductoService {
         productoRepository.delete(producto);
     }
 
-    public long calcularPrecioVenta(Map<String, Integer> productos) {
+    public Long calcularPrecioTotalVenta(Map<String, Integer> productos) {
         log.info("Se inicia procedimiento para calular precio de venta total");
         log.debug("Productos<sku, precio>: {}", productos);
 
 
-        long precioTotal = 0;
+        Long precioTotal = 0;
         for (Map.Entry<String, Integer> p : productos.entrySet()) {
             Producto producto = productoRepository.findBySku(p.getKey())
                 orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + p.getKey()));
