@@ -1,0 +1,12 @@
+bdusuario_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.sa-santiago-1.oraclecloud.com))(connect_data=(service_name=gf9e8418501e0c3_bdusuario_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+bdusuario_medium = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.sa-santiago-1.oraclecloud.com))(connect_data=(service_name=gf9e8418501e0c3_bdusuario_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+bdusuario_low = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.sa-santiago-1.oraclecloud.com))(connect_data=(service_name=gf9e8418501e0c3_bdusuario_low.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+bdusuario_tp = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.sa-santiago-1.oraclecloud.com))(connect_data=(service_name=gf9e8418501e0c3_bdusuario_tp.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+bdusuario_tpurgent = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.sa-santiago-1.oraclecloud.com))(connect_data=(service_name=gf9e8418501e0c3_bdusuario_tpurgent.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+
+

@@ -1,0 +1,63 @@
+2026-05-07T00:14:15.138-04:00 ERROR 8472 --- [sucursal-service] [http-nio-8081-exec-2] c.p.s.exception.GlobalHandlerException   : Error: No static resource Y34326P for request '/Y34326P'.
+2026-05-07T00:14:15.225-04:00  WARN 8472 --- [sucursal-service] [http-nio-8081-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource Y34326P for request '/Y34326P'.]
+2026-05-07T00:15:00.191-04:00 ERROR 8472 --- [sucursal-service] [http-nio-8081-exec-3] c.p.s.exception.GlobalHandlerException   : Error: No static resource YTR126P for request '/YTR126P'.
+2026-05-07T00:15:00.201-04:00  WARN 8472 --- [sucursal-service] [http-nio-8081-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource YTR126P for request '/YTR126P'.]
+2026-05-07T00:15:06.829-04:00 ERROR 8472 --- [sucursal-service] [http-nio-8081-exec-4] c.p.s.exception.GlobalHandlerException   : Error: No static resource YTR126P for request '/YTR126P'.
+2026-05-07T00:15:06.845-04:00  WARN 8472 --- [sucursal-service] [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource YTR126P for request '/YTR126P'.]
+2026-05-07T00:15:37.122-04:00 ERROR 8472 --- [sucursal-service] [http-nio-8081-exec-5] c.p.s.exception.GlobalHandlerException   : Error: No static resource JPY765T for request '/JPY765T'.
+2026-05-07T00:15:37.126-04:00  WARN 8472 --- [sucursal-service] [http-nio-8081-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource JPY765T for request '/JPY765T'.]
+2026-05-07T00:25:02.840-04:00 ERROR 8472 --- [sucursal-service] [http-nio-8081-exec-6] c.p.s.exception.GlobalHandlerException   : Error: No static resource YTR126P for request '/YTR126P'.
+2026-05-07T00:25:02.847-04:00  WARN 8472 --- [sucursal-service] [http-nio-8081-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource YTR126P for request '/YTR126P'.]
+2026-05-07T00:26:45.322-04:00  INFO 8472 --- [sucursal-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-07T00:26:45.700-04:00  INFO 8472 --- [sucursal-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-07T00:26:46.084-04:00  INFO 8472 --- [sucursal-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-07T00:26:47.292-04:00  INFO 8472 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-07T00:26:47.392-04:00  INFO 8472 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-07T00:27:39.663-04:00  INFO 8528 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : Starting SucursalServiceApplication using Java 21.0.9 with PID 8528 (C:\Users\bobip\Documents\Inventario-y-Logistica\sucursal_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\sucursal_service)
+2026-05-07T00:27:39.676-04:00  INFO 8528 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-05-07T00:27:39.908-04:00  INFO 8528 --- [sucursal-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-07T00:27:39.909-04:00  INFO 8528 --- [sucursal-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-07T00:27:42.970-04:00  INFO 8528 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-07T00:27:43.258-04:00  INFO 8528 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 239 ms. Found 1 JPA repository interface.
+2026-05-07T00:27:45.348-04:00  INFO 8528 --- [sucursal-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-05-07T00:27:45.414-04:00  INFO 8528 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-07T00:27:45.417-04:00  INFO 8528 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-07T00:27:45.630-04:00  INFO 8528 --- [sucursal-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5717 ms
+2026-05-07T00:27:47.618-04:00  INFO 8528 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-07T00:27:48.391-04:00  INFO 8528 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b835658
+2026-05-07T00:27:48.399-04:00  INFO 8528 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-07T00:27:50.613-04:00  INFO 8528 --- [sucursal-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_sucursal (MySQL 5.5)
+2026-05-07T00:27:50.911-04:00  INFO 8528 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.187s)
+2026-05-07T00:27:50.966-04:00  INFO 8528 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_sucursal`: 3
+2026-05-07T00:27:50.979-04:00  INFO 8528 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_sucursal` is up to date. No migration necessary.
+2026-05-07T00:27:51.349-04:00  INFO 8528 --- [sucursal-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-07T00:27:51.621-04:00  INFO 8528 --- [sucursal-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-07T00:27:54.168-04:00  INFO 8528 --- [sucursal-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-07T00:27:54.484-04:00  WARN 8528 --- [sucursal-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-07T00:27:54.574-04:00  INFO 8528 --- [sucursal-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_sucursal]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_sucursal/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-07T00:27:58.508-04:00  INFO 8528 --- [sucursal-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-07T00:27:58.545-04:00  INFO 8528 --- [sucursal-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-07T00:27:58.898-04:00  INFO 8528 --- [sucursal-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-07T00:28:00.101-04:00  WARN 8528 --- [sucursal-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-07T00:28:01.618-04:00  INFO 8528 --- [sucursal-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-05-07T00:28:01.640-04:00  INFO 8528 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : Started SucursalServiceApplication in 24.419 seconds (process running for 26.789)
+2026-05-07T00:31:27.707-04:00  INFO 8528 --- [sucursal-service] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-07T00:31:27.711-04:00  INFO 8528 --- [sucursal-service] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-07T00:31:27.795-04:00  INFO 8528 --- [sucursal-service] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-05-07T00:31:28.456-04:00  INFO 8528 --- [sucursal-service] [http-nio-8081-exec-1] c.p.s.service.SucursalService            : Inicia busqueda de sucursal.
+2026-05-07T00:38:15.730-04:00  INFO 8528 --- [sucursal-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-07T00:38:15.771-04:00  INFO 8528 --- [sucursal-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-07T00:38:15.824-04:00  INFO 8528 --- [sucursal-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-07T00:38:15.854-04:00  INFO 8528 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-07T00:38:16.073-04:00  INFO 8528 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
