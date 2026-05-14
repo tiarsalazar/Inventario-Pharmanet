@@ -15,4 +15,6 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     Optional<Producto> findBySku(String sku);
     
     Page<Producto> findByPrincipioActivoContainingIgnoreCase(String principioActivo, Pageable pageable);
+
+    Page<Producto> findByPrecioVentaBetween(int minimo, int maximo, Pageable pageable);
 }

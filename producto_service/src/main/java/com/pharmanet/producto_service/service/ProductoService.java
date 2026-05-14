@@ -54,13 +54,26 @@ public class ProductoService {
 
         return productoRepository.findByPrincipioActivoContainingIgnoreCase(principioActivo, pageable)
             .map(ProductoMapper::toDto)
-            .sorted(Comparated.comparing(nombreComercial, sku));
+            .sorted(Comparator.comparing(Producto::getNombreComercial));
+    }
+
+    public Page<ProductoDto> buscarPorPrecioVenta(int min, int max, Pageable pageable) {
+        log.info("Inicia búsqueda de productos por precio de venta");
+        log.debug("min: {} max: {}", min, max);
+
+        if (min > max) {
+            log.warn("El valor ingresado como mínimo supera al valor ingresado como máximo");
+            throw new IllegalArgumentException("El valor ingresado como mínimo no puede ser superior al valor ingresado como máximo");
+        }
+
+        return productoRepository.findByPrecioVentaBetween(min, max)
+            .sorted(Comparator.comparing(Producto::getPrecioVenta));
     }
 
     public Page<ProductoDto> mostrarTodos(Pageable pageable) {
         return productoRepository.findAll()
             .map(ProductoMapper::toDto)
-            .sorted(Comparated.comparing(nombreComercial, sku));
+            .sorted(Comparator.comparing(Producto::getNombreComercial));
     }
 
     public void actualizarProducto(ProductoDto productoDto) {
@@ -74,7 +87,29 @@ public class ProductoService {
         log.info("Producto guardado");
     }
 
-    /* TO DO:
-    - Eliminar
-    - Calcular precio (list de sku) */
+    public void eliminarProducto(String sku) {
+        log.info("Inicia eliminación del producto");
+        log.debug("sku: {}", sku);
+
+        Producto producto = productoRepository.findBySku(sku)
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + sku));
+        
+        productoRepository.delete(producto);
+    }
+
+    public long calcularPrecioVenta(Map<String, Integer> productos) {
+        log.info("Se inicia procedimiento para calular precio de venta total");
+        log.debug("Productos<sku, precio>: {}", productos);
+
+
+        long precioTotal = 0;
+        for (Map.Entry<String, Integer> p : productos.entrySet()) {
+            Producto producto = productoRepository.findBySku(p.getKey())
+                orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + p.getKey()));
+            
+            precioTotal += (producto.getPrecioVenta() * p.getValue());
+        }
+
+        return precioTotal;
+    }
 }
