@@ -1,11 +1,17 @@
 package com.pharmanet.producto_service.service;
 
+import java.math.BigDecimal;
+import java.util.Map;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.pharmanet.producto_service.dto.ProductoDto;
 import com.pharmanet.producto_service.dto.ProductoMapper;
 import com.pharmanet.producto_service.entity.Producto;
 import com.pharmanet.producto_service.exception.ProductoNotUniqueException;
+import com.pharmanet.producto_service.exception.ResourceNotFoundException;
 import com.pharmanet.producto_service.repository.ProductoRepository;
 
 import jakarta.transaction.Transactional;
@@ -50,7 +56,7 @@ public class ProductoService {
 
     public Page<ProductoDto> buscarPorPrincipioActivo(String principioActivo, Pageable pageable) {
         log.info("Inicia búsqueda por principio activo");
-        log.debug("principioActivo: {}", principtioActivo);
+        log.debug("principioActivo: {}", principioActivo);
 
         return productoRepository.findByPrincipioActivoContainingIgnoreCase(principioActivo, pageable)
             .map(ProductoMapper::toDto);
@@ -65,12 +71,12 @@ public class ProductoService {
             throw new IllegalArgumentException("El valor ingresado como mínimo no puede ser superior al valor ingresado como máximo");
         }
 
-        return productoRepository.findByPrecioVentaBetween(min, max)
-            .sorted(Comparator.comparing(Producto::getPrecioVenta));
+        return productoRepository.findByPrecioVentaBetween(min, max, pageable)
+            .map(ProductoMapper::toDto);
     }
 
     public Page<ProductoDto> mostrarTodos(Pageable pageable) {
-        return productoRepository.findAll()
+        return productoRepository.findAll(pageable)
             .map(ProductoMapper::toDto);
     }
 
@@ -78,7 +84,7 @@ public class ProductoService {
         log.info("Inicia actualización del producto");
         log.debug("productoDto: {}", productoDto);
 
-        Producto confirmado = productoRepository.findBysSku(productoDto.getSku())
+        Producto confirmado = productoRepository.findBySku(productoDto.getSku())
             .orElseThrow(() -> new ResourceNotFoundException("No se encuentra registrado el producto " + productoDto.getSku()));
 
         productoRepository.save(ProductoMapper.updateModel(confirmado, productoDto));
@@ -95,17 +101,17 @@ public class ProductoService {
         productoRepository.delete(producto);
     }
 
-    public Long calcularPrecioTotalVenta(Map<String, Integer> productos) {
+    public BigDecimal calcularPrecioTotalVenta(Map<String, Integer> productos) {
         log.info("Se inicia procedimiento para calular precio de venta total");
         log.debug("Productos<sku, precio>: {}", productos);
 
 
-        Long precioTotal = 0;
+        BigDecimal precioTotal = new BigDecimal(0);
         for (Map.Entry<String, Integer> p : productos.entrySet()) {
             Producto producto = productoRepository.findBySku(p.getKey())
-                orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + p.getKey()));
+                .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + p.getKey()));
             
-            precioTotal += (producto.getPrecioVenta() * p.getValue());
+            precioTotal = precioTotal.add(producto.getPrecioVenta().multiply(new BigDecimal(p.getValue())));
         }
 
         return precioTotal;
