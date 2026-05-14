@@ -30,6 +30,7 @@ public class Producto {
     
     @Column(name = "principio_activo", nullable = false, length = 80)
     private String principioActivo;
+    @Column(length = 100)
     private String laboratorio;
 
     @Column(name = "precio_venta", nullable = false)
