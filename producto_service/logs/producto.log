@@ -821,3 +821,281 @@ com.pharmanet.producto_service.exception.ResourceNotFoundException: No se encuen
 2026-05-14T20:25:34.662-04:00  INFO 11892 --- [producto_service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-14T20:25:34.665-04:00  INFO 11892 --- [producto_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-05-14T20:25:34.669-04:00  INFO 11892 --- [producto_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-14T23:14:32.419-04:00  INFO 3368 --- [producto_service] [restartedMain] c.p.p.ProductoServiceApplication         : Starting ProductoServiceApplication using Java 21.0.9 with PID 3368 (C:\Users\bobip\Documents\Inventario-y-Logistica\producto_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\producto_service)
+2026-05-14T23:14:32.722-04:00  INFO 3368 --- [producto_service] [restartedMain] c.p.p.ProductoServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T23:14:34.171-04:00  INFO 3368 --- [producto_service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-14T23:14:34.190-04:00  INFO 3368 --- [producto_service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-14T23:15:53.843-04:00  INFO 10772 --- [producto_service] [restartedMain] c.p.p.ProductoServiceApplication         : Starting ProductoServiceApplication using Java 21.0.9 with PID 10772 (C:\Users\bobip\Documents\Inventario-y-Logistica\producto_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\producto_service)
+2026-05-14T23:15:53.916-04:00  INFO 10772 --- [producto_service] [restartedMain] c.p.p.ProductoServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T23:15:54.195-04:00  INFO 10772 --- [producto_service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-14T23:15:54.202-04:00  INFO 10772 --- [producto_service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-14T23:16:06.235-04:00  INFO 10772 --- [producto_service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T23:16:06.810-04:00  INFO 10772 --- [producto_service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 461 ms. Found 1 JPA repository interface.
+2026-05-14T23:16:08.205-04:00  INFO 10772 --- [producto_service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9d8a3dd9-6582-33b6-bf23-3fd3b7470b2c
+2026-05-14T23:16:15.896-04:00  INFO 10772 --- [producto_service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8083 (http)
+2026-05-14T23:16:16.283-04:00  INFO 10772 --- [producto_service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T23:16:16.283-04:00  INFO 10772 --- [producto_service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-14T23:16:16.670-04:00  INFO 10772 --- [producto_service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 22448 ms
+2026-05-14T23:16:19.179-04:00  INFO 10772 --- [producto_service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T23:16:25.797-04:00  INFO 10772 --- [producto_service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59e6fcf8
+2026-05-14T23:16:25.828-04:00  INFO 10772 --- [producto_service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-14T23:16:29.326-04:00  INFO 10772 --- [producto_service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_producto (MySQL 5.5)
+2026-05-14T23:16:29.584-04:00  INFO 10772 --- [producto_service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `bd_producto`.`flyway_schema_history` does not exist yet
+2026-05-14T23:16:29.610-04:00  INFO 10772 --- [producto_service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.136s)
+2026-05-14T23:16:30.400-04:00  INFO 10772 --- [producto_service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `bd_producto`.`flyway_schema_history` ...
+2026-05-14T23:16:32.103-04:00  INFO 10772 --- [producto_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_producto`: << Empty Schema >>
+2026-05-14T23:16:32.156-04:00  INFO 10772 --- [producto_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_producto` to version "1 - create table producto"
+2026-05-14T23:16:32.900-04:00  INFO 10772 --- [producto_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_producto` to version "2 - checks"
+2026-05-14T23:16:34.978-04:00  INFO 10772 --- [producto_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_producto` to version "3 - insert productos"
+2026-05-14T23:16:35.573-04:00  INFO 10772 --- [producto_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 3 migrations to schema `bd_producto`, now at version v3 (execution time 00:02.107s)
+2026-05-14T23:16:37.019-04:00  INFO 10772 --- [producto_service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-14T23:16:39.225-04:00  INFO 10772 --- [producto_service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-14T23:16:48.252-04:00  INFO 10772 --- [producto_service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-14T23:16:51.207-04:00  WARN 10772 --- [producto_service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-14T23:16:52.642-04:00  INFO 10772 --- [producto_service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_producto]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_producto/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-14T23:17:05.923-04:00  INFO 10772 --- [producto_service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-14T23:17:05.999-04:00  INFO 10772 --- [producto_service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-14T23:17:07.414-04:00  INFO 10772 --- [producto_service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-14T23:17:11.300-04:00  WARN 10772 --- [producto_service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-14T23:17:13.001-04:00 DEBUG 10772 --- [producto_service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-05-14T23:17:13.222-04:00 DEBUG 10772 --- [producto_service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-14T23:17:13.580-04:00 DEBUG 10772 --- [producto_service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-14T23:17:14.067-04:00 DEBUG 10772 --- [producto_service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-14T23:17:15.749-04:00  INFO 10772 --- [producto_service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8083 (http) with context path '/'
+2026-05-14T23:17:15.800-04:00  INFO 10772 --- [producto_service] [restartedMain] c.p.p.ProductoServiceApplication         : Started ProductoServiceApplication in 84.892 seconds (process running for 88.985)
+2026-05-14T23:22:47.491-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-14T23:22:47.507-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-14T23:22:47.507-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-14T23:22:47.559-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-14T23:22:47.588-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@19aa6bcc
+2026-05-14T23:22:47.594-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@10d0e28d
+2026-05-14T23:22:47.608-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-14T23:22:47.625-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 118 ms
+2026-05-14T23:22:47.721-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/productos", parameters={}
+2026-05-14T23:22:47.956-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.producto_service.controller.ProductoController#mostrarTodos(Pageable)
+2026-05-14T23:22:48.441-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] c.p.p.controller.ProductoController      : Se inicia búsqueda de todos los productos
+2026-05-14T23:22:53.411-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:22:53.438-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:22:53.443-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:22:53.450-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:22:53.454-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:22:53.468-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:22:53.471-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:22:53.480-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:22:53.488-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:22:53.496-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-1] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:22:53.701-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-14T23:22:53.708-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 2 containing com.pharmanet.producto_service.dto.ProductoDto instances]
+2026-05-14T23:22:56.369-04:00  WARN 10772 --- [producto_service] [http-nio-8083-exec-1] ration$PageModule$WarningLoggingModifier : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-05-14T23:22:56.982-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-14T23:24:27.375-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/productos", parameters={}
+2026-05-14T23:24:27.403-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.producto_service.controller.ProductoController#actualizarProducto(ProductoDto)
+2026-05-14T23:24:32.128-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ProductoDto(sku=S9JAH2N, nombreComercial=Advil, principioActivo=Ibuprofeno, precioVenta=3400, receta (truncated)...]
+2026-05-14T23:24:33.202-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-5] c.p.p.service.ProductoService            : Inicia actualización del producto
+2026-05-14T23:24:39.127-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-5] c.p.p.service.ProductoService            : Producto guardado
+2026-05-14T23:24:40.402-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-14T23:24:40.408-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2026-05-14T23:24:40.411-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2026-05-14T23:25:43.282-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/productos", parameters={}
+2026-05-14T23:25:43.285-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.producto_service.controller.ProductoController#agregarProducto(ProductoDto)
+2026-05-14T23:25:43.410-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ProductoDto(sku=S9JAH2N, nombreComercial=Advil, principioActivo=Ibuprofeno, precioVenta=3190.00, rec (truncated)...]
+2026-05-14T23:25:43.416-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-6] c.p.p.service.ProductoService            : Inicia guardado de producto
+2026-05-14T23:25:43.417-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-6] c.p.p.service.ProductoService            : Valida que no se encuentre en el sistema
+2026-05-14T23:25:43.440-04:00  WARN 10772 --- [producto_service] [http-nio-8083-exec-6] c.p.p.service.ProductoService            : El producto S9JAH2N ya se encuentra registrado en el sistema.
+2026-05-14T23:25:43.485-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.producto_service.exception.GlobalHandlerException#handlerProductoNotUniqueException(ProductoNotUniqueException)
+2026-05-14T23:25:43.541-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-14T23:25:43.551-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=409, error=Conflict, mensaje=El producto S9JAH2N ya se encuentra registrado en  (truncated)...]
+2026-05-14T23:25:43.569-04:00  WARN 10772 --- [producto_service] [http-nio-8083-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.producto_service.exception.ProductoNotUniqueException: El producto S9JAH2N ya se encuentra registrado en el sistema]
+2026-05-14T23:25:43.581-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
+2026-05-14T23:27:43.763-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/productos", parameters={}
+2026-05-14T23:27:43.764-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.producto_service.controller.ProductoController#agregarProducto(ProductoDto)
+2026-05-14T23:27:43.791-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-2] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.pharmanet.producto_service.dto.ProductoDto> com.pharmanet.producto_service.controller.ProductoController.agregarProducto(com.pharmanet.producto_service.dto.ProductoDto): JSON parse error: Cannot deserialize value of type `com.pharmanet.producto_service.entity.ClaseReceta` from String "ABUELA": not one of the values accepted for Enum class: [RECETA_PRESENTADA, SIN_RECETA, RECETA_RETENIDA]
+2026-05-14T23:27:43.850-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.producto_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-05-14T23:27:43.875-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-14T23:27:43.878-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal Server Error, mensaje=Ha ocurrido un error del servidor. Si (truncated)...]
+2026-05-14T23:27:43.883-04:00  WARN 10772 --- [producto_service] [http-nio-8083-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.pharmanet.producto_service.entity.ClaseReceta` from String "ABUELA": not one of the values accepted for Enum class: [RECETA_PRESENTADA, SIN_RECETA, RECETA_RETENIDA]]
+2026-05-14T23:27:43.904-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-05-14T23:27:54.380-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/productos", parameters={}
+2026-05-14T23:27:54.381-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.producto_service.controller.ProductoController#agregarProducto(ProductoDto)
+2026-05-14T23:27:54.385-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-3] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.pharmanet.producto_service.dto.ProductoDto> com.pharmanet.producto_service.controller.ProductoController.agregarProducto(com.pharmanet.producto_service.dto.ProductoDto): JSON parse error: Cannot deserialize value of type `com.pharmanet.producto_service.entity.ClaseReceta` from String "ABUELA": not one of the values accepted for Enum class: [RECETA_PRESENTADA, SIN_RECETA, RECETA_RETENIDA]
+2026-05-14T23:27:54.391-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.producto_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-05-14T23:27:54.392-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-14T23:27:54.394-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal Server Error, mensaje=Ha ocurrido un error del servidor. Si (truncated)...]
+2026-05-14T23:27:54.397-04:00  WARN 10772 --- [producto_service] [http-nio-8083-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.pharmanet.producto_service.entity.ClaseReceta` from String "ABUELA": not one of the values accepted for Enum class: [RECETA_PRESENTADA, SIN_RECETA, RECETA_RETENIDA]]
+2026-05-14T23:27:54.403-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-05-14T23:28:32.306-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/productos", parameters={}
+2026-05-14T23:28:32.320-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.producto_service.controller.ProductoController#agregarProducto(ProductoDto)
+2026-05-14T23:28:32.324-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ProductoDto(sku=S4J6YG2, nombreComercial=Spiron, principioActivo=Risperidona, precioVenta=14000, rec (truncated)...]
+2026-05-14T23:28:32.348-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-5] c.p.p.service.ProductoService            : Inicia guardado de producto
+2026-05-14T23:28:32.359-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-5] c.p.p.service.ProductoService            : Valida que no se encuentre en el sistema
+2026-05-14T23:28:32.377-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-5] c.p.producto_service.dto.ProductoMapper  : Convierte producto dto a producto model
+2026-05-14T23:28:32.379-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-5] c.p.p.service.ProductoService            : Guarda producto
+2026-05-14T23:28:32.547-04:00  INFO 10772 --- [producto_service] [http-nio-8083-exec-5] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:28:32.692-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-14T23:28:32.697-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ProductoDto(sku=S4J6YG2, nombreComercial=Spiron, principioActivo=Risperidona, precioVenta=14000, rec (truncated)...]
+2026-05-14T23:28:32.731-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2026-05-14T23:37:41.283-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/productos", parameters={}
+2026-05-14T23:37:41.285-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.producto_service.controller.ProductoController#agregarProducto(ProductoDto)
+2026-05-14T23:37:41.285-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ProductoDto(sku=S478YG2, nombreComercial=null, principioActivo=Risperidona, precioVenta=-80000, rece (truncated)...]
+2026-05-14T23:37:41.325-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.producto_service.exception.GlobalHandlerException#handlerMethodArgumentNotValidException(MethodArgumentNotValidException)
+2026-05-14T23:37:41.332-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-14T23:37:41.335-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=400, error=Bad Request, mensaje=Errores de validación, errors=[ValidationError( (truncated)...]
+2026-05-14T23:37:41.354-04:00  WARN 10772 --- [producto_service] [http-nio-8083-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.pharmanet.producto_service.dto.ProductoDto> com.pharmanet.producto_service.controller.ProductoController.agregarProducto(com.pharmanet.producto_service.dto.ProductoDto) with 2 errors: [Field error in object 'productoDto' on field 'nombreComercial': rejected value [null]; codes [NotBlank.productoDto.nombreComercial,NotBlank.nombreComercial,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [productoDto.nombreComercial,nombreComercial]; arguments []; default message [nombreComercial]]; default message [Este campo no puede estar vacío]] [Field error in object 'productoDto' on field 'precioVenta': rejected value [-80000]; codes [Min.productoDto.precioVenta,Min.precioVenta,Min.java.math.BigDecimal,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [productoDto.precioVenta,precioVenta]; arguments []; default message [precioVenta],1]; default message [El precio no puede ser inferior a $1]] ]
+2026-05-14T23:37:41.381-04:00 DEBUG 10772 --- [producto_service] [http-nio-8083-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2026-05-14T23:41:21.148-04:00  INFO 10772 --- [producto_service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-14T23:41:21.279-04:00  INFO 10772 --- [producto_service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-14T23:41:21.495-04:00  INFO 10772 --- [producto_service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-14T23:41:21.579-04:00  INFO 10772 --- [producto_service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-14T23:41:21.625-04:00  INFO 10772 --- [producto_service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-14T23:41:21.954-04:00  INFO 10772 --- [producto_service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-14T23:41:23.232-04:00  INFO 10772 --- [producto_service] [restartedMain] c.p.p.ProductoServiceApplication         : Starting ProductoServiceApplication using Java 21.0.9 with PID 10772 (C:\Users\bobip\Documents\Inventario-y-Logistica\producto_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\producto_service)
+2026-05-14T23:41:23.354-04:00  INFO 10772 --- [producto_service] [restartedMain] c.p.p.ProductoServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T23:41:26.024-04:00  INFO 10772 --- [producto_service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T23:41:26.094-04:00  INFO 10772 --- [producto_service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interface.
+2026-05-14T23:41:26.572-04:00  INFO 10772 --- [producto_service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9d8a3dd9-6582-33b6-bf23-3fd3b7470b2c
+2026-05-14T23:41:27.060-04:00  INFO 10772 --- [producto_service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8083 (http)
+2026-05-14T23:41:27.221-04:00  INFO 10772 --- [producto_service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3742 ms
+2026-05-14T23:41:27.591-04:00  INFO 10772 --- [producto_service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-14T23:41:27.611-04:00  INFO 10772 --- [producto_service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@464bfd8
+2026-05-14T23:41:27.613-04:00  INFO 10772 --- [producto_service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-14T23:41:27.661-04:00  INFO 10772 --- [producto_service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_producto (MySQL 5.5)
+2026-05-14T23:41:27.759-04:00  INFO 10772 --- [producto_service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.059s)
+2026-05-14T23:41:27.793-04:00  INFO 10772 --- [producto_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_producto`: 3
+2026-05-14T23:41:27.798-04:00  INFO 10772 --- [producto_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_producto` is up to date. No migration necessary.
+2026-05-14T23:41:27.931-04:00  INFO 10772 --- [producto_service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-14T23:41:28.416-04:00  INFO 10772 --- [producto_service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-14T23:41:28.434-04:00  WARN 10772 --- [producto_service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-14T23:41:28.441-04:00  INFO 10772 --- [producto_service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_producto]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_producto/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-14T23:41:28.914-04:00  INFO 10772 --- [producto_service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-14T23:41:28.938-04:00  INFO 10772 --- [producto_service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-14T23:41:29.536-04:00  WARN 10772 --- [producto_service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-14T23:41:29.888-04:00 DEBUG 10772 --- [producto_service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-05-14T23:41:29.971-04:00 DEBUG 10772 --- [producto_service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-14T23:41:30.072-04:00 DEBUG 10772 --- [producto_service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-14T23:41:30.162-04:00 DEBUG 10772 --- [producto_service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-14T23:41:30.707-04:00  INFO 10772 --- [producto_service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8083 (http) with context path '/'
+2026-05-14T23:41:30.749-04:00  INFO 10772 --- [producto_service] [restartedMain] c.p.p.ProductoServiceApplication         : Started ProductoServiceApplication in 8.209 seconds (process running for 1543.933)
+2026-05-14T23:41:30.754-04:00  INFO 10772 --- [producto_service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-14T23:41:30.768-04:00  INFO 10772 --- [producto_service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-14T23:41:30.797-04:00  INFO 10772 --- [producto_service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-14T23:41:30.821-04:00  INFO 10772 --- [producto_service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-14T23:41:30.837-04:00  INFO 10772 --- [producto_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-05-14T23:41:30.869-04:00  INFO 10772 --- [producto_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-05-14T23:42:44.381-04:00  INFO 6964 --- [producto_service] [restartedMain] c.p.p.ProductoServiceApplication         : Starting ProductoServiceApplication using Java 21.0.9 with PID 6964 (C:\Users\bobip\Documents\Inventario-y-Logistica\producto_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\producto_service)
+2026-05-14T23:42:44.397-04:00  INFO 6964 --- [producto_service] [restartedMain] c.p.p.ProductoServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T23:42:44.623-04:00  INFO 6964 --- [producto_service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-14T23:42:44.623-04:00  INFO 6964 --- [producto_service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-14T23:42:48.392-04:00  INFO 6964 --- [producto_service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T23:42:48.767-04:00  INFO 6964 --- [producto_service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 304 ms. Found 1 JPA repository interface.
+2026-05-14T23:42:49.486-04:00  INFO 6964 --- [producto_service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9d8a3dd9-6582-33b6-bf23-3fd3b7470b2c
+2026-05-14T23:42:51.939-04:00  INFO 6964 --- [producto_service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8083 (http)
+2026-05-14T23:42:52.147-04:00  INFO 6964 --- [producto_service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T23:42:52.150-04:00  INFO 6964 --- [producto_service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-14T23:42:52.470-04:00  INFO 6964 --- [producto_service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7831 ms
+2026-05-14T23:42:54.267-04:00  INFO 6964 --- [producto_service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T23:42:55.268-04:00  INFO 6964 --- [producto_service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@31b42868
+2026-05-14T23:42:55.268-04:00  INFO 6964 --- [producto_service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-14T23:42:57.392-04:00  INFO 6964 --- [producto_service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_producto (MySQL 5.5)
+2026-05-14T23:42:57.647-04:00  INFO 6964 --- [producto_service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.149s)
+2026-05-14T23:42:57.703-04:00  INFO 6964 --- [producto_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_producto`: 3
+2026-05-14T23:42:57.715-04:00  INFO 6964 --- [producto_service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_producto` is up to date. No migration necessary.
+2026-05-14T23:42:58.391-04:00  INFO 6964 --- [producto_service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-14T23:42:59.314-04:00  INFO 6964 --- [producto_service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-14T23:43:03.236-04:00  INFO 6964 --- [producto_service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-14T23:43:04.188-04:00  WARN 6964 --- [producto_service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-14T23:43:04.401-04:00  INFO 6964 --- [producto_service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_producto]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_producto/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-14T23:43:13.627-04:00  INFO 6964 --- [producto_service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-14T23:43:13.707-04:00  INFO 6964 --- [producto_service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-14T23:43:14.080-04:00  INFO 6964 --- [producto_service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-14T23:43:15.909-04:00  WARN 6964 --- [producto_service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-14T23:43:16.968-04:00 DEBUG 6964 --- [producto_service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-05-14T23:43:17.095-04:00 DEBUG 6964 --- [producto_service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-14T23:43:17.202-04:00 DEBUG 6964 --- [producto_service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-14T23:43:17.423-04:00 DEBUG 6964 --- [producto_service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-14T23:43:18.562-04:00  INFO 6964 --- [producto_service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8083 (http) with context path '/'
+2026-05-14T23:43:18.611-04:00  INFO 6964 --- [producto_service] [restartedMain] c.p.p.ProductoServiceApplication         : Started ProductoServiceApplication in 36.577 seconds (process running for 40.379)
+2026-05-14T23:43:31.173-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-14T23:43:31.175-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-14T23:43:31.178-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-14T23:43:31.180-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-14T23:43:31.186-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1f56f294
+2026-05-14T23:43:31.190-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@3012ef81
+2026-05-14T23:43:31.193-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-14T23:43:31.195-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2026-05-14T23:43:31.278-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/productos", parameters={}
+2026-05-14T23:43:31.358-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.producto_service.controller.ProductoController#agregarProducto(ProductoDto)
+2026-05-14T23:43:31.946-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.pharmanet.producto_service.dto.ProductoDto> com.pharmanet.producto_service.controller.ProductoController.agregarProducto(com.pharmanet.producto_service.dto.ProductoDto): JSON parse error: Cannot deserialize value of type `com.pharmanet.producto_service.entity.ClaseReceta` from String "RECETA_RET": not one of the values accepted for Enum class: [RECETA_PRESENTADA, SIN_RECETA, RECETA_RETENIDA]
+2026-05-14T23:43:31.982-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.producto_service.exception.GlobalHandlerException#handlerHttpMessageNotReadableException(HttpMessageNotReadableException)
+2026-05-14T23:43:32.055-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-14T23:43:32.073-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=400, error=Bad Request, mensaje=Al menos uno de los campos ingresados no es cor (truncated)...]
+2026-05-14T23:43:32.231-04:00  WARN 6964 --- [producto_service] [http-nio-8083-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.pharmanet.producto_service.entity.ClaseReceta` from String "RECETA_RET": not one of the values accepted for Enum class: [RECETA_PRESENTADA, SIN_RECETA, RECETA_RETENIDA]]
+2026-05-14T23:43:32.237-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2026-05-14T23:44:45.021-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/productos?min=8000&max=-88", parameters={masked}
+2026-05-14T23:44:45.022-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.producto_service.controller.ProductoController#mostrarTodos(Pageable)
+2026-05-14T23:44:45.057-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-4] c.p.p.controller.ProductoController      : Se inicia búsqueda de todos los productos
+2026-05-14T23:44:46.600-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-4] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:44:46.617-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-4] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:44:46.617-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-4] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:44:46.617-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-4] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:44:46.637-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-4] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:44:46.644-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-4] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:44:46.646-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-4] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:44:46.653-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-4] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:44:46.658-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-4] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:44:46.660-04:00  INFO 6964 --- [producto_service] [http-nio-8083-exec-4] c.p.producto_service.dto.ProductoMapper  : Convierte producto model a producto dto
+2026-05-14T23:44:46.718-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-14T23:44:46.718-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 2 containing com.pharmanet.producto_service.dto.ProductoDto instances]
+2026-05-14T23:44:46.801-04:00  WARN 6964 --- [producto_service] [http-nio-8083-exec-4] ration$PageModule$WarningLoggingModifier : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-05-14T23:44:46.927-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-14T23:46:38.750-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/precioVenta?min=8000&max=-88", parameters={masked}
+2026-05-14T23:46:38.824-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-14T23:46:38.927-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-7] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [api/v1/precioVenta]
+2026-05-14T23:46:39.057-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.producto_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-05-14T23:46:39.126-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-14T23:46:39.193-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal Server Error, mensaje=Ha ocurrido un error del servidor. Si (truncated)...]
+2026-05-14T23:46:39.262-04:00  WARN 6964 --- [producto_service] [http-nio-8083-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/precioVenta for request '/api/v1/precioVenta'.]
+2026-05-14T23:46:39.274-04:00 DEBUG 6964 --- [producto_service] [http-nio-8083-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-05-14T23:46:52.063-04:00  INFO 6964 --- [producto_service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-14T23:46:52.151-04:00  INFO 6964 --- [producto_service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-14T23:46:52.175-04:00  INFO 6964 --- [producto_service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-14T23:46:52.203-04:00  INFO 6964 --- [producto_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-14T23:46:52.236-04:00  INFO 6964 --- [producto_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

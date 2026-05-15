@@ -19,6 +19,7 @@ public class ProductoMapper {
             producto.getConcentracion()
         );
 
+        log.debug("productoDto: {}", productoDto);
         return productoDto;
     }
 
@@ -34,6 +35,7 @@ public class ProductoMapper {
             productoDto.getConcentracion()
         );
 
+        log.debug("producto: {}", producto);
         return producto;
     }
 
