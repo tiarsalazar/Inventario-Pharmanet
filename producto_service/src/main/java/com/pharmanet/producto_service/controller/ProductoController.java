@@ -92,3 +92,5 @@ public class ProductoController {
     }
 
 }
+
+// se realizan pruebas, y el producto_service esta listo para su despliegue
