@@ -9,6 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pharmanet.inventario_service.client.ProductoClient;
+import com.pharmanet.inventario_service.client.SucursalClient;
 import com.pharmanet.inventario_service.dto.inventario.InventarioDetailResponse;
 import com.pharmanet.inventario_service.dto.inventario.InventarioResponse;
 import com.pharmanet.inventario_service.dto.lote.LoteRequest;
@@ -40,6 +42,8 @@ public class InventarioService {
     private final InventarioRepository invRepo;
     private final MovimientoRepository movRepo;
     private final LoteRepository loteRepo;
+    private final ProductoClient productoClient;
+    private final SucursalClient sucursalClient;
 
     // ==== CONSULTAS INVENTARIO =====
 
@@ -87,8 +91,22 @@ public class InventarioService {
     public List<LoteResponse> registrarRecepcion(RecepcionRequest request, String rutUsuario){
         log.info("Registrando recepcion para sucursal: {}", request.getCodSucursal());
 
+        // Validar que la sucursal existe
+        try {
+            sucursalClient.buscarSucursal(request.getCodSucursal());
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("Sucursal no encontrada: " + request.getCodSucursal());
+        }
+
         List<LoteResponse> response = new ArrayList<>();
         for (LoteRequest loteRequest : request.getLotes()){
+
+            // Validar que el producto existe
+            try {
+                productoClient.buscarPorSku(loteRequest.getSku());
+            } catch (Exception e) {
+                throw new ResourceNotFoundException("Producto no encontrado con sku: " + loteRequest.getSku());
+            }
 
             // Busca Inventario. Si no existe lo crea y persiste.
             Inventario inventario = invRepo.findBySkuAndCodSucursal(loteRequest.getSku(), request.getCodSucursal())
