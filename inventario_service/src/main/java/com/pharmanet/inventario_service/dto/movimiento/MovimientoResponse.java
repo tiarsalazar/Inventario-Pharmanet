@@ -14,6 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class MovimientoResponse {
     private TipoMovimiento tipo;
+    private String sku;
     private Integer cantidad;
     private LocalDateTime fecha;
     private String rutUsuario;

@@ -108,7 +108,7 @@ public class InventarioService {
                 .equals(loteRequest.getCodLote()))
                 .findFirst().orElseThrow(() -> new ResourceNotFoundException("Error al persistir lote"));
             
-            movRepo.save(crearMovimiento(TipoMovimiento.ENTRADA, loteRequest.getCantidad(), rutUsuario, lotePersistido));
+            movRepo.save(crearMovimiento(TipoMovimiento.ENTRADA,inventario.getSku(), loteRequest.getCantidad(), rutUsuario, lotePersistido));
 
             log.info("Lote {} registrado para sku {}", loteRequest.getCodLote(), loteRequest.getSku());
 
@@ -156,9 +156,11 @@ public class InventarioService {
 
     // ==== PRIVADOS ====
     // CREA un MOVIMIENTO 
-    private Movimiento crearMovimiento(TipoMovimiento tipo, Integer cantidad, String rutUsuario, Lote lote ){
+    private Movimiento crearMovimiento(TipoMovimiento tipo,String sku, Integer cantidad, String rutUsuario, Lote lote ){
         Movimiento movimiento = new Movimiento();
         movimiento.setTipo(tipo);
+        movimiento.setSku(sku);
+        movimiento.setCodLote(lote.getCodLote());
         movimiento.setCantidad(cantidad);
         movimiento.setRutUsuario(rutUsuario);
         movimiento.setLote(lote);

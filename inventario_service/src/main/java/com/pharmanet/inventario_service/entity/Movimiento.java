@@ -32,14 +32,19 @@ public class Movimiento {
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo", nullable = false, length = 20)
     private TipoMovimiento tipo;
+    @Column(name = "sku", nullable = false, length = 30)
+    private String sku;
     @Column(name = "cantidad", nullable = false)
     private Integer cantidad;
     @Column(name = "fecha", nullable = false, updatable = false)
     private LocalDateTime fecha = LocalDateTime.now();
     @Column(name = "rut_usuario", nullable = false)
     private String rutUsuario;
+    @Column(name = "codigo_lote", nullable = false, length = 30)
+    private String codLote;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "lote_id", nullable = false)
+    @JoinColumn(name = "lote_id")
+    @org.hibernate.annotations.OnDelete(action = org.hibernate.annotations.OnDeleteAction.SET_NULL)
     private Lote lote;
 }

@@ -50,9 +50,10 @@ public class InventarioMapper {
     public MovimientoResponse toMovimientoResponse(Movimiento movimiento){
         return new MovimientoResponse(
             movimiento.getTipo(),
+            movimiento.getSku(),
             movimiento.getCantidad(),
             movimiento.getFecha(),
             movimiento.getRutUsuario(),
-            movimiento.getLote().getCodLote()); 
+            movimiento.getCodLote());
     }
 }

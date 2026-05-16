@@ -21,7 +21,7 @@ CREATE TABLE lotes (
     inventario_id BIGINT NOT NULL,
     CONSTRAINT fk_lote_inventario FOREIGN KEY (inventario_id)
         REFERENCES inventario(id)
-        ON DELETE RESTRICT,
+        ON DELETE CASCADE,
     CONSTRAINT chk_estado_lote CHECK (
         estado IN ('ACTIVO', 'VENCIDO', 'AGOTADO', 'DEFECTUOSO')
     ),
@@ -36,13 +36,15 @@ CREATE INDEX idx_lotes_estado ON lotes(estado);
 CREATE TABLE movimientos (
     id BIGSERIAL PRIMARY KEY,
     tipo VARCHAR(20) NOT NULL,
+    sku VARCHAR(30) NOT NULL,
+    codigo_lote VARCHAR(30) NOT NULL,
     cantidad INTEGER NOT NULL,
     fecha TIMESTAMP NOT NULL DEFAULT NOW(),
     rut_usuario VARCHAR(20) NOT NULL,
-    lote_id BIGINT NOT NULL,
+    lote_id BIGINT,
     CONSTRAINT fk_movimiento_lote FOREIGN KEY (lote_id)
         REFERENCES lotes(lote_id)
-        ON DELETE RESTRICT,
+        ON DELETE SET NULL,
     CONSTRAINT chk_tipo_movimiento CHECK (
         tipo IN ('ENTRADA', 'SALIDA', 'AJUSTE', 'VENCIMIENTO')
     ),
@@ -51,3 +53,4 @@ CREATE TABLE movimientos (
 CREATE INDEX idx_movimientos_lote ON movimientos(lote_id);
 CREATE INDEX idx_movimientos_fecha ON movimientos(fecha);
 CREATE INDEX idx_movimientos_usuario ON movimientos(rut_usuario);
+CREATE INDEX idx_movimientos_sku ON movimientos(sku);

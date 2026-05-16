@@ -1,6 +1,6 @@
 package com.pharmanet.inventario_service.controller;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -72,8 +72,10 @@ public class InventarioController {
 
     @GetMapping("/movimientos/fecha")
     public ResponseEntity<Page<MovimientoResponse>> obtenerMovimientosPorFecha(
-            @RequestParam LocalDateTime inicio, @RequestParam LocalDateTime fin, Pageable pageable) {
-        return ResponseEntity.ok(invServ.obtenerMovimientosPorfecha(inicio, fin, pageable));
+            @RequestParam LocalDate inicio,
+            @RequestParam LocalDate fin, Pageable pageable) {
+        return ResponseEntity.ok(invServ.obtenerMovimientosPorfecha(
+            inicio.atStartOfDay(), fin.atTime(23, 59, 59), pageable));
     }
 
     @GetMapping("/movimientos/sucursales/{codSucursal}")
