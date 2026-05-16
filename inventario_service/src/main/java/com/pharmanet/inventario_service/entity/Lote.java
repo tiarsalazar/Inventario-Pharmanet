@@ -31,7 +31,7 @@ public class Lote {
     @Column(name = "lote_id")
     private Long id;
     @Column(name = "lote", nullable = false, length = 30)
-    private String lote;
+    private String codLote;
     @Column(name = "cantidad", nullable = false)
     private Integer cantidad;
     @Column(name = "fecha_vencimiento", nullable = false)

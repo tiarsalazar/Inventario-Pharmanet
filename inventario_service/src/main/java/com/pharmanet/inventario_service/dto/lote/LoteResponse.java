@@ -13,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LoteResponse {
-    private String lote;
+    private String codLote;
     private Integer cantidad;
     private LocalDate fechaVencimiento;
     private EstadoLote estado;
