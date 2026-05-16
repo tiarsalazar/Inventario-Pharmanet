@@ -16,5 +16,6 @@ public class MovimientoResponse {
     private TipoMovimiento tipo;
     private Integer cantidad;
     private LocalDateTime fecha;
+    private String rutUsuario;
     private String codLote;
 }

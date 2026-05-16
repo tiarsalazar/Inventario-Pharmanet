@@ -36,6 +36,9 @@ public class Movimiento {
     private Integer cantidad;
     @Column(name = "fecha", nullable = false, updatable = false)
     private LocalDateTime fecha = LocalDateTime.now();
+    @Column(name = "sut_usuario", nullable = false)
+    private String rutUsuario;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "lote_id", nullable = false)
     private Lote lote;
