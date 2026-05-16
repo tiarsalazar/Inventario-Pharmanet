@@ -82,7 +82,7 @@ public class InventarioService {
     }
 
 
-    // ==== PETICIONES  ====
+    // ==== PETICIONES ====
     // Recibe peticion de ABASTECIMIENTO para INGRESAR una recepcion.
     public List<LoteResponse> registrarRecepcion(RecepcionRequest request, String rutUsuario){
         log.info("Registrando recepcion para sucursal: {}", request.getCodSucursal());
