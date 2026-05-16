@@ -102,9 +102,13 @@ public class InventarioService {
             Lote lote = mapper.toLoteEntity(loteRequest);
             inventario.addLote(lote);
             inventario.recalcularStock();
-            invRepo.save(inventario);
+            invRepo.saveAndFlush(inventario);
+            Lote lotePersistido = inventario.getLotes().stream()
+                .filter(l -> l.getCodLote()
+                .equals(loteRequest.getCodLote()))
+                .findFirst().orElseThrow(() -> new ResourceNotFoundException("Error al persistir lote"));
             
-            movRepo.save(crearMovimiento(TipoMovimiento.ENTRADA, loteRequest.getCantidad(), rutUsuario, lote));
+            movRepo.save(crearMovimiento(TipoMovimiento.ENTRADA, loteRequest.getCantidad(), rutUsuario, lotePersistido));
 
             log.info("Lote {} registrado para sku {}", loteRequest.getCodLote(), loteRequest.getSku());
 

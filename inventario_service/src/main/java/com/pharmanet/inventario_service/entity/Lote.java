@@ -30,7 +30,7 @@ public class Lote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "lote_id")
     private Long id;
-    @Column(name = "lote", nullable = false, length = 30)
+    @Column(name = "codigo_lote", nullable = false, length = 30)
     private String codLote;
     @Column(name = "cantidad", nullable = false)
     private Integer cantidad;

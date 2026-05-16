@@ -20,10 +20,10 @@ public class LoteRequest {
     @Size(max = 30, message = "Sku no debe superar 30 caracteres")
     private String sku;
     @NotBlank(message = "Lote es obligatorio")
-    @Min(value = 30, message = "Lote no debe superar 30 caracteres")
+    @Size(max = 30, message = "Lote no debe superar 30 caracteres")
     private String codLote;
     @NotNull(message = "Cantidad es obligatoria")
-    @Size(min = 1, message = "Cantidad debe ser superior a 0")
+    @Min(value = 1, message = "Cantidad debe ser superior a 0")
     private Integer cantidad;
     @NotNull(message = "Fecha vencimiento es obligatoria")
     @Future(message = "Fecha vencimiento debe ser futura")

@@ -5,5 +5,4 @@ public enum EstadoLote {
     AGOTADO,
     VENCIDO,
     DEFECTUOSO,
-    REVISIÓN,
 }
