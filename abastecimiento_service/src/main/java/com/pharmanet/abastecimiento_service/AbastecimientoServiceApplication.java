@@ -1,0 +1,13 @@
+package com.pharmanet.abastecimiento_service;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AbastecimientoServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AbastecimientoServiceApplication.class, args);
+	}
+
+}
