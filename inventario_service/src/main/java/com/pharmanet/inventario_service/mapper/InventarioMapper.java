@@ -3,6 +3,7 @@ package com.pharmanet.inventario_service.mapper;
 import org.springframework.stereotype.Component;
 
 import com.pharmanet.inventario_service.dto.inventario.InventarioDetailResponse;
+import com.pharmanet.inventario_service.dto.inventario.InventarioResponse;
 import com.pharmanet.inventario_service.dto.lote.LoteRequest;
 import com.pharmanet.inventario_service.dto.lote.LoteResponse;
 import com.pharmanet.inventario_service.dto.movimiento.MovimientoResponse;
@@ -29,7 +30,7 @@ public class InventarioMapper {
         return lote;
     }
 
-    public InventarioDetailResponse toInventarioResponse(Inventario inventario){
+    public InventarioDetailResponse toInventarioDetailResponse(Inventario inventario){
         return new InventarioDetailResponse(
             inventario.getSku(),
             inventario.getCodSucursal(),
@@ -37,6 +38,13 @@ public class InventarioMapper {
             inventario.getLotes().stream()
                 .map(this::toLoteResponse)
                 .toList());
+    }
+
+    public InventarioResponse toInventarioResponse(Inventario inventario){
+        return new InventarioResponse(
+            inventario.getSku(),
+            inventario.getCodSucursal(),
+            inventario.getStockTotal());
     }
 
     public MovimientoResponse toMovimientoResponse(Movimiento movimiento){

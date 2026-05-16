@@ -6,5 +6,4 @@ public enum EstadoLote {
     VENCIDO,
     DEFECTUOSO,
     REVISIÓN,
-    CANCELADO;
 }
