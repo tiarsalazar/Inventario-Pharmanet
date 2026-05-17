@@ -35,8 +35,8 @@ public class DetalleRecepcion {
     private BigDecimal precioUnitario;
     @Column(name = "subtotal", nullable = false, precision = 12, scale = 2)
     private BigDecimal subtotal;
-    @Column(name = "lote", nullable = false, length = 30)
-    private String lote;
+    @Column(name = "codigo_lote", nullable = false, length = 30)
+    private String codLote;
     @Column(name = "fecha_vencimiento", nullable = false)
     private LocalDate fechaVencimiento;
 
