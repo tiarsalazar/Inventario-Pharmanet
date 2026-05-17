@@ -8,6 +8,6 @@ import lombok.Setter;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SucursalResponse {
+public class SucursalRequest {
     private String codInterno;
 }

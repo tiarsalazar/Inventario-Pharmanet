@@ -45,9 +45,15 @@ public class InventarioController {
     // INVENTARIO 
 
     @GetMapping("/productos/{sku}/sucursales/{codSucursal}")
-    public ResponseEntity<InventarioDetailResponse> obtenerInventarioPorSku(
+    public ResponseEntity<InventarioResponse> obtenerInventarioPorSku(
         @PathVariable String sku, @PathVariable String codSucursal){
         return ResponseEntity.ok(invServ.obtenerInventarioPorSku(sku, codSucursal));
+    }
+
+    @GetMapping("/productos/{sku}/sucursales/{codSucursal}/detalles")
+    public ResponseEntity<InventarioDetailResponse> obtenerInventarioDetailPorSku(
+        @PathVariable String sku, @PathVariable String codSucursal){
+        return ResponseEntity.ok(invServ.obtenerInventarioDetailPorSku(sku, codSucursal));
     }
 
     @GetMapping("/sucursales/{codSucursal}")

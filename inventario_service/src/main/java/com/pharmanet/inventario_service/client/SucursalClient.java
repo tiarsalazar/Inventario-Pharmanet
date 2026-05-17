@@ -4,10 +4,10 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.pharmanet.inventario_service.dto.client.SucursalResponse;
+import com.pharmanet.inventario_service.dto.client.SucursalRequest;
 
 @FeignClient(name = "sucursal-service", url = "http://localhost:8081")
 public interface SucursalClient {
     @GetMapping("/api/v1/sucursales/{codInterno}")
-    SucursalResponse buscarSucursal(@PathVariable String codInterno);
+    SucursalRequest buscarSucursal(@PathVariable String codInterno);
 }

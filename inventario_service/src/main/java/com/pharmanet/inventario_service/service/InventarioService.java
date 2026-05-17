@@ -47,7 +47,14 @@ public class InventarioService {
 
     // ==== CONSULTAS INVENTARIO =====
 
-    public InventarioDetailResponse obtenerInventarioPorSku(String sku, String codSucursal){
+    public InventarioResponse obtenerInventarioPorSku(String sku, String codSucursal){
+        log.info("Obteniendo inventario por sku: {} en sucursal: {}", sku, codSucursal);
+        return invRepo.findBySkuAndCodSucursal(sku, codSucursal)
+        .map(mapper::toInventarioResponse)
+        .orElseThrow(() -> new ResourceNotFoundException("Inventario no encontrado para sku: "+sku));
+    }
+
+    public InventarioDetailResponse obtenerInventarioDetailPorSku(String sku, String codSucursal){
         log.info("Obteniendo inventario por sku: {} en sucursal: {}", sku, codSucursal);
         return invRepo.findBySkuAndCodSucursal(sku, codSucursal)
         .map(mapper::toInventarioDetailResponse)
@@ -92,21 +99,21 @@ public class InventarioService {
         log.info("Registrando recepcion para sucursal: {}", request.getCodSucursal());
 
         // Validar que la sucursal existe
-        //try {
-        //    sucursalClient.buscarSucursal(request.getCodSucursal());
-        //} catch (Exception e) {
-        //    throw new ResourceNotFoundException("Sucursal no encontrada: " + request.getCodSucursal());
-        //}
-
+        try {
+            sucursalClient.buscarSucursal(request.getCodSucursal());
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("Sucursal no encontrada: " + request.getCodSucursal());
+        }
+       
         List<LoteResponse> response = new ArrayList<>();
         for (LoteRequest loteRequest : request.getLotes()){
 
             // Validar que el producto existe
-            //try {
-            //    productoClient.buscarPorSku(loteRequest.getSku());
-            //} catch (Exception e) {
-            //    throw new ResourceNotFoundException("Producto no encontrado con sku: " + loteRequest.getSku());
-            //}
+            try {
+                productoClient.buscarPorSku(loteRequest.getSku());
+            } catch (Exception e) {
+                throw new ResourceNotFoundException("Producto no encontrado con sku: " + loteRequest.getSku());
+            }
 
             // Busca Inventario. Si no existe lo crea y persiste.
             Inventario inventario = invRepo.findBySkuAndCodSucursal(loteRequest.getSku(), request.getCodSucursal())
