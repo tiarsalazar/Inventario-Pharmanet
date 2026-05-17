@@ -1,7 +1,7 @@
 package com.pharmanet.abastecimiento_service.dto.recepcion;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.pharmanet.abastecimiento_service.dto.detallerecepcion.DetalleRecepcionResponse;
@@ -16,13 +16,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecepcionResponse {
+    private String runUsuario;
     private String ordenCompra;
     private String codSucursal;
     private String numeroDocumento;
     private TipoDocumento tipoDocumento;
     private String rutProveedor;
     private String nombreProveedor;
-    private LocalDate fechaIngreso;
+    private LocalDateTime fechaIngreso;
     private String observaciones;
     private BigDecimal montoTotal;
     private List<DetalleRecepcionResponse> detalles;

@@ -1,7 +1,7 @@
 package com.pharmanet.abastecimiento_service.entity;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +38,8 @@ public class Recepcion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "recepcion_id")
     private Long id;
+    @Column(name = "run_usuario", nullable = false, length = 10)
+    private String runUsuario;
     @Column(name = "orden_compra", length = 30)
     private String ordenCompra;
     @Column(name = "codigo_sucursal", nullable = false, length = 10)
@@ -52,7 +54,7 @@ public class Recepcion {
     @Column(name = "nombre_proveedor", nullable = false, length = 100)
     private String nombreProveedor;
     @Column(name = "fecha_ingreso", nullable = false)
-    private LocalDate fechaIngreso = LocalDate.now();
+    private LocalDateTime fechaIngreso = LocalDateTime.now();
     @Column(name = "observaciones", length = 255)
     private String observaciones;
     @Column(name = "monto_total", nullable = false, precision = 12, scale = 2)

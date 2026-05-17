@@ -16,6 +16,7 @@ public class AbastecimientoMapper {
 
     public Recepcion toRecepcionEntity(RecepcionRequest request){
         Recepcion recepcion = new Recepcion();
+        recepcion.setRunUsuario(request.getRunUsuario());
         recepcion.setOrdenCompra(request.getOrdenCompra());
         recepcion.setCodSucursal(request.getCodSucursal());
         recepcion.setNumeroDocumento(request.getNumeroDocumento());
@@ -42,22 +43,23 @@ public class AbastecimientoMapper {
     }
 
     public RecepcionResponse toRecepcionDto(Recepcion recepcion){
-        RecepcionResponse dto = new RecepcionResponse();
-        dto.setOrdenCompra(recepcion.getOrdenCompra());
-        dto.setCodSucursal(recepcion.getCodSucursal());
-        dto.setNumeroDocumento(recepcion.getNumeroDocumento());
-        dto.setTipoDocumento(recepcion.getTipoDocumento());
-        dto.setRutProveedor(recepcion.getRutProveedor());
-        dto.setNombreProveedor(recepcion.getNombreProveedor());
-        dto.setFechaIngreso(recepcion.getFechaIngreso());
-        dto.setObservaciones(recepcion.getObservaciones());
-        dto.setMontoTotal(recepcion.getMontoTotal());
+        RecepcionResponse response = new RecepcionResponse();
+        response.setRunUsuario(recepcion.getRunUsuario());
+        response.setOrdenCompra(recepcion.getOrdenCompra());
+        response.setCodSucursal(recepcion.getCodSucursal());
+        response.setNumeroDocumento(recepcion.getNumeroDocumento());
+        response.setTipoDocumento(recepcion.getTipoDocumento());
+        response.setRutProveedor(recepcion.getRutProveedor());
+        response.setNombreProveedor(recepcion.getNombreProveedor());
+        response.setFechaIngreso(recepcion.getFechaIngreso());
+        response.setObservaciones(recepcion.getObservaciones());
+        response.setMontoTotal(recepcion.getMontoTotal());
 
         List<DetalleRecepcionResponse> detalles = recepcion.getDetalles().stream()
         .map(this::toDetalleDto)
         .toList();
-        dto.setDetalles(detalles);
-        return dto;
+        response.setDetalles(detalles);
+        return response;
     }
 
     public DetalleRecepcionResponse toDetalleDto(DetalleRecepcion detalle){

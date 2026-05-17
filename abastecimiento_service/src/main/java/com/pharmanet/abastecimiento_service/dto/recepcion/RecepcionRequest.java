@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,6 +20,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecepcionRequest {
+    @NotBlank(message = "Run usuario es obligatorio")
+    @Size(max = 10, message = "Run usuario no puede superar 10 caracteres")
+    @Pattern(regexp = "^[0-9]{7,8}-[0-9kK]$", message = "RUN inválido")
+    private String runUsuario;
     @Size(max = 30, message = "Orden de compra no puede superar 30 caracteres.")
     private String ordenCompra;
     @NotBlank(message = "Codigo de sucursal es obligatorio.")
