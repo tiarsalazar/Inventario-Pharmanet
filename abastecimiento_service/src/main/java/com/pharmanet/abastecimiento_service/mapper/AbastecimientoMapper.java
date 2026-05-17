@@ -14,9 +14,9 @@ import com.pharmanet.abastecimiento_service.entity.Recepcion;
 @Component
 public class AbastecimientoMapper {
 
-    public Recepcion toRecepcionEntity(RecepcionRequest request){
+    public Recepcion toRecepcionEntity(RecepcionRequest request, String runUsuario){
         Recepcion recepcion = new Recepcion();
-        recepcion.setRunUsuario(request.getRunUsuario());
+        recepcion.setRunUsuario(runUsuario);
         recepcion.setOrdenCompra(request.getOrdenCompra());
         recepcion.setCodSucursal(request.getCodSucursal());
         recepcion.setNumeroDocumento(request.getNumeroDocumento());

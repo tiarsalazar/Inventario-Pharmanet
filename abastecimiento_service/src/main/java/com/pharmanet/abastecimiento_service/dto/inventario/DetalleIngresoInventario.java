@@ -1,4 +1,4 @@
-package com.pharmanet.abastecimiento_service.dto.client;
+package com.pharmanet.abastecimiento_service.dto.inventario;
 
 import java.time.LocalDate;
 

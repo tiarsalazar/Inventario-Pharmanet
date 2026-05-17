@@ -1,4 +1,4 @@
-package com.pharmanet.abastecimiento_service.dto.client;
+package com.pharmanet.abastecimiento_service.dto.inventario;
 
 import java.util.List;
 
@@ -12,5 +12,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class IngresoInventario {
     private String codSucursal;
-    private List<DetalleIngresoInventario> lotes;
+    private List<DetalleIngresoInventario> detalles;
 }
