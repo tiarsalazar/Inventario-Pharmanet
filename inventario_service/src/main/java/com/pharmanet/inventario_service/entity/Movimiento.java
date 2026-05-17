@@ -34,6 +34,8 @@ public class Movimiento {
     private TipoMovimiento tipo;
     @Column(name = "sku", nullable = false, length = 30)
     private String sku;
+    @Column(name = "codigo_sucursal", nullable = false, length = 10)
+    private String codSucursal;
     @Column(name = "cantidad", nullable = false)
     private Integer cantidad;
     @Column(name = "fecha", nullable = false, updatable = false)

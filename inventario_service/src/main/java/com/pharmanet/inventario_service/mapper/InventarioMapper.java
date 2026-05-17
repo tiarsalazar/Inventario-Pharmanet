@@ -51,6 +51,7 @@ public class InventarioMapper {
         return new MovimientoResponse(
             movimiento.getTipo(),
             movimiento.getSku(),
+            movimiento.getCodSucursal(),
             movimiento.getCantidad(),
             movimiento.getFecha(),
             movimiento.getRutUsuario(),

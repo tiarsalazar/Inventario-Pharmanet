@@ -31,9 +31,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.PutMapping;
 
-
-
-
 @RestController
 @RequestMapping("/api/v1/inventarios")
 @RequiredArgsConstructor
@@ -45,13 +42,13 @@ public class InventarioController {
 
     // INVENTARIO 
 
-    @GetMapping("/productos/{sku}/sucursales/{codSucursal}")
+    @GetMapping("/sucursales/{codSucursal}/productos/{sku}")
     public ResponseEntity<InventarioResponse> obtenerInventarioPorSku(
         @PathVariable String sku, @PathVariable String codSucursal){
         return ResponseEntity.ok(invServ.obtenerInventarioPorSku(sku, codSucursal));
     }
 
-    @GetMapping("/productos/{sku}/sucursales/{codSucursal}/detalles")
+    @GetMapping("/sucursales/{codSucursal}/productos/{sku}/detalles")
     public ResponseEntity<InventarioDetailResponse> obtenerInventarioDetailPorSku(
         @PathVariable String sku, @PathVariable String codSucursal){
         return ResponseEntity.ok(invServ.obtenerInventarioDetailPorSku(sku, codSucursal));
@@ -65,27 +62,28 @@ public class InventarioController {
 
     // MOVIMIENTOS
 
-    @GetMapping("/movimientos/lotes/{codLote}")
-    public ResponseEntity<Page<MovimientoResponse>> obtenerMovimientosPorCodLote(
-            @PathVariable String codLote, Pageable pageable) {
-        return ResponseEntity.ok(invServ.obtenerMovimientoPorLote(codLote, pageable));
+    @GetMapping("/sucursales/{codSucursal}/productos/{sku}/movimientos")
+    public ResponseEntity<Page<MovimientoResponse>> obtenerMovimientosPorSku(
+            @PathVariable String sku, @PathVariable String codSucursal, Pageable pageable) {
+        return ResponseEntity.ok(invServ.obtenerMovimientoPorSku(sku, codSucursal, pageable));
     }
 
-    @GetMapping("/movimientos/usuarios/{rutUsuario}")
+    @GetMapping("/sucursales/{codSucursal}/usuarios/{rutUsuario}/movimientos")
     public ResponseEntity<Page<MovimientoResponse>> obtenerMovimientosPorRutUsuario(
-            @PathVariable String rutUsuario, Pageable pageable) {
-        return ResponseEntity.ok(invServ.obtenerMovimientoPorUsuario(rutUsuario, pageable));
+            @PathVariable String rutUsuario, @PathVariable String codSucursal, Pageable pageable) {
+        return ResponseEntity.ok(invServ.obtenerMovimientoPorUsuario(rutUsuario, codSucursal, pageable));
     }
 
-    @GetMapping("/movimientos/fecha")
+    @GetMapping("/sucursales/{codSucursal}/movimientos/fecha")
     public ResponseEntity<Page<MovimientoResponse>> obtenerMovimientosPorFecha(
+            @PathVariable String codSucursal,
             @RequestParam LocalDate inicio,
             @RequestParam LocalDate fin, Pageable pageable) {
         return ResponseEntity.ok(invServ.obtenerMovimientosPorfecha(
-            inicio.atStartOfDay(), fin.atTime(23, 59, 59), pageable));
+            codSucursal, inicio.atStartOfDay(), fin.atTime(23, 59, 59), pageable));
     }
 
-    @GetMapping("/movimientos/sucursales/{codSucursal}")
+    @GetMapping("/sucursales/{codSucursal}/movimientos")
     public ResponseEntity<Page<MovimientoResponse>> obtenerMovimientosPorSucursal(
             @PathVariable String codSucursal, Pageable pageable) {
         return ResponseEntity.ok(invServ.obtenerMovimientoPorSucursal(codSucursal, pageable));
@@ -105,8 +103,6 @@ public class InventarioController {
         invServ.procesarVenta(request);
         return ResponseEntity.noContent().build();
     }
-
-    // Agregar endpoint para VENTA
 
 
     // ==== PETICIONES PUT/PATCH ====

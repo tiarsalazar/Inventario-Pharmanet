@@ -50,6 +50,7 @@ public class InventarioService {
 
     // ==== CONSULTAS INVENTARIO =====
 
+    @Transactional(readOnly = true)
     public InventarioResponse obtenerInventarioPorSku(String sku, String codSucursal){
         log.info("Obteniendo inventario por sku: {} en sucursal: {}", sku, codSucursal);
         return invRepo.findBySkuAndCodSucursal(sku, codSucursal)
@@ -57,6 +58,7 @@ public class InventarioService {
         .orElseThrow(() -> new ResourceNotFoundException("Inventario no encontrado para sku: "+sku));
     }
 
+    @Transactional(readOnly = true)
     public InventarioDetailResponse obtenerInventarioDetailPorSku(String sku, String codSucursal){
         log.info("Obteniendo inventario por sku: {} en sucursal: {}", sku, codSucursal);
         return invRepo.findBySkuAndCodSucursal(sku, codSucursal)
@@ -64,6 +66,7 @@ public class InventarioService {
         .orElseThrow(() -> new ResourceNotFoundException("Inventario no encontrado para sku: "+sku));
     }
 
+    @Transactional(readOnly = true)
     public Page<InventarioResponse> obtenerInventarioPorSucursal(String codSucursal, Pageable pageable){
         log.info("Obteniendo inventarios de sucursal: {}",codSucursal);
         return invRepo.findByCodSucursal(codSucursal, pageable)
@@ -72,26 +75,30 @@ public class InventarioService {
 
     // ==== CONSULTAS MOVIMIENTOS ====
 
-    public Page<MovimientoResponse> obtenerMovimientoPorLote(String codLote, Pageable pageable){
-        log.info("Obteniendo movimientos del lote: {}", codLote);
-        return movRepo.findByLoteCodLote(codLote, pageable)
+    @Transactional(readOnly = true)
+    public Page<MovimientoResponse> obtenerMovimientoPorSku(String sku, String codSucursal, Pageable pageable){
+        log.info("Obteniendo movimientos del lote: {}", sku);
+        return movRepo.findBySkuAndCodSucursal(sku, codSucursal, pageable)
             .map(mapper::toMovimientoResponse);
     }
 
-    public Page<MovimientoResponse> obtenerMovimientoPorUsuario(String rutUsuario, Pageable pageable){
+    @Transactional(readOnly = true)
+    public Page<MovimientoResponse> obtenerMovimientoPorUsuario(String rutUsuario, String codSucursal, Pageable pageable){
         log.info("Obteniendo movimientos por usuario rut: {}", rutUsuario);
-        return movRepo.findByRutUsuario(rutUsuario, pageable).map(mapper::toMovimientoResponse);
+        return movRepo.findByRutUsuarioAndCodSucursal(rutUsuario, codSucursal, pageable).map(mapper::toMovimientoResponse);
     }
 
-    public Page<MovimientoResponse> obtenerMovimientosPorfecha(LocalDateTime inicio, LocalDateTime fin, Pageable pageable){
+    @Transactional(readOnly = true)
+    public Page<MovimientoResponse> obtenerMovimientosPorfecha(String codSucursal, LocalDateTime inicio, LocalDateTime fin, Pageable pageable){
         log.info("Obteniendo movimientos entre: {} y {}", inicio, fin);
-        return movRepo.findByFechaBetween(inicio, fin, pageable)
+        return movRepo.findByCodSucursalAndFechaBetween(codSucursal, inicio, fin, pageable)
             .map(mapper::toMovimientoResponse);
     }
 
+    @Transactional(readOnly = true)
     public Page<MovimientoResponse> obtenerMovimientoPorSucursal(String codSucursal, Pageable pageable){
         log.info("Obteniendo movimientos de sucursal: {}", codSucursal);
-        return movRepo.findByLoteInventarioCodSucursal(codSucursal, pageable)
+        return movRepo.findByCodSucursal(codSucursal, pageable)
             .map(mapper::toMovimientoResponse);
     }
 
@@ -126,11 +133,11 @@ public class InventarioService {
                 .equals(detalleRequest.getCodLote()))
                 .findFirst().orElseThrow(() -> new ResourceNotFoundException("Error al persistir lote"));
             
-            movRepo.save(crearMovimiento(TipoMovimiento.ENTRADA,inventario.getSku(), detalleRequest.getCantidad(), rutUsuario, lotePersistido));
+            movRepo.save(crearMovimiento(TipoMovimiento.ENTRADA,inventario.getSku(),request.getCodSucursal(), detalleRequest.getCantidad(), rutUsuario, lotePersistido));
 
             log.info("Lote {} registrado para sku {}", detalleRequest.getCodLote(), detalleRequest.getSku());
 
-            response.add(mapper.toLoteResponse(lote));
+            response.add(mapper.toLoteResponse(lotePersistido));
         }
         return response;
     }
@@ -174,7 +181,7 @@ public class InventarioService {
             Lote guardado = loteRepo.save(lote);
 
             movRepo.save(crearMovimiento(TipoMovimiento.SALIDA,
-                 inventario.getSku(), descuento, request.getRunVendedor(), guardado));
+                 inventario.getSku(), request.getCodSucursal(), descuento, request.getRunVendedor(), guardado));
 
             log.info(("Lote {} descontado en {} unidades, restantes: {}"),
             lote.getCodLote(), descuento, lote.getCantidad());
@@ -227,10 +234,11 @@ public class InventarioService {
 
     // ==== PRIVADOS ====
     // CREA un MOVIMIENTO 
-    private Movimiento crearMovimiento(TipoMovimiento tipo,String sku, Integer cantidad, String rutUsuario, Lote lote ){
+    private Movimiento crearMovimiento(TipoMovimiento tipo,String sku, String codSucursal, Integer cantidad, String rutUsuario, Lote lote ){
         Movimiento movimiento = new Movimiento();
         movimiento.setTipo(tipo);
         movimiento.setSku(sku);
+        movimiento.setCodSucursal(codSucursal);
         movimiento.setCodLote(lote.getCodLote());
         movimiento.setCantidad(cantidad);
         movimiento.setRutUsuario(rutUsuario);

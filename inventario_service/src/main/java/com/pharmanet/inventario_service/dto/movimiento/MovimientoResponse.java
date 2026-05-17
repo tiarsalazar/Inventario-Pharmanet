@@ -15,6 +15,7 @@ import lombok.Setter;
 public class MovimientoResponse {
     private TipoMovimiento tipo;
     private String sku;
+    private String codSucursal;
     private Integer cantidad;
     private LocalDateTime fecha;
     private String rutUsuario;
