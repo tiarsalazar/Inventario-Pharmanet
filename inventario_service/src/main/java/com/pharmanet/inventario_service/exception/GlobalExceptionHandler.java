@@ -68,6 +68,13 @@ public class GlobalExceptionHandler {
             .body(new ErrorResponse(400, "Bad Request", mensaje));
     }
 
+    @ExceptionHandler(ServiceCommunicationException.class)
+    public ResponseEntity<ErrorResponse> handleServiceCommunication(ServiceCommunicationException ex) {
+        log.error("Error de comunicacion entre servicios: {}", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
+            .body(new ErrorResponse(503, "Service Unavailable", ex.getMessage()));
+}
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGeneric(Exception ex) {
         log.error("Error inesperado: {}", ex);

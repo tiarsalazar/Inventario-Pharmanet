@@ -1,4 +1,4 @@
-package com.pharmanet.inventario_service.dto.lote;
+package com.pharmanet.inventario_service.dto.recepcion;
 
 import java.time.LocalDate;
 
@@ -15,7 +15,7 @@ import lombok.Setter;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoteRequest {
+public class DetalleRecepcionRequest {
     @NotBlank(message = "Sku es obligatorio")
     @Size(max = 30, message = "Sku no debe superar 30 caracteres")
     private String sku;

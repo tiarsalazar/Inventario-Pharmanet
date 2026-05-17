@@ -1,4 +1,4 @@
-package com.pharmanet.inventario_service.dto.lote;
+package com.pharmanet.inventario_service.dto.recepcion;
 
 import java.util.List;
 
@@ -17,8 +17,8 @@ import lombok.Setter;
 public class RecepcionRequest {
     @NotBlank(message = "Código sucursal es obligatorio")
     private String codSucursal;
-    @NotNull(message = "Lista de lotes es obligatoria")
-    @NotEmpty(message = "Debe incluir almenos un lote")
+    @NotNull(message = "Lista de detalles es obligatoria")
+    @NotEmpty(message = "Debe incluir almenos un detalle")
     @Valid
-    private List<LoteRequest> lotes;
+    private List<DetalleRecepcionRequest> detalles;
 }

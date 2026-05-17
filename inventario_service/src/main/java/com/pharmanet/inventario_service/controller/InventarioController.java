@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pharmanet.inventario_service.dto.inventario.InventarioDetailResponse;
 import com.pharmanet.inventario_service.dto.inventario.InventarioResponse;
 import com.pharmanet.inventario_service.dto.lote.LoteResponse;
-import com.pharmanet.inventario_service.dto.lote.RecepcionRequest;
 import com.pharmanet.inventario_service.dto.movimiento.MovimientoResponse;
+import com.pharmanet.inventario_service.dto.recepcion.RecepcionRequest;
+import com.pharmanet.inventario_service.dto.venta.VentaRequest;
 import com.pharmanet.inventario_service.enums.EstadoLote;
 import com.pharmanet.inventario_service.service.InventarioService;
 
@@ -97,6 +98,12 @@ public class InventarioController {
             @RequestBody @Valid RecepcionRequest request,
             @RequestHeader("X-Rut-Usuario") String rutUsuario) {
         return ResponseEntity.status(HttpStatus.CREATED).body(invServ.registrarRecepcion(request, rutUsuario));
+    }
+
+    @PostMapping("/ventas")
+    public ResponseEntity<Void> procesarVenta(@RequestBody @Valid VentaRequest request) {
+        invServ.procesarVenta(request);
+        return ResponseEntity.noContent().build();
     }
 
     // Agregar endpoint para VENTA

@@ -1,10 +1,8 @@
-package com.pharmanet.inventario_service.client;
+package com.pharmanet.inventario_service.client.sucursal;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import com.pharmanet.inventario_service.dto.client.SucursalRequest;
 
 @FeignClient(name = "sucursal-service", url = "http://localhost:8081")
 public interface SucursalClient {

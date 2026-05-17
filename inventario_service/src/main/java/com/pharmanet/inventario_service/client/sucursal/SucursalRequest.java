@@ -1,4 +1,4 @@
-package com.pharmanet.inventario_service.dto.client;
+package com.pharmanet.inventario_service.client.sucursal;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,6 +8,6 @@ import lombok.Setter;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductoRequest {
-    private String sku;
+public class SucursalRequest {
+    private String codInterno;
 }

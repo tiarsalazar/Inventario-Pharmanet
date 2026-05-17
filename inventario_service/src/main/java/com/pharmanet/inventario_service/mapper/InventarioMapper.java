@@ -4,9 +4,9 @@ import org.springframework.stereotype.Component;
 
 import com.pharmanet.inventario_service.dto.inventario.InventarioDetailResponse;
 import com.pharmanet.inventario_service.dto.inventario.InventarioResponse;
-import com.pharmanet.inventario_service.dto.lote.LoteRequest;
 import com.pharmanet.inventario_service.dto.lote.LoteResponse;
 import com.pharmanet.inventario_service.dto.movimiento.MovimientoResponse;
+import com.pharmanet.inventario_service.dto.recepcion.DetalleRecepcionRequest;
 import com.pharmanet.inventario_service.entity.Inventario;
 import com.pharmanet.inventario_service.entity.Lote;
 import com.pharmanet.inventario_service.entity.Movimiento;
@@ -22,7 +22,7 @@ public class InventarioMapper {
             lote.getEstado());
     }
 
-    public Lote toLoteEntity(LoteRequest request){
+    public Lote toLoteEntity(DetalleRecepcionRequest request){
         Lote lote = new Lote();
         lote.setCodLote(request.getCodLote());
         lote.setCantidad(request.getCantidad());
