@@ -16,7 +16,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecepcionResponse {
-    private Long id;
     private String ordenCompra;
     private String codSucursal;
     private String numeroDocumento;

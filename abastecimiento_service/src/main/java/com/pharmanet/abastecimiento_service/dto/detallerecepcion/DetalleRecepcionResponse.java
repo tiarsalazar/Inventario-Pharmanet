@@ -12,7 +12,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DetalleRecepcionResponse {
-    private Long id;
     private String sku;
     private Integer cantidad;
     private String codLote;
