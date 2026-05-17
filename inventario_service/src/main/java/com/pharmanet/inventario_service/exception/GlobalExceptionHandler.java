@@ -1,16 +1,19 @@
 package com.pharmanet.inventario_service.exception;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
+import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -39,20 +42,24 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ErrorResponse> handleValidation(MethodArgumentNotValidException ex){
-        String mensaje = ex.getBindingResult().getFieldErrors().stream()
-            .map(e -> e.getField() + ": " + e.getDefaultMessage())
-            .findFirst().orElse("Error de validación.");
-        log.warn("Error de validacion: {}", mensaje);
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-            .body(new ErrorResponse(400, "Bad Request", mensaje));
+    public ResponseEntity<ErrorResponse> handleValidation(MethodArgumentNotValidException ex) {
+        List<ValidationError> detalleErrores = ex.getBindingResult().getFieldErrors().stream()
+            .map(error -> new ValidationError(error.getField(), error.getDefaultMessage()))
+            .toList();
+
+        ErrorResponse response = new ErrorResponse(HttpStatus.BAD_REQUEST.value(),
+            "Bad Request", "Errores de validación", detalleErrores);
+
+        log.warn("Validación fallida en DTO: se encontraron {} errores", detalleErrores.size());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ErrorResponse> handleDataIntegrity(DataIntegrityViolationException ex){
         log.warn("Violacion de integridad: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT)
-            .body(new ErrorResponse(409, "Conflict", "Ya existe un registro con esos datos."));
+            .body(new ErrorResponse(409, "Conflict",
+                "No se pudo procesar la operación por restricciones de integridad de datos."));
     }
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
@@ -73,13 +80,26 @@ public class GlobalExceptionHandler {
         log.error("Error de comunicacion entre servicios: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
             .body(new ErrorResponse(503, "Service Unavailable", ex.getMessage()));
-}
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ErrorResponse> handleMalformedJson(HttpMessageNotReadableException ex) {
+        log.warn("Cuerpo de la petición JSON malformado: {}", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+            .body(new ErrorResponse(400, "Bad Request", "El cuerpo de la petición JSON tiene un formato inválido o no puede ser leído."));
+    }
+
+    @ExceptionHandler(FeignException.class)
+    public ResponseEntity<ErrorResponse> handleFeignException(FeignException ex) {
+        log.error("Falla de comunicación nativa con microservicio remoto. Status: {}, Detalles: {}", ex.status(), ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_GATEWAY)
+            .body(new ErrorResponse(502, "Bad Gateway", "Error al obtener respuesta del servicio externo remoto."));
+    }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGeneric(Exception ex) {
-        log.error("Error inesperado: {}", ex);
+        log.error("Error inesperado: ", ex);
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
             .body(new ErrorResponse(500, "Internal Server Error", "Error interno del servidor"));
     }
-
 }

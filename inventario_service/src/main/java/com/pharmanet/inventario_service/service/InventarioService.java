@@ -249,20 +249,24 @@ public class InventarioService {
     private void validarProducto(String sku) {
         try {
             productoClient.buscarPorSku(sku);
-        } catch (FeignException e) {
+        } catch (FeignException.NotFound e) {
             throw new ResourceNotFoundException("Producto no encontrado con sku: " + sku);
+        } catch (FeignException e) {
+            throw new ServiceCommunicationException("Error al comunicarse con el servicio de productos.");
         } catch (Exception e) {
-            throw new ServiceCommunicationException("Error al conectar con el servicio de productos.");
+            throw new ServiceCommunicationException("Error inesperado al conectar con productos.");
         }
     }
 
     private void validarSucursal(String codSucursal) {
         try {
             sucursalClient.buscarSucursal(codSucursal);
+        } catch (FeignException.NotFound e) {
+            throw new ResourceNotFoundException("Sucursal no encontrada con codigo sucursal: " + codSucursal);
         } catch (FeignException e) {
-            throw new ResourceNotFoundException("Sucursal no encontrada: " + codSucursal);
+            throw new ServiceCommunicationException("Error al comunicarse con el servicio de sucursal.");
         } catch (Exception e) {
-            throw new ServiceCommunicationException("Error al conectar con el servicio de sucursales.");
+            throw new ServiceCommunicationException("Error inesperado al conectar con sucursal.");
         }
     }
 }
