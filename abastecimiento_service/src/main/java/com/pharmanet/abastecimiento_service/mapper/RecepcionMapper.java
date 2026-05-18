@@ -12,7 +12,7 @@ import com.pharmanet.abastecimiento_service.entity.DetalleRecepcion;
 import com.pharmanet.abastecimiento_service.entity.Recepcion;
 
 @Component
-public class AbastecimientoMapper {
+public class RecepcionMapper {
 
     public Recepcion toRecepcionEntity(RecepcionRequest request, String runUsuario){
         Recepcion recepcion = new Recepcion();
@@ -42,7 +42,7 @@ public class AbastecimientoMapper {
         return detalle;
     }
 
-    public RecepcionResponse toRecepcionDto(Recepcion recepcion){
+    public RecepcionResponse toRecepcionResponse(Recepcion recepcion){
         RecepcionResponse response = new RecepcionResponse();
         response.setRunUsuario(recepcion.getRunUsuario());
         response.setOrdenCompra(recepcion.getOrdenCompra());
@@ -56,20 +56,20 @@ public class AbastecimientoMapper {
         response.setMontoTotal(recepcion.getMontoTotal());
 
         List<DetalleRecepcionResponse> detalles = recepcion.getDetalles().stream()
-        .map(this::toDetalleDto)
+        .map(this::toDetalleResponse)
         .toList();
         response.setDetalles(detalles);
         return response;
     }
 
-    public DetalleRecepcionResponse toDetalleDto(DetalleRecepcion detalle){
-        DetalleRecepcionResponse dto = new DetalleRecepcionResponse();
-        dto.setSku(detalle.getSku());
-        dto.setCodLote(detalle.getCodLote());
-        dto.setFechaVencimiento(detalle.getFechaVencimiento());
-        dto.setCantidad(detalle.getCantidad());
-        dto.setPrecioUnitario(detalle.getPrecioUnitario());
-        dto.setSubtotal(detalle.getSubtotal());
-        return dto;
+    public DetalleRecepcionResponse toDetalleResponse(DetalleRecepcion detalle){
+        DetalleRecepcionResponse response = new DetalleRecepcionResponse();
+        response.setSku(detalle.getSku());
+        response.setCodLote(detalle.getCodLote());
+        response.setFechaVencimiento(detalle.getFechaVencimiento());
+        response.setCantidad(detalle.getCantidad());
+        response.setPrecioUnitario(detalle.getPrecioUnitario());
+        response.setSubtotal(detalle.getSubtotal());
+        return response;
     }
 }

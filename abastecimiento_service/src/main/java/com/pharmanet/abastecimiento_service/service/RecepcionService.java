@@ -1,7 +1,11 @@
 package com.pharmanet.abastecimiento_service.service;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,7 +17,7 @@ import com.pharmanet.abastecimiento_service.dto.recepcion.RecepcionResponse;
 import com.pharmanet.abastecimiento_service.entity.Recepcion;
 import com.pharmanet.abastecimiento_service.exception.BusinessException;
 import com.pharmanet.abastecimiento_service.exception.ServiceCommunicationException;
-import com.pharmanet.abastecimiento_service.mapper.AbastecimientoMapper;
+import com.pharmanet.abastecimiento_service.mapper.RecepcionMapper;
 import com.pharmanet.abastecimiento_service.repository.RecepcionRepository;
 
 import feign.FeignException;
@@ -26,9 +30,49 @@ import lombok.extern.slf4j.Slf4j;
 @Transactional
 public class RecepcionService {
 
-    private final RecepcionRepository recepcionRepo;
-    private final AbastecimientoMapper aMapper;
+    private final RecepcionRepository recepRepo;
+    private final RecepcionMapper recepMapper;
     private final InventarioClient inventarioClient;
+
+    // ==== CONSULTAS GET ====
+
+    @Transactional(readOnly = true)
+    public Page<RecepcionResponse> buscarRecepcionPorSucursal(String codSucursal, Pageable pageable){
+        log.info("Obteniendo historial de recepciones de sucursal: {}", codSucursal);
+        return recepRepo.findByCodSucursal(codSucursal, pageable)
+            .map(recepMapper::toRecepcionResponse);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<RecepcionResponse> buscarRecepcionPorProveedor(String rutProveedor, String codSucursal, Pageable pageable){
+        log.info("Obteniendo historial de recepciones por proveedor: {}", rutProveedor);
+        return recepRepo.findByRutProveedorAndCodSucursal(rutProveedor, codSucursal, pageable)
+            .map(recepMapper::toRecepcionResponse);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<RecepcionResponse> buscarPorOrdenCompra(String ordenCompra, String codSucursal, Pageable pageable){
+        log.info("Obteniendo historial de recepciones por orden de compra {}", ordenCompra);
+        return recepRepo.findByOrdenCompraAndCodSucursal(ordenCompra, codSucursal, pageable)
+            .map(recepMapper::toRecepcionResponse);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<RecepcionResponse> buscarPorFecha(String codSucursal, LocalDate inicio, LocalDate fin, Pageable pageable){
+        log.info("Obteniendo historial de recepciones por rango de fechas: {} - {}", inicio, fin);
+        return recepRepo.findByCodSucursalAndFechaIngresoBetween(codSucursal, inicio.atStartOfDay(), fin.atTime(LocalTime.MAX), pageable)
+            .map(recepMapper::toRecepcionResponse);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<RecepcionResponse> buscarPorUsuario(String runUsuario, String codSucursal, Pageable pageable){
+        log.info("Obteniendo historial de recepciones de usuario run: {}", runUsuario);
+        return recepRepo.findByRunUsuarioAndCodSucursal(runUsuario, codSucursal, pageable)
+        .map(recepMapper::toRecepcionResponse);
+    }
+
+
+    // ==== PETICIONES POST ====
 
     public RecepcionResponse registrarRecepcion(RecepcionRequest request, String runUsuario){
         log.info("Iniciando registro de recepcion documento: {}, proveedor: {}",
@@ -36,23 +80,25 @@ public class RecepcionService {
 
         validarDocumentoDuplicado(request);
 
-        Recepcion recepcion = aMapper.toRecepcionEntity(request, runUsuario);
+        Recepcion recepcion = recepMapper.toRecepcionEntity(request, runUsuario);
         procesarCalculos(recepcion);
 
-        Recepcion guardada = recepcionRepo.save(recepcion);
+        Recepcion guardada = recepRepo.save(recepcion);
         log.info("Recepcion guardada correctamente con ID {}, documento: {}, proveedor: {}",
         guardada.getId(), guardada.getNumeroDocumento(), guardada.getRutProveedor());
 
         procesarIngresoInventario(guardada, runUsuario);
 
-        return aMapper.toRecepcionDto(guardada);
+        return recepMapper.toRecepcionResponse(guardada);
     }
+
+    
 
         // === METODOS PRIVADOS ===
     
     // Valida que Recepcion no este duplicada por rut proveedor, tipo y numero de documento.
     private void validarDocumentoDuplicado(RecepcionRequest request){
-        if (recepcionRepo.existsByRutProveedorAndTipoDocumentoAndNumeroDocumento(
+        if (recepRepo.existsByRutProveedorAndTipoDocumentoAndNumeroDocumento(
             request.getRutProveedor(), request.getTipoDocumento(),request.getNumeroDocumento())){
                 log.warn("[VALIDACION] Intento de registro duplicado documento {} proveedor {}",
                 request.getNumeroDocumento(), request.getRutProveedor());
