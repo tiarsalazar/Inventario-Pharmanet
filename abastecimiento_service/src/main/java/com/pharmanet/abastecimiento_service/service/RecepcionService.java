@@ -16,6 +16,7 @@ import com.pharmanet.abastecimiento_service.dto.recepcion.RecepcionRequest;
 import com.pharmanet.abastecimiento_service.dto.recepcion.RecepcionResponse;
 import com.pharmanet.abastecimiento_service.entity.Recepcion;
 import com.pharmanet.abastecimiento_service.exception.BusinessException;
+import com.pharmanet.abastecimiento_service.exception.ResourceNotFoundException;
 import com.pharmanet.abastecimiento_service.exception.ServiceCommunicationException;
 import com.pharmanet.abastecimiento_service.mapper.RecepcionMapper;
 import com.pharmanet.abastecimiento_service.repository.RecepcionRepository;
@@ -35,6 +36,13 @@ public class RecepcionService {
     private final InventarioClient inventarioClient;
 
     // ==== CONSULTAS GET ====
+
+    @Transactional(readOnly = true)
+    public RecepcionResponse buscarPorId(Long id, String codSucursal){
+        log.info("Buscando recepcion por id: {}", id);
+        return recepRepo.findByIdAndCodSucursal(id, codSucursal).map(recepMapper::toRecepcionResponse)
+        .orElseThrow(() -> new ResourceNotFoundException("Recepcion no encontrada."));
+    }
 
     @Transactional(readOnly = true)
     public Page<RecepcionResponse> buscarRecepcionPorSucursal(String codSucursal, Pageable pageable){

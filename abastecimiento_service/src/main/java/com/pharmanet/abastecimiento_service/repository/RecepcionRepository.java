@@ -1,6 +1,7 @@
 package com.pharmanet.abastecimiento_service.repository;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,4 +20,5 @@ public interface RecepcionRepository extends JpaRepository<Recepcion, Long>{
     Page<Recepcion> findByOrdenCompraAndCodSucursal(String ordenCompra, String codSucursal, Pageable pageable);
     Page<Recepcion> findByCodSucursalAndFechaIngresoBetween(String codSucursal, LocalDateTime inicio, LocalDateTime fin, Pageable pageable);
     Page<Recepcion> findByRunUsuarioAndCodSucursal(String runUsuario, String codSucursal, Pageable pageable);
+    Optional<Recepcion> findByIdAndCodSucursal(Long id, String codSucursal);
 }
