@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.pharmanet.abastecimiento_service.enums.EstadoRecepcion;
 import com.pharmanet.abastecimiento_service.enums.TipoDocumento;
 
 import jakarta.persistence.CascadeType;
@@ -59,6 +60,9 @@ public class Recepcion {
     private String observaciones;
     @Column(name = "monto_total", nullable = false, precision = 12, scale = 2)
     private BigDecimal montoTotal;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "estado_recepcion", nullable = false)
+    private EstadoRecepcion estado = EstadoRecepcion.PENDIENTE;
 
     @OneToMany(mappedBy = "recepcion", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DetalleRecepcion> detalles = new ArrayList<>();

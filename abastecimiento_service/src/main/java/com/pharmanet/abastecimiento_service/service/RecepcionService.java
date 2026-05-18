@@ -15,6 +15,7 @@ import com.pharmanet.abastecimiento_service.dto.inventario.IngresoInventario;
 import com.pharmanet.abastecimiento_service.dto.recepcion.RecepcionRequest;
 import com.pharmanet.abastecimiento_service.dto.recepcion.RecepcionResponse;
 import com.pharmanet.abastecimiento_service.entity.Recepcion;
+import com.pharmanet.abastecimiento_service.enums.EstadoRecepcion;
 import com.pharmanet.abastecimiento_service.exception.BusinessException;
 import com.pharmanet.abastecimiento_service.exception.ResourceNotFoundException;
 import com.pharmanet.abastecimiento_service.exception.ServiceCommunicationException;
@@ -97,7 +98,34 @@ public class RecepcionService {
 
         procesarIngresoInventario(guardada, runUsuario);
 
-        return recepMapper.toRecepcionResponse(guardada);
+        guardada.setEstado(EstadoRecepcion.PROCESADA);
+        Recepcion response = recepRepo.save(guardada);
+        log.info("Recepcion {} procesada correctamente", guardada.getId());
+
+        return recepMapper.toRecepcionResponse(response);
+    }
+
+
+    // ==== PETICIONES PUT ====
+
+    public void cancelarRecepcionPorId(Long id, String codSucursal){
+        log.info("Cancelando recepcion id {}", id);
+        Recepcion recepcion = recepRepo.findByIdAndCodSucursal(id, codSucursal)
+        .orElseThrow(() -> new ResourceNotFoundException("Recepcion no encontrada."));
+        //Aqui deberia llamar a inventario para quitar el stock.
+        recepcion.setEstado(EstadoRecepcion.CANCELADA);
+        recepRepo.save(recepcion);
+    }
+
+    // ==== PETICIONES DELETE ==== 
+
+    public void eliminarRecepcionPorId(Long id, String codSucursal){
+        log.info("Eliminando recepcion con id {}", id);
+        Recepcion recepcion = recepRepo.findByIdAndCodSucursal(id, codSucursal)
+        .orElseThrow(() -> new ResourceNotFoundException("Recepcion no encontrada."));
+        //Aqui deberia llamar a inventario para quitar el stock.
+        recepRepo.delete(recepcion);
+        log.info("Recepcion eliminada con id {} exitosamente", id);
     }
 
     

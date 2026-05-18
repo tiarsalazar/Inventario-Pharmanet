@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import com.pharmanet.abastecimiento_service.dto.detallerecepcion.DetalleRecepcionResponse;
+import com.pharmanet.abastecimiento_service.enums.EstadoRecepcion;
 import com.pharmanet.abastecimiento_service.enums.TipoDocumento;
 
 import lombok.AllArgsConstructor;
@@ -26,5 +27,6 @@ public class RecepcionResponse {
     private LocalDateTime fechaIngreso;
     private String observaciones;
     private BigDecimal montoTotal;
+    private EstadoRecepcion estado;
     private List<DetalleRecepcionResponse> detalles;
 }

@@ -54,6 +54,7 @@ public class RecepcionMapper {
         response.setFechaIngreso(recepcion.getFechaIngreso());
         response.setObservaciones(recepcion.getObservaciones());
         response.setMontoTotal(recepcion.getMontoTotal());
+        response.setEstado(recepcion.getEstado());
 
         List<DetalleRecepcionResponse> detalles = recepcion.getDetalles().stream()
         .map(this::toDetalleResponse)

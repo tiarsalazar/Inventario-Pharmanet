@@ -15,11 +15,15 @@ import com.pharmanet.abastecimiento_service.dto.recepcion.RecepcionResponse;
 import com.pharmanet.abastecimiento_service.service.RecepcionService;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 
@@ -68,7 +72,7 @@ public class RecepcionController {
         return ResponseEntity.ok(recepServ.buscarPorUsuario(runUsuario, codSucursal, pageable));
     }
     
-    // PETICIONES POST
+    // ==== PETICIONES POST ====
 
     @PostMapping("/registrar")
     public ResponseEntity<RecepcionResponse> registrarRecepcion(
@@ -76,6 +80,24 @@ public class RecepcionController {
             @RequestHeader("X-Rut-Usuario") String runUsuario) {
         return ResponseEntity.status(HttpStatus.CREATED).body(recepServ.registrarRecepcion(request, runUsuario));
     }
+
+    // ==== PETICIONES PUT ====
+
+    @PutMapping("/sucursales/{codSucursal}/{id}/cancelar")
+    public ResponseEntity<Void> cancelarRecepcion(
+            @PathVariable String codSucursal, @PathVariable Long id) {
+        recepServ.cancelarRecepcionPorId(id, codSucursal);
+        return ResponseEntity.noContent().build();
+    }
     
+
+    // ==== PETICIONES DELETE ====
+
+    @DeleteMapping("/sucursales/{codSucursal}/{id}")
+    public ResponseEntity<Void> eliminarRecepcionPorId(
+            @PathVariable String codSucursal, @PathVariable Long id){
+        recepServ.eliminarRecepcionPorId(id, codSucursal);
+        return ResponseEntity.noContent().build();
+    }
     
 }
