@@ -59,11 +59,14 @@ public class UsuarioController {
         Page<UsuarioDTO> usuariosPorSucursal = usuarioService.buscarPorSucursal(codInterno, pageable);
         
         return ResponseEntity.status(HttpStatus.OK).body(usuariosPorSucursal);
+<<<<<<< HEAD
     }
 
     @GetMapping("validado")
     public ValidadoVentaDTO validarUsuarioVenta(@RequestParam String codSucursal, String run, String recetaMaximaRestriccion) {
         return usuarioService.validarUsuarioVenta(codSucursal, run, recetaMaximaRestriccion);
+=======
+>>>>>>> 679fbd926a40f03a0dba3ecdea387f75ca593011
     }
 
     @PostMapping
