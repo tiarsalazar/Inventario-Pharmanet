@@ -1,7 +1,6 @@
 package com.pharmanet.producto_service.service;
 
 import java.math.BigDecimal;
-import java.util.Map;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -101,19 +100,13 @@ public class ProductoService {
         productoRepository.delete(producto);
     }
 
-    public BigDecimal calcularPrecioTotalVenta(Map<String, Integer> productos) {
+    public BigDecimal calcularPrecioTotalVenta(String sku, int cantidad) {
         log.info("Se inicia procedimiento para calular precio de venta total");
-        log.debug("Productos<sku, precio>: {}", productos);
+        log.debug("sku: {} cantidad: {}", sku, cantidad);
 
+        Producto producto = productoRepository.findBySku(sku)
+                .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + sku));
 
-        BigDecimal precioTotal = new BigDecimal(0);
-        for (Map.Entry<String, Integer> p : productos.entrySet()) {
-            Producto producto = productoRepository.findBySku(p.getKey())
-                .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + p.getKey()));
-            
-            precioTotal = precioTotal.add(producto.getPrecioVenta().multiply(new BigDecimal(p.getValue())));
-        }
-
-        return precioTotal;
+        return producto.getPrecioVenta().multiply(new BigDecimal(cantidad));
     }
 }

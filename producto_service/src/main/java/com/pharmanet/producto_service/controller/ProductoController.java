@@ -1,7 +1,6 @@
 package com.pharmanet.producto_service.controller;
 
 import java.math.BigDecimal;
-import java.util.Map;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -69,8 +68,8 @@ public class ProductoController {
     }
 
     @PostMapping("/calcular")
-    public BigDecimal calcularPrecioTotalVenta(@RequestBody Map<String, Integer> productos) {
-        return productoService.calcularPrecioTotalVenta(productos);
+    public BigDecimal calcularPrecioTotalVenta(@RequestParam String sku, @RequestParam int cantidad) {
+        return productoService.calcularPrecioTotalVenta(sku, cantidad);
     }
 
     @PostMapping
@@ -92,5 +91,3 @@ public class ProductoController {
     }
 
 }
-
-// se realizan pruebas, y el producto_service esta listo para su despliegue
