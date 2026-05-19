@@ -68,10 +68,10 @@ public class InventarioController {
         return ResponseEntity.ok(invServ.obtenerMovimientoPorSku(sku, codSucursal, pageable));
     }
 
-    @GetMapping("/sucursales/{codSucursal}/usuarios/{rutUsuario}/movimientos")
+    @GetMapping("/sucursales/{codSucursal}/usuarios/{runUsuario}/movimientos")
     public ResponseEntity<Page<MovimientoResponse>> obtenerMovimientosPorRutUsuario(
-            @PathVariable String rutUsuario, @PathVariable String codSucursal, Pageable pageable) {
-        return ResponseEntity.ok(invServ.obtenerMovimientoPorUsuario(rutUsuario, codSucursal, pageable));
+            @PathVariable String runUsuario, @PathVariable String codSucursal, Pageable pageable) {
+        return ResponseEntity.ok(invServ.obtenerMovimientoPorUsuario(runUsuario, codSucursal, pageable));
     }
 
     @GetMapping("/sucursales/{codSucursal}/movimientos/fecha")
@@ -94,8 +94,8 @@ public class InventarioController {
     @PostMapping("/recepciones")
     public ResponseEntity<List<LoteResponse>> registrarRecepcion(
             @RequestBody @Valid RecepcionRequest request,
-            @RequestHeader("X-Rut-Usuario") String rutUsuario) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(invServ.registrarRecepcion(request, rutUsuario));
+            @RequestHeader("X-Run-Usuario") String runUsuario) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(invServ.registrarRecepcion(request, runUsuario));
     }
 
     @PostMapping("/ventas")

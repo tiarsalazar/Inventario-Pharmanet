@@ -37,20 +37,22 @@ CREATE TABLE movimientos (
     id BIGSERIAL PRIMARY KEY,
     tipo VARCHAR(20) NOT NULL,
     sku VARCHAR(30) NOT NULL,
-    codigo_lote VARCHAR(30) NOT NULL,
+    codigo_sucursal VARCHAR(10) NOT NULL,  
+    codigo_lote VARCHAR(30) NOT NULL,     
     cantidad INTEGER NOT NULL,
     fecha TIMESTAMP NOT NULL DEFAULT NOW(),
-    rut_usuario VARCHAR(20) NOT NULL,
+    run_usuario VARCHAR(20) NOT NULL,    
     lote_id BIGINT,
     CONSTRAINT fk_movimiento_lote FOREIGN KEY (lote_id)
         REFERENCES lotes(lote_id)
         ON DELETE SET NULL,
     CONSTRAINT chk_tipo_movimiento CHECK (
         tipo IN ('ENTRADA', 'SALIDA', 'AJUSTE', 'VENCIMIENTO')
-    ),
+        ),
     CONSTRAINT chk_cantidad_movimiento CHECK (cantidad > 0)
-);
+    );
 CREATE INDEX idx_movimientos_lote ON movimientos(lote_id);
 CREATE INDEX idx_movimientos_fecha ON movimientos(fecha);
-CREATE INDEX idx_movimientos_usuario ON movimientos(rut_usuario);
+CREATE INDEX idx_movimientos_usuario ON movimientos(run_usuario);
 CREATE INDEX idx_movimientos_sku ON movimientos(sku);
+CREATE INDEX idx_movimientos_sucursal ON movimientos(codigo_sucursal);

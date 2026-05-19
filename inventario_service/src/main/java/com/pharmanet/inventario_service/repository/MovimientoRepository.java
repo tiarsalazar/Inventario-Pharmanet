@@ -11,7 +11,7 @@ import com.pharmanet.inventario_service.entity.Movimiento;
 
 @Repository
 public interface MovimientoRepository extends JpaRepository<Movimiento, Long> {
-    Page<Movimiento> findByRutUsuarioAndCodSucursal(String rutUsuario, String codSucursal, Pageable pageable);
+    Page<Movimiento> findByRunUsuarioAndCodSucursal(String runUsuario, String codSucursal, Pageable pageable);
     Page<Movimiento> findByCodSucursalAndFechaBetween(String codSucursal, LocalDateTime inicio, LocalDateTime fin, Pageable pageable);
     Page<Movimiento> findByCodSucursal(String codSucursal, Pageable pageable);
     Page<Movimiento> findBySkuAndCodSucursal(String sku, String codSucursal, Pageable pageable);

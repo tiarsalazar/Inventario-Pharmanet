@@ -54,7 +54,7 @@ public class InventarioMapper {
             movimiento.getCodSucursal(),
             movimiento.getCantidad(),
             movimiento.getFecha(),
-            movimiento.getRutUsuario(),
+            movimiento.getRunUsuario(),
             movimiento.getCodLote());
     }
 }

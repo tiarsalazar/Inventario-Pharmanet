@@ -83,9 +83,9 @@ public class InventarioService {
     }
 
     @Transactional(readOnly = true)
-    public Page<MovimientoResponse> obtenerMovimientoPorUsuario(String rutUsuario, String codSucursal, Pageable pageable){
-        log.info("Obteniendo movimientos por usuario rut: {}", rutUsuario);
-        return movRepo.findByRutUsuarioAndCodSucursal(rutUsuario, codSucursal, pageable).map(mapper::toMovimientoResponse);
+    public Page<MovimientoResponse> obtenerMovimientoPorUsuario(String runUsuario, String codSucursal, Pageable pageable){
+        log.info("Obteniendo movimientos por usuario run: {}", runUsuario);
+        return movRepo.findByRunUsuarioAndCodSucursal(runUsuario, codSucursal, pageable).map(mapper::toMovimientoResponse);
     }
 
     @Transactional(readOnly = true)
@@ -105,15 +105,15 @@ public class InventarioService {
 
     // ==== PETICIONES ====
     // Recibe peticion de ABASTECIMIENTO para INGRESAR una recepcion.
-    public List<LoteResponse> registrarRecepcion(RecepcionRequest request, String rutUsuario){
+    public List<LoteResponse> registrarRecepcion(RecepcionRequest request, String runUsuario){
         log.info("Registrando recepcion para sucursal: {}", request.getCodSucursal());
 
-        validarSucursal(request.getCodSucursal());
+        //validarSucursal(request.getCodSucursal());
        
         List<LoteResponse> response = new ArrayList<>();
         for (DetalleRecepcionRequest detalleRequest : request.getDetalles()){
 
-            validarProducto(detalleRequest.getSku());
+            //validarProducto(detalleRequest.getSku());
 
             // Busca Inventario. Si no existe lo crea y persiste.
             Inventario inventario = invRepo.findBySkuAndCodSucursal(detalleRequest.getSku(), request.getCodSucursal())
@@ -133,7 +133,7 @@ public class InventarioService {
                 .equals(detalleRequest.getCodLote()))
                 .findFirst().orElseThrow(() -> new ResourceNotFoundException("Error al persistir lote"));
             
-            movRepo.save(crearMovimiento(TipoMovimiento.ENTRADA,inventario.getSku(),request.getCodSucursal(), detalleRequest.getCantidad(), rutUsuario, lotePersistido));
+            movRepo.save(crearMovimiento(TipoMovimiento.ENTRADA,inventario.getSku(),request.getCodSucursal(), detalleRequest.getCantidad(), runUsuario, lotePersistido));
 
             log.info("Lote {} registrado para sku {}", detalleRequest.getCodLote(), detalleRequest.getSku());
 
@@ -147,9 +147,9 @@ public class InventarioService {
         log.info("Procesando venta de sku: {}, en sucursal: {}, cantidad: {}",
             request.getSku(), request.getCodSucursal(), request.getCantidad());
 
-        validarSucursal(request.getCodSucursal());
+        //validarSucursal(request.getCodSucursal());
 
-        validarProducto(request.getSku());
+        //validarProducto(request.getSku());
 
         Inventario inventario = invRepo.findBySkuAndCodSucursal(request.getSku(), request.getCodSucursal())
             .orElseThrow(() -> new ResourceNotFoundException(
@@ -234,14 +234,14 @@ public class InventarioService {
 
     // ==== PRIVADOS ====
     // CREA un MOVIMIENTO 
-    private Movimiento crearMovimiento(TipoMovimiento tipo,String sku, String codSucursal, Integer cantidad, String rutUsuario, Lote lote ){
+    private Movimiento crearMovimiento(TipoMovimiento tipo,String sku, String codSucursal, Integer cantidad, String runUsuario, Lote lote ){
         Movimiento movimiento = new Movimiento();
         movimiento.setTipo(tipo);
         movimiento.setSku(sku);
         movimiento.setCodSucursal(codSucursal);
         movimiento.setCodLote(lote.getCodLote());
         movimiento.setCantidad(cantidad);
-        movimiento.setRutUsuario(rutUsuario);
+        movimiento.setRunUsuario(runUsuario);
         movimiento.setLote(lote);
         return movimiento;
     }

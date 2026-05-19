@@ -40,8 +40,8 @@ public class Movimiento {
     private Integer cantidad;
     @Column(name = "fecha", nullable = false, updatable = false)
     private LocalDateTime fecha = LocalDateTime.now();
-    @Column(name = "rut_usuario", nullable = false)
-    private String rutUsuario;
+    @Column(name = "run_usuario", nullable = false, length = 20)
+    private String runUsuario;
     @Column(name = "codigo_lote", nullable = false, length = 30)
     private String codLote;
 

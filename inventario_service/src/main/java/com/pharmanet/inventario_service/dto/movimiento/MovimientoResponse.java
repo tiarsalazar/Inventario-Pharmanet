@@ -18,6 +18,6 @@ public class MovimientoResponse {
     private String codSucursal;
     private Integer cantidad;
     private LocalDateTime fecha;
-    private String rutUsuario;
+    private String runUsuario;
     private String codLote;
 }
