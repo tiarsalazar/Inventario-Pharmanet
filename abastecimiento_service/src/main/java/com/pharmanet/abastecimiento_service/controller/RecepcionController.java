@@ -77,7 +77,7 @@ public class RecepcionController {
     @PostMapping("/registrar")
     public ResponseEntity<RecepcionResponse> registrarRecepcion(
             @RequestBody RecepcionRequest request, 
-            @RequestHeader("X-Rut-Usuario") String runUsuario) {
+            @RequestHeader("X-Run-Usuario") String runUsuario) {
         return ResponseEntity.status(HttpStatus.CREATED).body(recepServ.registrarRecepcion(request, runUsuario));
     }
 

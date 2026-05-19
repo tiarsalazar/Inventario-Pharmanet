@@ -108,12 +108,12 @@ public class InventarioService {
     public List<LoteResponse> registrarRecepcion(RecepcionRequest request, String runUsuario){
         log.info("Registrando recepcion para sucursal: {}", request.getCodSucursal());
 
-        //validarSucursal(request.getCodSucursal());
+        validarSucursal(request.getCodSucursal());
        
         List<LoteResponse> response = new ArrayList<>();
         for (DetalleRecepcionRequest detalleRequest : request.getDetalles()){
 
-            //validarProducto(detalleRequest.getSku());
+            validarProducto(detalleRequest.getSku());
 
             // Busca Inventario. Si no existe lo crea y persiste.
             Inventario inventario = invRepo.findBySkuAndCodSucursal(detalleRequest.getSku(), request.getCodSucursal())
@@ -147,9 +147,9 @@ public class InventarioService {
         log.info("Procesando venta de sku: {}, en sucursal: {}, cantidad: {}",
             request.getSku(), request.getCodSucursal(), request.getCantidad());
 
-        //validarSucursal(request.getCodSucursal());
+        validarSucursal(request.getCodSucursal());
 
-        //validarProducto(request.getSku());
+        validarProducto(request.getSku());
 
         Inventario inventario = invRepo.findBySkuAndCodSucursal(request.getSku(), request.getCodSucursal())
             .orElseThrow(() -> new ResourceNotFoundException(
