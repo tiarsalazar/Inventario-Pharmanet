@@ -45,19 +45,6 @@ public class Venta {
 
     @Column(name = "fecha_venta", nullable = false)
     private LocalDate fechaVenta;
-
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private EstadoPago estadoPago;
-
-    public Venta(Long id, String sku, String codSucursal, String runVendedor, int cantidad, LocalDate fechaVenta) {
-        this.id = id;
-        this.sku = sku;
-        this.codSucursal = codSucursal;
-        this.cantidad = cantidad;
-        this.runVendedor = runVendedor;
-        this.fechaVenta = fechaVenta;
-    }
     
     public Venta(String sku, String codSucursal, int cantidad, String runVendedor, LocalDate fechaVenta) {
         this.sku = sku;

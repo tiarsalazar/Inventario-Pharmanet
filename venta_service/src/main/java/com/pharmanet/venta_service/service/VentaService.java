@@ -33,6 +33,8 @@ public class VentaService {
 
     private final InventarioFeignClient inventarioFeignClient;
 
+    private final ProductoFeignClient productoFeignClient;
+
     private final UsuarioFeignClient usuarioFeignClient;
 
     private final VentaRepository ventaRepository;
@@ -50,7 +52,28 @@ public class VentaService {
         if(!ventaDto.getFechaVenta().equals(LocalDate.now())) {
             throw new IllegalArgumentException("La fecha de la venta no puede ser distinta a la fecha actual.");
         }
+
+        log.info("Obtiene clase de receta del producto");
+        log.debug("sku: {}", ventaDto.getSku());
+
+        try {
+            String receta = productoFeignClient.buscarClaseReceta(ventaDto.getSku());
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("No se ha encontrado un producto con el sku: " + ventaDto.getSku());
+        }
+
+        log.info("Valida que el usuario pueda vender producto");
+        log.debug("runEmpleado: {}, codSucursal: {}, receta: {}", ventaDto.getRunEmpleado(), ventaDto.getCodSucursal(), receta);
         
+        UsuarioRequest usuarioRequest = new UsuarioRequest();
+        ValidadoDto validacionVenta = usuarioFeignClient.validarUsuarioVenta(usuarioRequest);
+        
+        log.debug("mensajeVentaValidacion: {}", validacionVenta.getMessage());
+
+        if (!validacionVenta.getEstadoValidacion()) {
+            throw new FeignClientException(validacionVenta.getMessage());
+        }
+
         log.info("Envío de solicitud de venta a inventario");
         log.debug("codSucursal: {}, sku: {}, cantidad: {}", ventaDto.getCodSucursal(), ventaDto.getSku(), ventaDto.getCantidad());
         try {
@@ -60,27 +83,12 @@ public class VentaService {
             throw new ResourceNotFoundException("No existe un inventario con el código de la sucursal: " + ventaDto.getCodSucursal() + " ni el sku: " + ventaDto.getSku() + " o no hay stock disponible.");
         }
 
-        log.info("Valida que el usuario pueda vender producto");
-        log.debug("runEmpleado: {}", ventaDto.getRunEmpleado());
-        
-        UsuarioRequest usuarioRequest = new UsuarioRequest();
-        ValidadoDto validacionVenta = usuarioFeignClient.validarUsuarioVenta(usuarioRequest);
-
         log.info("Convierte ventaDto en modelo");
         Venta venta = VentaMapper(ventaDto);
-        venta.setEstadoPago(EstadoPago.PENDIENTE);
-
-        // VALIDAR SI EN LA SUCURSAL HAY ALGUIEN QUE PUEDA VENDERLE
-
-        // AGREGAR METODO DE REGISTRAR VENTA CONECTADO A INVENTARIO (VALIDAR QUE EXISTA STOCK Y QUE SE PUEDA VENDER EL PRODUCTO)
-
-        if (venta.getEstadoPago().equalsIgnorCase("PENDIENTE")) {
-            venta.setEstadoPago(EstadoPago.APROBADO);
-        }
 
         log.info("Agrega nueva venta");
         log.debug("venta: {}", venta);
-        return ventaRepository.save(venta);
+        return ventaRepository.save(venta).VentaMapper.toDto();
     }
 
     public Page<VentaDto> mostrarTodos(Pageable pageable) {
@@ -127,17 +135,37 @@ public class VentaService {
             .map(VentaMapper::toDto);
     }
 
-    public Page<VentaDto> contarTodoPorCodProd(Pageable pageable) {
+    public Page<VentaDto> calcularVentasPorProducto(Pageable pageable) {
         log.info("Inicia búsqueda de ventas de todos los productos");
-        return ventaRepository.countAllByCodProd(codProd, pageable)
+        return ventaRepository.countAllBySku(pageable)
             .map(VentaMapper::toDto);
     }
 
-    public Page<VentaDto> contarPorCodProd(String codProd, Pageable pageable) {
-        log.info("Inicia búsqueda de ventas por código del producto");
-        log.debug("codProd: {}", codProd);
+    public Page<VentaDto> calcularVentasPorSucursal(String sku, Pageable pageable) {
+        log.info("Inicia búsqueda de ventas por sku del producto");
+        log.debug("sku: {}", sku);
 
-        return ventaRepository.countByCodProdGroupByCodInterno(codProd, pageable)
+        return ventaRepository.countBySkuGroupByCodSucursal(sky, pageable)
             .map(VentaMapper::toDto);
+    }
+
+    public void actualizarVenta(VentaDto dto) {
+        log.info("Inicia actualización de dto");
+        log.debug("dto: {}", dto);
+        
+        if (!ventaRepository.findById(dto.getId()).isPresent()) {
+            throw new ResourceNotFoundException("No se encuentra el producto con el ID: " + dto.getId());
+        }
+
+        Venta venta = VentaMapper.getModel(dto);
+        ventaRepository.save(venta);
+    }
+
+    public void eliminarVenta(String id) {
+        log.info("Inicia eliminación de producto");
+        log.debug("id: {}", id);
+
+        ventaRepository.delete(ventaRepository.findById(id))
+            .orElseThrow(() -> new ResourceNotFoundException("No existe un producto con el id: " + id));
     }
 }

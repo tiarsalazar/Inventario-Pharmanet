@@ -15,12 +15,12 @@ public interface VentaRepository extends JpaRepository<Venta, Long> {
 
     Page<Venta> findByBetweenFechaVenta(LocalDate inicio, LocalDate termino, Pageable pageable);
 
-    @Query("SELECT v FROM Venta WHERE v.fechaVenta = :dia AND v.estadoPago = 'APROBADO'")
+    @Query("SELECT v FROM Venta WHERE v.fechaVenta = :dia")
     Page<Venta> findByDia(LocalDate dia, Pageable pageable);
 
-    @Query("SELECT v.sku, COUNT(*) FROM Venta WHERE v.estadoPago = 'APROBADO' GROUP BY v.sku")
+    @Query("SELECT v.sku, COUNT(*) FROM Venta GROUP BY v.sku")
     Page<Venta> countAllBySku(Pageable pageable);
 
-    @Query("SELECT v.codSucursal, COUNT(*) FROM venta WHERE v.sku = :sku AND v.estadoPago = 'APROBADO' GROUP BY v.codSucursal")
+    @Query("SELECT v.codSucursal, COUNT(*) FROM venta WHERE v.sku = :sku GROUP BY v.codSucursal")
     Page<Venta> countBySkuGroupByCodSucursal(String sku, Pageable pageable);
 }
