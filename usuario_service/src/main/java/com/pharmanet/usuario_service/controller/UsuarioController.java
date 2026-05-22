@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pharmanet.usuario_service.dto.UsuarioDTO;
+import com.pharmanet.usuario_service.dto.UsuarioRequest;
 import com.pharmanet.usuario_service.dto.ValidadoVentaDTO;
 import com.pharmanet.usuario_service.service.UsuarioService;
 
@@ -59,14 +60,11 @@ public class UsuarioController {
         Page<UsuarioDTO> usuariosPorSucursal = usuarioService.buscarPorSucursal(codInterno, pageable);
         
         return ResponseEntity.status(HttpStatus.OK).body(usuariosPorSucursal);
-<<<<<<< HEAD
     }
 
-    @GetMapping("validado")
-    public ValidadoVentaDTO validarUsuarioVenta(@RequestParam String codSucursal, String run, String recetaMaximaRestriccion) {
-        return usuarioService.validarUsuarioVenta(codSucursal, run, recetaMaximaRestriccion);
-=======
->>>>>>> 679fbd926a40f03a0dba3ecdea387f75ca593011
+    @PostMapping("validado")
+    public ValidadoVentaDTO validarUsuarioVenta(@RequestBody UsuarioRequest request) {
+        return usuarioService.validarUsuarioVenta(request);
     }
 
     @PostMapping

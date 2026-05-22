@@ -1,7 +1,10 @@
 package com.pharmanet.venta_service.exception;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -20,6 +23,32 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handlerVentaNotUniqueException(VentaNotUniqueException ex) {
         ErrorResponse error = new ErrorResponse(409, "Conflict", ex.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorResponse> handlerIllegalArgumentException(IllegalArgumentException ex) {
+        ErrorResponse error = new ErrorResponse(400, "Bad Request", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ErrorResponse> handlerMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
+        List<ValidationError> errores = ex.getBindingResult()
+            .getFieldErrors()
+            .stream()
+            .map(err -> new ValidationError(
+                err.getField(),
+                err.getDefaultMessage()))
+            .toList();
+
+        ErrorResponse error = new ErrorResponse(500, "Bad Request", "Se encontraron el/los siguiente(s) error(es):", errores);
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);    }
+
+    @ExceptionHandler(VentaInvalida.class)
+    public ResponseEntity<ErrorResponse> handlerVentaInvalida(VentaInvalida ex) {
+        ErrorResponse error = new ErrorResponse(400, "Bad Request", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
 
     @ExceptionHandler(Exception.class)

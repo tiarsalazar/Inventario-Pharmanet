@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.pharmanet.usuario_service.client.SucursalFeignClient;
 import com.pharmanet.usuario_service.dto.UsuarioDTO;
 import com.pharmanet.usuario_service.dto.UsuarioMapper;
+import com.pharmanet.usuario_service.dto.UsuarioRequest;
 import com.pharmanet.usuario_service.dto.ValidadoVentaDTO;
 import com.pharmanet.usuario_service.entity.Usuario;
 import com.pharmanet.usuario_service.exception.NotUniqueUsuarioException;
@@ -127,9 +128,13 @@ public class UsuarioService {
         usuarioRepository.delete(usuario);
     }
 
-    public ValidadoVentaDTO validarUsuarioVenta(String codSucursal, String run, String recetaMaximaRestriccion) {
+    public ValidadoVentaDTO validarUsuarioVenta(UsuarioRequest request) {
         log.info("Inicia validación de venta");
-        log.debug("run: {}, recetaMaximaRestriccion: {}", run, recetaMaximaRestriccion);
+        log.debug("run: {}, codSucursal: {}, receta: {}", request.getRun(), request.getCodSucursal(), request.getReceta());
+
+        String run = request.getRun();
+        String codSucursal = request.getCodSucursal();
+        String receta = request.getReceta();
 
         ValidadoVentaDTO validacion = new ValidadoVentaDTO();
         validacion.setEstadoValidacion(false);
@@ -153,7 +158,7 @@ public class UsuarioService {
             return validacion;
         }
 
-        if (!recetaMaximaRestriccion.equalsIgnoreCase("SIN RECETA")) {
+        if (!receta.equalsIgnoreCase("SIN RECETA")) {
             log.info("Valida presencia de un analista químico en la farmacia");
         
             List<Usuario> analistaQuimico = usuarioRepository.findByProfesion("analista quimico", null)
