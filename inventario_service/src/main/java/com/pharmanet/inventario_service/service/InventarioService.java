@@ -1,6 +1,6 @@
 package com.pharmanet.inventario_service.service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pharmanet.inventario_service.client.producto.ProductoClient;
-import com.pharmanet.inventario_service.client.sucursal.SucursalClient;
+import com.pharmanet.inventario_service.client.ProductoClient;
+import com.pharmanet.inventario_service.client.SucursalClient;
 import com.pharmanet.inventario_service.dto.inventario.InventarioDetailResponse;
 import com.pharmanet.inventario_service.dto.inventario.InventarioResponse;
 import com.pharmanet.inventario_service.dto.lote.LoteResponse;
@@ -89,9 +89,9 @@ public class InventarioService {
     }
 
     @Transactional(readOnly = true)
-    public Page<MovimientoResponse> obtenerMovimientosPorfecha(String codSucursal, LocalDateTime inicio, LocalDateTime fin, Pageable pageable){
+    public Page<MovimientoResponse> obtenerMovimientoPorFecha(String codSucursal, LocalDate inicio, LocalDate fin, Pageable pageable){
         log.info("Obteniendo movimientos entre: {} y {}", inicio, fin);
-        return movRepo.findByCodSucursalAndFechaBetween(codSucursal, inicio, fin, pageable)
+        return movRepo.findByCodSucursalAndFechaBetween(codSucursal, inicio.atStartOfDay(), fin.atTime(23, 59, 59), pageable)
             .map(mapper::toMovimientoResponse);
     }
 
@@ -103,7 +103,7 @@ public class InventarioService {
     }
 
 
-    // ==== PETICIONES ====
+    // ==== PETICIONES POST ====
     // Recibe peticion de ABASTECIMIENTO para INGRESAR una recepcion.
     public List<LoteResponse> registrarRecepcion(RecepcionRequest request, String runUsuario){
         log.info("Registrando recepcion para sucursal: {}", request.getCodSucursal());
@@ -115,29 +115,23 @@ public class InventarioService {
 
             validarProducto(detalleRequest.getSku());
 
-            // Busca Inventario. Si no existe lo crea y persiste.
-            Inventario inventario = invRepo.findBySkuAndCodSucursal(detalleRequest.getSku(), request.getCodSucursal())
-                .orElseGet(() -> {
-                Inventario nuevoInv = new Inventario();
-                nuevoInv.setSku(detalleRequest.getSku());
-                nuevoInv.setCodSucursal(request.getCodSucursal());
-                nuevoInv.setStockTotal(0);
-                return invRepo.save(nuevoInv);});
+            Inventario inventario = obtenerOCrearInventario(detalleRequest.getSku(), request.getCodSucursal());
 
             Lote lote = mapper.toLoteEntity(detalleRequest);
             inventario.addLote(lote);
             inventario.recalcularStock();
-            invRepo.saveAndFlush(inventario);
+            invRepo.save(inventario);
             Lote lotePersistido = inventario.getLotes().stream()
-                .filter(l -> l.getCodLote()
-                .equals(detalleRequest.getCodLote()))
-                .findFirst().orElseThrow(() -> new ResourceNotFoundException("Error al persistir lote"));
-            
-            movRepo.save(crearMovimiento(TipoMovimiento.ENTRADA,inventario.getSku(),request.getCodSucursal(), detalleRequest.getCantidad(), runUsuario, lotePersistido));
+                .filter(l -> l.getCodLote().equals(detalleRequest.getCodLote()))
+                .findFirst()
+                .orElseThrow(() -> new ResourceNotFoundException("Error al persistir lote"));
+
+            movRepo.save(crearMovimiento(TipoMovimiento.ENTRADA, inventario.getSku(), request.getCodSucursal(),
+                detalleRequest.getCantidad(), runUsuario, lotePersistido));
 
             log.info("Lote {} registrado para sku {}", detalleRequest.getCodLote(), detalleRequest.getSku());
 
-            response.add(mapper.toLoteResponse(lotePersistido));
+            response.add(mapper.toLoteResponse(lote));
         }
         return response;
     }
@@ -148,21 +142,96 @@ public class InventarioService {
             request.getSku(), request.getCodSucursal(), request.getCantidad());
 
         validarSucursal(request.getCodSucursal());
-
         validarProducto(request.getSku());
 
-        Inventario inventario = invRepo.findBySkuAndCodSucursal(request.getSku(), request.getCodSucursal())
-            .orElseThrow(() -> new ResourceNotFoundException(
-                "Inventario no encontrado para sku: " + request.getSku()));
+        Inventario inventario = obtenerInventario(request.getSku(), request.getCodSucursal());
 
-        if (inventario.getStockTotal() < request.getCantidad()){
-            log.warn("Stock insuficiente para sku: {}, disponible: {}, solicitado: {}",
-            request.getSku(), inventario.getStockTotal(), request.getCantidad());
-            throw new BusinessException("Stock insuficiente para sku: " + request.getSku() 
-            + ". Disponible: " + inventario.getStockTotal() 
-            + ", Solicitado: " + request.getCantidad());
+        validarStockDisponible(inventario, request.getCantidad());
+
+        descontarStock(inventario, request);
+        
+        inventario.recalcularStock();
+        invRepo.save(inventario);
+
+        log.info("Venta procesada para sku: {}, cantidad: {}, stock restante: {}",
+        request.getSku(), request.getCantidad(), inventario.getStockTotal());
+    }
+
+    // ===== METODOS PUT =====
+    // cambia el ESTADO de un LOTE
+    public void cambiarEstadoLote(String sku, String codSucursal, String codLote, EstadoLote nuevoEstado){
+        log.info("Cambiando estado lote {} de sku {} en sucursal {}", codLote, sku, codSucursal);
+
+        List<Lote> lotes = loteRepo.findByCodLoteAndInventario_SkuAndInventario_CodSucursal(codLote, sku, codSucursal);
+        if (lotes.isEmpty()){
+            throw new ResourceNotFoundException("Lote no encontrado: "+codLote+" para sku: "+sku+" en sucursal: "+codSucursal);
+        } 
+        Inventario inventario = lotes.get(0). getInventario();
+        lotes.forEach(lote -> lote.setEstado(nuevoEstado));
+        inventario.recalcularStock();
+        invRepo.save(inventario);
+        log.info("{} lotes actualizados a estado {}", lotes.size(), nuevoEstado);
+    }
+
+    // METODOS DELETE 
+    // ELIMINA un INVENTARIO solo si su STOCK TOTAL es 0.
+    public void eliminarInventario(String sku, String codSucursal){
+        log.info("Eliminando inventario sku: {} en sucursal: {}", sku, codSucursal);
+
+        Inventario inventario = obtenerInventario(sku, codSucursal);
+        if (inventario.getStockTotal() > 0){
+            throw new BusinessException("No se puede eliminar un inventario con stock activo: " + inventario.getStockTotal() + " unidades.");
         }
+        invRepo.delete(inventario);
+        log.info("Inventario sku: {} en sucursal: {} eliminado", sku, codSucursal);
+    }
 
+    // ==== METODOS PRIVADOS ====
+
+    // Busca un inventario
+    private Inventario obtenerInventario(String sku, String codSucursal){
+         return invRepo.findBySkuAndCodSucursal(sku, codSucursal)
+            .orElseThrow(() -> new ResourceNotFoundException(
+                "Inventario no encontrado para sku:"+ sku +" en sucursal: "+ codSucursal));
+    }
+
+    // Busca Inventario. Si no existe lo crea y persiste.
+    private Inventario obtenerOCrearInventario(String sku, String codSucursal){
+        return invRepo.findBySkuAndCodSucursal(sku, codSucursal)
+                .orElseGet(() -> {
+                Inventario nuevoInv = new Inventario();
+                nuevoInv.setSku(sku);
+                nuevoInv.setCodSucursal(codSucursal);
+                nuevoInv.setStockTotal(0);
+                return invRepo.save(nuevoInv);});
+    }
+
+    // CREA un MOVIMIENTO 
+    private Movimiento crearMovimiento(TipoMovimiento tipo,String sku, String codSucursal, Integer cantidad, String runUsuario, Lote lote ){
+        Movimiento movimiento = new Movimiento();
+        movimiento.setTipo(tipo);
+        movimiento.setSku(sku);
+        movimiento.setCodSucursal(codSucursal);
+        movimiento.setCodLote(lote.getCodLote());
+        movimiento.setCantidad(cantidad);
+        movimiento.setRunUsuario(runUsuario);
+        movimiento.setLote(lote);
+        return movimiento;
+    }
+
+    //Valida stock disponible vs stock solicitado
+    private void validarStockDisponible(Inventario inventario, int cantidadSolicitada){
+        if (inventario.getStockTotal() < cantidadSolicitada){
+            log.warn("Stock insuficiente para sku: {}, disponible: {}, solicitado: {}",
+            inventario.getSku(), inventario.getStockTotal(), cantidadSolicitada);
+            throw new BusinessException("Stock insuficiente para sku: " + inventario.getSku() 
+            + ". Disponible: " + inventario.getStockTotal() 
+            + ", Solicitado: " + cantidadSolicitada);
+        }
+    }
+
+    // Procesa el descuento de stock para venta
+    private void descontarStock(Inventario inventario, VentaRequest request){
         List<Lote> lotesDisponibles = loteRepo
         .findByInventarioAndEstadoAndCantidadGreaterThanOrderByFechaVencimientoAsc(
             inventario, EstadoLote.ACTIVO, 0);
@@ -178,74 +247,19 @@ public class InventarioService {
 
             if (lote.getCantidad() == 0) lote.setEstado(EstadoLote.AGOTADO);
 
-            Lote guardado = loteRepo.save(lote);
-
             movRepo.save(crearMovimiento(TipoMovimiento.SALIDA,
-                 inventario.getSku(), request.getCodSucursal(), descuento, request.getRunVendedor(), guardado));
+                 inventario.getSku(), request.getCodSucursal(), descuento, request.getRunVendedor(), lote));
 
-            log.info(("Lote {} descontado en {} unidades, restantes: {}"),
+            log.info("Lote {} descontado en {} unidades, restantes: {}",
             lote.getCodLote(), descuento, lote.getCantidad());
         }
-
         if (cantidadPendiente > 0) {
             log.error("Inconsistencia crítica: El stock de los lotes no coincide con el total del inventario para SKU: {}", request.getSku());
             throw new BusinessException("No se pudo procesar la venta por inconsistencia en existencias.");
         }
-        
-        inventario.recalcularStock();
-        invRepo.save(inventario);
-
-        log.info("Venta procesada para sku: {}, cantidad: {}, stock restante: {}",
-        request.getSku(), request.getCantidad(), inventario.getStockTotal());
-    }
-        
-
-    // ===== METODOS PUT =====
-    // cambia el ESTADO de un LOTE
-    public void cambiarEstadoLote(String sku, String codSucursal, String codLote, EstadoLote nuevoEstado){
-        log.info("Cambiando estado lote {} de sku {} en sucursal {}", codLote, sku, codSucursal);
-
-        List<Lote> lotes = loteRepo.findByCodLoteAndInventario_SkuAndInventario_CodSucursal(codLote, sku, codSucursal);
-        if (lotes.isEmpty()){
-            throw new ResourceNotFoundException("Lote no encontrado: "+codLote+" para sku: "+sku+" en sucursal: "+codSucursal);
-        } 
-        lotes.forEach(lote -> {
-            lote.setEstado(nuevoEstado);
-            loteRepo.save(lote);
-            lote.getInventario().recalcularStock();
-            invRepo.save(lote.getInventario());
-        });
-        log.info("{} lotes actualizados a estado {}", lotes.size(), nuevoEstado);
     }
 
-    // METODOS DELETE 
-    // ELIMINA un INVENTARIO solo si su STOCK TOTAL es 0.
-    public void eliminarInventario(String sku, String codSucursal){
-        log.info("Eliminando inventario sku: {} en sucursal: {}", sku, codSucursal);
-
-        Inventario inventario = invRepo.findBySkuAndCodSucursal(sku, codSucursal)
-            .orElseThrow(() -> new ResourceNotFoundException("Inventario no encontrado para sku:"+ sku +" en sucursal: "+ codSucursal));
-        if (inventario.getStockTotal() > 0){
-            throw new BusinessException("No se puede eliminar un inventario con stock activo: " + inventario.getStockTotal() + " unidades.");
-        }
-        invRepo.delete(inventario);
-        log.info("Inventario sku: {} en sucursal: {} eliminado", sku, codSucursal);
-    }
-
-    // ==== PRIVADOS ====
-    // CREA un MOVIMIENTO 
-    private Movimiento crearMovimiento(TipoMovimiento tipo,String sku, String codSucursal, Integer cantidad, String runUsuario, Lote lote ){
-        Movimiento movimiento = new Movimiento();
-        movimiento.setTipo(tipo);
-        movimiento.setSku(sku);
-        movimiento.setCodSucursal(codSucursal);
-        movimiento.setCodLote(lote.getCodLote());
-        movimiento.setCantidad(cantidad);
-        movimiento.setRunUsuario(runUsuario);
-        movimiento.setLote(lote);
-        return movimiento;
-    }
-
+    // Valida existencia de producto con FEIGN
     private void validarProducto(String sku) {
         try {
             productoClient.buscarPorSku(sku);
@@ -253,11 +267,10 @@ public class InventarioService {
             throw new ResourceNotFoundException("Producto no encontrado con sku: " + sku);
         } catch (FeignException e) {
             throw new ServiceCommunicationException("Error al comunicarse con el servicio de productos.");
-        } catch (Exception e) {
-            throw new ServiceCommunicationException("Error inesperado al conectar con productos.");
         }
     }
 
+    // Valida existencia de Sucursal con FEIGN
     private void validarSucursal(String codSucursal) {
         try {
             sucursalClient.buscarSucursal(codSucursal);
@@ -265,8 +278,6 @@ public class InventarioService {
             throw new ResourceNotFoundException("Sucursal no encontrada con codigo sucursal: " + codSucursal);
         } catch (FeignException e) {
             throw new ServiceCommunicationException("Error al comunicarse con el servicio de sucursal.");
-        } catch (Exception e) {
-            throw new ServiceCommunicationException("Error inesperado al conectar con sucursal.");
         }
     }
 }

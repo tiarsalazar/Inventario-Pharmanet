@@ -1,7 +1,5 @@
 package com.pharmanet.inventario_service.dto.venta;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -17,10 +15,9 @@ import lombok.Setter;
 public class VentaRequest {
     @NotBlank(message = "Código de producto obligatorio")
     @Size(max = 30, message = "Sku no debe superar 30 caracteres")
-    @JsonProperty("codProd")
     private String sku;
     @NotBlank(message = "Código sucursal obligatorio")
-    private String codSucursal; // codInterno/codInventario
+    private String codSucursal; 
     @NotBlank(message = "Run vendedor obligatorio")
     private String runVendedor;
     @NotNull(message = "Cantidad es obligatoria")

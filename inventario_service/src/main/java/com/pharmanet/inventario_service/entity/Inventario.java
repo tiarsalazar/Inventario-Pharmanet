@@ -28,14 +28,14 @@ import lombok.Setter;
     name = "inventario",
     uniqueConstraints = @UniqueConstraint(
         name = "uk_sku_sucursal",
-        columnNames = {"sku", "cod_sucursal"}))
+        columnNames = {"sku", "codigo_sucursal"}))
 public class Inventario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "sku", nullable = false, length = 30)
     private String sku;
-    @Column(name = "cod_sucursal", nullable = false, length = 10)
+    @Column(name = "codigo_sucursal", nullable = false, length = 10)
     private String codSucursal;
     @Column(name = "stock_total", nullable = false)
     private Integer stockTotal;

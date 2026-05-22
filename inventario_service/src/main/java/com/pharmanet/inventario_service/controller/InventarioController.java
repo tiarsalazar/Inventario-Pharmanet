@@ -39,22 +39,21 @@ public class InventarioController {
     private final InventarioService invServ;
 
     // ===== PETICIONES GET =====
-
     // INVENTARIO 
 
-    @GetMapping("/sucursales/{codSucursal}/productos/{sku}")
+    @GetMapping("/{codSucursal}/productos/{sku}")
     public ResponseEntity<InventarioResponse> obtenerInventarioPorSku(
-        @PathVariable String sku, @PathVariable String codSucursal){
+        @PathVariable String codSucursal, @PathVariable String sku){
         return ResponseEntity.ok(invServ.obtenerInventarioPorSku(sku, codSucursal));
     }
 
-    @GetMapping("/sucursales/{codSucursal}/productos/{sku}/detalles")
+    @GetMapping("/{codSucursal}/productos/{sku}/detalles")
     public ResponseEntity<InventarioDetailResponse> obtenerInventarioDetailPorSku(
-        @PathVariable String sku, @PathVariable String codSucursal){
+        @PathVariable String codSucursal, @PathVariable String sku){
         return ResponseEntity.ok(invServ.obtenerInventarioDetailPorSku(sku, codSucursal));
     }
 
-    @GetMapping("/sucursales/{codSucursal}")
+    @GetMapping("/{codSucursal}")
     public ResponseEntity<Page<InventarioResponse>> obtenerInventarioPorSucursal(
         @PathVariable String codSucursal, Pageable pageable) {
         return ResponseEntity.ok(invServ.obtenerInventarioPorSucursal(codSucursal, pageable));
@@ -62,28 +61,28 @@ public class InventarioController {
 
     // MOVIMIENTOS
 
-    @GetMapping("/sucursales/{codSucursal}/productos/{sku}/movimientos")
+    @GetMapping("/{codSucursal}/productos/{sku}/movimientos")
     public ResponseEntity<Page<MovimientoResponse>> obtenerMovimientosPorSku(
-            @PathVariable String sku, @PathVariable String codSucursal, Pageable pageable) {
+            @PathVariable String codSucursal, @PathVariable String sku, Pageable pageable) {
         return ResponseEntity.ok(invServ.obtenerMovimientoPorSku(sku, codSucursal, pageable));
     }
 
-    @GetMapping("/sucursales/{codSucursal}/usuarios/{runUsuario}/movimientos")
+    @GetMapping("/{codSucursal}/usuarios/{runUsuario}/movimientos")
     public ResponseEntity<Page<MovimientoResponse>> obtenerMovimientosPorRutUsuario(
-            @PathVariable String runUsuario, @PathVariable String codSucursal, Pageable pageable) {
+            @PathVariable String codSucursal, @PathVariable String runUsuario, Pageable pageable) {
         return ResponseEntity.ok(invServ.obtenerMovimientoPorUsuario(runUsuario, codSucursal, pageable));
     }
 
-    @GetMapping("/sucursales/{codSucursal}/movimientos/fecha")
+    @GetMapping("/{codSucursal}/movimientos/fecha")
     public ResponseEntity<Page<MovimientoResponse>> obtenerMovimientosPorFecha(
             @PathVariable String codSucursal,
             @RequestParam LocalDate inicio,
             @RequestParam LocalDate fin, Pageable pageable) {
-        return ResponseEntity.ok(invServ.obtenerMovimientosPorfecha(
-            codSucursal, inicio.atStartOfDay(), fin.atTime(23, 59, 59), pageable));
+        return ResponseEntity.ok(invServ.obtenerMovimientoPorFecha(
+            codSucursal, inicio, fin, pageable));
     }
 
-    @GetMapping("/sucursales/{codSucursal}/movimientos")
+    @GetMapping("/{codSucursal}/movimientos")
     public ResponseEntity<Page<MovimientoResponse>> obtenerMovimientosPorSucursal(
             @PathVariable String codSucursal, Pageable pageable) {
         return ResponseEntity.ok(invServ.obtenerMovimientoPorSucursal(codSucursal, pageable));
@@ -104,24 +103,21 @@ public class InventarioController {
         return ResponseEntity.noContent().build();
     }
 
-
     // ==== PETICIONES PUT/PATCH ====
 
-    @PutMapping("/{sku}/{codSucursal}/lotes/{codLote}/estado")
+    @PutMapping("/{codSucursal}/productos/{sku}/lotes/{codLote}/estado")
     public ResponseEntity<Void> cambiarEstadoLote(
-            @PathVariable String sku, @PathVariable String codSucursal, @PathVariable String codLote,
+            @PathVariable String codSucursal, @PathVariable String sku, @PathVariable String codLote,
             @RequestParam EstadoLote nuevoEstado) {
         invServ.cambiarEstadoLote(sku, codSucursal, codLote, nuevoEstado);
         return ResponseEntity.noContent().build();
     }
 
-
     // ==== PETICIONES DELETE ====
 
-    @DeleteMapping("/{sku}/{codSucursal}")
-    public ResponseEntity<Void> eliminarInventario(@PathVariable String sku, @PathVariable String codSucursal){
+    @DeleteMapping("/{codSucursal}/productos/{sku}")
+    public ResponseEntity<Void> eliminarInventario(@PathVariable String codSucursal, @PathVariable String sku){
         invServ.eliminarInventario(sku, codSucursal);
         return ResponseEntity.noContent().build();
     }
-
 }
