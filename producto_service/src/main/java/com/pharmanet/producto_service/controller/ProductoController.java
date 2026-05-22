@@ -67,6 +67,12 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.OK).body(prodPorPrecioVenta);
     }
 
+    @GetMapping("/receta/{sku}")
+    public String obtenerReceta(@PathVariable String sku) {
+        return productoService.obtenerReceta(sku);
+    }
+    
+
     @PostMapping("/calcular")
     public BigDecimal calcularPrecioTotalVenta(@RequestParam String sku, @RequestParam int cantidad) {
         return productoService.calcularPrecioTotalVenta(sku, cantidad);

@@ -100,6 +100,14 @@ public class ProductoService {
         productoRepository.delete(producto);
     }
 
+    public String obtenerReceta(String sku) {
+        log.info("Inicia búsqueda de tipo de receta");
+        log.debug(sku);
+        Producto producto = productoRepository.findBySku(sku).orElseThrow(() -> new ResourceNotFoundException("No existe un producto con el sku: " + sku));
+        
+        return producto.getReceta().toString();
+    }
+
     public BigDecimal calcularPrecioTotalVenta(String sku, int cantidad) {
         log.info("Se inicia procedimiento para calular precio de venta total");
         log.debug("sku: {} cantidad: {}", sku, cantidad);

@@ -7,20 +7,20 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.pharmanet.venta_service.client.InventarioFeignClient;
-import com.pharmanet.venta_service.client.SucursalFeignClient;
+import com.pharmanet.venta_service.client.ProductoFeignClient;
 import com.pharmanet.venta_service.client.UsuarioFeignClient;
 import com.pharmanet.venta_service.dto.ValidadoDto;
 import com.pharmanet.venta_service.dto.VentaDto;
 import com.pharmanet.venta_service.dto.VentaMapper;
-import com.pharmanet.venta_service.entity.EstadoPago;
 import com.pharmanet.venta_service.entity.Venta;
 import com.pharmanet.venta_service.exception.ResourceNotFoundException;
+import com.pharmanet.venta_service.exception.VentaInvalida;
 import com.pharmanet.venta_service.exception.VentaNotUniqueException;
 import com.pharmanet.venta_service.repository.VentaRepository;
 import com.pharmanet.venta_service.request.InventarioRequest;
 import com.pharmanet.venta_service.request.UsuarioRequest;
 
-import feign.FeignException.FeignClientException;
+import feign.FeignException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -48,16 +48,19 @@ public class VentaService {
             throw new VentaNotUniqueException("Ya existe una venta con el id: " + ventaDto.getId());
         }
 
-        log.info("Valida que la fecha de la venta sea exactamente a la de ingreso");
+        log.info("Valida que la fecha de la venta sea exactamente igual a la de ingreso");
         if(!ventaDto.getFechaVenta().equals(LocalDate.now())) {
-            throw new IllegalArgumentException("La fecha de la venta no puede ser distinta a la fecha actual.");
+            throw new IllegalArgumentException("La fecha de la venta no puede ser distinta a la fecha actual.\nFecha ingresada: "
+            + ventaDto.getFechaVenta()
+            + "\nFecha actual: " + LocalDate.now());
         }
 
-        log.info("Obtiene clase de receta del producto");
+        log.info("Obtiene tipo de receta del producto");
         log.debug("sku: {}", ventaDto.getSku());
 
+        String receta;
         try {
-            String receta = productoFeignClient.buscarClaseReceta(ventaDto.getSku());
+            receta = productoFeignClient.obtenerReceta(ventaDto.getSku());
         } catch (Exception e) {
             throw new ResourceNotFoundException("No se ha encontrado un producto con el sku: " + ventaDto.getSku());
         }
@@ -65,13 +68,13 @@ public class VentaService {
         log.info("Valida que el usuario pueda vender producto");
         log.debug("runEmpleado: {}, codSucursal: {}, receta: {}", ventaDto.getRunEmpleado(), ventaDto.getCodSucursal(), receta);
         
-        UsuarioRequest usuarioRequest = new UsuarioRequest();
+        UsuarioRequest usuarioRequest = new UsuarioRequest(ventaDto.getRunEmpleado(), ventaDto.getCodSucursal(), receta);
         ValidadoDto validacionVenta = usuarioFeignClient.validarUsuarioVenta(usuarioRequest);
         
         log.debug("mensajeVentaValidacion: {}", validacionVenta.getMessage());
 
-        if (!validacionVenta.getEstadoValidacion()) {
-            throw new FeignClientException(validacionVenta.getMessage());
+        if (!validacionVenta.isEstadoValidacion()) {
+            throw new VentaInvalida(validacionVenta.getMessage());
         }
 
         log.info("Envío de solicitud de venta a inventario");
@@ -79,16 +82,16 @@ public class VentaService {
         try {
             InventarioRequest inventarioRequest = new InventarioRequest(ventaDto.getCodSucursal(), ventaDto.getSku(), ventaDto.getCantidad());
             inventarioFeignClient.procesarVenta(inventarioRequest);
-        } catch (FeignClientException e){
-            throw new ResourceNotFoundException("No existe un inventario con el código de la sucursal: " + ventaDto.getCodSucursal() + " ni el sku: " + ventaDto.getSku() + " o no hay stock disponible.");
+        } catch (FeignException e){
+            throw new VentaInvalida("No existe un inventario con el código de la sucursal: " + ventaDto.getCodSucursal() + " ni el sku: " + ventaDto.getSku() + " o no hay stock disponible.");
         }
 
         log.info("Convierte ventaDto en modelo");
-        Venta venta = VentaMapper(ventaDto);
+        Venta venta = VentaMapper.toModel(ventaDto);
 
         log.info("Agrega nueva venta");
         log.debug("venta: {}", venta);
-        return ventaRepository.save(venta).VentaMapper.toDto();
+        return VentaMapper.toDto(ventaRepository.save(venta));
     }
 
     public Page<VentaDto> mostrarTodos(Pageable pageable) {
@@ -101,7 +104,7 @@ public class VentaService {
         log.debug("ID: {}", id);
     
         Venta venta = ventaRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("No existe una venta con el id: " + ventaDto.getId()));
+            .orElseThrow(() -> new ResourceNotFoundException("No existe una venta con el id: " + id));
         
         log.info("Convierte a dto y retorna");
         return VentaMapper.toDto(venta);
@@ -145,7 +148,7 @@ public class VentaService {
         log.info("Inicia búsqueda de ventas por sku del producto");
         log.debug("sku: {}", sku);
 
-        return ventaRepository.countBySkuGroupByCodSucursal(sky, pageable)
+        return ventaRepository.countBySkuGroupByCodSucursal(sku, pageable)
             .map(VentaMapper::toDto);
     }
 
@@ -157,15 +160,17 @@ public class VentaService {
             throw new ResourceNotFoundException("No se encuentra el producto con el ID: " + dto.getId());
         }
 
-        Venta venta = VentaMapper.getModel(dto);
+        Venta venta = VentaMapper.toModel(dto);
         ventaRepository.save(venta);
     }
 
-    public void eliminarVenta(String id) {
+    public void eliminarVenta(Long id) {
         log.info("Inicia eliminación de producto");
         log.debug("id: {}", id);
 
-        ventaRepository.delete(ventaRepository.findById(id))
+        Venta venta = ventaRepository.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("No existe un producto con el id: " + id));
+
+        ventaRepository.delete(venta);
     }
 }
