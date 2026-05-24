@@ -320,3 +320,53 @@ Caused by: java.net.UnknownHostException: Host desconocido (adb.sa-santiago-1.or
 2026-05-24T17:58:45.114-04:00  INFO 15264 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-24T17:58:45.884-04:00  INFO 15264 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-05-24T17:58:46.743-04:00  INFO 15264 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T18:03:35.979-04:00  INFO 18728 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.9 with PID 18728 (C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service)
+2026-05-24T18:03:36.004-04:00  INFO 18728 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T18:03:36.399-04:00  INFO 18728 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\bobip\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/bobip/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-24T18:03:36.399-04:00  INFO 18728 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T18:03:36.399-04:00  INFO 18728 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T18:03:41.036-04:00  INFO 18728 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T18:03:41.352-04:00  INFO 18728 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 240 ms. Found 1 JPA repository interface.
+2026-05-24T18:03:42.220-04:00  INFO 18728 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-24T18:03:44.965-04:00  INFO 18728 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-24T18:03:45.058-04:00  INFO 18728 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T18:03:45.058-04:00  INFO 18728 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T18:03:45.380-04:00  INFO 18728 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 8964 ms
+2026-05-24T18:03:49.007-04:00  INFO 18728 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T18:03:55.483-04:00  INFO 18728 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@799e54e3
+2026-05-24T18:03:55.508-04:00  INFO 18728 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T18:03:55.695-04:00  INFO 18728 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-05-24T18:03:59.095-04:00  INFO 18728 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.657s)
+2026-05-24T18:03:59.813-04:00  INFO 18728 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-05-24T18:03:59.947-04:00  INFO 18728 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-05-24T18:04:01.055-04:00  INFO 18728 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T18:04:01.643-04:00  INFO 18728 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T18:04:05.467-04:00  INFO 18728 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T18:04:06.753-04:00  INFO 18728 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T18:04:13.522-04:00  INFO 18728 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T18:04:13.580-04:00  INFO 18728 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T18:04:14.158-04:00  INFO 18728 --- [usuario-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T18:04:18.272-04:00  WARN 18728 --- [usuario-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T18:04:21.938-04:00  INFO 18728 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-05-24T18:04:22.008-04:00  INFO 18728 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Started UsuarioServiceApplication in 48.888 seconds (process running for 53.127)
+2026-05-24T18:06:32.759-04:00  INFO 18728 --- [usuario-service] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T18:06:32.763-04:00  INFO 18728 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T18:06:32.785-04:00  INFO 18728 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2026-05-24T18:06:33.123-04:00 ERROR 18728 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.exception.GlobalHandlerException   : Error: No static resource api/v1/usuario/validado for request '/api/v1/usuario/validado'.
+2026-05-24T18:06:33.832-04:00  WARN 18728 --- [usuario-service] [http-nio-8082-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/usuario/validado for request '/api/v1/usuario/validado'.]
+2026-05-24T18:07:09.455-04:00  INFO 18728 --- [usuario-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T18:07:10.368-04:00  INFO 18728 --- [usuario-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T18:07:10.421-04:00  INFO 18728 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T18:07:10.441-04:00  INFO 18728 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T18:07:11.222-04:00  INFO 18728 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
