@@ -74,7 +74,7 @@ public class RecepcionController {
     
     // ==== PETICIONES POST ====
 
-    @PostMapping("/Sucursales/{codSucursal}/registrar")
+    @PostMapping("/sucursales/{codSucursal}/registrar")
     public ResponseEntity<RecepcionResponse> registrarRecepcion(
             @PathVariable String codSucursal, @RequestBody RecepcionRequest request,
             @RequestHeader("X-Run-Usuario") String runUsuario) {
