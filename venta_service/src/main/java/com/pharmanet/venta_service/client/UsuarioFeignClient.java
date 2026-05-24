@@ -10,6 +10,6 @@ import com.pharmanet.venta_service.request.UsuarioRequest;
 @FeignClient(name = "usuario-service", url = "http://localhost:8082")
 public interface UsuarioFeignClient {
 
-    @PostMapping("/api/v1/usuario/validado")
+    @PostMapping("/api/v1/usuarios/validado")
     ValidadoDto validarUsuarioVenta(@RequestBody UsuarioRequest request);
 }
