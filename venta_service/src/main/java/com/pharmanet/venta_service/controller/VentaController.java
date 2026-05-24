@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@RequestMapping("venta_service")
+@RequestMapping("/api/v1/ventas")
 @RequiredArgsConstructor
 @Slf4j
 public class VentaController {
@@ -37,7 +37,7 @@ public class VentaController {
     private final VentaService ventaService;
 
     @GetMapping
-    public ResponseEntity<Page<VentaDto>> mostrarTodos(@PageableDefault(size = 10, sort = {"fechaVenta", "nombreComercial", "sku"}) Pageable pageable) {
+    public ResponseEntity<Page<VentaDto>> mostrarTodos(@PageableDefault(size = 10, sort = {"fechaVenta", "sku"}) Pageable pageable) {
         log.info("Inicia búsqueda de todas las ventas");
         Page<VentaDto> ventas = ventaService.mostrarTodos(pageable);
         return ResponseEntity.status(HttpStatus.OK).body(ventas);
@@ -45,8 +45,8 @@ public class VentaController {
     
 
     @GetMapping("/{id}")
-    public ResponseEntity<VentaDto> buscarPorId(@PathVariable Long id) {
-        VentaDto ventaDto = ventaService.buscarPorId(id);
+    public ResponseEntity<VentaDto> buscarPorCodVenta(@PathVariable Long codVenta) {
+        VentaDto ventaDto = ventaService.buscarPorCodVenta(codVenta);
         return ResponseEntity.status(HttpStatus.OK).body(ventaDto);
     }
 
@@ -54,14 +54,14 @@ public class VentaController {
     public ResponseEntity<Page<VentaDto>> buscarPorFechas(
         @Valid @RequestParam LocalDate inicio,
         @RequestParam @DateTimeFormat(iso = ISO.DATE) LocalDate termino,
-        @PageableDefault (size = 10, sort = {"fechaVenta", "nombreComercial", "sku"}) Pageable pageable) {
+        @PageableDefault (size = 10, sort = {"fechaVenta", "sku"}) Pageable pageable) {
         Page<VentaDto> resultado = ventaService.buscarPorFechas(inicio, termino, pageable);
         return ResponseEntity.status(HttpStatus.OK).body(resultado);
     }
     
     @GetMapping("/dia/{dia}")
     public ResponseEntity<Page<VentaDto>> buscarPorDia(@PathVariable @DateTimeFormat (iso = ISO.DATE) LocalDate dia,
-        @PageableDefault(size = 10, sort= {"nombreComercial", "sku"}) Pageable pageable) {
+        @PageableDefault(size = 10, sort= "sku") Pageable pageable) {
         Page<VentaDto> ventasPorDia = ventaService.buscarPorDia(dia, pageable);
         return ResponseEntity.status(HttpStatus.OK).body(ventasPorDia);
     }

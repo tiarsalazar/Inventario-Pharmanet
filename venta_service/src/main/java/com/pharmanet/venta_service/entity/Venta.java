@@ -28,10 +28,13 @@ public class Venta {
     @Column(name = "venta_id")
     private Long id;
 
+    @Column(name = "cod_venta", nullable = false)
+    private Long codVenta;
+
     @Column(nullable = false)
     private String sku;
 
-    @Column(name = "cod_sucursal", nullable = false)
+    @Column(name = "cod_sucursal", nullable = false, unique = true)
     private String codSucursal;
 
     @Column(name = "run_vendedor", nullable = false)
@@ -44,7 +47,8 @@ public class Venta {
     @Column(name = "fecha_venta", nullable = false)
     private LocalDate fechaVenta;
     
-    public Venta(String sku, String codSucursal, int cantidad, String runVendedor, LocalDate fechaVenta) {
+    public Venta(Long codVenta, String sku, String codSucursal, int cantidad, String runVendedor, LocalDate fechaVenta) {
+        this.codVenta = codVenta;
         this.sku = sku;
         this.codSucursal = codSucursal;
         this.cantidad = cantidad;

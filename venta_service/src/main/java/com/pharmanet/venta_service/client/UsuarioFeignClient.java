@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.pharmanet.venta_service.dto.ValidadoDto;
 import com.pharmanet.venta_service.request.UsuarioRequest;
 
-@FeignClient(name = "usuario_service", url = "http://localhost:8082")
+@FeignClient(name = "usuario-service", url = "http://localhost:8082")
 public interface UsuarioFeignClient {
 
-    @PostMapping("/api/v1/productos/validado")
+    @PostMapping("/api/v1/usuario/validado")
     ValidadoDto validarUsuarioVenta(@RequestBody UsuarioRequest request);
 }

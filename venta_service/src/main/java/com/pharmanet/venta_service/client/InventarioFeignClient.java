@@ -8,7 +8,7 @@ import com.pharmanet.venta_service.request.InventarioRequest;
 
 import jakarta.validation.Valid;
 
-@FeignClient(name = "inventario_service", url = "http://localhost:8084")
+@FeignClient(name = "inventario-service", url = "http://localhost:8084")
 public interface InventarioFeignClient {
 
     @PostMapping("/api/v1/inventarios/ventas")

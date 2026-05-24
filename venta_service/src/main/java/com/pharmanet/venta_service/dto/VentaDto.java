@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class VentaDto {
 
     @NotNull(message = "Este campo no puede estar vacío.")
-    private Long id;
+    private Long codVenta;
 
     @NotBlank(message = "Este campo no puede estar vacío.")
     private String sku;
@@ -26,7 +26,7 @@ public class VentaDto {
 
     @NotBlank(message = "Este campo no puede estar vacío")
     @Pattern(regexp = "^[0-9]{7,8}-[0-9kK]$", message = "RUN inválido")
-    private String runEmpleado;
+    private String runVendedor;
 
     @NotNull(message = "Este campo no puede estar vacío.")
     @Min(value = 1, message = "Ingrese al menos un producto.")
