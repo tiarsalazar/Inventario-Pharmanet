@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pharmanet.abastecimiento_service.client.InventarioClient;
+import com.pharmanet.abastecimiento_service.client.UsuarioClient;
 import com.pharmanet.abastecimiento_service.dto.inventario.DetalleIngresoInventario;
 import com.pharmanet.abastecimiento_service.dto.inventario.IngresoInventario;
 import com.pharmanet.abastecimiento_service.dto.recepcion.RecepcionRequest;
@@ -35,6 +36,7 @@ public class RecepcionService {
     private final RecepcionRepository recepRepo;
     private final RecepcionMapper recepMapper;
     private final InventarioClient inventarioClient;
+    private final UsuarioClient usuarioClient;
 
     // ==== CONSULTAS GET ====
 
@@ -87,6 +89,7 @@ public class RecepcionService {
         log.info("Iniciando registro de recepcion documento: {}, proveedor: {}",
         request.getNumeroDocumento(), request.getRutProveedor());
 
+        validarUsuario(runUsuario);
         validarDocumentoDuplicado(request);
 
         Recepcion recepcion = recepMapper.toRecepcionEntity(request, runUsuario);
@@ -176,6 +179,17 @@ public class RecepcionService {
             throw new ServiceCommunicationException("Error de comunicación con el servicio de Inventario al actualizar stock.");
         } catch (Exception ex) {
             throw new ServiceCommunicationException("Error inesperado al conectar con inventario.");
+        }
+    }
+
+    // Valida existencia de Usuario con FEIGN
+    private void validarUsuario(String run) {
+        try {
+            usuarioClient.buscarPorRun(run);
+        } catch (FeignException.NotFound e) {
+            throw new ResourceNotFoundException("Usuario no encontrada con RUN: " + run);
+        } catch (FeignException e) {
+            throw new ServiceCommunicationException("Error al comunicarse con el servicio de Usuario.");
         }
     }
 }
