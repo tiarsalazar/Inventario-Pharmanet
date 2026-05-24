@@ -85,14 +85,14 @@ public class RecepcionService {
 
     // ==== PETICIONES POST ====
 
-    public RecepcionResponse registrarRecepcion(RecepcionRequest request, String runUsuario){
+    public RecepcionResponse registrarRecepcion(RecepcionRequest request, String runUsuario, String codSucursal){
         log.info("Iniciando registro de recepcion documento: {}, proveedor: {}",
         request.getNumeroDocumento(), request.getRutProveedor());
 
         validarUsuario(runUsuario);
         validarDocumentoDuplicado(request);
 
-        Recepcion recepcion = recepMapper.toRecepcionEntity(request, runUsuario);
+        Recepcion recepcion = recepMapper.toRecepcionEntity(request, runUsuario, codSucursal);
         procesarCalculos(recepcion);
 
         Recepcion guardada = recepRepo.save(recepcion);

@@ -21,9 +21,6 @@ import lombok.Setter;
 public class RecepcionRequest {
     @Size(max = 30, message = "Orden de compra no puede superar 30 caracteres.")
     private String ordenCompra;
-    @NotBlank(message = "Codigo de sucursal es obligatorio.")
-    @Size(max = 10, message = "Codigo sucursal no puede superar 10 caracteres.")
-    private String codSucursal;
     @NotBlank(message = "Numero de documento es obligatorio.")
     @Size(max = 30, message = "Numero de documento no puede superar 30 caracteres.")
     private String numeroDocumento;

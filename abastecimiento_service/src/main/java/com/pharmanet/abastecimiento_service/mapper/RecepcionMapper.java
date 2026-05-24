@@ -14,11 +14,11 @@ import com.pharmanet.abastecimiento_service.entity.Recepcion;
 @Component
 public class RecepcionMapper {
 
-    public Recepcion toRecepcionEntity(RecepcionRequest request, String runUsuario){
+    public Recepcion toRecepcionEntity(RecepcionRequest request, String runUsuario, String codSucursal){
         Recepcion recepcion = new Recepcion();
         recepcion.setRunUsuario(runUsuario);
         recepcion.setOrdenCompra(request.getOrdenCompra());
-        recepcion.setCodSucursal(request.getCodSucursal());
+        recepcion.setCodSucursal(codSucursal);
         recepcion.setNumeroDocumento(request.getNumeroDocumento());
         recepcion.setTipoDocumento(request.getTipoDocumento());
         recepcion.setRutProveedor(request.getRutProveedor());
