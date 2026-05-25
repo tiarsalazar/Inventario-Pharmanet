@@ -185,3 +185,445 @@
 2026-05-24T21:43:46.840-04:00  INFO 16068 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-24T21:43:46.864-04:00  INFO 16068 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-05-24T21:43:47.406-04:00  INFO 16068 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T21:54:27.321-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.9 with PID 13532 (C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service)
+2026-05-24T21:54:27.359-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T21:54:27.600-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\bobip\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/bobip/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-24T21:54:27.600-04:00  INFO 13532 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T21:54:27.600-04:00  INFO 13532 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T21:54:30.880-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T21:54:31.111-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 174 ms. Found 1 JPA repository interface.
+2026-05-24T21:54:31.765-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-24T21:54:33.798-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-24T21:54:33.865-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T21:54:33.872-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T21:54:34.095-04:00  INFO 13532 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6495 ms
+2026-05-24T21:54:36.687-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T21:54:43.109-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@40b799cf
+2026-05-24T21:54:43.123-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T21:54:43.304-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-05-24T21:54:45.566-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.264s)
+2026-05-24T21:54:46.203-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-05-24T21:54:46.340-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-05-24T21:54:46.903-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T21:54:47.413-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T21:54:50.425-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T21:54:51.408-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T21:54:56.678-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T21:54:56.719-04:00  INFO 13532 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:54:57.124-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T21:54:58.192-04:00  WARN 13532 --- [usuario-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T21:54:59.390-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-05-24T21:54:59.519-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T21:54:59.628-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T21:54:59.835-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T21:55:00.838-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-05-24T21:55:00.893-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Started UsuarioServiceApplication in 35.701 seconds (process running for 38.914)
+2026-05-24T21:57:22.991-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T21:57:22.993-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T21:57:22.994-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-24T21:57:22.995-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-24T21:57:23.000-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@53c7022b
+2026-05-24T21:57:23.003-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@320a7399
+2026-05-24T21:57:23.004-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-24T21:57:23.008-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2026-05-24T21:57:23.046-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/usuarios/validado", parameters={}
+2026-05-24T21:57:23.103-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#validarUsuarioVenta(UsuarioRequest)
+2026-05-24T21:57:23.591-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioRequest(runVendedor=12345777-3, codSucursal=YTR126P, receta=RECETA_RETENIDA)]
+2026-05-24T21:57:23.763-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T21:57:23.777-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T21:57:26.693-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Valida credenciales del usuario
+2026-05-24T21:57:26.694-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Valida que el usuario ingresado se encuentra en la sucursal indicada
+2026-05-24T21:57:26.696-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Valida presencia de un analista químico en la farmacia
+2026-05-24T21:57:26.885-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Validación de usuario aprobada
+2026-05-24T21:57:26.936-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T21:57:26.936-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [ValidadoVentaDTO(estadoValidacion=true, mensaje=Validación de usuario aprobada)]
+2026-05-24T21:57:27.162-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-24T21:59:31.101-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/usuarios/validado", parameters={}
+2026-05-24T21:59:31.105-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#validarUsuarioVenta(UsuarioRequest)
+2026-05-24T21:59:31.109-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioRequest(runVendedor=12345777-3, codSucursal=YTR126P, receta=RECETA_RETENIDA)]
+2026-05-24T21:59:31.191-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T21:59:31.192-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T21:59:31.263-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Valida credenciales del usuario
+2026-05-24T21:59:31.264-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Valida que el usuario ingresado se encuentra en la sucursal indicada
+2026-05-24T21:59:31.267-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Valida presencia de un analista químico en la farmacia
+2026-05-24T21:59:31.368-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Validación de usuario aprobada
+2026-05-24T21:59:31.372-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T21:59:31.374-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [ValidadoVentaDTO(estadoValidacion=true, mensaje=Validación de usuario aprobada)]
+2026-05-24T21:59:31.379-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-24T22:12:02.500-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/usuarios/validado", parameters={}
+2026-05-24T22:12:02.505-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#validarUsuarioVenta(UsuarioRequest)
+2026-05-24T22:12:02.511-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioRequest(runVendedor=12345777-3, codSucursal=YTR126P, receta=RECETA_RETENIDA)]
+2026-05-24T22:12:02.604-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-5] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T22:12:02.608-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-5] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T22:12:02.693-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-5] c.p.u.service.UsuarioService             : Valida credenciales del usuario
+2026-05-24T22:12:02.695-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-5] c.p.u.service.UsuarioService             : Valida que el usuario ingresado se encuentra en la sucursal indicada
+2026-05-24T22:12:02.696-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-5] c.p.u.service.UsuarioService             : Valida presencia de un analista químico en la farmacia
+2026-05-24T22:12:02.759-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-5] c.p.u.service.UsuarioService             : Validación de usuario aprobada
+2026-05-24T22:12:02.762-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T22:12:02.763-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [ValidadoVentaDTO(estadoValidacion=true, mensaje=Validación de usuario aprobada)]
+2026-05-24T22:12:02.766-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-24T22:16:25.971-04:00  INFO 13532 --- [usuario-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-05-24T22:16:26.571-04:00  INFO 13532 --- [usuario-service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T22:16:27.091-04:00  INFO 13532 --- [usuario-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T22:16:27.309-04:00  INFO 13532 --- [usuario-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T22:16:27.650-04:00  INFO 13532 --- [usuario-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T22:16:28.432-04:00  INFO 13532 --- [usuario-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T22:16:33.519-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.9 with PID 13532 (C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service)
+2026-05-24T22:16:33.688-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T22:16:37.168-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T22:16:37.274-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 1 JPA repository interface.
+2026-05-24T22:16:37.818-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-24T22:16:39.175-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-24T22:16:39.212-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T22:16:39.215-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T22:16:39.879-04:00  INFO 13532 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6064 ms
+2026-05-24T22:16:40.767-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-24T22:16:42.464-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection oracle.jdbc.driver.T4CConnection@5e69d40b
+2026-05-24T22:16:42.537-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-24T22:16:42.586-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-05-24T22:16:43.013-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.123s)
+2026-05-24T22:16:43.656-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-05-24T22:16:43.745-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-05-24T22:16:43.921-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T22:16:44.330-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T22:16:44.475-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T22:16:44.909-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T22:16:44.915-04:00  INFO 13532 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T22:16:45.021-04:00  WARN 13532 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'usuarioController': Lookup method resolution failed
+2026-05-24T22:16:45.024-04:00  INFO 13532 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T22:16:45.026-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-05-24T22:16:45.212-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-05-24T22:16:45.216-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-24T22:16:45.236-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-24T22:16:45.413-04:00 ERROR 13532 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'usuarioController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:482) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:352) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.pharmanet.usuario_service.controller.UsuarioController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3bed245e]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:460) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: ValidadoVentaDTO
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3580) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2678) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.7.jar:7.0.7]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: ValidadoVentaDTO
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:536) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:515) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	... 30 common frames omitted
+
+2026-05-24T22:16:47.146-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.9 with PID 13532 (C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service)
+2026-05-24T22:16:47.163-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T22:16:48.112-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T22:16:48.166-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
+2026-05-24T22:16:48.389-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-24T22:16:48.930-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-24T22:16:48.938-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T22:16:48.939-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T22:16:49.479-04:00  INFO 13532 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2299 ms
+2026-05-24T22:16:49.728-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-05-24T22:16:50.334-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection oracle.jdbc.driver.T4CConnection@ef9def7
+2026-05-24T22:16:50.336-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-05-24T22:16:50.370-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-05-24T22:16:50.717-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.087s)
+2026-05-24T22:16:51.262-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-05-24T22:16:51.307-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-05-24T22:16:51.481-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T22:16:51.647-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T22:16:51.810-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T22:16:52.083-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T22:16:52.088-04:00  INFO 13532 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T22:16:52.204-04:00  WARN 13532 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'usuarioController': Lookup method resolution failed
+2026-05-24T22:16:52.205-04:00  INFO 13532 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T22:16:52.207-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-05-24T22:16:52.798-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-05-24T22:16:52.801-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-24T22:16:52.810-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-24T22:16:52.825-04:00 ERROR 13532 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'usuarioController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:482) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:352) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.pharmanet.usuario_service.controller.UsuarioController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6f7d8997]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:460) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: ValidadoVentaDTO
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3580) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2678) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.7.jar:7.0.7]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: ValidadoVentaDTO
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:536) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:515) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	... 30 common frames omitted
+
+2026-05-24T22:19:47.131-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.9 with PID 13532 (C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service)
+2026-05-24T22:19:47.168-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T22:19:48.986-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T22:19:49.615-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 595 ms. Found 1 JPA repository interface.
+2026-05-24T22:19:50.130-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-24T22:19:50.937-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-24T22:19:51.070-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T22:19:51.186-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T22:19:52.018-04:00  INFO 13532 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4838 ms
+2026-05-24T22:19:52.736-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-05-24T22:19:53.529-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection oracle.jdbc.driver.T4CConnection@210ab4a6
+2026-05-24T22:19:53.552-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-05-24T22:19:53.636-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-05-24T22:19:54.184-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.258s)
+2026-05-24T22:19:54.807-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-05-24T22:19:54.877-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-05-24T22:19:55.069-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T22:19:56.084-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T22:19:56.364-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T22:19:57.353-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T22:19:57.358-04:00  INFO 13532 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T22:19:58.742-04:00  WARN 13532 --- [usuario-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T22:20:00.298-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-05-24T22:20:00.644-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T22:20:00.759-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T22:20:00.946-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T22:20:01.704-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-05-24T22:20:01.906-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Started UsuarioServiceApplication in 14.851 seconds (process running for 1539.926)
+2026-05-24T22:20:01.926-04:00  INFO 13532 --- [usuario-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T22:21:49.272-04:00  INFO 13532 --- [usuario-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T22:21:49.276-04:00  INFO 13532 --- [usuario-service] [Thread-9] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T22:21:49.309-04:00  INFO 13532 --- [usuario-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T22:21:49.322-04:00  INFO 13532 --- [usuario-service] [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T22:21:49.326-04:00  INFO 13532 --- [usuario-service] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-05-24T22:21:49.698-04:00  INFO 13532 --- [usuario-service] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2026-05-24T22:21:50.301-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.9 with PID 13532 (C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service)
+2026-05-24T22:21:50.349-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T22:21:52.291-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T22:21:52.426-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2026-05-24T22:21:52.982-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-24T22:21:53.788-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-24T22:21:53.796-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T22:21:53.797-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T22:21:53.948-04:00  INFO 13532 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3574 ms
+2026-05-24T22:21:54.130-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2026-05-24T22:21:54.989-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection oracle.jdbc.driver.T4CConnection@7a43c0e7
+2026-05-24T22:21:54.999-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2026-05-24T22:21:55.044-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-05-24T22:21:55.537-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.138s)
+2026-05-24T22:21:55.925-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-05-24T22:21:56.001-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-05-24T22:21:56.142-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T22:21:56.440-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T22:21:56.618-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T22:21:56.991-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T22:21:56.995-04:00  INFO 13532 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T22:21:57.377-04:00  WARN 13532 --- [usuario-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T22:21:58.045-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-05-24T22:21:58.200-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T22:21:58.243-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T22:21:58.275-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T22:21:58.542-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-05-24T22:21:58.576-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Started UsuarioServiceApplication in 8.519 seconds (process running for 1656.597)
+2026-05-24T22:21:58.583-04:00  INFO 13532 --- [usuario-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T22:27:58.307-04:00  INFO 13532 --- [usuario-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T22:27:58.315-04:00  INFO 13532 --- [usuario-service] [Thread-27] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T22:27:58.371-04:00  INFO 13532 --- [usuario-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T22:27:58.431-04:00  INFO 13532 --- [usuario-service] [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T22:27:58.681-04:00  INFO 13532 --- [usuario-service] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2026-05-24T22:27:59.216-04:00  INFO 13532 --- [usuario-service] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2026-05-24T22:28:00.091-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.9 with PID 13532 (C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service)
+2026-05-24T22:28:00.093-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T22:28:01.663-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T22:28:01.718-04:00  INFO 13532 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interface.
+2026-05-24T22:28:02.008-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-24T22:28:02.443-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-24T22:28:02.452-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T22:28:02.453-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T22:28:02.784-04:00  INFO 13532 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2672 ms
+2026-05-24T22:28:03.099-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2026-05-24T22:28:05.027-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection oracle.jdbc.driver.T4CConnection@2818a893
+2026-05-24T22:28:05.028-04:00  INFO 13532 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2026-05-24T22:28:05.060-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-05-24T22:28:05.717-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.191s)
+2026-05-24T22:28:06.712-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-05-24T22:28:06.913-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-05-24T22:28:07.160-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T22:28:07.479-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T22:28:08.088-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T22:28:08.489-04:00  INFO 13532 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T22:28:08.494-04:00  INFO 13532 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T22:28:09.098-04:00  WARN 13532 --- [usuario-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T22:28:09.639-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-05-24T22:28:09.723-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T22:28:09.760-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T22:28:09.810-04:00 DEBUG 13532 --- [usuario-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T22:28:10.243-04:00  INFO 13532 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-05-24T22:28:10.280-04:00  INFO 13532 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Started UsuarioServiceApplication in 10.494 seconds (process running for 2028.301)
+2026-05-24T22:28:10.288-04:00  INFO 13532 --- [usuario-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T22:28:11.303-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T22:28:11.303-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T22:28:11.303-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-24T22:28:11.303-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-24T22:28:11.303-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@21d99e3f
+2026-05-24T22:28:11.319-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4aa14a3e
+2026-05-24T22:28:11.322-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-24T22:28:11.323-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2026-05-24T22:28:11.326-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/usuarios/validado", parameters={}
+2026-05-24T22:28:11.328-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#validarUsuarioVenta(UsuarioRequest)
+2026-05-24T22:28:11.425-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioRequest(runVendedor=12345777-3, codSucursal=YTR126P, receta=RECETA_RETENIDA)]
+2026-05-24T22:28:11.550-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T22:28:11.568-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T22:28:11.713-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Valida credenciales del usuario
+2026-05-24T22:28:11.768-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Valida que el usuario ingresado se encuentra en la sucursal indicada
+2026-05-24T22:28:11.835-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Valida presencia de un analista químico en la farmacia
+2026-05-24T22:28:12.010-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Validación de usuario aprobada
+2026-05-24T22:28:12.060-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T22:28:12.078-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [true]
+2026-05-24T22:28:12.084-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-24T22:31:41.320-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/usuarios/validado", parameters={}
+2026-05-24T22:31:41.325-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#validarUsuarioVenta(UsuarioRequest)
+2026-05-24T22:31:41.331-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioRequest(runVendedor=10000005-5, codSucursal=YTR126P, receta=RECETA_RETENIDA)]
+2026-05-24T22:31:41.363-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T22:31:41.364-04:00  INFO 13532 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T22:31:42.366-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.usuario_service.exception.GlobalHandlerException#handlerResourceNotFoundException(ResourceNotFoundException)
+2026-05-24T22:31:42.513-04:00 ERROR 13532 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.exception.GlobalHandlerException   : Objeto no encontrado: Usuario no encontrado
+2026-05-24T22:31:42.526-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T22:31:42.542-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(fecha=2026-05-24T22:31:42.513641300, estado=404, error=Not Found, mensaje=Usuario no e (truncated)...]
+2026-05-24T22:31:43.075-04:00  WARN 13532 --- [usuario-service] [http-nio-8082-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.usuario_service.exception.ResourceNotFoundException: Usuario no encontrado]
+2026-05-24T22:31:43.079-04:00 DEBUG 13532 --- [usuario-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-05-24T22:35:40.452-04:00  INFO 13532 --- [usuario-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T22:35:40.486-04:00  INFO 13532 --- [usuario-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T22:35:40.505-04:00  INFO 13532 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T22:35:40.509-04:00  INFO 13532 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2026-05-24T22:35:40.875-04:00  INFO 13532 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.

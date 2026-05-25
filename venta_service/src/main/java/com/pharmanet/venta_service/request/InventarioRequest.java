@@ -1,6 +1,7 @@
 package com.pharmanet.venta_service.request;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,8 +18,8 @@ public class InventarioRequest {
     private String codSucursal;
     
     @NotBlank(message = "Este campo no puede ser nulo")
-    private String rutVendedor;
+    private String runVendedor;
 
-    @NotBlank(message = "Este campo no ser nulo")
+    @NotNull(message = "Este campo no ser nulo")
     private Integer cantidad;
 }

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.pharmanet.venta_service.client.InventarioFeignClient;
 import com.pharmanet.venta_service.client.ProductoFeignClient;
 import com.pharmanet.venta_service.client.UsuarioFeignClient;
-import com.pharmanet.venta_service.dto.ValidadoDto;
 import com.pharmanet.venta_service.dto.VentaDto;
 import com.pharmanet.venta_service.dto.VentaMapper;
 import com.pharmanet.venta_service.entity.Venta;
@@ -73,22 +72,25 @@ public class VentaService {
         usuarioRequest.setReceta(receta);
         log.debug("runVendedor: {}, codSucursal: {}, receta: {}", usuarioRequest.getRunVendedor(), usuarioRequest.getCodSucursal(), receta);
 
-        ValidadoDto validacionVenta = usuarioFeignClient.validarUsuarioVenta(usuarioRequest);
-        
-        log.debug("mensajeVentaValidacion: {}", validacionVenta.getMessage());
+        boolean validacion;
+        try {
+            validacion = usuarioFeignClient.validarUsuarioVenta(usuarioRequest);
+        } catch (FeignException e) {
+            throw new VentaInvalida("El usuario ingresado " + ventaDto.getRunVendedor() + " no se encuentra disponible para realizar la venta");
+        }
 
-        if (!validacionVenta.isEstadoValidacion()) {
-            throw new VentaInvalida(validacionVenta.getMessage());
+        if (!validacion) {
+            throw new VentaInvalida("El usuario ingresado " + ventaDto.getRunVendedor() + " no se encuentra disponible para realizar la venta");
         }
 
         log.info("Envío de solicitud de venta a inventario");
         try {
             InventarioRequest inventarioRequest = new InventarioRequest();
-            inventarioRequest.setRutVendedor(ventaDto.getRunVendedor());
+            inventarioRequest.setRunVendedor(ventaDto.getRunVendedor());
             inventarioRequest.setCodSucursal(ventaDto.getCodSucursal());
             inventarioRequest.setSku(ventaDto.getSku());
             inventarioRequest.setCantidad(ventaDto.getCantidad());
-            log.debug("runVendedor: {}, codSucursal: {}, sku: {}, cantidad: {}", inventarioRequest.getRutVendedor(), inventarioRequest.getCodSucursal(), inventarioRequest.getSku(), inventarioRequest.getCantidad());
+            log.debug("runVendedor: {}, codSucursal: {}, sku: {}, cantidad: {}", inventarioRequest.getRunVendedor(), inventarioRequest.getCodSucursal(), inventarioRequest.getSku(), inventarioRequest.getCantidad());
             inventarioFeignClient.procesarVenta(inventarioRequest);
         } catch (FeignException e){
             throw new VentaInvalida("No existe un inventario con el código de la sucursal: " + ventaDto.getCodSucursal() + " ni el sku: " + ventaDto.getSku() + " o no hay stock disponible.");

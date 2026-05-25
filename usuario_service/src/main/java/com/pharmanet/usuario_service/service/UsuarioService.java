@@ -10,7 +10,6 @@ import com.pharmanet.usuario_service.client.SucursalFeignClient;
 import com.pharmanet.usuario_service.dto.UsuarioDTO;
 import com.pharmanet.usuario_service.dto.UsuarioMapper;
 import com.pharmanet.usuario_service.dto.UsuarioRequest;
-import com.pharmanet.usuario_service.dto.ValidadoVentaDTO;
 import com.pharmanet.usuario_service.entity.Usuario;
 import com.pharmanet.usuario_service.exception.NotUniqueUsuarioException;
 import com.pharmanet.usuario_service.exception.ResourceNotFoundException;
@@ -128,16 +127,13 @@ public class UsuarioService {
         usuarioRepository.delete(usuario);
     }
 
-    public ValidadoVentaDTO validarUsuarioVenta(UsuarioRequest request) {
+    public boolean validarUsuarioVenta(UsuarioRequest request) {
         log.info("Inicia validación de venta");
         log.debug("run: {}, codSucursal: {}, receta: {}", request.getRunVendedor(), request.getCodSucursal(), request.getReceta());
 
         String run = request.getRunVendedor();
         String codSucursal = request.getCodSucursal();
         String receta = request.getReceta();
-
-        ValidadoVentaDTO validacion = new ValidadoVentaDTO();
-        validacion.setEstadoValidacion(false);
 
         log.info("Verifica existencia de usuario");
         Usuario usuario = usuarioRepository.findByRun(run)
@@ -147,15 +143,12 @@ public class UsuarioService {
         if (!usuario.getProfesion().equalsIgnoreCase("TECNICO EN FARMACIA")
             && !usuario.getProfesion().equalsIgnoreCase("ANALISTA QUIMICO")) {
             log.warn("El usuario no tiene las credenciales para vender los producto/s. Profesion: {}", usuario.getProfesion());
-            validacion.setMensaje("El usuario no tiene las credenciales para vender los producto/s. Profesión: " + usuario.getProfesion());
-            return validacion;
+            return false;
         }
 
         log.info("Valida que el usuario ingresado se encuentra en la sucursal indicada");
         if (!codSucursal.equals(usuario.getCodInterno())) {
-            log.warn("El usuario {} no se encuentra en la sucursal {}", run, codSucursal);
-            validacion.setMensaje("El usuario " + run + " no se encuentra en la sucursal " + codSucursal);
-            return validacion;
+            log.warn("El usuario {} no se encuentra en la sucursal {}", run, codSucursal);return false;
         }
 
         if (!receta.equalsIgnoreCase("SIN RECETA")) {
@@ -165,14 +158,11 @@ public class UsuarioService {
                 .toList();
             if (analistaQuimico.isEmpty()) {
                 log.warn("No hay ANALISTA QUÍMICO en la sucursal {}", codSucursal);
-                validacion.setMensaje("No hay ANALISTA QUÍMICO en la sucursal " + codSucursal);
-                return validacion;
+                return false;
             }
         }
         
         log.info("Validación de usuario aprobada");
-        validacion.setEstadoValidacion(true);
-        validacion.setMensaje("Validación de usuario aprobada");
-        return validacion;
+        return true;
     }
 }
