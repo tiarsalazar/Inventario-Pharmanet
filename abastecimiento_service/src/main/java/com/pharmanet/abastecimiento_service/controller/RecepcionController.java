@@ -74,11 +74,11 @@ public class RecepcionController {
     
     // ==== PETICIONES POST ====
 
-    @PostMapping("/registrar")
+    @PostMapping("/sucursales/{codSucursal}/registrar")
     public ResponseEntity<RecepcionResponse> registrarRecepcion(
-            @RequestBody RecepcionRequest request, 
+            @PathVariable String codSucursal, @RequestBody RecepcionRequest request,
             @RequestHeader("X-Run-Usuario") String runUsuario) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(recepServ.registrarRecepcion(request, runUsuario));
+        return ResponseEntity.status(HttpStatus.CREATED).body(recepServ.registrarRecepcion(request, runUsuario, codSucursal));
     }
 
     // ==== PETICIONES PUT ====

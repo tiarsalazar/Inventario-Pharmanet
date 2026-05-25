@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pharmanet.abastecimiento_service.client.InventarioClient;
+import com.pharmanet.abastecimiento_service.client.UsuarioClient;
 import com.pharmanet.abastecimiento_service.dto.inventario.DetalleIngresoInventario;
 import com.pharmanet.abastecimiento_service.dto.inventario.IngresoInventario;
 import com.pharmanet.abastecimiento_service.dto.recepcion.RecepcionRequest;
@@ -35,6 +36,7 @@ public class RecepcionService {
     private final RecepcionRepository recepRepo;
     private final RecepcionMapper recepMapper;
     private final InventarioClient inventarioClient;
+    private final UsuarioClient usuarioClient;
 
     // ==== CONSULTAS GET ====
 
@@ -83,19 +85,22 @@ public class RecepcionService {
 
     // ==== PETICIONES POST ====
 
-    public RecepcionResponse registrarRecepcion(RecepcionRequest request, String runUsuario){
+    public RecepcionResponse registrarRecepcion(RecepcionRequest request, String runUsuario, String codSucursal){
         log.info("Iniciando registro de recepcion documento: {}, proveedor: {}",
         request.getNumeroDocumento(), request.getRutProveedor());
 
+        log.info("Validacion de usuario {} con feign", runUsuario);
+        validarUsuario(runUsuario);
         validarDocumentoDuplicado(request);
 
-        Recepcion recepcion = recepMapper.toRecepcionEntity(request, runUsuario);
+        Recepcion recepcion = recepMapper.toRecepcionEntity(request, runUsuario, codSucursal);
         procesarCalculos(recepcion);
 
         Recepcion guardada = recepRepo.save(recepcion);
         log.info("Recepcion guardada correctamente con ID {}, documento: {}, proveedor: {}",
         guardada.getId(), guardada.getNumeroDocumento(), guardada.getRutProveedor());
 
+        log.info("Enviando stock de recepcion ID {} a servicio Inventario", guardada.getId());
         procesarIngresoInventario(guardada, runUsuario);
 
         guardada.setEstado(EstadoRecepcion.PROCESADA);
@@ -109,23 +114,24 @@ public class RecepcionService {
     // ==== PETICIONES PUT ====
 
     public void cancelarRecepcionPorId(Long id, String codSucursal){
-        log.info("Cancelando recepcion id {}", id);
+        log.info("Cancelando recepcion ID {}", id);
         Recepcion recepcion = recepRepo.findByIdAndCodSucursal(id, codSucursal)
         .orElseThrow(() -> new ResourceNotFoundException("Recepcion no encontrada."));
         //Aqui deberia llamar a inventario para quitar el stock.
         recepcion.setEstado(EstadoRecepcion.CANCELADA);
         recepRepo.save(recepcion);
+        log.info("Recepcion ID {} cambiada a estado CANCELADA", id);
     }
 
     // ==== PETICIONES DELETE ==== 
 
     public void eliminarRecepcionPorId(Long id, String codSucursal){
-        log.info("Eliminando recepcion con id {}", id);
+        log.info("Eliminando recepcion ID {}", id);
         Recepcion recepcion = recepRepo.findByIdAndCodSucursal(id, codSucursal)
         .orElseThrow(() -> new ResourceNotFoundException("Recepcion no encontrada."));
         //Aqui deberia llamar a inventario para quitar el stock.
         recepRepo.delete(recepcion);
-        log.info("Recepcion eliminada con id {} exitosamente", id);
+        log.info("Recepcion ID {} eliminada exitosamente", id);
     }
 
     
@@ -171,11 +177,26 @@ public class RecepcionService {
         try {
             inventarioClient.registrarStockRecepcion(ingresoInventario, runUsuario);
         } catch (FeignException.NotFound ex) {
+            log.warn("Inventario retorno 404 para recepcion ID {}: {}", recepcion.getId(), ex.getMessage());
             throw new BusinessException("No se pudo registrar la recepción: " + ex.getMessage());
         } catch (FeignException ex) {
+            log.error("Error de Feign al comunicar con Inventario.");
             throw new ServiceCommunicationException("Error de comunicación con el servicio de Inventario al actualizar stock.");
         } catch (Exception ex) {
+            log.error("Error inesperado no controlado al conectar con inventario", ex);
             throw new ServiceCommunicationException("Error inesperado al conectar con inventario.");
+        }
+    }
+
+    // Valida existencia de Usuario con FEIGN
+    private void validarUsuario(String run) {
+        try {
+            usuarioClient.buscarPorRun(run);
+        } catch (FeignException.NotFound e) {
+            throw new ResourceNotFoundException("Usuario no encontrada con RUN: " + run);
+        } catch (FeignException e) {
+            log.error("Error de Feign al comunicar con el servicio de Usuarios.");
+            throw new ServiceCommunicationException("Error al comunicarse con el servicio de Usuario.");
         }
     }
 }

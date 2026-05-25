@@ -1,0 +1,32 @@
+-- 1. INSERCIÓN EN TABLA: INVENTARIO
+INSERT INTO inventario (id, sku, codigo_sucursal, stock_total) VALUES
+(1, 'SUR2H2N', 'YTR126P', 150),
+(2, '98U2H2S', 'YTR126P', 80),
+(3, 'AEH2H2N', 'YTR126P', 30),
+(4, 'SUR2H2N', 'JPY765T', 1000),
+(5, '6TU2H92', 'YTR126P', 0);
+
+ALTER SEQUENCE inventario_id_seq RESTART WITH 6;
+
+-- 2. INSERCIÓN EN TABLA: LOTE
+INSERT INTO lote (lote_id, codigo_lote, cantidad, fecha_vencimiento, estado, inventario_id) VALUES
+(1, 'LOT-CLA-001', 100, '2027-12-31', 'ACTIVO', 1),
+(2, 'LOT-CLA-002', 50, '2026-07-15', 'ACTIVO', 1),
+(3, 'LOT-LOS-022', 80, '2028-03-20', 'ACTIVO', 2),
+(4, 'LOT-XAN-099', 30, '2027-05-18', 'ACTIVO', 3),
+(5, 'LOT-CLA-B01', 1000, '2028-01-01', 'ACTIVO', 4),
+(6, 'LOT-MOT-554', 0, '2025-11-12', 'AGOTADO', 5);
+
+ALTER SEQUENCE lote_lote_id_seq RESTART WITH 7;
+
+-- 3. INSERCIÓN EN TABLA: MOVIMIENTO
+INSERT INTO movimiento (id, tipo, sku, codigo_sucursal, cantidad, fecha, run_usuario, codigo_lote, lote_id) VALUES
+(1, 'ENTRADA', 'SUR2H2N', 'YTR126P', 100, '2026-05-01 09:00:00', '12345777-3', 'LOT-CLA-001', 1),
+(2, 'ENTRADA', 'SUR2H2N', 'YTR126P', 50, '2026-05-01 09:15:00', '12345777-3', 'LOT-CLA-002', 2),
+(3, 'ENTRADA', '98U2H2S', 'YTR126P', 80, '2026-05-02 10:30:00', '12345777-3', 'LOT-LOS-022', 3),
+(4, 'ENTRADA', 'AEH2H2N', 'YTR126P', 30, '2026-05-03 11:00:00', '12345777-3', 'LOT-XAN-099', 4),
+(5, 'ENTRADA', 'SUR2H2N', 'JPY765T', 1000, '2026-04-20 08:00:00', '13987654-3', 'LOT-CLA-B01', 5),
+(6, 'ENTRADA', '6TU2H92', 'YTR126P', 40, '2025-10-01 14:00:00', '12345777-3', 'LOT-MOT-554', 6),
+(7, 'SALIDA', '6TU2H92', 'YTR126P', 40, '2026-01-10 16:45:00', '12345777-3', 'LOT-MOT-554', 6);
+
+ALTER SEQUENCE movimiento_id_seq RESTART WITH 8;

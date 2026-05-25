@@ -108,11 +108,13 @@ public class InventarioService {
     public List<LoteResponse> registrarRecepcion(RecepcionRequest request, String runUsuario){
         log.info("Registrando recepcion para sucursal: {}", request.getCodSucursal());
 
+        log.info("Validando sucursal {} por feign",request.getCodSucursal());
         validarSucursal(request.getCodSucursal());
        
         List<LoteResponse> response = new ArrayList<>();
         for (DetalleRecepcionRequest detalleRequest : request.getDetalles()){
 
+            log.info("Validando producto {} por feign",detalleRequest.getSku());
             validarProducto(detalleRequest.getSku());
 
             Inventario inventario = obtenerOCrearInventario(detalleRequest.getSku(), request.getCodSucursal());
@@ -133,6 +135,8 @@ public class InventarioService {
 
             response.add(mapper.toLoteResponse(lote));
         }
+        log.info("Recepcion finalizada con éxito. Total de lotes procesados para la sucursal {}: {}", 
+                 request.getCodSucursal(), response.size());
         return response;
     }
 
@@ -141,7 +145,9 @@ public class InventarioService {
         log.info("Procesando venta de sku: {}, en sucursal: {}, cantidad: {}",
             request.getSku(), request.getCodSucursal(), request.getCantidad());
 
+        log.info("Validando Sucursal {} por feign",request.getCodSucursal());
         validarSucursal(request.getCodSucursal());
+        log.info("Validando producto {} por feign",request.getSku());
         validarProducto(request.getSku());
 
         Inventario inventario = obtenerInventario(request.getSku(), request.getCodSucursal());
@@ -180,6 +186,8 @@ public class InventarioService {
 
         Inventario inventario = obtenerInventario(sku, codSucursal);
         if (inventario.getStockTotal() > 0){
+            log.warn("Intento de eliminacion fallido. El inventario SKU: {} en sucursal: {} posee stock activo: {} ud.", 
+                     sku, codSucursal, inventario.getStockTotal());
             throw new BusinessException("No se puede eliminar un inventario con stock activo: " + inventario.getStockTotal() + " unidades.");
         }
         invRepo.delete(inventario);
@@ -266,6 +274,7 @@ public class InventarioService {
         } catch (FeignException.NotFound e) {
             throw new ResourceNotFoundException("Producto no encontrado con sku: " + sku);
         } catch (FeignException e) {
+            log.error("Error crítico de Feign al validar Producto SKU: {}. Status HTTP: {}", sku, e.status());
             throw new ServiceCommunicationException("Error al comunicarse con el servicio de productos.");
         }
     }
@@ -277,6 +286,7 @@ public class InventarioService {
         } catch (FeignException.NotFound e) {
             throw new ResourceNotFoundException("Sucursal no encontrada con codigo sucursal: " + codSucursal);
         } catch (FeignException e) {
+            log.error("Error crítico de Feign al validar Sucursal Código: {}. Status HTTP: {}", codSucursal, e.status());
             throw new ServiceCommunicationException("Error al comunicarse con el servicio de sucursal.");
         }
     }
