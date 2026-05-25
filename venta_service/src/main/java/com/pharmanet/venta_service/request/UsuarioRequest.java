@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UsuarioRequest {
 
+    private String runVendedor;
     private String codSucursal;
-    private String runEmpleado;
     private String receta;
 }

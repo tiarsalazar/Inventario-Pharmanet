@@ -88,3 +88,23 @@
 2026-05-24T17:22:00.394-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-3] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
 2026-05-24T17:49:11.455-04:00  WARN 9096 --- [producto_service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s223ms123µs600ns).
 2026-05-24T17:53:42.329-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-5] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T18:06:31.017-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-7] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T19:59:50.396-04:00  WARN 9096 --- [producto_service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h46m1s968ms20µs500ns).
+2026-05-24T20:26:38.318-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-9] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T20:29:39.848-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-1] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T20:44:50.315-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-3] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T20:46:46.169-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-5] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T20:50:55.796-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-7] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T20:59:00.371-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-9] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T21:10:41.856-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-1] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T21:12:44.478-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-3] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T21:16:22.377-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-5] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T21:27:57.841-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-7] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T21:29:10.026-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-9] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T21:39:14.396-04:00  WARN 9096 --- [producto_service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50s896ms819µs100ns).
+2026-05-24T21:39:29.533-04:00  INFO 9096 --- [producto_service] [http-nio-8083-exec-1] c.p.p.service.ProductoService            : Inicia búsqueda de tipo de receta
+2026-05-24T21:44:11.640-04:00  INFO 9096 --- [producto_service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:44:12.558-04:00  INFO 9096 --- [producto_service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:44:14.050-04:00  INFO 9096 --- [producto_service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:44:15.283-04:00  INFO 9096 --- [producto_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T21:44:16.687-04:00  INFO 9096 --- [producto_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

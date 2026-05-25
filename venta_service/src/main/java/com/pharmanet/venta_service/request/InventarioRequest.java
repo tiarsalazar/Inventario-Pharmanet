@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 public class InventarioRequest {
 
     @NotBlank(message = "Este campo no puede ser nulo")
-    private String rutVendedor;
+    private String sku;
     
     @NotBlank(message = "Este campo no puede ser nulo")
     private String codSucursal;
     
     @NotBlank(message = "Este campo no puede ser nulo")
-    private String sku;
+    private String rutVendedor;
 
     @NotBlank(message = "Este campo no ser nulo")
-    private int cantidad;
+    private Integer cantidad;
 }

@@ -42,7 +42,7 @@ public class Venta {
     private String runVendedor;
     
     @Column(nullable = false)
-    private int cantidad;
+    private Integer cantidad;
 
     @Column(name = "fecha_venta", nullable = false)
     private LocalDate fechaVenta;

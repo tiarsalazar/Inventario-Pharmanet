@@ -30,7 +30,7 @@ public class VentaDto {
 
     @NotNull(message = "Este campo no puede estar vacío.")
     @Min(value = 1, message = "Ingrese al menos un producto.")
-    private int cantidad;
+    private Integer cantidad;
 
     @NotNull(message = "Este campo no puede estar vacío.")
     private LocalDate fechaVenta;

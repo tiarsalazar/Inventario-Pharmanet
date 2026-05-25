@@ -130,9 +130,9 @@ public class UsuarioService {
 
     public ValidadoVentaDTO validarUsuarioVenta(UsuarioRequest request) {
         log.info("Inicia validación de venta");
-        log.debug("run: {}, codSucursal: {}, receta: {}", request.getRun(), request.getCodSucursal(), request.getReceta());
+        log.debug("run: {}, codSucursal: {}, receta: {}", request.getRunVendedor(), request.getCodSucursal(), request.getReceta());
 
-        String run = request.getRun();
+        String run = request.getRunVendedor();
         String codSucursal = request.getCodSucursal();
         String receta = request.getReceta();
 

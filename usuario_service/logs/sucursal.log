@@ -370,3 +370,1017 @@ Caused by: java.net.UnknownHostException: Host desconocido (adb.sa-santiago-1.or
 2026-05-24T18:07:10.421-04:00  INFO 18728 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-24T18:07:10.441-04:00  INFO 18728 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-05-24T18:07:11.222-04:00  INFO 18728 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T18:11:24.316-04:00  INFO 20340 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.9 with PID 20340 (C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service)
+2026-05-24T18:11:24.347-04:00  INFO 20340 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T18:11:24.652-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\bobip\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/bobip/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-24T18:11:24.652-04:00  INFO 20340 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T18:11:24.652-04:00  INFO 20340 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T18:11:32.271-04:00  INFO 20340 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T18:11:32.749-04:00  INFO 20340 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 418 ms. Found 1 JPA repository interface.
+2026-05-24T18:11:34.590-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-24T18:11:39.523-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-24T18:11:39.745-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T18:11:39.761-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T18:11:40.266-04:00  INFO 20340 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 15599 ms
+2026-05-24T18:11:46.147-04:00  INFO 20340 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T18:11:56.156-04:00  INFO 20340 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@3e68e3e3
+2026-05-24T18:11:56.168-04:00  INFO 20340 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T18:11:56.426-04:00  INFO 20340 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-05-24T18:12:00.745-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.408s)
+2026-05-24T18:12:01.441-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-05-24T18:12:01.608-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-05-24T18:12:03.031-04:00  INFO 20340 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T18:12:03.988-04:00  INFO 20340 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T18:12:11.928-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T18:12:13.634-04:00  INFO 20340 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T18:12:25.710-04:00  INFO 20340 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T18:12:26.025-04:00  INFO 20340 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T18:12:27.494-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T18:12:30.419-04:00  WARN 20340 --- [usuario-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T18:12:41.451-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-05-24T18:12:41.632-04:00  INFO 20340 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Started UsuarioServiceApplication in 80.847 seconds (process running for 87.305)
+2026-05-24T19:59:52.088-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h46m20s509ms761µs700ns).
+2026-05-24T19:59:53.818-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@1e0a57ff (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T19:59:53.822-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@3e68e3e3 (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T19:59:53.825-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@93b004d (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T19:59:53.828-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@66cfd74d (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T19:59:53.831-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@3737d921 (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T19:59:53.834-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@7efbd7c3 (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T19:59:53.837-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@5f49e8e9 (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T19:59:53.840-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@6a9f8f52 (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T19:59:53.843-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@194a1ea3 (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T19:59:53.962-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@12a1c0ac (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T20:00:58.743-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (20a94df5-4cf7-4c63-9860-890a1ea16674)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: adb.sa-santiago-1.oraclecloud.com
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:02:15.583-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (c5261ce1-5054-428f-9dfd-fa2b77dcbe39)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[na:na]
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[na:na]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:03:25.068-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (ae0acc99-31c5-445d-a56e-f59e1e8ecf52)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: adb.sa-santiago-1.oraclecloud.com
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:04:30.380-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (15e2d48f-dc25-4c45-b3c2-0e64c12e3d8b)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[na:na]
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[na:na]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:05:35.792-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (499ed425-5d31-4604-b858-edfc2e132804)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: adb.sa-santiago-1.oraclecloud.com
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:06:41.100-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (014f241f-6481-42f5-b4fc-b92133b30fc7)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[na:na]
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[na:na]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:07:46.389-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (fce43678-bb1e-484a-80a0-7083d3a436ee)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: adb.sa-santiago-1.oraclecloud.com
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:08:51.753-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (8d593598-a3b5-499b-9b4f-9ccd09f55734)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[na:na]
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[na:na]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:09:57.131-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (de33fa09-3b75-4b65-85b4-18b03f94ecd1)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: adb.sa-santiago-1.oraclecloud.com
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:11:02.482-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (ff00c28d-8733-4fef-a9a4-9bf7b623eb70)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[na:na]
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[na:na]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:12:07.870-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (fd03e58d-2e30-4e69-b6ad-f62b1357f992)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: adb.sa-santiago-1.oraclecloud.com
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:13:13.289-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (bd1ab42a-1134-407f-bc11-4fb5fb503810)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[na:na]
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[na:na]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:14:18.548-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (a892cbed-8012-4170-94dd-790c3559bfc4)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: adb.sa-santiago-1.oraclecloud.com
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:15:23.965-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (012f8dc1-66df-44e4-8bb3-306369f2fdfb)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[na:na]
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[na:na]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:16:29.278-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (90884653-deab-413c-ba72-10221bb4cd04)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: adb.sa-santiago-1.oraclecloud.com
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:17:34.563-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (e67e5614-da49-4749-844c-700433911303)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: Host desconocido (adb.sa-santiago-1.oraclecloud.com)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[na:na]
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[na:na]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:18:39.926-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (529e98d8-5e5b-4ad7-b8ad-736d878db567)
+
+java.sql.SQLException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: oracle.net.ns.NetException: ORA-17868: Se ha especificado un host desconocido.: adb.sa-santiago-1.oraclecloud.com
+https://docs.oracle.com/error-help/db/ora-17868/
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1175) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:954) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 14 common frames omitted
+Caused by: java.net.UnknownHostException: adb.sa-santiago-1.oraclecloud.com
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
+	at oracle.net.resolver.InetAddressResolver.resolveInetSocketAddresses(InetAddressResolver.java:89) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveConnOptions(AddrResolution.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveAddrTree(AddrResolution.java:1152) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 20 common frames omitted
+
+2026-05-24T20:21:19.929-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@407e9ee0 (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T20:21:20.263-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@63f17b8d (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T20:21:30.154-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@5c426f6f (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T20:21:32.296-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@bb983e3 (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T20:21:37.014-04:00  WARN 20340 --- [usuario-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@4e2b32b9 (ORA-17008: Conexión cerrada
+https://docs.oracle.com/error-help/db/ora-17008/). Possibly consider using a shorter maxLifetime value.
+2026-05-24T20:26:40.818-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T20:26:40.886-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T20:26:41.008-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2026-05-24T20:26:41.924-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T20:26:41.927-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T20:26:44.138-04:00 ERROR 20340 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.exception.GlobalHandlerException   : Objeto no encontrado: Usuario no encontrado
+2026-05-24T20:26:44.359-04:00  WARN 20340 --- [usuario-service] [http-nio-8082-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.usuario_service.exception.ResourceNotFoundException: Usuario no encontrado]
+2026-05-24T20:29:02.017-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-7] c.p.u.service.UsuarioService             : Se inicia búsqueda del usuario por RUN
+2026-05-24T20:29:02.525-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-7] c.p.u.service.UsuarioService             : Se transforma modelo a dto
+2026-05-24T20:29:39.967-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-4] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T20:29:39.974-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-4] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T20:29:40.067-04:00 ERROR 20340 --- [usuario-service] [http-nio-8082-exec-4] c.p.u.exception.GlobalHandlerException   : Objeto no encontrado: Usuario no encontrado
+2026-05-24T20:29:40.076-04:00  WARN 20340 --- [usuario-service] [http-nio-8082-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.usuario_service.exception.ResourceNotFoundException: Usuario no encontrado]
+2026-05-24T20:43:48.332-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-6] c.p.u.service.UsuarioService             : Se inicia búsqueda del usuario por RUN
+2026-05-24T20:43:48.439-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-6] c.p.u.service.UsuarioService             : Se transforma modelo a dto
+2026-05-24T20:44:50.908-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T20:44:50.937-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T20:44:51.069-04:00 ERROR 20340 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.exception.GlobalHandlerException   : Objeto no encontrado: Usuario no encontrado
+2026-05-24T20:44:51.074-04:00  WARN 20340 --- [usuario-service] [http-nio-8082-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.usuario_service.exception.ResourceNotFoundException: Usuario no encontrado]
+2026-05-24T20:46:28.171-04:00  INFO 20340 --- [usuario-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T20:46:28.228-04:00  INFO 20340 --- [usuario-service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T20:46:28.315-04:00  INFO 20340 --- [usuario-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T20:46:28.399-04:00  INFO 20340 --- [usuario-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:46:28.458-04:00  INFO 20340 --- [usuario-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T20:46:28.906-04:00  INFO 20340 --- [usuario-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T20:46:29.671-04:00  INFO 20340 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.9 with PID 20340 (C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service)
+2026-05-24T20:46:29.683-04:00  INFO 20340 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T20:46:32.183-04:00  INFO 20340 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T20:46:32.260-04:00  INFO 20340 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 1 JPA repository interface.
+2026-05-24T20:46:32.627-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-24T20:46:33.380-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-24T20:46:33.388-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T20:46:33.394-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T20:46:33.768-04:00  INFO 20340 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4070 ms
+2026-05-24T20:46:34.670-04:00  INFO 20340 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-24T20:46:35.684-04:00  INFO 20340 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection oracle.jdbc.driver.T4CConnection@3e2ee836
+2026-05-24T20:46:35.692-04:00  INFO 20340 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-24T20:46:35.762-04:00  INFO 20340 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-05-24T20:46:36.452-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.177s)
+2026-05-24T20:46:36.967-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-05-24T20:46:37.116-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-05-24T20:46:37.299-04:00  INFO 20340 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T20:46:37.669-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T20:46:37.894-04:00  INFO 20340 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T20:46:38.447-04:00  INFO 20340 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T20:46:38.453-04:00  INFO 20340 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:46:39.127-04:00  WARN 20340 --- [usuario-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T20:46:39.681-04:00 DEBUG 20340 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-05-24T20:46:39.742-04:00 DEBUG 20340 --- [usuario-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T20:46:39.785-04:00 DEBUG 20340 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T20:46:39.853-04:00 DEBUG 20340 --- [usuario-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T20:46:40.142-04:00  INFO 20340 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-05-24T20:46:40.182-04:00  INFO 20340 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Started UsuarioServiceApplication in 10.79 seconds (process running for 9350.578)
+2026-05-24T20:46:40.199-04:00  INFO 20340 --- [usuario-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T20:46:46.226-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T20:46:46.229-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T20:46:46.235-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-24T20:46:46.237-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-24T20:46:46.244-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7414f8d3
+2026-05-24T20:46:46.251-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@f79faa5
+2026-05-24T20:46:46.259-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-24T20:46:46.267-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 32 ms
+2026-05-24T20:46:46.287-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/usuarios/validado", parameters={}
+2026-05-24T20:46:46.488-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#validarUsuarioVenta(UsuarioRequest)
+2026-05-24T20:46:46.649-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioRequest(run=null, codSucursal=18253765-9, receta=RECETA_RETENIDA)]
+2026-05-24T20:46:46.828-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T20:46:46.846-04:00  INFO 20340 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T20:46:47.036-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.usuario_service.exception.GlobalHandlerException#handlerResourceNotFoundException(ResourceNotFoundException)
+2026-05-24T20:46:47.043-04:00 ERROR 20340 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.exception.GlobalHandlerException   : Objeto no encontrado: Usuario no encontrado
+2026-05-24T20:46:47.050-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T20:46:47.071-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(fecha=2026-05-24T20:46:47.043692600, estado=404, error=Not Found, mensaje=Usuario no e (truncated)...]
+2026-05-24T20:46:47.085-04:00  WARN 20340 --- [usuario-service] [http-nio-8082-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.usuario_service.exception.ResourceNotFoundException: Usuario no encontrado]
+2026-05-24T20:46:47.094-04:00 DEBUG 20340 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-05-24T20:48:00.596-04:00  INFO 20340 --- [usuario-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T20:48:00.634-04:00  INFO 20340 --- [usuario-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T20:48:00.644-04:00  INFO 20340 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:48:00.648-04:00  INFO 20340 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-05-24T20:48:01.188-04:00  INFO 20340 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-05-24T20:50:18.388-04:00  INFO 19796 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.9 with PID 19796 (C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service)
+2026-05-24T20:50:18.405-04:00  INFO 19796 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T20:50:18.672-04:00  INFO 19796 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\bobip\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/bobip/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-24T20:50:18.672-04:00  INFO 19796 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T20:50:18.672-04:00  INFO 19796 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T20:50:22.952-04:00  INFO 19796 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T20:50:23.177-04:00  INFO 19796 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 1 JPA repository interface.
+2026-05-24T20:50:23.855-04:00  INFO 19796 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-24T20:50:25.765-04:00  INFO 19796 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-24T20:50:25.843-04:00  INFO 19796 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T20:50:25.848-04:00  INFO 19796 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T20:50:26.079-04:00  INFO 19796 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7407 ms
+2026-05-24T20:50:28.470-04:00  INFO 19796 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T20:50:33.310-04:00  INFO 19796 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@799e54e3
+2026-05-24T20:50:33.310-04:00  INFO 19796 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T20:50:33.469-04:00  INFO 19796 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-05-24T20:50:35.484-04:00  INFO 19796 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.239s)
+2026-05-24T20:50:36.155-04:00  INFO 19796 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-05-24T20:50:36.297-04:00  INFO 19796 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-05-24T20:50:36.784-04:00  INFO 19796 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T20:50:37.059-04:00  INFO 19796 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T20:50:39.596-04:00  INFO 19796 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T20:50:40.389-04:00  INFO 19796 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T20:50:45.373-04:00  INFO 19796 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T20:50:45.429-04:00  INFO 19796 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:50:45.864-04:00  INFO 19796 --- [usuario-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T20:50:47.085-04:00  WARN 19796 --- [usuario-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T20:50:48.834-04:00 DEBUG 19796 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-05-24T20:50:48.984-04:00 DEBUG 19796 --- [usuario-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T20:50:49.100-04:00 DEBUG 19796 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T20:50:49.320-04:00 DEBUG 19796 --- [usuario-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T20:50:49.989-04:00  INFO 19796 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-05-24T20:50:50.038-04:00  INFO 19796 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Started UsuarioServiceApplication in 33.971 seconds (process running for 37.034)
+2026-05-24T20:50:56.222-04:00  INFO 19796 --- [usuario-service] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T20:50:56.224-04:00  INFO 19796 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T20:50:56.227-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-24T20:50:56.229-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-24T20:50:56.237-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6e820a2b
+2026-05-24T20:50:56.240-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@53c7022b
+2026-05-24T20:50:56.258-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-24T20:50:56.264-04:00  INFO 19796 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 36 ms
+2026-05-24T20:50:56.331-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/usuarios/validado", parameters={}
+2026-05-24T20:50:56.424-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#validarUsuarioVenta(UsuarioRequest)
+2026-05-24T20:50:57.514-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioRequest(run=null, codSucursal=18253765-9, receta=RECETA_RETENIDA)]
+2026-05-24T20:50:57.830-04:00  INFO 19796 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T20:50:57.892-04:00  INFO 19796 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T20:51:00.327-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.usuario_service.exception.GlobalHandlerException#handlerResourceNotFoundException(ResourceNotFoundException)
+2026-05-24T20:51:00.338-04:00 ERROR 19796 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.exception.GlobalHandlerException   : Objeto no encontrado: Usuario no encontrado
+2026-05-24T20:51:00.401-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T20:51:00.649-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(fecha=2026-05-24T20:51:00.338901500, estado=404, error=Not Found, mensaje=Usuario no e (truncated)...]
+2026-05-24T20:51:00.864-04:00  WARN 19796 --- [usuario-service] [http-nio-8082-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.usuario_service.exception.ResourceNotFoundException: Usuario no encontrado]
+2026-05-24T20:51:00.868-04:00 DEBUG 19796 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-05-24T20:55:00.784-04:00  INFO 19796 --- [usuario-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T20:55:00.970-04:00  INFO 19796 --- [usuario-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T20:55:00.997-04:00  INFO 19796 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:55:01.016-04:00  INFO 19796 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T20:55:01.679-04:00  INFO 19796 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T20:55:53.989-04:00  INFO 6256 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.9 with PID 6256 (C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\usuario_service)
+2026-05-24T20:55:54.011-04:00  INFO 6256 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T20:55:54.456-04:00  INFO 6256 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\bobip\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/bobip/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-05-24T20:55:54.456-04:00  INFO 6256 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T20:55:54.456-04:00  INFO 6256 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T20:55:59.645-04:00  INFO 6256 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T20:55:59.895-04:00  INFO 6256 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 192 ms. Found 1 JPA repository interface.
+2026-05-24T20:56:00.632-04:00  INFO 6256 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-05-24T20:56:02.942-04:00  INFO 6256 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-05-24T20:56:03.081-04:00  INFO 6256 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T20:56:03.084-04:00  INFO 6256 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T20:56:03.373-04:00  INFO 6256 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 8903 ms
+2026-05-24T20:56:06.006-04:00  INFO 6256 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T20:56:13.412-04:00  INFO 6256 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@40b799cf
+2026-05-24T20:56:13.436-04:00  INFO 6256 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T20:56:14.028-04:00  INFO 6256 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-05-24T20:56:16.889-04:00  INFO 6256 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.621s)
+2026-05-24T20:56:17.998-04:00  INFO 6256 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-05-24T20:56:18.213-04:00  INFO 6256 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-05-24T20:56:19.301-04:00  INFO 6256 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T20:56:19.830-04:00  INFO 6256 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T20:56:25.181-04:00  INFO 6256 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T20:56:26.563-04:00  INFO 6256 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T20:56:31.212-04:00  INFO 6256 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T20:56:31.252-04:00  INFO 6256 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:56:31.616-04:00  INFO 6256 --- [usuario-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T20:56:32.833-04:00  WARN 6256 --- [usuario-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T20:56:34.096-04:00 DEBUG 6256 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-05-24T20:56:34.214-04:00 DEBUG 6256 --- [usuario-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T20:56:34.313-04:00 DEBUG 6256 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T20:56:34.816-04:00 DEBUG 6256 --- [usuario-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T20:56:35.661-04:00  INFO 6256 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-05-24T20:56:35.705-04:00  INFO 6256 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Started UsuarioServiceApplication in 44.687 seconds (process running for 48.353)
+2026-05-24T20:59:00.818-04:00  INFO 6256 --- [usuario-service] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T20:59:00.819-04:00  INFO 6256 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T20:59:00.821-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-24T20:59:00.823-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-24T20:59:00.830-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5fcc674
+2026-05-24T20:59:00.835-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@55637761
+2026-05-24T20:59:00.838-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-24T20:59:00.841-04:00  INFO 6256 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2026-05-24T20:59:00.907-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/usuarios/validado", parameters={}
+2026-05-24T20:59:00.964-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#validarUsuarioVenta(UsuarioRequest)
+2026-05-24T20:59:01.448-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioRequest(run=null, codSucursal=HGX4356, receta=RECETA_RETENIDA)]
+2026-05-24T20:59:01.565-04:00  INFO 6256 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T20:59:01.567-04:00  INFO 6256 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T20:59:04.120-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.usuario_service.exception.GlobalHandlerException#handlerResourceNotFoundException(ResourceNotFoundException)
+2026-05-24T20:59:04.126-04:00 ERROR 6256 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.exception.GlobalHandlerException   : Objeto no encontrado: Usuario no encontrado
+2026-05-24T20:59:04.164-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T20:59:04.183-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(fecha=2026-05-24T20:59:04.126528500, estado=404, error=Not Found, mensaje=Usuario no e (truncated)...]
+2026-05-24T20:59:04.360-04:00  WARN 6256 --- [usuario-service] [http-nio-8082-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.usuario_service.exception.ResourceNotFoundException: Usuario no encontrado]
+2026-05-24T20:59:04.369-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-05-24T21:10:42.072-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/usuarios/validado", parameters={}
+2026-05-24T21:10:42.073-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#validarUsuarioVenta(UsuarioRequest)
+2026-05-24T21:10:42.077-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioRequest(run=null, codSucursal=HGX4356, receta=RECETA_RETENIDA)]
+2026-05-24T21:10:42.322-04:00  INFO 6256 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T21:10:42.323-04:00  INFO 6256 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T21:10:42.702-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.usuario_service.exception.GlobalHandlerException#handlerResourceNotFoundException(ResourceNotFoundException)
+2026-05-24T21:10:42.704-04:00 ERROR 6256 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.exception.GlobalHandlerException   : Objeto no encontrado: Usuario no encontrado
+2026-05-24T21:10:42.706-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T21:10:42.707-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(fecha=2026-05-24T21:10:42.703324, estado=404, error=Not Found, mensaje=Usuario no enco (truncated)...]
+2026-05-24T21:10:42.714-04:00  WARN 6256 --- [usuario-service] [http-nio-8082-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.usuario_service.exception.ResourceNotFoundException: Usuario no encontrado]
+2026-05-24T21:10:42.728-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-05-24T21:12:44.717-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/usuarios/validado", parameters={}
+2026-05-24T21:12:44.720-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#validarUsuarioVenta(UsuarioRequest)
+2026-05-24T21:12:44.724-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioRequest(run=null, codSucursal=HGX4356, receta=RECETA_RETENIDA)]
+2026-05-24T21:12:44.842-04:00  INFO 6256 --- [usuario-service] [http-nio-8082-exec-5] c.p.u.service.UsuarioService             : Inicia validación de venta
+2026-05-24T21:12:44.844-04:00  INFO 6256 --- [usuario-service] [http-nio-8082-exec-5] c.p.u.service.UsuarioService             : Verifica existencia de usuario
+2026-05-24T21:12:44.965-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.usuario_service.exception.GlobalHandlerException#handlerResourceNotFoundException(ResourceNotFoundException)
+2026-05-24T21:12:44.970-04:00 ERROR 6256 --- [usuario-service] [http-nio-8082-exec-5] c.p.u.exception.GlobalHandlerException   : Objeto no encontrado: Usuario no encontrado
+2026-05-24T21:12:44.972-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T21:12:44.977-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(fecha=2026-05-24T21:12:44.970259, estado=404, error=Not Found, mensaje=Usuario no enco (truncated)...]
+2026-05-24T21:12:44.987-04:00  WARN 6256 --- [usuario-service] [http-nio-8082-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.usuario_service.exception.ResourceNotFoundException: Usuario no encontrado]
+2026-05-24T21:12:44.996-04:00 DEBUG 6256 --- [usuario-service] [http-nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-05-24T21:15:01.915-04:00  INFO 6256 --- [usuario-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T21:15:02.058-04:00  INFO 6256 --- [usuario-service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:15:02.144-04:00  INFO 6256 --- [usuario-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:15:02.188-04:00  INFO 6256 --- [usuario-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:15:02.217-04:00  INFO 6256 --- [usuario-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T21:15:03.052-04:00  INFO 6256 --- [usuario-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

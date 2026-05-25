@@ -2591,3 +2591,1014 @@ Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL synta
 2026-05-24T18:09:39.652-04:00  INFO 18092 --- [venta-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-24T18:09:39.652-04:00  INFO 18092 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
 2026-05-24T18:09:39.698-04:00  INFO 18092 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-05-24T18:12:50.782-04:00  INFO 19492 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 19492 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T18:12:50.802-04:00  INFO 19492 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T18:12:51.112-04:00  INFO 19492 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T18:12:51.115-04:00  INFO 19492 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T18:12:55.969-04:00  INFO 19492 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T18:12:56.286-04:00  INFO 19492 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 248 ms. Found 1 JPA repository interface.
+2026-05-24T18:12:57.189-04:00  INFO 19492 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T18:13:00.091-04:00  INFO 19492 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T18:13:00.187-04:00  INFO 19492 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T18:13:00.189-04:00  INFO 19492 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T18:13:00.564-04:00  INFO 19492 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 9443 ms
+2026-05-24T18:13:03.092-04:00  INFO 19492 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T18:13:04.172-04:00  INFO 19492 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@64bd1a5c
+2026-05-24T18:13:04.182-04:00  INFO 19492 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T18:13:08.477-04:00  INFO 19492 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T18:13:12.095-04:00  INFO 19492 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:01.536s)
+2026-05-24T18:13:12.659-04:00  INFO 19492 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T18:13:12.713-04:00  INFO 19492 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T18:13:13.653-04:00  INFO 19492 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T18:13:14.217-04:00  INFO 19492 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T18:13:21.296-04:00  INFO 19492 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T18:13:23.168-04:00  WARN 19492 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T18:13:23.705-04:00  INFO 19492 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T18:13:45.291-04:00  INFO 19492 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T18:13:45.456-04:00  INFO 19492 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T18:13:47.469-04:00  WARN 19492 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T18:13:50.368-04:00  INFO 19492 --- [venta-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T18:14:02.572-04:00  INFO 19492 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T18:14:02.852-04:00  INFO 19492 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 75.324 seconds (process running for 82.589)
+2026-05-24T20:00:00.115-04:00  WARN 19492 --- [venta-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h46m20s516ms339µs700ns).
+2026-05-24T20:26:29.797-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T20:26:29.801-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T20:26:29.819-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2026-05-24T20:26:30.923-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T20:26:30.925-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T20:26:36.964-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T20:26:36.966-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T20:26:40.148-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T20:26:44.653-04:00  WARN 19492 --- [venta-service] [http-nio-8086-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8082/api/v1/usuarios/validado] [UsuarioFeignClient#validarUsuarioVenta(UsuarioRequest)]: [{"estado":404,"error":"Not Found","mensaje":"Usuario no encontrado","fecha":"2026-05-24T20:26:44.138926"}]]
+2026-05-24T20:29:39.639-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T20:29:39.641-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T20:29:39.657-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T20:29:39.666-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T20:29:39.864-04:00  INFO 19492 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T20:29:40.099-04:00  WARN 19492 --- [venta-service] [http-nio-8086-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8082/api/v1/usuarios/validado] [UsuarioFeignClient#validarUsuarioVenta(UsuarioRequest)]: [{"estado":404,"error":"Not Found","mensaje":"Usuario no encontrado","fecha":"2026-05-24T20:29:40.0678778"}]]
+2026-05-24T20:39:55.991-04:00  INFO 19492 --- [venta-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T20:39:56.156-04:00  INFO 19492 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T20:39:56.252-04:00  INFO 19492 --- [venta-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:39:56.291-04:00  INFO 19492 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T20:39:56.957-04:00  INFO 19492 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T20:43:54.847-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 5076 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T20:43:54.883-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T20:43:55.355-04:00  INFO 5076 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T20:43:55.362-04:00  INFO 5076 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T20:44:00.035-04:00  INFO 5076 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T20:44:00.298-04:00  INFO 5076 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 210 ms. Found 1 JPA repository interface.
+2026-05-24T20:44:01.034-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T20:44:03.920-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T20:44:04.024-04:00  INFO 5076 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T20:44:04.026-04:00  INFO 5076 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T20:44:04.381-04:00  INFO 5076 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 9004 ms
+2026-05-24T20:44:06.781-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T20:44:07.664-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@64bd1a5c
+2026-05-24T20:44:07.673-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T20:44:09.954-04:00  INFO 5076 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T20:44:10.325-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.201s)
+2026-05-24T20:44:10.408-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T20:44:10.448-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T20:44:11.205-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T20:44:11.861-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T20:44:16.302-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T20:44:16.970-04:00  WARN 5076 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T20:44:17.178-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T20:44:22.666-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T20:44:22.720-04:00  INFO 5076 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:44:23.294-04:00  WARN 5076 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T20:44:24.011-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T20:44:27.767-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T20:44:27.827-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 37.257 seconds (process running for 43.938)
+2026-05-24T20:44:46.471-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T20:44:46.472-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T20:44:46.481-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2026-05-24T20:44:47.337-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T20:44:47.338-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T20:44:49.902-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T20:44:49.904-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T20:44:50.384-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T20:44:51.286-04:00  WARN 5076 --- [venta-service] [http-nio-8086-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8082/api/v1/usuarios/validado] [UsuarioFeignClient#validarUsuarioVenta(UsuarioRequest)]: [{"estado":404,"error":"Not Found","mensaje":"Usuario no encontrado","fecha":"2026-05-24T20:44:51.0696897"}]]
+2026-05-24T20:46:24.119-04:00  INFO 5076 --- [venta-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T20:46:24.154-04:00  INFO 5076 --- [venta-service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T20:46:24.198-04:00  INFO 5076 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T20:46:24.239-04:00  INFO 5076 --- [venta-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:46:24.259-04:00  INFO 5076 --- [venta-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T20:46:24.461-04:00  INFO 5076 --- [venta-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T20:46:24.973-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 5076 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T20:46:25.014-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T20:46:26.852-04:00  INFO 5076 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T20:46:26.934-04:00  INFO 5076 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interface.
+2026-05-24T20:46:27.306-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T20:46:27.664-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T20:46:27.670-04:00  INFO 5076 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T20:46:27.672-04:00  INFO 5076 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T20:46:27.820-04:00  INFO 5076 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2794 ms
+2026-05-24T20:46:28.139-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-24T20:46:28.161-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@dc39573
+2026-05-24T20:46:28.165-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-24T20:46:28.220-04:00  INFO 5076 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T20:46:28.282-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.031s)
+2026-05-24T20:46:28.314-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T20:46:28.317-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T20:46:28.441-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T20:46:28.769-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T20:46:28.789-04:00  WARN 5076 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T20:46:28.794-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T20:46:29.145-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T20:46:29.149-04:00  INFO 5076 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:46:29.416-04:00  WARN 5076 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T20:46:31.750-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T20:46:31.796-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 7.057 seconds (process running for 167.906)
+2026-05-24T20:46:31.805-04:00  INFO 5076 --- [venta-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T20:46:46.038-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T20:46:46.039-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T20:46:46.046-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-05-24T20:46:46.109-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T20:46:46.111-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T20:46:46.133-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T20:46:46.134-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T20:46:46.209-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T20:46:47.142-04:00  WARN 5076 --- [venta-service] [http-nio-8086-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8082/api/v1/usuarios/validado] [UsuarioFeignClient#validarUsuarioVenta(UsuarioRequest)]: [{"estado":404,"error":"Not Found","mensaje":"Usuario no encontrado","fecha":"2026-05-24T20:46:47.0436926"}]]
+2026-05-24T20:50:55.695-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T20:50:55.696-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T20:50:55.706-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T20:50:55.708-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T20:50:55.813-04:00  INFO 5076 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T20:51:00.892-04:00  WARN 5076 --- [venta-service] [http-nio-8086-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8082/api/v1/usuarios/validado] [UsuarioFeignClient#validarUsuarioVenta(UsuarioRequest)]: [{"estado":404,"error":"Not Found","mensaje":"Usuario no encontrado","fecha":"2026-05-24T20:51:00.3389015"}]]
+2026-05-24T20:52:59.097-04:00  INFO 5076 --- [venta-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T20:52:59.109-04:00  INFO 5076 --- [venta-service] [Thread-7] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T20:52:59.149-04:00  INFO 5076 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T20:52:59.171-04:00  INFO 5076 --- [venta-service] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:52:59.174-04:00  INFO 5076 --- [venta-service] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-05-24T20:52:59.186-04:00  INFO 5076 --- [venta-service] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-05-24T20:52:59.726-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 5076 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T20:52:59.743-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T20:53:01.642-04:00  INFO 5076 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T20:53:01.752-04:00  INFO 5076 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 1 JPA repository interface.
+2026-05-24T20:53:02.330-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T20:53:03.086-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T20:53:03.120-04:00  INFO 5076 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T20:53:03.128-04:00  INFO 5076 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T20:53:03.444-04:00  INFO 5076 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3666 ms
+2026-05-24T20:53:03.896-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-05-24T20:53:03.929-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5af2ea7e
+2026-05-24T20:53:03.940-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-05-24T20:53:04.049-04:00  INFO 5076 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T20:53:04.124-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.032s)
+2026-05-24T20:53:04.186-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T20:53:04.217-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T20:53:04.321-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T20:53:04.610-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T20:53:04.624-04:00  WARN 5076 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T20:53:04.630-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T20:53:04.802-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T20:53:04.805-04:00  INFO 5076 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:53:05.038-04:00  WARN 5076 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T20:53:06.126-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T20:53:06.161-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 6.777 seconds (process running for 562.272)
+2026-05-24T20:53:06.168-04:00  INFO 5076 --- [venta-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T20:54:07.589-04:00  INFO 5076 --- [venta-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T20:54:07.596-04:00  INFO 5076 --- [venta-service] [Thread-13] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T20:54:07.627-04:00  INFO 5076 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T20:54:07.635-04:00  INFO 5076 --- [venta-service] [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:54:07.638-04:00  INFO 5076 --- [venta-service] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-05-24T20:54:07.654-04:00  INFO 5076 --- [venta-service] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-05-24T20:54:08.443-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 5076 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T20:54:08.467-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T20:54:11.252-04:00  INFO 5076 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T20:54:11.405-04:00  INFO 5076 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 133 ms. Found 1 JPA repository interface.
+2026-05-24T20:54:12.092-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T20:54:12.711-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T20:54:12.719-04:00  INFO 5076 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T20:54:12.721-04:00  INFO 5076 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T20:54:12.903-04:00  INFO 5076 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4331 ms
+2026-05-24T20:54:13.226-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-05-24T20:54:13.240-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58621f70
+2026-05-24T20:54:13.242-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-05-24T20:54:13.335-04:00  INFO 5076 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T20:54:13.386-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.022s)
+2026-05-24T20:54:13.415-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T20:54:13.419-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T20:54:13.525-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T20:54:13.693-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T20:54:13.715-04:00  WARN 5076 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T20:54:13.722-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T20:54:13.967-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T20:54:13.985-04:00  INFO 5076 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:54:14.285-04:00  WARN 5076 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T20:54:15.152-04:00 DEBUG 5076 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T20:54:15.210-04:00 DEBUG 5076 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T20:54:15.259-04:00 DEBUG 5076 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T20:54:15.303-04:00 DEBUG 5076 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T20:54:15.701-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T20:54:15.728-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 7.705 seconds (process running for 631.839)
+2026-05-24T20:54:15.734-04:00  INFO 5076 --- [venta-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T20:54:59.791-04:00  INFO 5076 --- [venta-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T20:55:00.317-04:00  INFO 5076 --- [venta-service] [Thread-19] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T20:55:00.444-04:00  INFO 5076 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T20:55:00.454-04:00  INFO 5076 --- [venta-service] [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:55:00.457-04:00  INFO 5076 --- [venta-service] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-05-24T20:55:00.471-04:00  INFO 5076 --- [venta-service] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2026-05-24T20:55:01.200-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 5076 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T20:55:01.203-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T20:55:02.923-04:00  INFO 5076 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T20:55:02.981-04:00  INFO 5076 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interface.
+2026-05-24T20:55:03.224-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T20:55:03.698-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T20:55:03.698-04:00  INFO 5076 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T20:55:03.698-04:00  INFO 5076 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T20:55:03.851-04:00  INFO 5076 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2640 ms
+2026-05-24T20:55:04.033-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2026-05-24T20:55:04.057-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10ca3cbd
+2026-05-24T20:55:04.057-04:00  INFO 5076 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2026-05-24T20:55:05.445-04:00  INFO 5076 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T20:55:05.941-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.468s)
+2026-05-24T20:55:06.102-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T20:55:06.139-04:00  INFO 5076 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T20:55:06.246-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T20:55:06.669-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T20:55:06.688-04:00  WARN 5076 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T20:55:06.691-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T20:55:07.041-04:00  INFO 5076 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T20:55:07.046-04:00  INFO 5076 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:55:07.276-04:00  WARN 5076 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T20:55:07.870-04:00 DEBUG 5076 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T20:55:07.916-04:00 DEBUG 5076 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T20:55:07.939-04:00 DEBUG 5076 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T20:55:07.971-04:00 DEBUG 5076 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T20:55:08.267-04:00  INFO 5076 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T20:55:08.316-04:00  INFO 5076 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 7.382 seconds (process running for 684.427)
+2026-05-24T20:55:08.316-04:00  INFO 5076 --- [venta-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T20:55:08.916-04:00  INFO 5076 --- [venta-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T20:55:08.945-04:00  INFO 5076 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T20:55:08.950-04:00  INFO 5076 --- [venta-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:55:08.950-04:00  INFO 5076 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2026-05-24T20:55:08.965-04:00  INFO 5076 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2026-05-24T20:58:18.279-04:00  INFO 20152 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 20152 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T20:58:18.295-04:00  INFO 20152 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T20:58:18.531-04:00  INFO 20152 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T20:58:18.531-04:00  INFO 20152 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T20:58:21.695-04:00  INFO 20152 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T20:58:21.923-04:00  INFO 20152 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 182 ms. Found 1 JPA repository interface.
+2026-05-24T20:58:22.584-04:00  INFO 20152 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T20:58:24.708-04:00  INFO 20152 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T20:58:24.783-04:00  INFO 20152 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T20:58:24.785-04:00  INFO 20152 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T20:58:25.011-04:00  INFO 20152 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6480 ms
+2026-05-24T20:58:26.795-04:00  INFO 20152 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T20:58:27.672-04:00  INFO 20152 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@64bd1a5c
+2026-05-24T20:58:27.679-04:00  INFO 20152 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T20:58:29.549-04:00  INFO 20152 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T20:58:29.757-04:00  INFO 20152 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.117s)
+2026-05-24T20:58:29.817-04:00  INFO 20152 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T20:58:29.833-04:00  INFO 20152 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T20:58:30.210-04:00  INFO 20152 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T20:58:30.485-04:00  INFO 20152 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T20:58:32.835-04:00  INFO 20152 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T20:58:33.138-04:00  WARN 20152 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T20:58:33.229-04:00  INFO 20152 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T20:58:36.934-04:00  INFO 20152 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T20:58:36.984-04:00  INFO 20152 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T20:58:37.426-04:00  WARN 20152 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T20:58:38.028-04:00  INFO 20152 --- [venta-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T20:58:39.632-04:00 DEBUG 20152 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T20:58:39.744-04:00 DEBUG 20152 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T20:58:39.863-04:00 DEBUG 20152 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T20:58:40.062-04:00 DEBUG 20152 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T20:58:40.720-04:00  INFO 20152 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T20:58:40.769-04:00  INFO 20152 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 24.624 seconds (process running for 27.689)
+2026-05-24T20:58:56.299-04:00  INFO 20152 --- [venta-service] [http-nio-8086-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T20:58:56.303-04:00  INFO 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T20:58:56.305-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-24T20:58:56.306-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-24T20:58:56.318-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@356482cf
+2026-05-24T20:58:56.323-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@29bc6db0
+2026-05-24T20:58:56.325-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-24T20:58:56.329-04:00  INFO 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2026-05-24T20:58:56.403-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/ventas", parameters={}
+2026-05-24T20:58:56.492-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.venta_service.controller.VentaController#agregarVenta(VentaDto)
+2026-05-24T20:58:57.076-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [VentaDto(codVenta=22, sku=AEH2H2N, codSucursal=HGX4356, runVendedor=18253765-9, cantidad=87, fechaVe (truncated)...]
+2026-05-24T20:58:57.406-04:00  INFO 20152 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T20:58:57.431-04:00  INFO 20152 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T20:59:00.241-04:00  INFO 20152 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T20:59:00.242-04:00  INFO 20152 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T20:59:00.427-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.w.c.HttpMessageConverterExtractor    : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2026-05-24T20:59:00.434-04:00  INFO 20152 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T20:59:04.474-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.venta_service.exception.GlobalExceptionHandler#handlerException(Exception)
+2026-05-24T20:59:04.524-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T20:59:04.552-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internar Server Error, message=Ha ocurrido un error en el sistema. S (truncated)...]
+2026-05-24T20:59:04.606-04:00  WARN 20152 --- [venta-service] [http-nio-8086-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8082/api/v1/usuarios/validado] [UsuarioFeignClient#validarUsuarioVenta(UsuarioRequest)]: [{"estado":404,"error":"Not Found","mensaje":"Usuario no encontrado","fecha":"2026-05-24T20:59:04.1265285"}]]
+2026-05-24T20:59:04.613-04:00 DEBUG 20152 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-05-24T21:08:24.350-04:00  INFO 20152 --- [venta-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T21:08:24.564-04:00  INFO 20152 --- [venta-service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:08:24.859-04:00  INFO 20152 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:08:24.992-04:00  INFO 20152 --- [venta-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:08:25.091-04:00  INFO 20152 --- [venta-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T21:08:25.262-04:00  INFO 20152 --- [venta-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T21:09:13.323-04:00  INFO 15700 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 15700 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T21:09:13.338-04:00  INFO 15700 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T21:09:13.575-04:00  INFO 15700 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T21:09:13.576-04:00  INFO 15700 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T21:09:18.217-04:00  INFO 15700 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T21:09:18.489-04:00  INFO 15700 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 208 ms. Found 1 JPA repository interface.
+2026-05-24T21:09:19.312-04:00  INFO 15700 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T21:09:21.607-04:00  INFO 15700 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T21:09:21.831-04:00  INFO 15700 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T21:09:21.831-04:00  INFO 15700 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T21:09:22.155-04:00  INFO 15700 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 8575 ms
+2026-05-24T21:09:23.925-04:00  INFO 15700 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T21:09:24.694-04:00  INFO 15700 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3aab9463
+2026-05-24T21:09:24.702-04:00  INFO 15700 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T21:09:26.630-04:00  INFO 15700 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T21:09:26.867-04:00  INFO 15700 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.130s)
+2026-05-24T21:09:26.920-04:00  INFO 15700 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T21:09:26.966-04:00  INFO 15700 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T21:09:27.460-04:00  INFO 15700 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T21:09:27.941-04:00  INFO 15700 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T21:09:31.363-04:00  INFO 15700 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T21:09:32.002-04:00  WARN 15700 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T21:09:32.246-04:00  INFO 15700 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T21:09:37.385-04:00  INFO 15700 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T21:09:37.423-04:00  INFO 15700 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:09:37.930-04:00  WARN 15700 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T21:09:38.753-04:00  INFO 15700 --- [venta-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T21:09:40.957-04:00 DEBUG 15700 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T21:09:41.080-04:00 DEBUG 15700 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T21:09:41.207-04:00 DEBUG 15700 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T21:09:41.532-04:00 DEBUG 15700 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T21:09:42.750-04:00  INFO 15700 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T21:09:42.799-04:00  INFO 15700 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 31.859 seconds (process running for 35.456)
+2026-05-24T21:10:38.473-04:00  INFO 15700 --- [venta-service] [http-nio-8086-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T21:10:38.475-04:00  INFO 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T21:10:38.477-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-24T21:10:38.478-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-24T21:10:38.488-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@16dd1a8b
+2026-05-24T21:10:38.504-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@597faf27
+2026-05-24T21:10:38.513-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-24T21:10:38.524-04:00  INFO 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 47 ms
+2026-05-24T21:10:38.594-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/ventas", parameters={}
+2026-05-24T21:10:38.659-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.venta_service.controller.VentaController#agregarVenta(VentaDto)
+2026-05-24T21:10:39.244-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [VentaDto(codVenta=22, sku=AEH2H2N, codSucursal=HGX4356, runVendedor=18253765-9, cantidad=87, fechaVe (truncated)...]
+2026-05-24T21:10:39.502-04:00  INFO 15700 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T21:10:39.504-04:00  INFO 15700 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T21:10:41.732-04:00  INFO 15700 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T21:10:41.735-04:00  INFO 15700 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T21:10:41.908-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.w.c.HttpMessageConverterExtractor    : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2026-05-24T21:10:41.913-04:00  INFO 15700 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T21:10:42.784-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.venta_service.exception.GlobalExceptionHandler#handlerException(Exception)
+2026-05-24T21:10:42.835-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T21:10:42.876-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internar Server Error, message=Ha ocurrido un error en el sistema. S (truncated)...]
+2026-05-24T21:10:42.951-04:00  WARN 15700 --- [venta-service] [http-nio-8086-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8082/api/v1/usuarios/validado] [UsuarioFeignClient#validarUsuarioVenta(UsuarioRequest)]: [{"estado":404,"error":"Not Found","mensaje":"Usuario no encontrado","fecha":"2026-05-24T21:10:42.703324"}]]
+2026-05-24T21:10:42.960-04:00 DEBUG 15700 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-05-24T21:11:10.495-04:00  INFO 15700 --- [venta-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:11:10.532-04:00  INFO 15700 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:11:10.555-04:00  INFO 15700 --- [venta-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:11:10.571-04:00  INFO 15700 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T21:11:10.611-04:00  INFO 15700 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T21:12:11.374-04:00  INFO 16640 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 16640 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T21:12:11.400-04:00  INFO 16640 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T21:12:11.716-04:00  INFO 16640 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T21:12:11.718-04:00  INFO 16640 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T21:12:16.140-04:00  INFO 16640 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T21:12:16.385-04:00  INFO 16640 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 176 ms. Found 1 JPA repository interface.
+2026-05-24T21:12:17.292-04:00  INFO 16640 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T21:12:19.560-04:00  INFO 16640 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T21:12:19.631-04:00  INFO 16640 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T21:12:19.634-04:00  INFO 16640 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T21:12:19.939-04:00  INFO 16640 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 8218 ms
+2026-05-24T21:12:21.854-04:00  INFO 16640 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T21:12:22.571-04:00  INFO 16640 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@64bd1a5c
+2026-05-24T21:12:22.579-04:00  INFO 16640 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T21:12:24.702-04:00  INFO 16640 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T21:12:24.925-04:00  INFO 16640 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.126s)
+2026-05-24T21:12:24.974-04:00  INFO 16640 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T21:12:24.987-04:00  INFO 16640 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T21:12:25.468-04:00  INFO 16640 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T21:12:25.780-04:00  INFO 16640 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T21:12:28.152-04:00  INFO 16640 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T21:12:28.442-04:00  WARN 16640 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T21:12:28.533-04:00  INFO 16640 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T21:12:32.053-04:00  INFO 16640 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T21:12:32.092-04:00  INFO 16640 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:12:32.570-04:00  WARN 16640 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T21:12:33.183-04:00  INFO 16640 --- [venta-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T21:12:34.810-04:00 DEBUG 16640 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T21:12:34.930-04:00 DEBUG 16640 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T21:12:35.035-04:00 DEBUG 16640 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T21:12:35.237-04:00 DEBUG 16640 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T21:12:35.883-04:00  INFO 16640 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T21:12:35.934-04:00  INFO 16640 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 27.456 seconds (process running for 31.983)
+2026-05-24T21:12:41.206-04:00  INFO 16640 --- [venta-service] [http-nio-8086-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T21:12:41.208-04:00  INFO 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T21:12:41.210-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-24T21:12:41.211-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-24T21:12:41.226-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@356482cf
+2026-05-24T21:12:41.232-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@29bc6db0
+2026-05-24T21:12:41.239-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-24T21:12:41.240-04:00  INFO 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 31 ms
+2026-05-24T21:12:41.300-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/ventas", parameters={}
+2026-05-24T21:12:41.369-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.venta_service.controller.VentaController#agregarVenta(VentaDto)
+2026-05-24T21:12:41.898-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [VentaDto(codVenta=22, sku=AEH2H2N, codSucursal=HGX4356, runVendedor=18253765-9, cantidad=87, fechaVe (truncated)...]
+2026-05-24T21:12:42.113-04:00  INFO 16640 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T21:12:42.116-04:00  INFO 16640 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T21:12:44.334-04:00  INFO 16640 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T21:12:44.336-04:00  INFO 16640 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T21:12:44.545-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.w.c.HttpMessageConverterExtractor    : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2026-05-24T21:12:44.551-04:00  INFO 16640 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T21:12:45.057-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.venta_service.exception.GlobalExceptionHandler#handlerException(Exception)
+2026-05-24T21:12:45.107-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T21:12:45.139-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internar Server Error, message=Ha ocurrido un error en el sistema. S (truncated)...]
+2026-05-24T21:12:45.215-04:00  WARN 16640 --- [venta-service] [http-nio-8086-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8082/api/v1/usuarios/validado] [UsuarioFeignClient#validarUsuarioVenta(UsuarioRequest)]: [{"estado":404,"error":"Not Found","mensaje":"Usuario no encontrado","fecha":"2026-05-24T21:12:44.970259"}]]
+2026-05-24T21:12:45.218-04:00 DEBUG 16640 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-05-24T21:14:38.956-04:00  INFO 16640 --- [venta-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:14:38.988-04:00  INFO 16640 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:14:39.019-04:00  INFO 16640 --- [venta-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:14:39.040-04:00  INFO 16640 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T21:14:39.077-04:00  INFO 16640 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T21:15:43.906-04:00  INFO 17504 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 17504 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T21:15:43.924-04:00  INFO 17504 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T21:15:44.203-04:00  INFO 17504 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T21:15:44.204-04:00  INFO 17504 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T21:15:49.093-04:00  INFO 17504 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T21:15:49.371-04:00  INFO 17504 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 215 ms. Found 1 JPA repository interface.
+2026-05-24T21:15:50.144-04:00  INFO 17504 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T21:15:53.343-04:00  INFO 17504 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T21:15:53.428-04:00  INFO 17504 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T21:15:53.431-04:00  INFO 17504 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T21:15:53.750-04:00  INFO 17504 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 9543 ms
+2026-05-24T21:15:56.518-04:00  INFO 17504 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T21:15:57.271-04:00  INFO 17504 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3aab9463
+2026-05-24T21:15:57.280-04:00  INFO 17504 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T21:15:59.669-04:00  INFO 17504 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T21:15:59.941-04:00  INFO 17504 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.138s)
+2026-05-24T21:15:59.999-04:00  INFO 17504 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T21:16:00.016-04:00  INFO 17504 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T21:16:00.721-04:00  INFO 17504 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T21:16:01.292-04:00  INFO 17504 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T21:16:03.846-04:00  INFO 17504 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T21:16:04.155-04:00  WARN 17504 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T21:16:04.262-04:00  INFO 17504 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T21:16:07.941-04:00  INFO 17504 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T21:16:07.980-04:00  INFO 17504 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:16:08.440-04:00  WARN 17504 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T21:16:09.045-04:00  INFO 17504 --- [venta-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T21:16:10.817-04:00 DEBUG 17504 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T21:16:10.951-04:00 DEBUG 17504 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T21:16:11.060-04:00 DEBUG 17504 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T21:16:11.265-04:00 DEBUG 17504 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T21:16:11.960-04:00  INFO 17504 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T21:16:12.013-04:00  INFO 17504 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 32.326 seconds (process running for 35.925)
+2026-05-24T21:16:18.753-04:00  INFO 17504 --- [venta-service] [http-nio-8086-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T21:16:18.755-04:00  INFO 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T21:16:18.757-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-24T21:16:18.758-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-24T21:16:18.775-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1c1ad019
+2026-05-24T21:16:18.784-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5abe9ae3
+2026-05-24T21:16:18.786-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-24T21:16:18.791-04:00  INFO 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 35 ms
+2026-05-24T21:16:18.864-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/ventas", parameters={}
+2026-05-24T21:16:18.941-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.venta_service.controller.VentaController#agregarVenta(VentaDto)
+2026-05-24T21:16:19.442-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [VentaDto(codVenta=22, sku=AEH2H2N, codSucursal=HGX4356, runVendedor=18253765-9, cantidad=87, fechaVe (truncated)...]
+2026-05-24T21:16:19.689-04:00  INFO 17504 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T21:16:19.691-04:00  INFO 17504 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T21:16:22.239-04:00  INFO 17504 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T21:16:22.240-04:00  INFO 17504 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T21:16:24.144-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.w.c.HttpMessageConverterExtractor    : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2026-05-24T21:16:24.149-04:00  INFO 17504 --- [venta-service] [http-nio-8086-exec-2] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T21:16:24.662-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.venta_service.exception.GlobalExceptionHandler#handlerException(Exception)
+2026-05-24T21:16:24.697-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T21:16:24.711-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internar Server Error, message=Ha ocurrido un error en el sistema. S (truncated)...]
+2026-05-24T21:16:24.765-04:00  WARN 17504 --- [venta-service] [http-nio-8086-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8082/api/v1/usuarios/validado] [UsuarioFeignClient#validarUsuarioVenta(UsuarioRequest)]: [{"estado":404,"error":"Not Found","mensaje":"Usuario no encontrado","fecha":"2026-05-24T21:16:24.5854488"}]]
+2026-05-24T21:16:24.768-04:00 DEBUG 17504 --- [venta-service] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-05-24T21:19:24.539-04:00  INFO 17504 --- [venta-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T21:19:24.572-04:00  INFO 17504 --- [venta-service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:19:24.622-04:00  INFO 17504 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:19:24.645-04:00  INFO 17504 --- [venta-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:19:24.663-04:00  INFO 17504 --- [venta-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T21:19:24.698-04:00  INFO 17504 --- [venta-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T21:19:25.372-04:00  INFO 17504 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 17504 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T21:19:25.379-04:00 DEBUG 17504 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-24T21:19:25.380-04:00  INFO 17504 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T21:19:26.867-04:00  INFO 17504 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T21:19:26.921-04:00  INFO 17504 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 1 JPA repository interface.
+2026-05-24T21:19:27.203-04:00  INFO 17504 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T21:19:27.489-04:00  INFO 17504 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T21:19:27.492-04:00  INFO 17504 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T21:19:27.494-04:00  INFO 17504 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T21:19:27.708-04:00  INFO 17504 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2312 ms
+2026-05-24T21:19:27.915-04:00  INFO 17504 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-24T21:19:27.930-04:00  INFO 17504 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d81769c
+2026-05-24T21:19:27.932-04:00  INFO 17504 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-24T21:19:28.048-04:00  INFO 17504 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T21:19:28.114-04:00  INFO 17504 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.021s)
+2026-05-24T21:19:28.139-04:00  INFO 17504 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T21:19:28.143-04:00  INFO 17504 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T21:19:28.230-04:00  INFO 17504 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T21:19:28.405-04:00  INFO 17504 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T21:19:28.416-04:00  WARN 17504 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T21:19:28.421-04:00  INFO 17504 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T21:19:28.617-04:00  INFO 17504 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T21:19:28.622-04:00  INFO 17504 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:19:28.830-04:00  WARN 17504 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T21:19:29.435-04:00 DEBUG 17504 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T21:19:29.480-04:00 DEBUG 17504 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T21:19:29.508-04:00 DEBUG 17504 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T21:19:29.540-04:00 DEBUG 17504 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T21:19:29.793-04:00  INFO 17504 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T21:19:29.821-04:00  INFO 17504 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 4.839 seconds (process running for 233.734)
+2026-05-24T21:19:29.828-04:00  INFO 17504 --- [venta-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T21:20:54.845-04:00  INFO 17504 --- [venta-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:20:54.871-04:00  INFO 17504 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:20:54.887-04:00  INFO 17504 --- [venta-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:20:54.893-04:00  INFO 17504 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-05-24T21:20:54.904-04:00  INFO 17504 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-05-24T21:21:38.086-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 10156 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T21:21:38.099-04:00 DEBUG 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-24T21:21:38.102-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T21:21:38.357-04:00  INFO 10156 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T21:21:38.359-04:00  INFO 10156 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T21:21:41.650-04:00  INFO 10156 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T21:21:41.887-04:00  INFO 10156 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 188 ms. Found 1 JPA repository interface.
+2026-05-24T21:21:42.556-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T21:21:44.550-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T21:21:44.616-04:00  INFO 10156 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T21:21:44.619-04:00  INFO 10156 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T21:21:44.873-04:00  INFO 10156 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6510 ms
+2026-05-24T21:21:46.599-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T21:21:47.403-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f620d8
+2026-05-24T21:21:47.413-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T21:21:49.357-04:00  INFO 10156 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T21:21:49.598-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.125s)
+2026-05-24T21:21:49.641-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T21:21:49.664-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T21:21:50.035-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T21:21:50.316-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T21:21:52.758-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T21:21:53.047-04:00  WARN 10156 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T21:21:53.127-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T21:21:56.819-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T21:21:56.858-04:00  INFO 10156 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:21:57.314-04:00  WARN 10156 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T21:21:58.043-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T21:21:59.702-04:00 DEBUG 10156 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T21:21:59.827-04:00 DEBUG 10156 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T21:21:59.935-04:00 DEBUG 10156 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T21:22:00.141-04:00 DEBUG 10156 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T21:22:00.834-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T21:22:00.872-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 25.22 seconds (process running for 28.531)
+2026-05-24T21:27:54.883-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T21:27:54.883-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T21:27:54.883-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-24T21:27:54.883-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-24T21:27:54.899-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@29ef114a
+2026-05-24T21:27:54.905-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5a6e84b2
+2026-05-24T21:27:54.913-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-24T21:27:54.918-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 31 ms
+2026-05-24T21:27:54.963-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/ventas", parameters={}
+2026-05-24T21:27:55.016-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.venta_service.controller.VentaController#agregarVenta(VentaDto)
+2026-05-24T21:27:55.450-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [VentaDto(codVenta=22, sku=AEH2H2N, codSucursal=HGX4356, runVendedor=18253765-9, cantidad=87, fechaVe (truncated)...]
+2026-05-24T21:27:55.685-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T21:27:55.687-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : id: 22
+2026-05-24T21:27:55.688-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T21:27:57.784-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T21:27:57.786-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T21:27:57.787-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : sku: AEH2H2N
+2026-05-24T21:27:57.902-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.w.c.HttpMessageConverterExtractor    : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2026-05-24T21:27:57.907-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T21:27:57.908-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : runVendedor: 18253765-9, codSucursal: HGX4356, receta: RECETA_RETENIDA
+2026-05-24T21:28:02.305-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.w.c.HttpMessageConverterExtractor    : Reading to [com.pharmanet.venta_service.dto.ValidadoDto]
+2026-05-24T21:28:02.331-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : mensajeVentaValidacion: null
+2026-05-24T21:28:02.364-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.venta_service.exception.GlobalExceptionHandler#handlerVentaInvalida(VentaInvalida)
+2026-05-24T21:28:02.401-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T21:28:02.413-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=400, error=Bad Request, message=null, errores=null)]
+2026-05-24T21:28:02.454-04:00  WARN 10156 --- [venta-service] [http-nio-8086-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.venta_service.exception.VentaInvalida]
+2026-05-24T21:28:02.458-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2026-05-24T21:29:09.974-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/ventas", parameters={}
+2026-05-24T21:29:09.976-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.venta_service.controller.VentaController#agregarVenta(VentaDto)
+2026-05-24T21:29:09.979-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [VentaDto(codVenta=22, sku=AEH2H2N, codSucursal=YTR126P, runVendedor=12345777-3, cantidad=87, fechaVe (truncated)...]
+2026-05-24T21:29:09.988-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T21:29:09.990-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : id: 22
+2026-05-24T21:29:09.992-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T21:29:10.000-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T21:29:10.001-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T21:29:10.002-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : sku: AEH2H2N
+2026-05-24T21:29:10.042-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] o.s.w.c.HttpMessageConverterExtractor    : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2026-05-24T21:29:10.045-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T21:29:10.046-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : runVendedor: 12345777-3, codSucursal: YTR126P, receta: RECETA_RETENIDA
+2026-05-24T21:29:10.383-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] o.s.w.c.HttpMessageConverterExtractor    : Reading to [com.pharmanet.venta_service.dto.ValidadoDto]
+2026-05-24T21:29:10.388-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : mensajeVentaValidacion: null
+2026-05-24T21:29:10.393-04:00  INFO 10156 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : Envío de solicitud de venta a inventario
+2026-05-24T21:29:10.394-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] c.p.venta_service.service.VentaService   : runVendedor: 12345777-3, codSucursal: YTR126P, sku: AEH2H2N, cantidad: 87
+2026-05-24T21:29:46.461-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.venta_service.exception.GlobalExceptionHandler#handlerVentaInvalida(VentaInvalida)
+2026-05-24T21:29:46.467-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T21:29:46.468-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=400, error=Bad Request, message=No existe un inventario con el código de la suc (truncated)...]
+2026-05-24T21:29:46.472-04:00  WARN 10156 --- [venta-service] [http-nio-8086-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.venta_service.exception.VentaInvalida: No existe un inventario con el código de la sucursal: YTR126P ni el sku: AEH2H2N o no hay stock disponible.]
+2026-05-24T21:29:46.476-04:00 DEBUG 10156 --- [venta-service] [http-nio-8086-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2026-05-24T21:31:54.667-04:00  INFO 10156 --- [venta-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-05-24T21:31:54.970-04:00  INFO 10156 --- [venta-service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:31:55.299-04:00  INFO 10156 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:31:55.451-04:00  INFO 10156 --- [venta-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:31:55.680-04:00  INFO 10156 --- [venta-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T21:31:56.074-04:00  INFO 10156 --- [venta-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T21:31:56.980-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 10156 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T21:31:56.994-04:00 DEBUG 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-24T21:31:57.000-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T21:31:59.684-04:00  INFO 10156 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T21:32:00.006-04:00  INFO 10156 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 172 ms. Found 1 JPA repository interface.
+2026-05-24T21:32:00.688-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T21:32:01.290-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T21:32:01.298-04:00  INFO 10156 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T21:32:01.300-04:00  INFO 10156 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T21:32:01.483-04:00  INFO 10156 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4458 ms
+2026-05-24T21:32:01.803-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-24T21:32:01.820-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@8f3b47
+2026-05-24T21:32:01.821-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-24T21:32:01.980-04:00  INFO 10156 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T21:32:02.122-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.047s)
+2026-05-24T21:32:02.207-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T21:32:02.213-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T21:32:02.354-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T21:32:02.788-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T21:32:02.805-04:00  WARN 10156 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T21:32:02.810-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T21:32:03.094-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T21:32:03.101-04:00  INFO 10156 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:32:03.364-04:00  WARN 10156 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T21:32:04.246-04:00 DEBUG 10156 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T21:32:04.296-04:00 DEBUG 10156 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T21:32:04.330-04:00 DEBUG 10156 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T21:32:04.370-04:00 DEBUG 10156 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T21:32:04.742-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T21:32:04.813-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 8.192 seconds (process running for 632.464)
+2026-05-24T21:32:04.822-04:00  INFO 10156 --- [venta-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T21:33:16.272-04:00  INFO 10156 --- [venta-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 4 class path changes (0 additions, 0 deletions, 4 modifications)
+2026-05-24T21:33:16.282-04:00  INFO 10156 --- [venta-service] [Thread-7] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:33:16.322-04:00  INFO 10156 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:33:16.345-04:00  INFO 10156 --- [venta-service] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:33:16.351-04:00  INFO 10156 --- [venta-service] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-05-24T21:33:16.370-04:00  INFO 10156 --- [venta-service] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-05-24T21:33:16.802-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 10156 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T21:33:16.805-04:00 DEBUG 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-24T21:33:16.815-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T21:33:18.398-04:00  INFO 10156 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T21:33:18.462-04:00  INFO 10156 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interface.
+2026-05-24T21:33:18.816-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T21:33:19.297-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T21:33:19.300-04:00  INFO 10156 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T21:33:19.306-04:00  INFO 10156 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T21:33:19.527-04:00  INFO 10156 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2697 ms
+2026-05-24T21:33:19.817-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-05-24T21:33:19.829-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5071178c
+2026-05-24T21:33:19.831-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-05-24T21:33:19.904-04:00  INFO 10156 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T21:33:19.955-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.026s)
+2026-05-24T21:33:19.985-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T21:33:19.987-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T21:33:20.061-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T21:33:20.268-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T21:33:20.285-04:00  WARN 10156 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T21:33:20.288-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T21:33:20.508-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T21:33:20.511-04:00  INFO 10156 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:33:20.702-04:00  WARN 10156 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T21:33:21.350-04:00 DEBUG 10156 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T21:33:21.399-04:00 DEBUG 10156 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T21:33:21.423-04:00 DEBUG 10156 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T21:33:21.454-04:00 DEBUG 10156 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T21:33:21.734-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T21:33:21.772-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 5.209 seconds (process running for 709.423)
+2026-05-24T21:33:21.806-04:00  INFO 10156 --- [venta-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T21:36:46.065-04:00  INFO 10156 --- [venta-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T21:36:46.168-04:00  INFO 10156 --- [venta-service] [Thread-13] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:36:46.274-04:00  INFO 10156 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:36:46.315-04:00  INFO 10156 --- [venta-service] [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:36:46.357-04:00  INFO 10156 --- [venta-service] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-05-24T21:36:46.494-04:00  INFO 10156 --- [venta-service] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-05-24T21:36:47.199-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 10156 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T21:36:47.201-04:00 DEBUG 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-24T21:36:47.202-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T21:36:48.611-04:00  INFO 10156 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T21:36:48.662-04:00  INFO 10156 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface.
+2026-05-24T21:36:48.874-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T21:36:49.140-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T21:36:49.142-04:00  INFO 10156 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T21:36:49.143-04:00  INFO 10156 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T21:36:49.304-04:00  INFO 10156 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2092 ms
+2026-05-24T21:36:49.857-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-05-24T21:36:49.892-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a0ac779
+2026-05-24T21:36:49.892-04:00  INFO 10156 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-05-24T21:36:50.104-04:00  INFO 10156 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T21:36:50.178-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.043s)
+2026-05-24T21:36:50.206-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T21:36:50.209-04:00  INFO 10156 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T21:36:50.277-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T21:36:50.475-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T21:36:50.484-04:00  WARN 10156 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T21:36:50.489-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T21:36:50.716-04:00  INFO 10156 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T21:36:50.731-04:00  INFO 10156 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:36:50.995-04:00  WARN 10156 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T21:36:51.684-04:00 DEBUG 10156 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T21:36:51.739-04:00 DEBUG 10156 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T21:36:51.767-04:00 DEBUG 10156 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T21:36:51.808-04:00 DEBUG 10156 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T21:36:52.065-04:00  INFO 10156 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T21:36:52.099-04:00  INFO 10156 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 5.385 seconds (process running for 919.749)
+2026-05-24T21:36:52.106-04:00  INFO 10156 --- [venta-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T21:37:29.300-04:00  INFO 10156 --- [venta-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:37:29.327-04:00  INFO 10156 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:37:29.334-04:00  INFO 10156 --- [venta-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:37:29.337-04:00  INFO 10156 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-05-24T21:37:29.351-04:00  INFO 10156 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2026-05-24T21:38:18.892-04:00  INFO 17624 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 17624 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T21:38:18.905-04:00 DEBUG 17624 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-24T21:38:18.909-04:00  INFO 17624 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T21:38:19.154-04:00  INFO 17624 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-24T21:38:19.156-04:00  INFO 17624 --- [venta-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-24T21:38:23.172-04:00  INFO 17624 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T21:38:23.428-04:00  INFO 17624 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 199 ms. Found 1 JPA repository interface.
+2026-05-24T21:38:24.194-04:00  INFO 17624 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T21:38:26.465-04:00  INFO 17624 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T21:38:26.588-04:00  INFO 17624 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T21:38:26.590-04:00  INFO 17624 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T21:38:26.878-04:00  INFO 17624 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7719 ms
+2026-05-24T21:38:28.692-04:00  INFO 17624 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-24T21:38:29.466-04:00  INFO 17624 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50e59373
+2026-05-24T21:38:29.474-04:00  INFO 17624 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-24T21:38:31.563-04:00  INFO 17624 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T21:38:31.780-04:00  INFO 17624 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.118s)
+2026-05-24T21:38:31.844-04:00  INFO 17624 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T21:38:31.890-04:00  INFO 17624 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T21:38:33.373-04:00  INFO 17624 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T21:38:35.299-04:00  INFO 17624 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-24T21:38:42.713-04:00  INFO 17624 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T21:38:44.190-04:00  WARN 17624 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T21:38:44.347-04:00  INFO 17624 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T21:38:59.627-04:00  INFO 17624 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T21:38:59.688-04:00  INFO 17624 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:39:00.180-04:00  WARN 17624 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T21:39:01.664-04:00  INFO 17624 --- [venta-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-24T21:39:10.580-04:00 DEBUG 17624 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T21:39:10.718-04:00 DEBUG 17624 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T21:39:10.915-04:00 DEBUG 17624 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T21:39:11.184-04:00 DEBUG 17624 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T21:39:12.168-04:00  INFO 17624 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T21:39:12.217-04:00  INFO 17624 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 56.265 seconds (process running for 60.185)
+2026-05-24T21:39:19.524-04:00  INFO 17624 --- [venta-service] [http-nio-8086-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T21:39:19.530-04:00  INFO 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T21:39:19.532-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-24T21:39:19.541-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-24T21:39:19.560-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1c1ad019
+2026-05-24T21:39:19.563-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5abe9ae3
+2026-05-24T21:39:19.566-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-24T21:39:19.573-04:00  INFO 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 36 ms
+2026-05-24T21:39:19.635-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/ventas", parameters={}
+2026-05-24T21:39:19.741-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.venta_service.controller.VentaController#agregarVenta(VentaDto)
+2026-05-24T21:39:20.339-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [VentaDto(codVenta=22, sku=AEH2H2N, codSucursal=YTR126P, runVendedor=12345777-3, cantidad=87, fechaVe (truncated)...]
+2026-05-24T21:39:20.659-04:00  INFO 17624 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Inicia funcionalidad de guardado de venta
+2026-05-24T21:39:20.663-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : id: 22
+2026-05-24T21:39:20.666-04:00  INFO 17624 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que la venta no haya sido registrada anteriormente
+2026-05-24T21:39:26.554-04:00  INFO 17624 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que la fecha de la venta sea exactamente igual a la de ingreso
+2026-05-24T21:39:26.554-04:00  INFO 17624 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Obtiene tipo de receta del producto
+2026-05-24T21:39:26.571-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : sku: AEH2H2N
+2026-05-24T21:39:29.588-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.w.c.HttpMessageConverterExtractor    : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2026-05-24T21:39:29.593-04:00  INFO 17624 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Valida que el usuario pueda vender producto
+2026-05-24T21:39:29.594-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : runVendedor: 12345777-3, codSucursal: YTR126P, receta: RECETA_RETENIDA
+2026-05-24T21:39:30.033-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.w.c.HttpMessageConverterExtractor    : Reading to [com.pharmanet.venta_service.dto.ValidadoDto]
+2026-05-24T21:39:30.059-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : mensajeVentaValidacion: null
+2026-05-24T21:39:30.059-04:00  INFO 17624 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : Envío de solicitud de venta a inventario
+2026-05-24T21:39:30.059-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] c.p.venta_service.service.VentaService   : runVendedor: 12345777-3, codSucursal: YTR126P, sku: AEH2H2N, cantidad: 87
+2026-05-24T21:39:30.349-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.venta_service.exception.GlobalExceptionHandler#handlerVentaInvalida(VentaInvalida)
+2026-05-24T21:39:30.395-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-05-24T21:39:30.411-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=400, error=Bad Request, message=No existe un inventario con el código de la suc (truncated)...]
+2026-05-24T21:39:30.491-04:00  WARN 17624 --- [venta-service] [http-nio-8086-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.venta_service.exception.VentaInvalida: No existe un inventario con el código de la sucursal: YTR126P ni el sku: AEH2H2N o no hay stock disponible.]
+2026-05-24T21:39:30.495-04:00 DEBUG 17624 --- [venta-service] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2026-05-24T21:42:16.820-04:00  INFO 17624 --- [venta-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-24T21:42:16.846-04:00  INFO 17624 --- [venta-service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:42:16.874-04:00  INFO 17624 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:42:16.888-04:00  INFO 17624 --- [venta-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:42:16.923-04:00  INFO 17624 --- [venta-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-24T21:42:16.982-04:00  INFO 17624 --- [venta-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-24T21:42:17.335-04:00  INFO 17624 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Starting VentaServiceApplication using Java 21.0.9 with PID 17624 (C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service\target\classes started by bobip in C:\Users\bobip\Documents\Inventario-y-Logistica\venta_service)
+2026-05-24T21:42:17.337-04:00  INFO 17624 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T21:42:18.340-04:00  INFO 17624 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-24T21:42:18.395-04:00  INFO 17624 --- [venta-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interface.
+2026-05-24T21:42:18.676-04:00  INFO 17624 --- [venta-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5fab6791-29ee-3ef6-ac9a-7ad4a1fa19c8
+2026-05-24T21:42:19.065-04:00  INFO 17624 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8086 (http)
+2026-05-24T21:42:19.072-04:00  INFO 17624 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T21:42:19.074-04:00  INFO 17624 --- [venta-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-24T21:42:19.513-04:00  INFO 17624 --- [venta-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2167 ms
+2026-05-24T21:42:19.755-04:00  INFO 17624 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-24T21:42:19.776-04:00  INFO 17624 --- [venta-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@16ea7512
+2026-05-24T21:42:19.782-04:00  INFO 17624 --- [venta-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-24T21:42:19.934-04:00  INFO 17624 --- [venta-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_venta (MySQL 5.5)
+2026-05-24T21:42:20.079-04:00  INFO 17624 --- [venta-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.112s)
+2026-05-24T21:42:20.119-04:00  INFO 17624 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_venta`: 2
+2026-05-24T21:42:20.122-04:00  INFO 17624 --- [venta-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_venta` is up to date. No migration necessary.
+2026-05-24T21:42:20.267-04:00  INFO 17624 --- [venta-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-24T21:42:20.823-04:00  INFO 17624 --- [venta-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-24T21:42:20.859-04:00  WARN 17624 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-24T21:42:20.869-04:00  INFO 17624 --- [venta-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_venta]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_venta/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-24T21:42:21.134-04:00  INFO 17624 --- [venta-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-24T21:42:21.147-04:00  INFO 17624 --- [venta-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:42:21.392-04:00  WARN 17624 --- [venta-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-24T21:42:22.106-04:00 DEBUG 17624 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2026-05-24T21:42:22.149-04:00 DEBUG 17624 --- [venta-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-24T21:42:22.177-04:00 DEBUG 17624 --- [venta-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-24T21:42:22.213-04:00 DEBUG 17624 --- [venta-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-24T21:42:22.477-04:00  INFO 17624 --- [venta-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8086 (http) with context path '/'
+2026-05-24T21:42:22.503-04:00  INFO 17624 --- [venta-service] [restartedMain] c.p.v.VentaServiceApplication            : Started VentaServiceApplication in 5.319 seconds (process running for 250.471)
+2026-05-24T21:42:22.510-04:00  INFO 17624 --- [venta-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-24T21:43:34.117-04:00  INFO 17624 --- [venta-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-24T21:43:34.180-04:00  INFO 17624 --- [venta-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-24T21:43:34.196-04:00  INFO 17624 --- [venta-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-24T21:43:34.206-04:00  INFO 17624 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-05-24T21:43:34.280-04:00  INFO 17624 --- [venta-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
