@@ -44,7 +44,7 @@ public class VentaController {
     }
     
 
-    @GetMapping("/{id}")
+    @GetMapping("/{codVenta}")
     public ResponseEntity<VentaDto> buscarPorCodVenta(@PathVariable Long codVenta) {
         VentaDto ventaDto = ventaService.buscarPorCodVenta(codVenta);
         return ResponseEntity.status(HttpStatus.OK).body(ventaDto);
@@ -78,9 +78,9 @@ public class VentaController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminarVenta(@PathVariable Long id) {
-        ventaService.eliminarVenta(id);
+    @DeleteMapping("/{codVenta}")
+    public ResponseEntity<?> eliminarVenta(@PathVariable Long codVenta) {
+        ventaService.eliminarVenta(codVenta);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

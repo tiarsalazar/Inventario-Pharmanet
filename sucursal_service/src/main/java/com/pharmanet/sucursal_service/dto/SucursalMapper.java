@@ -3,35 +3,46 @@ package com.pharmanet.sucursal_service.dto;
 import com.pharmanet.sucursal_service.entity.Sucursal;
 import com.pharmanet.sucursal_service.exception.ResourceNotFoundException;
 
+@Slf4j
 public class SucursalMapper {
 
-    public static SucursalDTO toDTO(Sucursal sucursal) {
+    public static SucursalDto toDTO(Sucursal entity) {
 
-        if (sucursal == null) {
-            throw new ResourceNotFoundException("La sucursal viene null");
-        }
+        log.info("Inicia cambio de entidad sucursal a objeto dto");
+        log.debug("entity: {}", entity);
 
-        return new SucursalDTO(sucursal.getCodInterno(),
-            sucursal.getNombreSucursal(),
-            sucursal.getTipoSucursal(),
-            sucursal.getRegion(),
-            sucursal.getComuna(),
-            sucursal.getDireccion()
+        return new SucursalDto(entity.getCodSucursal(),
+            entity.getNombreSucursal(),
+            entity.getTipoSucursal(),
+            entity.getRegion(),
+            entity.getComuna(),
+            entity.getDireccion()
         );
     }
 
-    public static Sucursal toModel(SucursalDTO sucursalDTO) {
+    public static Sucursal toEntity(SucursalDto dto) {
 
-        if (sucursalDTO == null) {
-            throw new ResourceNotFoundException("La sucursalDTO viene null");
-        }
+        log.info("Inicia cambio de objeto dto a entidad sucursal");
+        log.debug("dto: {}", dto);
         
-        return new Sucursal(sucursalDTO.getCodInterno(),
-            sucursalDTO.getNombreSucursal(),
-            sucursalDTO.getTipoSucursal(),
-            sucursalDTO.getRegion(),
-            sucursalDTO.getComuna(),
-            sucursalDTO.getDireccion()
+        return new Sucursal(dto.getCodSucursal(),
+            dto.getNombreSucursal(),
+            dto.getTipoSucursal(),
+            dto.getRegion(),
+            dto.getComuna(),
+            dto.getDireccion()
         );
+    }
+
+    public static Sucursal update(Sucursal actual, SucursalDto nueva) {
+        log.info("Inicia actualización de sucursal");
+        log.debug("actual: {}, nueva: {}", actual, nueva);
+
+        actual.setNombreSucursal(nueva.getNombreSucursal());
+        actual.setRegion(nueva.getRegion());
+        actual.setComuna(nueva.getComuna());
+        actual.getDireccion(nueva.getDireccion());
+
+        return actual;
     }
 }
