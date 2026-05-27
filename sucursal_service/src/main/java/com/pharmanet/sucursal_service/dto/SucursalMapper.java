@@ -6,12 +6,12 @@ import com.pharmanet.sucursal_service.exception.ResourceNotFoundException;
 @Slf4j
 public class SucursalMapper {
 
-    public static SucursalDto toDTO(Sucursal entity) {
+    public static SucursalDto toDto(Sucursal entity) {
 
         log.info("Inicia cambio de entidad sucursal a objeto dto");
         log.debug("entity: {}", entity);
 
-        return new SucursalDto(entity.getCodSucursal(),
+        return new SucursalDto(entity.getId(),
             entity.getNombreSucursal(),
             entity.getTipoSucursal(),
             entity.getRegion(),
@@ -22,10 +22,10 @@ public class SucursalMapper {
 
     public static Sucursal toEntity(SucursalDto dto) {
 
-        log.info("Inicia cambio de objeto dto a entidad sucursal");
+        log.info("Inicia cambio de objeto dto a entidad sucursal.");
         log.debug("dto: {}", dto);
         
-        return new Sucursal(dto.getCodSucursal(),
+        return new Sucursal(dto.getId(),
             dto.getNombreSucursal(),
             dto.getTipoSucursal(),
             dto.getRegion(),
@@ -35,7 +35,7 @@ public class SucursalMapper {
     }
 
     public static Sucursal update(Sucursal actual, SucursalDto nueva) {
-        log.info("Inicia actualización de sucursal");
+        log.info("Inicia actualización de sucursal.");
         log.debug("actual: {}, nueva: {}", actual, nueva);
 
         actual.setNombreSucursal(nueva.getNombreSucursal());

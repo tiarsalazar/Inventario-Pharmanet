@@ -12,8 +12,6 @@ import com.pharmanet.sucursal_service.entity.Sucursal;
 @Repository
 public interface SucursalRepository extends JpaRepository<Sucursal, Long> {
 
-    Optional<Sucursal> findByCodSucursal(String codSucursal);
-
     Page<Sucursal> findByRegion(String region, Pageable pageable);
 
     Page<Sucursal> findByTipoSucursal(TipoSucursal tipoSucursal, Pageable pageable);

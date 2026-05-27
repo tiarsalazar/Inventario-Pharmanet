@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.pharmanet.sucursal_service.dto.SucursalDTO;
+import com.pharmanet.sucursal_service.dto.SucursalDto;
 import com.pharmanet.sucursal_service.dto.SucursalMapper;
 import com.pharmanet.sucursal_service.entity.Sucursal;
 import com.pharmanet.sucursal_service.exception.NotUniqueSucursalException;
@@ -23,24 +23,34 @@ public class SucursalService {
 
     private final SucursalRepository sucursalRepository;
 
-    public SucursalDTO agregarSucursal(SucursalDTO sucursalDTO) {
+    public SucursalDto agregarSucursal(SucursalDto dto) {
         log.info("Inicia guardado de sucursal.");
-        log.debug("sucursalDTO: " + sucursalDTO);
+        log.debug("dto: {}" + dto);
 
-        log.info("Verifica que la sucursal no exista");
-        if(sucursalRepository.findByCodInterno(sucursalDTO.getCodInterno()).isPresent()) {
-            throw new NotUniqueSucursalException("Ya existe la sucursal en la base de datos: " + sucursalDTO.getCodInterno());
+        log.info("Búsqueda de posibles duplicados.");
+        if(sucursalRepository.findById(dto.getId()).isPresent()) {
+            throw new NotUniqueSucursalException("Ya se encuentra ingresada la sucursal: " + dto.getId());
         }
 
-        Sucursal sucursal = SucursalMapper.toModel(sucursalDTO);
-        sucursalRepository.save(sucursal);
-        log.debug("sucursal guardada:" + sucursal);
+        log.info("Verifica que la dirección ingresada sea válida.");
+        log.debug("region: {}, comuna: {}", dto.getRegion(), dto.getComuna());
 
-        return SucursalMapper.toDTO(sucursal);
+        try {
+
+        } catch (FeignException ex) {
+            throw new FeignException(ex.contentUTF8());
+        }
+
+        Sucursal sucursal = SucursalMapper.toEntity(dto);
+
+        log.debug("sucursal: {}", sucursal);
+        sucursalRepository.save(sucursal);
+        
+        return SucursalMapper.toDto(sucursal);
     }
 
-    public SucursalDTO buscarSucursal(String codInterno) {
-        log.info("Inicia busqueda de sucursal.");
+    public SucursalDTO buscarSucursal(String codSucursal) {
+        log.info("Inicia busqueda de sucursal por código de la sucursal.");
         log.debug("codInterno: " + codInterno);
 
         Sucursal sucursal = sucursalRepository.findByCodInterno(codInterno)

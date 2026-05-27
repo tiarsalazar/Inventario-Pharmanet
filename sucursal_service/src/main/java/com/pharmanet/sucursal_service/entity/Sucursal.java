@@ -27,10 +27,6 @@ public class Sucursal {
     @Column(name = "sucursal_id")
     private Long id;
 
-    @Column(name = "cod_sucursal", nullable = false, unique = true, length = 10)
-    @Pattern(regexp = "^[A-Z0-9]+$")
-    private String codSucursal;
-
     @Column(name = "nombre_sucursal", unique = true, length = 30)
     private String nombreSucursal;
 
@@ -39,17 +35,16 @@ public class Sucursal {
     private TipoSucursal tipoSucursal;
 
     @Column(nullable = false, length = 30)
-    private String region;
+    private Integer region;
     @Column(nullable = false, length = 40)
-    private String comuna;
+    private Integer comuna;
     @Column(nullable = false, length = 100)
     private String direccion;
 
     @Column(nullable = false, length = 15)
     private String estado = "activo"; // Sucursales activas por defecto
 
-    public Sucursal(String codSucursal, String nombreSucursal, TipoSucursal tipoSucursal, String region, String comuna, String direccion) {
-        this.codSucursal = codSucursal;
+    public Sucursal(String nombreSucursal, TipoSucursal tipoSucursal, Integer region, Integer comuna, String direccion) {
         this.nombreSucursal = nombreSucursal;
         this.tipoSucursal = tipoSucursal;
         this.region = region;
