@@ -1,7 +1,8 @@
 package com.pharmanet.sucursal_service.dto;
 
 import com.pharmanet.sucursal_service.entity.Sucursal;
-import com.pharmanet.sucursal_service.exception.ResourceNotFoundException;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class SucursalMapper {
@@ -14,8 +15,8 @@ public class SucursalMapper {
         return new SucursalDto(entity.getId(),
             entity.getNombreSucursal(),
             entity.getTipoSucursal(),
-            entity.getRegion(),
-            entity.getComuna(),
+            entity.getRegionId(),
+            entity.getComunaId(),
             entity.getDireccion()
         );
     }
@@ -28,8 +29,8 @@ public class SucursalMapper {
         return new Sucursal(dto.getId(),
             dto.getNombreSucursal(),
             dto.getTipoSucursal(),
-            dto.getRegion(),
-            dto.getComuna(),
+            dto.getRegionId(),
+            dto.getComunaId(),
             dto.getDireccion()
         );
     }
@@ -39,9 +40,9 @@ public class SucursalMapper {
         log.debug("actual: {}, nueva: {}", actual, nueva);
 
         actual.setNombreSucursal(nueva.getNombreSucursal());
-        actual.setRegion(nueva.getRegion());
-        actual.setComuna(nueva.getComuna());
-        actual.getDireccion(nueva.getDireccion());
+        actual.setRegionId(nueva.getRegionId());
+        actual.setComunaId(nueva.getComunaId());
+        actual.setDireccion(nueva.getDireccion());
 
         return actual;
     }

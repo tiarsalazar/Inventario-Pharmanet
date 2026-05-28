@@ -1,5 +1,7 @@
 package com.pharmanet.sucursal_service.dto;
 
+import com.pharmanet.sucursal_service.entity.TipoSucursal;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -22,13 +24,13 @@ public class SucursalDto {
     @NotBlank(message = "Campo obligatorio")
     @Pattern(regexp = "(?i)^(farmacia|bodega)$",
         message = "El tipo de sucursal no es válido. Entradas válidas: farmacia, bodega")
-    private String tipoSucursal;
+    private TipoSucursal tipoSucursal;
 
     @NotNull(message = "Campo obligatorio")
-    private String region;
+    private Integer regionId;
 
     @NotNull(message = "Campo obligatorio")
-    private String comuna;
+    private Integer comunaId;
 
     @NotBlank(message = "Campo obligatorio")
     @Size(max = 100, message = "Largo máximo 100 carácteres")
