@@ -1,6 +1,8 @@
-package com.pharmanet.localidad_service.entity;
+package com.pharmanet.ubicacion_service.entity;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,9 +32,10 @@ public class Region {
     private Integer regionId;
 
     @Column(nullable = false, length = 60)
-    @Size(min = 5)
+    @Size(min = 4, message = "Este campo no puede tener menos de 4 carácteres.")
     private String descripcion;
     
+    @JsonManagedReference
     @OneToMany(mappedBy = "region")
     private List<Comuna> comunas;
     

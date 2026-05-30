@@ -1,4 +1,4 @@
-package com.pharmanet.localidad_service.exception;
+package com.pharmanet.ubicacion_service.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
 

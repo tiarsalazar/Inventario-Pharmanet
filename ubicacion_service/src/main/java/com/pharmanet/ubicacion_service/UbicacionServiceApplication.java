@@ -1,13 +1,13 @@
-package com.pharmanet.localidad_service;
+package com.pharmanet.ubicacion_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LocalidadServiceApplication {
+public class UbicacionServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LocalidadServiceApplication.class, args);
+		SpringApplication.run(UbicacionServiceApplication.class, args);
 	}
 
 }

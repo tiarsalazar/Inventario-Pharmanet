@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.pharmanet</groupId>
-	<artifactId>localidad_service</artifactId>
+	<artifactId>ubicacion_service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>localidad_service</name>
 	<description/>

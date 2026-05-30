@@ -1,4 +1,6 @@
-package com.pharmanet.localidad_service.entity;
+package com.pharmanet.ubicacion_service.entity;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,10 +31,11 @@ public class Comuna {
     private Integer comunaId;
 
     @Column(nullable = false, length = 30)
-    @Size(min = 5)
+    @Size(min = 4, message = "Este campo no puede tener menos de 4 carácteres.")
     private String descripcion;
 
+    @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "region_id", nullable = false)
+    @JoinColumn(name = "region", nullable = false)
     private Region region;
 }

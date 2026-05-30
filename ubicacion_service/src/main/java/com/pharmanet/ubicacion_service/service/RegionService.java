@@ -1,13 +1,13 @@
-package com.pharmanet.localidad_service.service;
+package com.pharmanet.ubicacion_service.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.pharmanet.localidad_service.entity.Region;
-import com.pharmanet.localidad_service.exception.DuplicatedRegionException;
-import com.pharmanet.localidad_service.exception.ResourceNotFoundException;
-import com.pharmanet.localidad_service.repository.RegionRepository;
+import com.pharmanet.ubicacion_service.entity.Region;
+import com.pharmanet.ubicacion_service.exception.DuplicatedResourceException;
+import com.pharmanet.ubicacion_service.exception.ResourceNotFoundException;
+import com.pharmanet.ubicacion_service.repository.RegionRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -26,12 +26,21 @@ public class RegionService {
         log.debug("region: {}", region);
 
         if (regionRepository.existsById(region.getRegionId())) {
-            throw new DuplicatedRegionException("La region con el id " + region.getRegionId() + " ya se encuentra registrada.");
+            throw new DuplicatedResourceException("La region con el id " + region.getRegionId() + " ya se encuentra registrada.");
         }
 
         return regionRepository.save(region);
     }
 
+    public Region buscarRegion(Integer id) {
+        log.info("Inicia búsqueda de región por ID");
+        log.debug("id: {}", id);
+
+        Region region = regionRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la reguón con el ID: " + id));
+
+        return region;
+    }
     public Page<Region> mostrarTodasRegiones(Pageable pageable) {
         return regionRepository.findAll(pageable);
     }
@@ -41,7 +50,7 @@ public class RegionService {
         log.debug("region: {}", region);
 
         if (!regionRepository.existsById(region.getRegionId())) {
-            throw new ResourceNotFoundException("No se encuentra la sucursal con el ID: " + region.getRegionId());
+            throw new ResourceNotFoundException("No se encuentra la región con el ID: " + region.getRegionId());
         }
 
         regionRepository.save(region);
@@ -49,6 +58,11 @@ public class RegionService {
 
     public void eliminarRegion(Integer id) {
         log.info("Inicia eliminación de la región");
-        log.debug()
+        log.debug("id: {}", id);
+
+        Region region = regionRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la región con el ID: " + id));
+
+        regionRepository.delete(region);
     }
 }
