@@ -1,13 +1,15 @@
 CREATE TABLE region (
   region_id INT AUTO_INCREMENT,
-  descripcion VARCHAR(60) NOT NULL,
+  cod_region VARCHAR(2) NOT NULL CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAINT UN_REGION_DESC UNIQUE,
   PRIMARY KEY (region_id)
 );
 
 CREATE TABLE comuna (
   comuna_id INT AUTO_INCREMENT,
+  cod_comuna INT NOT NULL CONSTRAINT UN_COMUNA_COD UNIQUE,
   region INT NOT NULL,
-  descripcion VARCHAR(30) NOT NULL,
+  descripcion VARCHAR(30) NOT NULL UN_COMUNA_DESC UNIQUE,
   PRIMARY KEY (comuna_id),
-  FOREIGN KEY (region) REFERENCES region(region_id)
+  FOREIGN KEY (region) REFERENCES region(cod_region)
 );

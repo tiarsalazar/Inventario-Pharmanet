@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.pharmanet.ubicacion_service.dto.RegionDto;
 import com.pharmanet.ubicacion_service.entity.Region;
 import com.pharmanet.ubicacion_service.exception.DuplicatedResourceException;
 import com.pharmanet.ubicacion_service.exception.ResourceNotFoundException;
@@ -21,14 +22,15 @@ public class RegionService {
 
     private final RegionRepository regionRepository;
 
-    public Region agregarRegion(Region region) {
+    public RegionDto agregarRegion(RegionDto dto) {
         log.info("Inicia agregado de región.");
-        log.debug("region: {}", region);
+        log.debug("dto: {}", dto);
 
-        if (regionRepository.existsById(region.getRegionId())) {
-            throw new DuplicatedResourceException("La region con el id " + region.getRegionId() + " ya se encuentra registrada.");
+        if (regionRepository.findByCodRegion(dto.getCodRegion()).isPresent()) {
+            throw new DuplicatedResourceException("La region con el codigo " + dto.getCodRegion() + " ya está registrada.");
         }
 
+        Region region = 
         return regionRepository.save(region);
     }
 

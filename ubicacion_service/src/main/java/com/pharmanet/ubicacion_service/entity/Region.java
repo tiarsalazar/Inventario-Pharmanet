@@ -11,7 +11,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,8 +30,10 @@ public class Region {
     @Column(name = "region_id")
     private Integer regionId;
 
-    @Column(nullable = false, length = 60)
-    @Size(min = 4, message = "Este campo no puede tener menos de 4 carácteres.")
+    @Column(name = "cod_region", nullable = false, unique = true, length = 2)
+    private String codRegion;
+
+    @Column(nullable = false, unique = true, length = 60)
     private String descripcion;
     
     @JsonManagedReference

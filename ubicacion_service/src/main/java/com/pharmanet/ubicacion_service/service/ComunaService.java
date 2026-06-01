@@ -21,7 +21,7 @@ public class ComunaService {
 
     private final ComunaRepository comunaRepository;
 
-    public Comuna agregarComuna(Comuna comuna) {
+    public static Comuna agregarComuna(Comuna comuna) {
         log.info("Inicia agregado de comuna.");
         log.debug("comuna: {}", comuna);
 
