@@ -10,5 +10,7 @@ import com.pharmanet.ubicacion_service.entity.Comuna;
 @Repository
 public interface ComunaRepository extends JpaRepository<Comuna, Integer> {
 
-    Optional<Comuna> findByComunaIdAndRegion_RegionId(Integer comu, Integer region);
+    Optional<Comuna> findByCodComuna(Integer comu);
+
+    Optional<Comuna> findByComunaIdAndRegion_RegionId(Integer comu, String region);
 }

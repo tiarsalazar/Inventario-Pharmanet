@@ -4,10 +4,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.pharmanet.ubicacion_service.dto.ComunaDto;
+import com.pharmanet.ubicacion_service.dto.ComunaMapper;
 import com.pharmanet.ubicacion_service.entity.Comuna;
-import com.pharmanet.ubicacion_service.exception.DuplicatedResourceException;
+import com.pharmanet.ubicacion_service.entity.Region;
+import com.pharmanet.ubicacion_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.ubicacion_service.exception.ResourceNotFoundException;
 import com.pharmanet.ubicacion_service.repository.ComunaRepository;
+import com.pharmanet.ubicacion_service.repository.RegionRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -20,58 +24,67 @@ import lombok.extern.slf4j.Slf4j;
 public class ComunaService {
 
     private final ComunaRepository comunaRepository;
+    private final RegionRepository regionRepository;
 
-    public static Comuna agregarComuna(Comuna comuna) {
+    public ComunaDto agregarComuna(Comuna comuna) {
         log.info("Inicia agregado de comuna.");
         log.debug("comuna: {}", comuna);
 
-        if (comunaRepository.existsById(comuna.getComunaId())) {
-            throw new DuplicatedResourceException("La comuna con el id " + comuna.getComunaId() + " ya se encuentra registrada.");
+        if (!comunaRepository.findByCodComuna(comuna.getCodComuna()).isPresent()) {
+            throw new ResourceAlreadyExistsException("La comuna con el código " + comuna.getCodComuna() + " ya se encuentra registrada.");
         }
 
-        return comunaRepository.save(comuna);
+        return ComunaMapper.toDto(comunaRepository.save(comuna));
     }
 
-    public Comuna buscarComuna(Integer id) {
-        log.info("Inicia búsqueda de la comuna por ID");
-        log.debug("id: {}", id);
+    public ComunaDto buscarComuna(Integer codComuna) {
+        log.info("Inicia búsqueda de la comuna por código.");
+        log.debug("codComuna: {}", codComuna);
 
-        Comuna comuna = comunaRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el ID: " + id));
+        Comuna comuna = comunaRepository.findByCodComuna(codComuna)
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el código: " + codComuna));
 
-        return comuna;
+        return ComunaMapper.toDto(comuna);
     }
 
-    public Page<Comuna> mostrarTodasComunas(Pageable pageable) {
-        return comunaRepository.findAll(pageable);
+    public Page<ComunaDto> mostrarTodasComunas(Pageable pageable) {
+        return comunaRepository.findAll(pageable)
+            .map(ComunaMapper::toDto);
     }
 
-    public void actualizarComuna(Comuna comuna) {
+    public void actualizarComuna(ComunaDto dto) {
         log.info("Inicia actualización de comuna");
-        log.debug("comuna: {}", comuna);
+        log.debug("dto: {}", dto);
 
-        if (!comunaRepository.existsById(comuna.getComunaId())) {
-            throw new ResourceNotFoundException("No se encuentra la comuna con el ID: " + comuna.getComunaId());
-        }
+        Comuna comuna = comunaRepository.findByCodComuna(dto.getCodComuna())
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el código " + dto.getCodComuna()));
+
+        Region region = (dto.getRegion().isEmpty())
+            ? comuna.getRegion()
+            : regionRepository.findByCodRegion(dto.getRegion())
+                .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la región con el código: " + dto.getRegion()));
+
+        comuna = ComunaMapper.update(comuna, dto, region);
 
         comunaRepository.save(comuna);
     }
 
-    public void eliminarComuna(Integer id) {
+    public void eliminarComuna(Integer codComuna) {
         log.info("Inicia eliminación de la comuna");
-        log.debug("id: {}", id);
+        log.debug("codComuna: {}", codComuna);
 
-        Comuna comuna = comunaRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el ID: " + id));
+        Comuna comuna = comunaRepository.findByCodComuna(codComuna)
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el código: " + codComuna));
 
         comunaRepository.delete(comuna);
     }
 
-    public Comuna validarComuna(Integer comuna, Integer region) {
+    public ComunaDto validarComuna(Integer comuna, String region) {
         log.info("Inicia búsqueda de comuna");
         log.debug("comunaId: {}, region: {}", comuna, region);
 
-        return comunaRepository.findByComunaIdAndRegion_RegionId(comuna, region)
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el id: " + comuna + " y la región: " + region));
+        return ComunaMapper.toDto(
+            comunaRepository.findByComunaIdAndRegion_RegionId(comuna, region)
+                .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el id: " + comuna + " y la región: " + region)));
     }
 }

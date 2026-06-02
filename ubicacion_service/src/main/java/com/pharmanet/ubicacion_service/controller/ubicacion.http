@@ -1,0 +1,2 @@
+GET http://localhost:8087/api/v1/regiones
+

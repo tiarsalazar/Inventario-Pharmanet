@@ -1929,3 +1929,7 @@ Caused by: org.springframework.data.core.PropertyReferenceException: No property
 2026-05-29T20:01:11.145-04:00  INFO 20596 --- [ubicacion-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-29T20:01:11.150-04:00  INFO 20596 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-05-29T20:01:11.157-04:00  INFO 20596 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-01T20:36:36.756-04:00  INFO 10432 --- [ubicacion-service] [main] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 10432 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-01T20:36:36.760-04:00  INFO 10432 --- [ubicacion-service] [main] c.p.u.UbicacionServiceApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-01T20:36:37.284-04:00  INFO 10432 --- [ubicacion-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-01T20:36:37.321-04:00  INFO 10432 --- [ubicacion-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
