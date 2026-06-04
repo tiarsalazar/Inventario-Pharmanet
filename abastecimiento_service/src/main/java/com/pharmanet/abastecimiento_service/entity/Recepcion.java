@@ -41,8 +41,6 @@ public class Recepcion {
     private Long id;
     @Column(name = "run_usuario", nullable = false, length = 10)
     private String runUsuario;
-    @Column(name = "orden_compra", length = 30)
-    private String ordenCompra;
     @Column(name = "codigo_sucursal", nullable = false, length = 10)
     private String codSucursal;
     @Column(name = "numero_documento", nullable = false, length = 30)
@@ -52,12 +50,8 @@ public class Recepcion {
     private TipoDocumento tipoDocumento;
     @Column(name = "rut_proveedor", nullable = false, length = 15)
     private String rutProveedor;
-    @Column(name = "nombre_proveedor", nullable = false, length = 100)
-    private String nombreProveedor;
     @Column(name = "fecha_ingreso", nullable = false)
     private LocalDateTime fechaIngreso = LocalDateTime.now();
-    @Column(name = "observaciones", length = 255)
-    private String observaciones;
     @Column(name = "monto_total", nullable = false, precision = 12, scale = 2)
     private BigDecimal montoTotal;
     @Enumerated(EnumType.STRING)

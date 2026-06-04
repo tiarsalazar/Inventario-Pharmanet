@@ -62,13 +62,6 @@ public class RecepcionService {
     }
 
     @Transactional(readOnly = true)
-    public Page<RecepcionResponse> buscarPorOrdenCompra(String ordenCompra, String codSucursal, Pageable pageable){
-        log.info("Obteniendo historial de recepciones por orden de compra {}", ordenCompra);
-        return recepRepo.findByOrdenCompraAndCodSucursal(ordenCompra, codSucursal, pageable)
-            .map(recepMapper::toRecepcionResponse);
-    }
-
-    @Transactional(readOnly = true)
     public Page<RecepcionResponse> buscarPorFecha(String codSucursal, LocalDate inicio, LocalDate fin, Pageable pageable){
         log.info("Obteniendo historial de recepciones por rango de fechas: {} - {}", inicio, fin);
         return recepRepo.findByCodSucursalAndFechaIngresoBetween(codSucursal, inicio.atStartOfDay(), fin.atTime(LocalTime.MAX), pageable)

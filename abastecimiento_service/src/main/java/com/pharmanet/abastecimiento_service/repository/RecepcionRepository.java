@@ -15,7 +15,6 @@ public interface RecepcionRepository extends JpaRepository<Recepcion, Long>{
         String rutProveedor, TipoDocumento tipoDocumento, String numeroDocumento);
     Page<Recepcion> findByRutProveedorAndCodSucursal(String rutProveedor, String codSucursal, Pageable pageable);
     Page<Recepcion> findByCodSucursal(String codSucursal, Pageable pageable);
-    Page<Recepcion> findByOrdenCompraAndCodSucursal(String ordenCompra, String codSucursal, Pageable pageable);
     Page<Recepcion> findByCodSucursalAndFechaIngresoBetween(String codSucursal, LocalDateTime inicio, LocalDateTime fin, Pageable pageable);
     Page<Recepcion> findByRunUsuarioAndCodSucursal(String runUsuario, String codSucursal, Pageable pageable);
     Optional<Recepcion> findByIdAndCodSucursal(Long id, String codSucursal);

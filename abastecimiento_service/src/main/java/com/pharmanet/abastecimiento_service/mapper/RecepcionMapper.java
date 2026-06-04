@@ -17,13 +17,10 @@ public class RecepcionMapper {
     public Recepcion toRecepcionEntity(RecepcionRequest request, String runUsuario, String codSucursal){
         Recepcion recepcion = new Recepcion();
         recepcion.setRunUsuario(runUsuario);
-        recepcion.setOrdenCompra(request.getOrdenCompra());
         recepcion.setCodSucursal(codSucursal);
         recepcion.setNumeroDocumento(request.getNumeroDocumento());
         recepcion.setTipoDocumento(request.getTipoDocumento());
         recepcion.setRutProveedor(request.getRutProveedor());
-        recepcion.setNombreProveedor(request.getNombreProveedor());
-        recepcion.setObservaciones(request.getObservaciones());
 
         request.getDetalles().stream()
         .map(this::toDetalleEntity)
@@ -45,14 +42,11 @@ public class RecepcionMapper {
     public RecepcionResponse toRecepcionResponse(Recepcion recepcion){
         RecepcionResponse response = new RecepcionResponse();
         response.setRunUsuario(recepcion.getRunUsuario());
-        response.setOrdenCompra(recepcion.getOrdenCompra());
         response.setCodSucursal(recepcion.getCodSucursal());
         response.setNumeroDocumento(recepcion.getNumeroDocumento());
         response.setTipoDocumento(recepcion.getTipoDocumento());
         response.setRutProveedor(recepcion.getRutProveedor());
-        response.setNombreProveedor(recepcion.getNombreProveedor());
         response.setFechaIngreso(recepcion.getFechaIngreso());
-        response.setObservaciones(recepcion.getObservaciones());
         response.setMontoTotal(recepcion.getMontoTotal());
         response.setEstado(recepcion.getEstado());
 

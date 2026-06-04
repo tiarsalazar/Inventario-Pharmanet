@@ -17,15 +17,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecepcionResponse {
+    private Long id;
     private String runUsuario;
-    private String ordenCompra;
     private String codSucursal;
     private String numeroDocumento;
     private TipoDocumento tipoDocumento;
     private String rutProveedor;
-    private String nombreProveedor;
     private LocalDateTime fechaIngreso;
-    private String observaciones;
     private BigDecimal montoTotal;
     private EstadoRecepcion estado;
     private List<DetalleRecepcionResponse> detalles;

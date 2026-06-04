@@ -24,9 +24,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.PutMapping;
 
-
-
-
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/recepciones")
@@ -52,12 +49,6 @@ public class RecepcionController {
     public ResponseEntity<Page<RecepcionResponse>> buscarPorRutProveedor(
             @PathVariable String codSucursal, @RequestParam String rutProveedor, Pageable pageable) {
         return ResponseEntity.ok(recepServ.buscarRecepcionPorProveedor(rutProveedor, codSucursal, pageable));
-    }
-
-    @GetMapping("/sucursales/{codSucursal}/ordenes")
-    public ResponseEntity<Page<RecepcionResponse>> buscarPorOrdenCompra(
-            @PathVariable String codSucursal, @RequestParam String ordenCompra, Pageable pageable) {
-        return ResponseEntity.ok(recepServ.buscarPorOrdenCompra(ordenCompra, codSucursal, pageable));
     }
 
     @GetMapping("/sucursales/{codSucursal}/fechas")

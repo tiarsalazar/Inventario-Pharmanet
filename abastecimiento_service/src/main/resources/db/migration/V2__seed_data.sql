@@ -1,12 +1,12 @@
 -- 1. INSERCIÓN EN TABLA: RECEPCIONES
 INSERT INTO recepciones (
-recepcion_id, run_usuario, orden_compra, codigo_sucursal, numero_documento,
-tipo_documento, rut_proveedor, nombre_proveedor, fecha_ingreso, observaciones,
+recepcion_id, run_usuario, codigo_sucursal, numero_documento,
+tipo_documento, rut_proveedor, fecha_ingreso,
 monto_total, estado_recepcion
 ) VALUES
-(1, '12345777-3', 'OC-2026-0041', 'YTR126P', '88431', 'FACTURA', '76.123.456-K', 'Laboratorio Pfizer Chile', '2026-05-01 09:00:00', 'Ingreso regular de stock para Farmacia', 1325000.00, 'PROCESADO'),
-(2, '13987654-3', 'OC-2026-0039', 'JPY765T', '9921', 'GUIA_DESPACHO', '76.123.456-K', 'Laboratorio Pfizer Chile', '2026-04-20 08:00:00', 'Carga masiva de Claritin centralizado', 7000000.00, 'PROCESADO'),
-(3, '12345777-3', 'OC-2025-0912', 'YTR126P', '7654', 'FACTURA', '84.998.221-3', 'Droguería Alfa S.A.', '2025-10-01 14:00:00', 'Medicamento de rotación rápida', 240000.00, 'PROCESADO');
+(1, '12345777-3', 'YTR126P', '88431', 'FACTURA', '76.123.456-K', '2026-05-01 09:00:00', 1325000.00, 'PROCESADA'),
+(2, '13987654-3', 'JPY765T', '9921', 'GUIA_DESPACHO', '76.123.456-K', '2026-04-20 08:00:00', 7000000.00, 'PROCESADA'),
+(3, '12345777-3', 'YTR126P', '7654', 'FACTURA', '84.998.221-3', '2025-10-01 14:00:00', 240000.00, 'PROCESADA');
 
 ALTER SEQUENCE recepciones_recepcion_id_seq RESTART WITH 4;
 

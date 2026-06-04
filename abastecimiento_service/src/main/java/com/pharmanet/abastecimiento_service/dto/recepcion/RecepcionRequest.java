@@ -19,8 +19,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecepcionRequest {
-    @Size(max = 30, message = "Orden de compra no puede superar 30 caracteres.")
-    private String ordenCompra;
     @NotBlank(message = "Numero de documento es obligatorio.")
     @Size(max = 30, message = "Numero de documento no puede superar 30 caracteres.")
     private String numeroDocumento;
@@ -29,11 +27,6 @@ public class RecepcionRequest {
     @NotBlank(message = "RUT proveedor es obligatorio.")
     @Size(max = 15, message = "RUT proveedor no puede superar 15 caracteres.")
     private String rutProveedor;
-    @NotBlank(message = "Nombre proveedor es obligatorio.")
-    @Size(max = 100, message = "Nombre proveedor no debe superar 100 caracteres.")
-    private String nombreProveedor;
-    @Size(max = 255, message = "Observacion no puede superar 255 caracteres.")
-    private String observaciones;
     @Valid 
     @NotEmpty(message = "Debe ingresar al menos un detalle.")
     private List<DetalleRecepcionRequest> detalles;

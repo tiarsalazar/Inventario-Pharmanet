@@ -2,14 +2,11 @@
 CREATE TABLE recepciones (
     recepcion_id BIGSERIAL PRIMARY KEY,
     run_usuario VARCHAR(10) NOT NULL,
-    orden_compra VARCHAR(30),
     codigo_sucursal VARCHAR(10) NOT NULL,
     numero_documento VARCHAR(30) NOT NULL,
     tipo_documento VARCHAR(30) NOT NULL,
     rut_proveedor VARCHAR(15) NOT NULL,
-    nombre_proveedor VARCHAR(100) NOT NULL,
     fecha_ingreso TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    observaciones VARCHAR(255),
     monto_total NUMERIC(12, 2) NOT NULL,
     estado_recepcion VARCHAR(255) NOT NULL DEFAULT 'PENDIENTE',
     
