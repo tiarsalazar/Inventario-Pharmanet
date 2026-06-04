@@ -30,8 +30,8 @@ public class ComunaService {
         log.info("Inicia agregado de comuna.");
         log.debug("comuna: {}", comuna);
 
-        if (!comunaRepository.findByCodComuna(comuna.getCodComuna()).isPresent()) {
-            throw new ResourceAlreadyExistsException("La comuna con el código " + comuna.getCodComuna() + " ya se encuentra registrada.");
+        if (comunaRepository.findByCodComuna(comuna.getCodComuna()).isPresent() || comunaRepository.findByDescripcion(comuna.getDescripcion()).isPresent()) {
+            throw new ResourceAlreadyExistsException("La comuna ya se encuentra registrada.");
         }
 
         Region region = regionRepository.findByCodRegion(comuna.getRegion())

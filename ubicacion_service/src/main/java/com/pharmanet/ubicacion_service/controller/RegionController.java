@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pharmanet.ubicacion_service.dto.RegionDto;
 import com.pharmanet.ubicacion_service.service.RegionService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -43,13 +44,13 @@ public class RegionController {
     }
 
     @PostMapping
-    public ResponseEntity<RegionDto> agregarRegion(@RequestBody RegionDto region) {
+    public ResponseEntity<RegionDto> agregarRegion(@Valid @RequestBody RegionDto region) {
         RegionDto resultado = regionService.agregarRegion(region);
         return ResponseEntity.status(HttpStatus.CREATED).body(resultado);
     }
     
     @PutMapping
-    public ResponseEntity<?> actualizarRegion(@RequestBody RegionDto region) {
+    public ResponseEntity<?> actualizarRegion(@Valid @RequestBody RegionDto region) {
         regionService.actualizarRegion(region);   
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }

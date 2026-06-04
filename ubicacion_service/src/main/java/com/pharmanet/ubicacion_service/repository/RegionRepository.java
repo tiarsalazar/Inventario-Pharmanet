@@ -11,4 +11,6 @@ import com.pharmanet.ubicacion_service.entity.Region;
 public interface RegionRepository extends JpaRepository<Region, Integer> {
 
     Optional<Region> findByCodRegion(String codRegion);
+
+    Optional<Region> findByDescripcion(String desc);
 }
