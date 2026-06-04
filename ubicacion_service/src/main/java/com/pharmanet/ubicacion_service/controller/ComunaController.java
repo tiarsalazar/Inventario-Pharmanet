@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pharmanet.ubicacion_service.dto.ComunaDto;
 import com.pharmanet.ubicacion_service.service.ComunaService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -50,13 +51,13 @@ public class ComunaController {
     
 
     @PostMapping
-    public ResponseEntity<ComunaDto> agregarComuna(@RequestBody ComunaDto comuna) {
+    public ResponseEntity<ComunaDto> agregarComuna(@Valid @RequestBody ComunaDto comuna) {
         ComunaDto resultado = comunaService.agregarComuna(comuna);
         return ResponseEntity.status(HttpStatus.CREATED).body(resultado);
     }
     
     @PutMapping
-    public ResponseEntity<?> actualizarComuna(@RequestBody ComunaDto comuna) {
+    public ResponseEntity<?> actualizarComuna(@Valid @RequestBody ComunaDto comuna) {
         comunaService.actualizarComuna(comuna);   
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }

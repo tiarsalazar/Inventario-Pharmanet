@@ -12,4 +12,5 @@ CREATE TABLE comuna (
   descripcion VARCHAR(30) NOT NULL UNIQUE,
   PRIMARY KEY (comuna_id),
   FOREIGN KEY (region) REFERENCES region(cod_region)
+  ON DELETE CASCADE
 );

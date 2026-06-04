@@ -36,7 +36,7 @@ public class Region {
     @Column(nullable = false, unique = true, length = 60)
     private String descripcion;
     
-    @OneToMany(mappedBy = "region", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "region", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comuna> comunas;
     
 }

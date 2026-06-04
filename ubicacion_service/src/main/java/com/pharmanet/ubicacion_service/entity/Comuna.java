@@ -34,6 +34,6 @@ public class Comuna {
     private String descripcion;
 
     @ManyToOne
-    @JoinColumn(name = "cod_region", referencedColumnName = "cod_region", nullable = false)
+    @JoinColumn(name = "region", referencedColumnName = "cod_region", nullable = false)
     private Region region;
 }
