@@ -1933,3 +1933,835 @@ Caused by: org.springframework.data.core.PropertyReferenceException: No property
 2026-06-01T20:36:36.760-04:00  INFO 10432 --- [ubicacion-service] [main] c.p.u.UbicacionServiceApplication        : No active profile set, falling back to 1 default profile: "default"
 2026-06-01T20:36:37.284-04:00  INFO 10432 --- [ubicacion-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2026-06-01T20:36:37.321-04:00  INFO 10432 --- [ubicacion-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+2026-06-04T13:59:50.522-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 40168 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-04T13:59:50.525-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-04T13:59:50.572-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T13:59:50.573-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T13:59:51.051-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T13:59:51.096-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 2 JPA repository interfaces.
+2026-06-04T13:59:51.474-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-04T13:59:51.487-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T13:59:51.488-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T13:59:51.532-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 958 ms
+2026-06-04T13:59:51.821-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-04T13:59:53.301-04:00  WARN 40168 --- [ubicacion-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Unknown database 'bd_ubicacion'
+--------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'bd_ubicacion'
+
+2026-06-04T13:59:53.305-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-04T13:59:53.311-04:00  INFO 40168 --- [ubicacion-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-04T13:59:53.322-04:00 ERROR 40168 --- [ubicacion-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Unknown database 'bd_ubicacion'
+--------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'bd_ubicacion'
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.ubicacion_service.UbicacionServiceApplication.main(UbicacionServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Unknown database 'bd_ubicacion'
+--------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'bd_ubicacion'
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: Unknown database 'bd_ubicacion'
+--------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'bd_ubicacion'
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'bd_ubicacion'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:840) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+
+2026-06-04T14:01:43.974-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 51660 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-04T14:01:43.977-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-04T14:01:44.023-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T14:01:44.023-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T14:01:44.490-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T14:01:44.540-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2026-06-04T14:01:44.896-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-04T14:01:44.906-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T14:01:44.906-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T14:01:44.953-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 929 ms
+2026-06-04T14:01:45.238-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-04T14:01:45.360-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@21deb05c
+2026-06-04T14:01:45.361-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-04T14:01:45.763-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-04T14:01:45.796-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `bd_ubicacion`.`flyway_schema_history` does not exist yet
+2026-06-04T14:01:45.799-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.018s)
+2026-06-04T14:01:45.822-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `bd_ubicacion`.`flyway_schema_history` ...
+2026-06-04T14:01:45.864-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: << Empty Schema >>
+2026-06-04T14:01:45.871-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_ubicacion` to version "1 - create tables"
+2026-06-04T14:01:45.880-04:00 ERROR 51660 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migration of schema `bd_ubicacion` to version "1 - create tables" failed! Please restore backups and roll back database and code!
+2026-06-04T14:01:45.895-04:00  WARN 51660 --- [ubicacion-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+2026-06-04T14:01:45.899-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-04T14:01:45.904-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-04T14:01:45.907-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-04T14:01:45.913-04:00  INFO 51660 --- [ubicacion-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-04T14:01:45.926-04:00 ERROR 51660 --- [ubicacion-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.ubicacion_service.UbicacionServiceApplication.main(UbicacionServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.database.mysql.MySQLNamedLockTemplate.execute(MySQLNamedLockTemplate.java:62) ~[flyway-mysql-11.14.1.jar:na]
+	at org.flywaydb.database.mysql.MySQLConnection.lock(MySQLConnection.java:159) ~[flyway-mysql-11.14.1.jar:na]
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.lambda$migrate$3(Flyway.java:245) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:240) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:255) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:216) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:136) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.14.1.jar:na]
+	... 36 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:839) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:687) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:211) ~[flyway-core-11.14.1.jar:na]
+	... 42 common frames omitted
+
+2026-06-04T14:06:11.560-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 41972 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-04T14:06:11.565-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-04T14:06:11.610-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T14:06:11.611-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T14:06:12.136-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T14:06:12.179-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2026-06-04T14:06:12.545-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-04T14:06:12.556-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T14:06:12.557-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T14:06:12.594-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 981 ms
+2026-06-04T14:06:12.865-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-04T14:06:12.987-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7aa5748f
+2026-06-04T14:06:12.989-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-04T14:06:13.408-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-04T14:06:13.438-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `bd_ubicacion`.`flyway_schema_history` does not exist yet
+2026-06-04T14:06:13.441-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.016s)
+2026-06-04T14:06:13.461-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `bd_ubicacion`.`flyway_schema_history` ...
+2026-06-04T14:06:13.493-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: << Empty Schema >>
+2026-06-04T14:06:13.499-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_ubicacion` to version "1 - create tables"
+2026-06-04T14:06:13.507-04:00 ERROR 41972 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migration of schema `bd_ubicacion` to version "1 - create tables" failed! Please restore backups and roll back database and code!
+2026-06-04T14:06:13.518-04:00  WARN 41972 --- [ubicacion-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+2026-06-04T14:06:13.520-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-04T14:06:13.527-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-04T14:06:13.529-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-04T14:06:13.534-04:00  INFO 41972 --- [ubicacion-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-04T14:06:13.546-04:00 ERROR 41972 --- [ubicacion-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.ubicacion_service.UbicacionServiceApplication.main(UbicacionServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.database.mysql.MySQLNamedLockTemplate.execute(MySQLNamedLockTemplate.java:62) ~[flyway-mysql-11.14.1.jar:na]
+	at org.flywaydb.database.mysql.MySQLConnection.lock(MySQLConnection.java:159) ~[flyway-mysql-11.14.1.jar:na]
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.lambda$migrate$3(Flyway.java:245) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:240) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:255) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:216) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:136) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.14.1.jar:na]
+	... 36 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:839) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:687) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:211) ~[flyway-core-11.14.1.jar:na]
+	... 42 common frames omitted
+
+2026-06-04T14:08:11.242-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 27744 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-04T14:08:11.246-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-04T14:08:11.290-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T14:08:11.290-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T14:08:11.746-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T14:08:11.787-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2026-06-04T14:08:12.152-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-04T14:08:12.162-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T14:08:12.164-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T14:08:12.201-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 910 ms
+2026-06-04T14:08:12.472-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-04T14:08:12.591-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7aa5748f
+2026-06-04T14:08:12.592-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-04T14:08:12.992-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-04T14:08:13.022-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `bd_ubicacion`.`flyway_schema_history` does not exist yet
+2026-06-04T14:08:13.025-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.014s)
+2026-06-04T14:08:13.042-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `bd_ubicacion`.`flyway_schema_history` ...
+2026-06-04T14:08:13.072-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: << Empty Schema >>
+2026-06-04T14:08:13.081-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_ubicacion` to version "1 - create tables"
+2026-06-04T14:08:13.090-04:00 ERROR 27744 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migration of schema `bd_ubicacion` to version "1 - create tables" failed! Please restore backups and roll back database and code!
+2026-06-04T14:08:13.105-04:00  WARN 27744 --- [ubicacion-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+2026-06-04T14:08:13.107-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-04T14:08:13.114-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-04T14:08:13.117-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-04T14:08:13.124-04:00  INFO 27744 --- [ubicacion-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-04T14:08:13.137-04:00 ERROR 27744 --- [ubicacion-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.ubicacion_service.UbicacionServiceApplication.main(UbicacionServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.database.mysql.MySQLNamedLockTemplate.execute(MySQLNamedLockTemplate.java:62) ~[flyway-mysql-11.14.1.jar:na]
+	at org.flywaydb.database.mysql.MySQLConnection.lock(MySQLConnection.java:159) ~[flyway-mysql-11.14.1.jar:na]
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.lambda$migrate$3(Flyway.java:245) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:240) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Failed to execute script V1__create_tables.sql
+----------------------------------------------
+SQL State  : 42000
+Error Code : 1064
+Message    : You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+Location   : db/migration/V1__create_tables.sql (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes\db\migration\V1__create_tables.sql)
+Line       : 1
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:255) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:216) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:136) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.14.1.jar:na]
+	... 36 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CONSTRAINT UN_REGION_COD UNIQUE,
+  descripcion VARCHAR(60) NOT NULL CONSTRAI...' at line 3
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:839) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:687) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:211) ~[flyway-core-11.14.1.jar:na]
+	... 42 common frames omitted
+
+2026-06-04T14:08:56.127-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 41032 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-04T14:08:56.129-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-04T14:08:56.166-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T14:08:56.166-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T14:08:56.631-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T14:08:56.675-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2026-06-04T14:08:57.031-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-04T14:08:57.044-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T14:08:57.045-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T14:08:57.089-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 922 ms
+2026-06-04T14:08:57.363-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-04T14:08:57.482-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7aa5748f
+2026-06-04T14:08:57.483-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-04T14:08:57.871-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-04T14:08:57.903-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `bd_ubicacion`.`flyway_schema_history` does not exist yet
+2026-06-04T14:08:57.907-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.015s)
+2026-06-04T14:08:57.926-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `bd_ubicacion`.`flyway_schema_history` ...
+2026-06-04T14:08:57.954-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: << Empty Schema >>
+2026-06-04T14:08:57.961-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_ubicacion` to version "1 - create tables"
+2026-06-04T14:08:57.992-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_ubicacion` to version "2 - inserts"
+2026-06-04T14:08:58.014-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `bd_ubicacion`, now at version v2 (execution time 00:00.023s)
+2026-06-04T14:08:58.074-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-04T14:08:58.110-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-04T14:08:58.460-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-04T14:08:58.510-04:00  WARN 41032 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-04T14:08:58.523-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-04T14:08:59.214-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-04T14:08:59.220-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T14:08:59.278-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-04T14:08:59.469-04:00  WARN 41032 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-04T14:08:59.565-04:00 DEBUG 41032 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
+2026-06-04T14:08:59.584-04:00 DEBUG 41032 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-06-04T14:08:59.602-04:00 DEBUG 41032 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-04T14:08:59.635-04:00 DEBUG 41032 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-04T14:08:59.719-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-04T14:08:59.723-04:00  INFO 41032 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 3.947 seconds (process running for 4.379)
+2026-06-04T14:09:29.375-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-04T14:09:29.375-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-04T14:09:29.375-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-04T14:09:29.375-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-04T14:09:29.376-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3936e72a
+2026-06-04T14:09:29.377-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@350824af
+2026-06-04T14:09:29.377-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-04T14:09:29.377-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-04T14:09:29.383-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/regiones", parameters={}
+2026-06-04T14:09:29.390-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.RegionController#mostrarTodos(Pageable)
+2026-06-04T14:09:29.403-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.u.controller.RegionController        : Inicia búsqueda de todas las regiones.
+2026-06-04T14:09:29.557-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:09:29.557-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:09:29.557-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:09:29.557-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:09:29.558-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:09:29.558-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:09:29.558-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:09:29.558-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:09:29.558-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:09:29.558-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:09:29.567-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:09:29.568-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 2 containing com.pharmanet.ubicacion_service.dto.RegionDto instances]
+2026-06-04T14:09:29.602-04:00  WARN 41032 --- [ubicacion-service] [http-nio-8087-exec-2] ration$PageModule$WarningLoggingModifier : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-06-04T14:09:29.614-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T14:09:38.736-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/comunas", parameters={}
+2026-06-04T14:09:38.737-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.ComunaController#mostrarTodos(Pageable)
+2026-06-04T14:09:38.738-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-3] c.p.u.controller.ComunaController        : Inicia búsqueda de todas las comunas.
+2026-06-04T14:09:38.742-04:00  WARN 41032 --- [ubicacion-service] [http-nio-8087-exec-3] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1054, SQLState: 42S22
+2026-06-04T14:09:38.742-04:00  WARN 41032 --- [ubicacion-service] [http-nio-8087-exec-3] org.hibernate.orm.jdbc.error             : Unknown column 'c1_0.cod_region' in 'field list'
+2026-06-04T14:09:38.750-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T14:09:38.751-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:09:38.752-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T14:09:38.754-04:00  WARN 41032 --- [ubicacion-service] [http-nio-8087-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC exception executing SQL [Unknown column 'c1_0.cod_region' in 'field list'] [select c1_0.comuna_id,c1_0.cod_comuna,c1_0.descripcion,c1_0.cod_region from comuna c1_0 order by c1_0.comuna_id limit ?,?]; SQL [select c1_0.comuna_id,c1_0.cod_comuna,c1_0.descripcion,c1_0.cod_region from comuna c1_0 order by c1_0.comuna_id limit ?,?]]
+2026-06-04T14:09:38.754-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T14:10:51.252-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/regiones", parameters={}
+2026-06-04T14:10:51.252-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.RegionController#mostrarTodos(Pageable)
+2026-06-04T14:10:51.253-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.u.controller.RegionController        : Inicia búsqueda de todas las regiones.
+2026-06-04T14:10:51.258-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:10:51.258-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:10:51.258-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:10:51.258-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:10:51.259-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:10:51.259-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:10:51.259-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:10:51.260-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:10:51.260-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:10:51.260-04:00  INFO 41032 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:10:51.262-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:10:51.262-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 2 containing com.pharmanet.ubicacion_service.dto.RegionDto instances]
+2026-06-04T14:10:51.264-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T14:10:56.916-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/regiones/15", parameters={}
+2026-06-04T14:10:56.917-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.RegionController#buscarRegion(String)
+2026-06-04T14:10:56.918-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.pharmanet.ubicacion_service.dto.RegionDto> com.pharmanet.ubicacion_service.controller.RegionController.buscarRegion(java.lang.String): Required URI template variable 'codRegion' for method parameter type String is not present
+2026-06-04T14:10:56.919-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T14:10:56.920-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:10:56.920-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T14:10:56.921-04:00  WARN 41032 --- [ubicacion-service] [http-nio-8087-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'codRegion' for method parameter type String is not present]
+2026-06-04T14:10:56.921-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T14:13:01.506-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/regiones/RM", parameters={}
+2026-06-04T14:13:01.507-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.RegionController#buscarRegion(String)
+2026-06-04T14:13:01.507-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.pharmanet.ubicacion_service.dto.RegionDto> com.pharmanet.ubicacion_service.controller.RegionController.buscarRegion(java.lang.String): Required URI template variable 'codRegion' for method parameter type String is not present
+2026-06-04T14:13:01.508-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T14:13:01.509-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:13:01.509-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T14:13:01.510-04:00  WARN 41032 --- [ubicacion-service] [http-nio-8087-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'codRegion' for method parameter type String is not present]
+2026-06-04T14:13:01.510-04:00 DEBUG 41032 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T14:15:28.889-04:00  INFO 41032 --- [ubicacion-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-04T14:15:28.909-04:00  INFO 41032 --- [ubicacion-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-04T14:15:28.916-04:00  INFO 41032 --- [ubicacion-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T14:15:28.926-04:00  INFO 41032 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-04T14:15:28.949-04:00  INFO 41032 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-04T14:15:58.109-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 6448 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-04T14:15:58.112-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-04T14:15:58.163-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T14:15:58.164-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T14:15:58.679-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T14:15:58.734-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2026-06-04T14:15:59.151-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-04T14:15:59.166-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T14:15:59.167-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T14:15:59.211-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1045 ms
+2026-06-04T14:15:59.552-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-04T14:15:59.689-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7aa5748f
+2026-06-04T14:15:59.691-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-04T14:16:00.099-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-04T14:16:00.145-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.026s)
+2026-06-04T14:16:00.153-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: 2
+2026-06-04T14:16:00.156-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_ubicacion` is up to date. No migration necessary.
+2026-06-04T14:16:00.235-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-04T14:16:00.295-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-04T14:16:00.695-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-04T14:16:00.757-04:00  WARN 6448 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-04T14:16:00.802-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-04T14:16:01.603-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-04T14:16:01.610-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T14:16:01.678-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-04T14:16:01.916-04:00  WARN 6448 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-04T14:16:02.031-04:00 DEBUG 6448 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
+2026-06-04T14:16:02.051-04:00 DEBUG 6448 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-06-04T14:16:02.073-04:00 DEBUG 6448 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-04T14:16:02.112-04:00 DEBUG 6448 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-04T14:16:02.203-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-04T14:16:02.207-04:00  INFO 6448 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 4.456 seconds (process running for 4.856)
+2026-06-04T14:16:12.012-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-04T14:16:12.014-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-04T14:16:12.015-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-04T14:16:12.015-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-04T14:16:12.017-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3d1b5840
+2026-06-04T14:16:12.017-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@3efdffc0
+2026-06-04T14:16:12.018-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-04T14:16:12.018-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-06-04T14:16:12.028-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/regiones/RM", parameters={}
+2026-06-04T14:16:12.040-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.RegionController#buscarRegion(String)
+2026-06-04T14:16:12.070-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.u.service.RegionService              : Inicia búsqueda de región por código de región.
+2026-06-04T14:16:12.071-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.u.service.RegionService              : Valida que la región exista.
+2026-06-04T14:16:12.455-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:16:12.476-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:16:12.477-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [RegionDto(codRegion=RM, descripcion=REGIÓN DE METROPOLITANA DE SANTIAGO)]
+2026-06-04T14:16:12.526-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T14:16:17.271-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/regiones/15", parameters={}
+2026-06-04T14:16:17.272-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.RegionController#buscarRegion(String)
+2026-06-04T14:16:17.273-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-3] c.p.u.service.RegionService              : Inicia búsqueda de región por código de región.
+2026-06-04T14:16:17.273-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-3] c.p.u.service.RegionService              : Valida que la región exista.
+2026-06-04T14:16:17.275-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-3] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:16:17.276-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:16:17.277-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [RegionDto(codRegion=15, descripcion=REGIÓN DE ARICA Y PARINACOTA)]
+2026-06-04T14:16:17.278-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T14:16:31.834-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/regiones/999", parameters={}
+2026-06-04T14:16:31.835-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.RegionController#buscarRegion(String)
+2026-06-04T14:16:31.836-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.u.service.RegionService              : Inicia búsqueda de región por código de región.
+2026-06-04T14:16:31.836-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-5] c.p.u.service.RegionService              : Valida que la región exista.
+2026-06-04T14:16:31.840-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerResourceNotFoundException(ResourceNotFoundException)
+2026-06-04T14:16:31.841-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:16:31.843-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=404, error=Not found, message=No se encuentra la región con el código: 999)]
+2026-06-04T14:16:31.847-04:00  WARN 6448 --- [ubicacion-service] [http-nio-8087-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.ubicacion_service.exception.ResourceNotFoundException: No se encuentra la región con el código: 999]
+2026-06-04T14:16:31.848-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-06-04T14:16:37.472-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/regiones/99944", parameters={}
+2026-06-04T14:16:37.473-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.RegionController#buscarRegion(String)
+2026-06-04T14:16:37.474-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-7] c.p.u.service.RegionService              : Inicia búsqueda de región por código de región.
+2026-06-04T14:16:37.475-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-7] c.p.u.service.RegionService              : Valida que la región exista.
+2026-06-04T14:16:37.477-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerResourceNotFoundException(ResourceNotFoundException)
+2026-06-04T14:16:37.477-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:16:37.478-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=404, error=Not found, message=No se encuentra la región con el código: 99944)]
+2026-06-04T14:16:37.479-04:00  WARN 6448 --- [ubicacion-service] [http-nio-8087-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.ubicacion_service.exception.ResourceNotFoundException: No se encuentra la región con el código: 99944]
+2026-06-04T14:16:37.480-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-06-04T14:16:48.541-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/regiones/15", parameters={}
+2026-06-04T14:16:48.542-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.RegionController#buscarRegion(String)
+2026-06-04T14:16:48.543-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-8] c.p.u.service.RegionService              : Inicia búsqueda de región por código de región.
+2026-06-04T14:16:48.543-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-8] c.p.u.service.RegionService              : Valida que la región exista.
+2026-06-04T14:16:48.544-04:00  INFO 6448 --- [ubicacion-service] [http-nio-8087-exec-8] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:16:48.545-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:16:48.546-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [RegionDto(codRegion=15, descripcion=REGIÓN DE ARICA Y PARINACOTA)]
+2026-06-04T14:16:48.547-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T14:17:06.032-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-9] o.s.web.servlet.DispatcherServlet        : DELETE "/api/v1/regiones/", parameters={}
+2026-06-04T14:17:06.035-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-04T14:17:06.038-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [api/v1/regiones]
+2026-06-04T14:17:06.039-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T14:17:06.040-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:17:06.040-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T14:17:06.041-04:00  WARN 6448 --- [ubicacion-service] [http-nio-8087-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/regiones for request '/api/v1/regiones/'.]
+2026-06-04T14:17:06.041-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T14:17:11.316-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-10] o.s.web.servlet.DispatcherServlet        : DELETE "/api/v1/regiones/rfrfr", parameters={}
+2026-06-04T14:17:11.317-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T14:17:11.318-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:17:11.318-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T14:17:11.319-04:00  WARN 6448 --- [ubicacion-service] [http-nio-8087-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2026-06-04T14:17:11.319-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T14:17:15.513-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : DELETE "/api/v1/regiones/rfrfrfrfr", parameters={}
+2026-06-04T14:17:15.514-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T14:17:15.514-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:17:15.514-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T14:17:15.515-04:00  WARN 6448 --- [ubicacion-service] [http-nio-8087-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2026-06-04T14:17:15.515-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T14:17:21.624-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.web.servlet.DispatcherServlet        : DELETE "/api/v1/regiones/15", parameters={}
+2026-06-04T14:17:21.625-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T14:17:21.625-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:17:21.626-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T14:17:21.627-04:00  WARN 6448 --- [ubicacion-service] [http-nio-8087-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2026-06-04T14:17:21.628-04:00 DEBUG 6448 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T14:18:01.106-04:00  INFO 6448 --- [ubicacion-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-04T14:18:01.114-04:00  INFO 6448 --- [ubicacion-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-04T14:18:01.117-04:00  INFO 6448 --- [ubicacion-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T14:18:01.119-04:00  INFO 6448 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-04T14:18:01.126-04:00  INFO 6448 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-04T14:18:27.819-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 42272 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-04T14:18:27.822-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-06-04T14:18:27.863-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T14:18:27.864-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T14:18:28.347-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T14:18:28.394-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+2026-06-04T14:18:28.763-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-04T14:18:28.775-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T14:18:28.776-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T14:18:28.818-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 954 ms
+2026-06-04T14:18:29.087-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-04T14:18:29.205-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@53bf27ce
+2026-06-04T14:18:29.207-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-04T14:18:29.606-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-04T14:18:29.646-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.021s)
+2026-06-04T14:18:29.655-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: 2
+2026-06-04T14:18:29.658-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_ubicacion` is up to date. No migration necessary.
+2026-06-04T14:18:29.721-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-04T14:18:29.758-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-04T14:18:30.093-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-04T14:18:30.142-04:00  WARN 42272 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-04T14:18:30.155-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-04T14:18:30.818-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-04T14:18:30.824-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T14:18:30.892-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-04T14:18:31.088-04:00  WARN 42272 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-04T14:18:31.184-04:00 DEBUG 42272 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
+2026-06-04T14:18:31.201-04:00 DEBUG 42272 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-06-04T14:18:31.218-04:00 DEBUG 42272 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-04T14:18:31.250-04:00 DEBUG 42272 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-04T14:18:31.332-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-04T14:18:31.335-04:00  INFO 42272 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 3.87 seconds (process running for 4.292)
+2026-06-04T14:18:44.465-04:00  INFO 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-04T14:18:44.466-04:00  INFO 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-04T14:18:44.466-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-04T14:18:44.466-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-04T14:18:44.467-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1287714c
+2026-06-04T14:18:44.468-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4467ce5e
+2026-06-04T14:18:44.468-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-04T14:18:44.468-04:00  INFO 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-04T14:18:44.477-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/regiones/15", parameters={}
+2026-06-04T14:18:44.490-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.RegionController#buscarRegion(String)
+2026-06-04T14:18:44.519-04:00  INFO 42272 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.u.service.RegionService              : Inicia búsqueda de región por código de región.
+2026-06-04T14:18:44.519-04:00  INFO 42272 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.u.service.RegionService              : Valida que la región exista.
+2026-06-04T14:18:44.863-04:00  INFO 42272 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.RegionMapper   : Inicia conversión de entidad a objeto dto.
+2026-06-04T14:18:44.884-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:18:44.886-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [RegionDto(codRegion=15, descripcion=REGIÓN DE ARICA Y PARINACOTA)]
+2026-06-04T14:18:44.932-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T14:18:51.574-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : DELETE "/api/v1/regiones/15", parameters={}
+2026-06-04T14:18:51.574-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.RegionController#eliminarRegion(String)
+2026-06-04T14:18:51.576-04:00  INFO 42272 --- [ubicacion-service] [http-nio-8087-exec-3] c.p.u.service.RegionService              : Inicia eliminación de la región
+2026-06-04T14:18:51.598-04:00  WARN 42272 --- [ubicacion-service] [http-nio-8087-exec-3] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1451, SQLState: 23000
+2026-06-04T14:18:51.599-04:00  WARN 42272 --- [ubicacion-service] [http-nio-8087-exec-3] org.hibernate.orm.jdbc.error             : Cannot delete or update a parent row: a foreign key constraint fails (`bd_ubicacion`.`comuna`, CONSTRAINT `comuna_ibfk_1` FOREIGN KEY (`region`) REFERENCES `region` (`cod_region`))
+2026-06-04T14:18:51.606-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T14:18:51.608-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-04T14:18:51.609-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T14:18:51.613-04:00  WARN 42272 --- [ubicacion-service] [http-nio-8087-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`bd_ubicacion`.`comuna`, CONSTRAINT `comuna_ibfk_1` FOREIGN KEY (`region`) REFERENCES `region` (`cod_region`))] [delete from region where region_id=?]; SQL [delete from region where region_id=?]; constraint [comuna_ibfk_1]]
+2026-06-04T14:18:51.614-04:00 DEBUG 42272 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T14:19:59.882-04:00  INFO 42272 --- [ubicacion-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-04T14:19:59.889-04:00  INFO 42272 --- [ubicacion-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-04T14:19:59.892-04:00  INFO 42272 --- [ubicacion-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T14:19:59.896-04:00  INFO 42272 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-04T14:19:59.903-04:00  INFO 42272 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

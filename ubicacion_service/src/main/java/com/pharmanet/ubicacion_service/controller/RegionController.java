@@ -3,7 +3,7 @@ package com.pharmanet.ubicacion_service.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pharmanet.ubicacion_service.entity.Region;
+import com.pharmanet.ubicacion_service.dto.RegionDto;
 import com.pharmanet.ubicacion_service.service.RegionService;
 
 import lombok.RequiredArgsConstructor;
@@ -30,33 +30,33 @@ public class RegionController {
     private final RegionService regionService;
 
     @GetMapping
-    public ResponseEntity<Page<Region>> mostrarTodos(@PageableDefault(size = 10, sort = "regionId") Pageable pageable) {
+    public ResponseEntity<Page<RegionDto>> mostrarTodos(@PageableDefault(size = 10, sort = "codRegion") Pageable pageable) {
         log.info("Inicia búsqueda de todas las regiones.");
-        Page<Region> regiones = regionService.mostrarTodasRegiones(pageable);
+        Page<RegionDto> regiones = regionService.mostrarTodasRegiones(pageable);
         return ResponseEntity.status(HttpStatus.OK).body(regiones);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Region> buscarRegion(@PathVariable Integer id) {
-        Region region = regionService.buscarRegion(id);
+    @GetMapping("/{codRegion}")
+    public ResponseEntity<RegionDto> buscarRegion(@PathVariable String codRegion) {
+        RegionDto region = regionService.buscarRegion(codRegion);
         return ResponseEntity.status(HttpStatus.OK).body(region);
     }
 
     @PostMapping
-    public ResponseEntity<Region> agregarRegion(@RequestBody Region region) {
-        Region resultado = regionService.agregarRegion(region);
+    public ResponseEntity<RegionDto> agregarRegion(@RequestBody RegionDto region) {
+        RegionDto resultado = regionService.agregarRegion(region);
         return ResponseEntity.status(HttpStatus.CREATED).body(resultado);
     }
     
     @PutMapping
-    public ResponseEntity<?> actualizarRegion(@RequestBody Region region) {
+    public ResponseEntity<?> actualizarRegion(@RequestBody RegionDto region) {
         regionService.actualizarRegion(region);   
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    @DeleteMapping
-    public ResponseEntity<?> eliminarRegion(@PathVariable Integer id) {
-        regionService.eliminarRegion(id);
+    @DeleteMapping("/{codRegion}")
+    public ResponseEntity<?> eliminarRegion(@PathVariable String codRegion) {
+        regionService.eliminarRegion(codRegion);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
     

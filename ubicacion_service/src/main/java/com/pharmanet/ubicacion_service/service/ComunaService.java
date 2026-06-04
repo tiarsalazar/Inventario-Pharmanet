@@ -26,7 +26,7 @@ public class ComunaService {
     private final ComunaRepository comunaRepository;
     private final RegionRepository regionRepository;
 
-    public ComunaDto agregarComuna(Comuna comuna) {
+    public ComunaDto agregarComuna(ComunaDto comuna) {
         log.info("Inicia agregado de comuna.");
         log.debug("comuna: {}", comuna);
 
@@ -34,7 +34,12 @@ public class ComunaService {
             throw new ResourceAlreadyExistsException("La comuna con el código " + comuna.getCodComuna() + " ya se encuentra registrada.");
         }
 
-        return ComunaMapper.toDto(comunaRepository.save(comuna));
+        Region region = regionRepository.findByCodRegion(comuna.getRegion())
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la región con el código: " + comuna.getRegion()));
+
+        Comuna comu = ComunaMapper.toEntity(comuna, region);
+
+        return ComunaMapper.toDto(comunaRepository.save(comu));
     }
 
     public ComunaDto buscarComuna(Integer codComuna) {
