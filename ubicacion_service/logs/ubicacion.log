@@ -5964,3 +5964,231 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2026-06-04T19:45:32.157-04:00  INFO 3468 --- [ubicacion-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-04T19:45:32.158-04:00  INFO 3468 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
 2026-06-04T19:45:32.159-04:00  INFO 3468 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-06-05T14:40:12.103-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 8812 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-05T14:40:12.106-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-05T14:40:12.142-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-05T14:40:12.142-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-05T14:40:12.695-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-05T14:40:12.741-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+2026-06-05T14:40:13.145-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-05T14:40:13.158-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-05T14:40:13.159-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-05T14:40:13.206-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1063 ms
+2026-06-05T14:40:13.385-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-05T14:40:13.507-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70db4108
+2026-06-05T14:40:13.509-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-05T14:40:13.907-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-05T14:40:13.939-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `bd_ubicacion`.`flyway_schema_history` does not exist yet
+2026-06-05T14:40:13.941-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.015s)
+2026-06-05T14:40:13.961-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `bd_ubicacion`.`flyway_schema_history` ...
+2026-06-05T14:40:13.992-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: << Empty Schema >>
+2026-06-05T14:40:14.004-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_ubicacion` to version "1 - create tables"
+2026-06-05T14:40:14.031-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_ubicacion` to version "2 - inserts"
+2026-06-05T14:40:14.053-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `bd_ubicacion`, now at version v2 (execution time 00:00.022s)
+2026-06-05T14:40:14.110-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-05T14:40:14.148-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-05T14:40:14.474-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-05T14:40:14.530-04:00  WARN 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-05T14:40:14.543-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-05T14:40:15.148-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-05T14:40:15.153-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-05T14:40:15.211-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-05T14:40:15.417-04:00  WARN 8812 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-05T14:40:15.523-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2026-06-05T14:40:15.542-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-05T14:40:15.560-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-05T14:40:15.591-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-05T14:40:15.731-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-05T14:40:15.735-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 3.98 seconds (process running for 4.456)
+2026-06-05T14:47:07.920-04:00  INFO 8812 --- [ubicacion-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 19 class path changes (0 additions, 0 deletions, 19 modifications)
+2026-06-05T14:47:07.925-04:00  INFO 8812 --- [ubicacion-service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-05T14:47:07.936-04:00  INFO 8812 --- [ubicacion-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-05T14:47:07.939-04:00  INFO 8812 --- [ubicacion-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-05T14:47:07.943-04:00  INFO 8812 --- [ubicacion-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-05T14:47:07.951-04:00  INFO 8812 --- [ubicacion-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-05T14:51:10.997-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 8812 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-05T14:51:10.998-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-05T14:51:11.259-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-05T14:51:11.279-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
+2026-06-05T14:51:11.380-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-05T14:51:11.382-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-05T14:51:11.383-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-05T14:51:11.409-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 408 ms
+2026-06-05T14:51:11.478-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-06-05T14:51:11.490-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@17d768fc
+2026-06-05T14:51:11.492-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-06-05T14:51:11.504-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-05T14:51:11.528-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.011s)
+2026-06-05T14:51:11.533-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: 2
+2026-06-05T14:51:11.534-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_ubicacion` is up to date. No migration necessary.
+2026-06-05T14:51:11.549-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-05T14:51:11.576-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-05T14:51:11.578-04:00  WARN 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-05T14:51:11.579-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-05T14:51:11.629-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-05T14:51:11.630-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-05T14:51:11.671-04:00  WARN 8812 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-05T14:51:11.702-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 6 mappings in 'requestMappingHandlerMapping'
+2026-06-05T14:51:11.709-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-05T14:51:11.714-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-05T14:51:11.719-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-05T14:51:11.802-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-05T14:51:11.805-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 0.839 seconds (process running for 660.523)
+2026-06-05T14:51:11.806-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-06-05T14:51:13.230-04:00  INFO 8812 --- [ubicacion-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 19 class path changes (0 additions, 0 deletions, 19 modifications)
+2026-06-05T14:51:13.231-04:00  INFO 8812 --- [ubicacion-service] [Thread-5] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-05T14:51:13.239-04:00  INFO 8812 --- [ubicacion-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-05T14:51:13.241-04:00  INFO 8812 --- [ubicacion-service] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-05T14:51:13.241-04:00  INFO 8812 --- [ubicacion-service] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-06-05T14:51:13.243-04:00  INFO 8812 --- [ubicacion-service] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-06-05T14:51:13.300-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 8812 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-05T14:51:13.301-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-05T14:51:13.411-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-05T14:51:13.420-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2026-06-05T14:51:13.488-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-05T14:51:13.489-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-05T14:51:13.490-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-05T14:51:13.508-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 205 ms
+2026-06-05T14:51:13.540-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-06-05T14:51:13.544-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@487d3509
+2026-06-05T14:51:13.544-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-06-05T14:51:13.548-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-05T14:51:13.557-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.003s)
+2026-06-05T14:51:13.561-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: 2
+2026-06-05T14:51:13.561-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_ubicacion` is up to date. No migration necessary.
+2026-06-05T14:51:13.570-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-05T14:51:13.590-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-05T14:51:13.592-04:00  WARN 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-05T14:51:13.594-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-05T14:51:13.630-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-05T14:51:13.631-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-05T14:51:13.710-04:00  WARN 8812 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-05T14:51:13.762-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2026-06-05T14:51:13.771-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-05T14:51:13.778-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-05T14:51:13.787-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-05T14:51:13.826-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-05T14:51:13.829-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 0.547 seconds (process running for 662.547)
+2026-06-05T14:51:13.831-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-06-05T14:51:16.267-04:00  INFO 8812 --- [ubicacion-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 19 class path changes (0 additions, 0 deletions, 19 modifications)
+2026-06-05T14:51:16.268-04:00  INFO 8812 --- [ubicacion-service] [Thread-17] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-05T14:51:16.275-04:00  INFO 8812 --- [ubicacion-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-05T14:51:16.277-04:00  INFO 8812 --- [ubicacion-service] [Thread-17] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-05T14:51:16.278-04:00  INFO 8812 --- [ubicacion-service] [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-06-05T14:51:16.279-04:00  INFO 8812 --- [ubicacion-service] [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-06-05T14:51:16.341-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 8812 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-05T14:51:16.341-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-05T14:51:16.473-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-05T14:51:16.480-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2026-06-05T14:51:16.540-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-05T14:51:16.541-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-05T14:51:16.543-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-05T14:51:16.562-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 219 ms
+2026-06-05T14:51:16.586-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-06-05T14:51:16.589-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@256678c1
+2026-06-05T14:51:16.590-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-06-05T14:51:16.593-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-05T14:51:16.601-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.002s)
+2026-06-05T14:51:16.605-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: 2
+2026-06-05T14:51:16.605-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_ubicacion` is up to date. No migration necessary.
+2026-06-05T14:51:16.613-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-05T14:51:16.631-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-05T14:51:16.633-04:00  WARN 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-05T14:51:16.634-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-05T14:51:16.663-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-05T14:51:16.664-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-05T14:51:16.719-04:00  WARN 8812 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-05T14:51:16.742-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2026-06-05T14:51:16.748-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-05T14:51:16.753-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-05T14:51:16.756-04:00 DEBUG 8812 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-05T14:51:16.789-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-05T14:51:16.791-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 0.47 seconds (process running for 665.508)
+2026-06-05T14:51:16.791-04:00  INFO 8812 --- [ubicacion-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-06-05T15:13:47.539-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 4304 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-05T15:13:47.543-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-05T15:13:47.590-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-05T15:13:47.590-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-05T15:13:48.192-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-05T15:13:48.243-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 2 JPA repository interfaces.
+2026-06-05T15:13:48.624-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-05T15:13:48.634-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-05T15:13:48.635-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-05T15:13:48.690-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1099 ms
+2026-06-05T15:13:48.872-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-05T15:13:48.997-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5303391b
+2026-06-05T15:13:48.999-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-05T15:13:49.391-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-05T15:13:49.438-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.024s)
+2026-06-05T15:13:49.453-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: 2
+2026-06-05T15:13:49.457-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_ubicacion` is up to date. No migration necessary.
+2026-06-05T15:13:49.525-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-05T15:13:49.577-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-05T15:13:49.967-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-05T15:13:50.041-04:00  WARN 4304 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-05T15:13:50.054-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-05T15:13:50.774-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-05T15:13:50.780-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-05T15:13:50.846-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-05T15:13:51.066-04:00  WARN 4304 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-05T15:13:51.170-04:00 DEBUG 4304 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2026-06-05T15:13:51.187-04:00 DEBUG 4304 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-05T15:13:51.209-04:00 DEBUG 4304 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-05T15:13:51.244-04:00 DEBUG 4304 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-05T15:13:51.388-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-05T15:13:51.393-04:00  INFO 4304 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 4.222 seconds (process running for 4.66)

@@ -43,7 +43,7 @@ public class ComunaController {
         return ResponseEntity.status(HttpStatus.OK).body(comuna);
     }
 
-    @GetMapping("/validar/{comu}/{region}")
+    @GetMapping("/validado/{comu}/{region}")
     public ResponseEntity<ComunaDto> validarUbicacion(@PathVariable Integer comu, @PathVariable String region) {
         ComunaDto comuna = comunaService.validarComuna(comu, region);
         return ResponseEntity.status(HttpStatus.OK).body(comuna);

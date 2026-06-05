@@ -1,10 +1,7 @@
 package com.pharmanet.sucursal_service.dto;
 
-import com.pharmanet.sucursal_service.entity.TipoSucursal;
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,24 +10,19 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SucursalDto {
+public class SucursalDTO {
 
-    @NotNull(message = "Campo obligatorio")
-    private Long id;
+    @NotBlank(message = "Campo obligatorio")
+    private String codSucursal;
 
     @Size(min = 5, max = 30, message = "El campo debe tener entre 5 y 30 caracteres")
     private String nombreSucursal;
 
     @NotBlank(message = "Campo obligatorio")
-    @Pattern(regexp = "(?i)^(farmacia|bodega)$",
-        message = "El tipo de sucursal no es válido. Entradas válidas: farmacia, bodega")
-    private TipoSucursal tipoSucursal;
+    private String codRegion;
 
     @NotNull(message = "Campo obligatorio")
-    private Integer regionId;
-
-    @NotNull(message = "Campo obligatorio")
-    private Integer comunaId;
+    private Integer codComuna;
 
     @NotBlank(message = "Campo obligatorio")
     @Size(max = 100, message = "Largo máximo 100 carácteres")

@@ -7,41 +7,39 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SucursalMapper {
 
-    public static SucursalDto toDto(Sucursal entity) {
+    public static SucursalDTO toDto(Sucursal entity) {
 
         log.info("Inicia cambio de entidad sucursal a objeto dto");
         log.debug("entity: {}", entity);
 
-        return new SucursalDto(entity.getId(),
+        return new SucursalDTO(entity.getCodSucursal(),
             entity.getNombreSucursal(),
-            entity.getTipoSucursal(),
-            entity.getRegionId(),
-            entity.getComunaId(),
+            entity.getCodRegion(),
+            entity.getCodComuna(),
             entity.getDireccion()
         );
     }
 
-    public static Sucursal toEntity(SucursalDto dto) {
+    public static Sucursal toEntity(SucursalDTO dto) {
 
         log.info("Inicia cambio de objeto dto a entidad sucursal.");
         log.debug("dto: {}", dto);
         
-        return new Sucursal(dto.getId(),
+        return new Sucursal(dto.getCodSucursal(),
             dto.getNombreSucursal(),
-            dto.getTipoSucursal(),
-            dto.getRegionId(),
-            dto.getComunaId(),
+            dto.getCodRegion(),
+            dto.getCodComuna(),
             dto.getDireccion()
         );
     }
 
-    public static Sucursal update(Sucursal actual, SucursalDto nueva) {
+    public static Sucursal update(Sucursal actual, SucursalDTO nueva) {
         log.info("Inicia actualización de sucursal.");
         log.debug("actual: {}, nueva: {}", actual, nueva);
 
         actual.setNombreSucursal(nueva.getNombreSucursal());
-        actual.setRegionId(nueva.getRegionId());
-        actual.setComunaId(nueva.getComunaId());
+        actual.setCodRegion(nueva.getCodRegion());
+        actual.setCodComuna(nueva.getCodComuna());
         actual.setDireccion(nueva.getDireccion());
 
         return actual;

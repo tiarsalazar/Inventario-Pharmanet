@@ -11,7 +11,7 @@
 	<groupId>com.pharmanet</groupId>
 	<artifactId>ubicacion_service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>localidad_service</name>
+	<name>ubicacion_service</name>
 	<description/>
 	<url/>
 	<licenses>
@@ -100,6 +100,22 @@
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
 				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>2025.1.1</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>2025.1.1</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
