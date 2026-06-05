@@ -33,23 +33,16 @@ public class SucursalService {
 
         log.info("Válida que el código de la sucursal sea único.");
         if(sucursalRepository.findByCodSucursal(dto.getCodSucursal()).isPresent()) {
-            throw new ResourceAlreadyExistsException("Ya se encuentra ingresada la sucursal con el código: " + dto.getCodSucursal());
-        }
-
-        if (!dto.getCodRegion().startsWith("SU")) {
-            if (dto.getCodRegion().length() >= 7) {
-                throw new IllegalArgumentException("El código de región debe ingresar con 'SU', de lo contrario ingrese un código menor o igual a 6 carácteres");
-            }
-            String codigo = dto.getCodRegion();
-            dto.setCodRegion("SU" + codigo);
+            throw new ResourceAlreadyExistsException("Ya existe una sucursal con el código: " + dto.getCodSucursal());
         }
 
         log.info("Válida que el nombre de la sucursal sea único.");
         if(sucursalRepository.findByNombreSucursal(dto.getNombreSucursal()).isPresent()) {
-            throw new ResourceAlreadyExistsException("Ya se encuentra ingresada la sucursal con el nombre: " + dto.getNombreSucursal());
+            throw new ResourceAlreadyExistsException("Ya existe una sucursal con el nombre: " + dto.getNombreSucursal());
         }
 
-        dto.setCodRegion(dto.getCodRegion().toUpperCase());
+        dto.setCodSucursal(convertirCodSucursal(dto.getCodSucursal()));
+        log.debug("codSucursal: {}", dto.getCodSucursal());
 
         log.info("Verifica que la ubicación ingresada sea válida.");
         log.debug("comuna: {}, region: {}", dto.getCodComuna(), dto.getCodRegion());
@@ -57,8 +50,10 @@ public class SucursalService {
         try {
             ubicacionFeignClient.validarUbicacion(dto.getCodComuna(), dto.getCodRegion());
         } catch (FeignException ex) {
-            throw ex;
-        }
+            throw new ResourceNotFoundException(
+                "Ubicación inválida para comuna " + dto.getCodComuna()
+    );
+}
 
         Sucursal sucursal = SucursalMapper.toEntity(dto);
 
@@ -103,7 +98,7 @@ public class SucursalService {
             Sucursal verificar = sucursalRepository.findByNombreSucursal(dto.getNombreSucursal())
                 .orElseThrow(() -> new InternalError());
             if (verificar.getCodSucursal() != dto.getNombreSucursal())
-                throw new ResourceAlreadyExistsException("Ya existe una sucursal con el nombre ingresado");
+                throw new ResourceAlreadyExistsException("Ya existe una sucursal con el nombre " + dto.getNombreSucursal());
         }
 
         sucursal = SucursalMapper.update(sucursal, dto);
@@ -120,5 +115,22 @@ public class SucursalService {
 
         sucursalRepository.delete(sucursal);
         log.debug("sucursal eliminada: {}", sucursal);
+    }
+
+    public String convertirCodSucursal(String codSucursal) {
+        log.info("Inicia la transformación del código sucursal");
+        log.debug("codSucursal: {}", codSucursal);
+
+        codSucursal = codSucursal.toUpperCase();
+
+        if (!codSucursal.startsWith("SU")) {
+            if (codSucursal.length() >= 7) {
+                throw new IllegalArgumentException("El código ingresado no es válido. Ingrese un código menor o igual a 6 carácteres o que empiece con 'SU'");
+            }
+
+            codSucursal = "SU" + codSucursal;
+        }
+
+        return codSucursal;
     }
 }
