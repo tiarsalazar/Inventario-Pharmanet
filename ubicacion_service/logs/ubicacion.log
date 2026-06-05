@@ -5603,3 +5603,364 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2026-06-04T17:48:01.333-04:00  INFO 24632 --- [ubicacion-service] [Thread-33] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-04T17:48:01.334-04:00  INFO 24632 --- [ubicacion-service] [Thread-33] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
 2026-06-04T17:48:01.335-04:00  INFO 24632 --- [ubicacion-service] [Thread-33] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2026-06-04T19:15:30.035-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 4312 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-04T19:15:30.037-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-04T19:15:30.064-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T19:15:30.064-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T19:15:30.453-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T19:15:30.484-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 2 JPA repository interfaces.
+2026-06-04T19:15:30.780-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-04T19:15:30.788-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T19:15:30.789-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T19:15:30.820-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 755 ms
+2026-06-04T19:15:30.961-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-04T19:15:31.056-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55e3c2aa
+2026-06-04T19:15:31.057-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-04T19:15:31.424-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-04T19:15:31.462-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `bd_ubicacion`.`flyway_schema_history` does not exist yet
+2026-06-04T19:15:31.466-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.012s)
+2026-06-04T19:15:31.487-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `bd_ubicacion`.`flyway_schema_history` ...
+2026-06-04T19:15:31.542-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: << Empty Schema >>
+2026-06-04T19:15:31.549-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_ubicacion` to version "1 - create tables"
+2026-06-04T19:15:31.690-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_ubicacion` to version "2 - inserts"
+2026-06-04T19:15:31.734-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `bd_ubicacion`, now at version v2 (execution time 00:00.080s)
+2026-06-04T19:15:31.777-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-04T19:15:31.804-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-04T19:15:32.036-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-04T19:15:32.100-04:00  WARN 4312 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-04T19:15:32.159-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-04T19:15:32.623-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-04T19:15:32.627-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T19:15:32.672-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-04T19:15:32.827-04:00  WARN 4312 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-04T19:15:32.906-04:00 DEBUG 4312 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2026-06-04T19:15:32.919-04:00 DEBUG 4312 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-04T19:15:32.932-04:00 DEBUG 4312 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-04T19:15:32.955-04:00 DEBUG 4312 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-04T19:15:33.054-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-04T19:15:33.058-04:00  INFO 4312 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 3.267 seconds (process running for 3.606)
+2026-06-04T19:16:11.136-04:00  INFO 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-04T19:16:11.136-04:00  INFO 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-04T19:16:11.137-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-04T19:16:11.137-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-04T19:16:11.138-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7f64f9b5
+2026-06-04T19:16:11.139-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@39eb3509
+2026-06-04T19:16:11.139-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-04T19:16:11.140-04:00  INFO 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-06-04T19:16:11.148-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-iu/index.html", parameters={}
+2026-06-04T19:16:11.155-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-04T19:16:11.165-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [doc/swagger-iu/index.html]
+2026-06-04T19:16:11.169-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T19:16:11.178-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json, application/yaml]
+2026-06-04T19:16:11.182-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T19:16:11.228-04:00  WARN 4312 --- [ubicacion-service] [http-nio-8087-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource doc/swagger-iu/index.html for request '/doc/swagger-iu/index.html'.]
+2026-06-04T19:16:11.230-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T19:16:11.255-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2026-06-04T19:16:11.256-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-04T19:16:11.259-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [favicon.ico]
+2026-06-04T19:16:11.259-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T19:16:11.261-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/yaml]
+2026-06-04T19:16:11.262-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T19:16:11.267-04:00  WARN 4312 --- [ubicacion-service] [http-nio-8087-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico for request '/favicon.ico'.]
+2026-06-04T19:16:11.267-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T19:16:48.720-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-iu.html", parameters={}
+2026-06-04T19:16:48.721-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-04T19:16:48.724-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [doc/swagger-iu.html]
+2026-06-04T19:16:48.725-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T19:16:48.725-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json, application/yaml]
+2026-06-04T19:16:48.726-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T19:16:48.727-04:00  WARN 4312 --- [ubicacion-service] [http-nio-8087-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource doc/swagger-iu.html for request '/doc/swagger-iu.html'.]
+2026-06-04T19:16:48.728-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T19:16:48.740-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2026-06-04T19:16:48.741-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-04T19:16:48.743-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [favicon.ico]
+2026-06-04T19:16:48.744-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T19:16:48.745-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/yaml]
+2026-06-04T19:16:48.746-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T19:16:48.747-04:00  WARN 4312 --- [ubicacion-service] [http-nio-8087-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico for request '/favicon.ico'.]
+2026-06-04T19:16:48.747-04:00 DEBUG 4312 --- [ubicacion-service] [http-nio-8087-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T19:17:04.909-04:00  INFO 4312 --- [ubicacion-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-04T19:17:04.916-04:00  INFO 4312 --- [ubicacion-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-04T19:17:04.918-04:00  INFO 4312 --- [ubicacion-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T19:17:04.920-04:00  INFO 4312 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-04T19:17:04.923-04:00  INFO 4312 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-04T19:17:21.629-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 8392 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-04T19:17:21.632-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-04T19:17:21.659-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T19:17:21.660-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T19:17:22.040-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T19:17:22.077-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2026-06-04T19:17:22.362-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-04T19:17:22.369-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T19:17:22.370-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T19:17:22.403-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 743 ms
+2026-06-04T19:17:22.544-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-04T19:17:22.641-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6404bbda
+2026-06-04T19:17:22.643-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-04T19:17:22.971-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-04T19:17:23.003-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.020s)
+2026-06-04T19:17:23.009-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: 2
+2026-06-04T19:17:23.012-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_ubicacion` is up to date. No migration necessary.
+2026-06-04T19:17:23.059-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-04T19:17:23.095-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-04T19:17:23.331-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-04T19:17:23.375-04:00  WARN 8392 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-04T19:17:23.384-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-04T19:17:23.857-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-04T19:17:23.861-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T19:17:23.912-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-04T19:17:24.082-04:00  WARN 8392 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-04T19:17:24.171-04:00 DEBUG 8392 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2026-06-04T19:17:24.186-04:00 DEBUG 8392 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-04T19:17:24.204-04:00 DEBUG 8392 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-04T19:17:24.228-04:00 DEBUG 8392 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-04T19:17:24.326-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-04T19:17:24.329-04:00  INFO 8392 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 2.959 seconds (process running for 3.266)
+2026-06-04T19:17:31.747-04:00  INFO 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-04T19:17:31.748-04:00  INFO 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-04T19:17:31.748-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-04T19:17:31.748-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-04T19:17:31.751-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@760f4ec2
+2026-06-04T19:17:31.752-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5c3e223c
+2026-06-04T19:17:31.753-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-04T19:17:31.757-04:00  INFO 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2026-06-04T19:17:31.767-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-iu.html", parameters={}
+2026-06-04T19:17:31.776-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-04T19:17:31.787-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [doc/swagger-iu.html]
+2026-06-04T19:17:31.792-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T19:17:31.807-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json, application/yaml]
+2026-06-04T19:17:31.822-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T19:17:31.868-04:00  WARN 8392 --- [ubicacion-service] [http-nio-8087-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource doc/swagger-iu.html for request '/doc/swagger-iu.html'.]
+2026-06-04T19:17:31.870-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T19:17:31.882-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2026-06-04T19:17:31.886-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-04T19:17:31.888-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [favicon.ico]
+2026-06-04T19:17:31.889-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T19:17:31.893-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/yaml]
+2026-06-04T19:17:31.897-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T19:17:31.903-04:00  WARN 8392 --- [ubicacion-service] [http-nio-8087-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico for request '/favicon.ico'.]
+2026-06-04T19:17:31.905-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T19:17:34.433-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-iu.html", parameters={}
+2026-06-04T19:17:34.434-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-04T19:17:34.436-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [doc/swagger-iu.html]
+2026-06-04T19:17:34.437-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T19:17:34.437-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json, application/yaml]
+2026-06-04T19:17:34.438-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T19:17:34.439-04:00  WARN 8392 --- [ubicacion-service] [http-nio-8087-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource doc/swagger-iu.html for request '/doc/swagger-iu.html'.]
+2026-06-04T19:17:34.439-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T19:17:34.452-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2026-06-04T19:17:34.453-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-04T19:17:34.454-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [favicon.ico]
+2026-06-04T19:17:34.454-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T19:17:34.455-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/yaml]
+2026-06-04T19:17:34.455-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T19:17:34.456-04:00  WARN 8392 --- [ubicacion-service] [http-nio-8087-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico for request '/favicon.ico'.]
+2026-06-04T19:17:34.456-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T19:17:46.096-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-iu/index.html", parameters={}
+2026-06-04T19:17:46.097-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-04T19:17:46.099-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [doc/swagger-iu/index.html]
+2026-06-04T19:17:46.100-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T19:17:46.101-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json, application/yaml]
+2026-06-04T19:17:46.101-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T19:17:46.102-04:00  WARN 8392 --- [ubicacion-service] [http-nio-8087-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource doc/swagger-iu/index.html for request '/doc/swagger-iu/index.html'.]
+2026-06-04T19:17:46.102-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T19:17:46.116-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2026-06-04T19:17:46.116-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-06-04T19:17:46.118-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found for path [favicon.ico]
+2026-06-04T19:17:46.123-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.ubicacion_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-04T19:17:46.124-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/yaml]
+2026-06-04T19:17:46.129-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(status=500, error=Internal server error, message=Ha ocurrido un problema del servidor. (truncated)...]
+2026-06-04T19:17:46.131-04:00  WARN 8392 --- [ubicacion-service] [http-nio-8087-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico for request '/favicon.ico'.]
+2026-06-04T19:17:46.134-04:00 DEBUG 8392 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-04T19:17:59.965-04:00  INFO 8392 --- [ubicacion-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-04T19:17:59.971-04:00  INFO 8392 --- [ubicacion-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-04T19:17:59.973-04:00  INFO 8392 --- [ubicacion-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T19:17:59.976-04:00  INFO 8392 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-04T19:17:59.979-04:00  INFO 8392 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-04T19:18:12.199-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 3468 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-04T19:18:12.201-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-04T19:18:12.233-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T19:18:12.233-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T19:18:12.627-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T19:18:12.656-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 2 JPA repository interfaces.
+2026-06-04T19:18:12.956-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-04T19:18:12.964-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T19:18:12.965-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T19:18:12.995-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 761 ms
+2026-06-04T19:18:13.132-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-04T19:18:13.222-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ee66e5a
+2026-06-04T19:18:13.224-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-04T19:18:13.559-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-04T19:18:13.593-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.020s)
+2026-06-04T19:18:13.599-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: 2
+2026-06-04T19:18:13.601-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_ubicacion` is up to date. No migration necessary.
+2026-06-04T19:18:13.644-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-04T19:18:13.674-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-04T19:18:13.917-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-04T19:18:13.953-04:00  WARN 3468 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-04T19:18:13.962-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-04T19:18:14.440-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-04T19:18:14.443-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T19:18:14.489-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-04T19:18:14.730-04:00  WARN 3468 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-04T19:18:14.875-04:00 DEBUG 3468 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2026-06-04T19:18:14.900-04:00 DEBUG 3468 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-04T19:18:14.927-04:00 DEBUG 3468 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-04T19:18:14.964-04:00 DEBUG 3468 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-04T19:18:15.205-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-04T19:18:15.212-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 3.275 seconds (process running for 3.599)
+2026-06-04T19:18:27.923-04:00  INFO 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-04T19:18:27.923-04:00  INFO 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-04T19:18:27.924-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-04T19:18:27.924-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-04T19:18:27.926-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@52fb8ed3
+2026-06-04T19:18:27.926-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@42560f83
+2026-06-04T19:18:27.927-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-04T19:18:27.928-04:00  INFO 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-06-04T19:18:27.936-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/index.html", parameters={}
+2026-06-04T19:18:27.949-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:18:27.983-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:18:27.989-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/swagger-ui.css", parameters={}
+2026-06-04T19:18:27.989-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/index.css", parameters={}
+2026-06-04T19:18:27.990-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/swagger-ui-bundle.js", parameters={}
+2026-06-04T19:18:27.990-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2026-06-04T19:18:27.990-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/swagger-initializer.js", parameters={}
+2026-06-04T19:18:27.990-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:18:27.990-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:18:27.991-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:18:27.991-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:18:27.991-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:18:27.995-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:18:27.998-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:18:28.000-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:18:28.007-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:18:28.012-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:18:28.080-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2026-06-04T19:18:28.081-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2026-06-04T19:18:28.089-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2026-06-04T19:18:28.090-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8087/doc/swagger-ui/oauth (truncated)...]
+2026-06-04T19:18:28.094-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/favicon-32x32.png", parameters={}
+2026-06-04T19:18:28.095-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:18:28.099-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:18:28.128-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:18:28.135-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2026-06-04T19:18:28.138-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-06-04T19:18:28.592-04:00  INFO 3468 --- [ubicacion-service] [http-nio-8087-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 440 ms
+2026-06-04T19:18:28.682-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2026-06-04T19:18:28.697-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [{7b226f70656e617069223a22332e312e30222c22696e666f223a7b227469746c65223a22415049203230323620476573746 (truncated)...]
+2026-06-04T19:18:28.698-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:37:45.769-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/index.html", parameters={}
+2026-06-04T19:37:45.770-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:37:45.772-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-06-04T19:37:45.780-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/swagger-ui.css", parameters={}
+2026-06-04T19:37:45.781-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:37:45.782-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/swagger-initializer.js", parameters={}
+2026-06-04T19:37:45.783-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:37:45.783-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/index.css", parameters={}
+2026-06-04T19:37:45.783-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/swagger-ui-bundle.js", parameters={}
+2026-06-04T19:37:45.783-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2026-06-04T19:37:45.784-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-06-04T19:37:45.784-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:37:45.785-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:37:45.785-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:37:45.786-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-06-04T19:37:45.787-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-06-04T19:37:45.787-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-06-04T19:37:45.787-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:37:45.878-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2026-06-04T19:37:45.880-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2026-06-04T19:37:45.881-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2026-06-04T19:37:45.881-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8087/doc/swagger-ui/oauth (truncated)...]
+2026-06-04T19:37:45.882-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:37:45.889-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/doc/swagger-ui/favicon-32x32.png", parameters={}
+2026-06-04T19:37:45.890-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-04T19:37:45.891-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-06-04T19:37:45.894-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2026-06-04T19:37:45.894-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-06-04T19:37:45.901-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2026-06-04T19:37:45.902-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [{7b226f70656e617069223a22332e312e30222c22696e666f223a7b227469746c65223a22415049203230323620476573746 (truncated)...]
+2026-06-04T19:37:45.904-04:00 DEBUG 3468 --- [ubicacion-service] [http-nio-8087-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-04T19:40:16.683-04:00  INFO 3468 --- [ubicacion-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 19 class path changes (0 additions, 0 deletions, 19 modifications)
+2026-06-04T19:40:16.687-04:00  INFO 3468 --- [ubicacion-service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-04T19:40:16.694-04:00  INFO 3468 --- [ubicacion-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-04T19:40:16.697-04:00  INFO 3468 --- [ubicacion-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T19:40:16.699-04:00  INFO 3468 --- [ubicacion-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-04T19:40:16.704-04:00  INFO 3468 --- [ubicacion-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-04T19:40:16.766-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 3468 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-04T19:40:16.766-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-04T19:40:16.868-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T19:40:16.876-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2026-06-04T19:40:16.940-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-04T19:40:16.941-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T19:40:16.941-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T19:40:16.955-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 187 ms
+2026-06-04T19:40:16.979-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-06-04T19:40:16.983-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1875fc80
+2026-06-04T19:40:16.984-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-06-04T19:40:16.990-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-04T19:40:16.997-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.003s)
+2026-06-04T19:40:17.002-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: 2
+2026-06-04T19:40:17.003-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_ubicacion` is up to date. No migration necessary.
+2026-06-04T19:40:17.012-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-04T19:40:17.029-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-04T19:40:17.031-04:00  WARN 3468 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-04T19:40:17.031-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-04T19:40:17.072-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-04T19:40:17.074-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T19:40:17.137-04:00  WARN 3468 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-04T19:40:17.164-04:00 DEBUG 3468 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2026-06-04T19:40:17.169-04:00 DEBUG 3468 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-04T19:40:17.173-04:00 DEBUG 3468 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-04T19:40:17.177-04:00 DEBUG 3468 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-04T19:40:17.213-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-04T19:40:17.215-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 0.467 seconds (process running for 1325.586)
+2026-06-04T19:40:17.216-04:00  INFO 3468 --- [ubicacion-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-06-04T19:45:32.148-04:00  INFO 3468 --- [ubicacion-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-04T19:45:32.155-04:00  INFO 3468 --- [ubicacion-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-04T19:45:32.157-04:00  INFO 3468 --- [ubicacion-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T19:45:32.158-04:00  INFO 3468 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-06-04T19:45:32.159-04:00  INFO 3468 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.

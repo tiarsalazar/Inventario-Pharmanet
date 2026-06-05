@@ -49,10 +49,10 @@ public class RegionController {
     @Operation(summary = "Busca una región", description = "Busca una región por código de región")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Obtiene una región exitosamente"),
-        @ApiResponse(responseCode = "404", description = "No encuentra la región con el código ingresado")
+        @ApiResponse(responseCode = "409", description = "Ya existe una región con los datos ingresados"),
+        @ApiResponse(responseCode = "404", description = "Región no encontrada")
     })
-    @Parameter(name = "codRegion", description = "Código de la region", required = true)
-    public ResponseEntity<RegionDto> buscarRegion(@PathVariable String codRegion) {
+    public ResponseEntity<RegionDto> buscarRegion(@Parameter(name = "codRegion", description = "Código de la region", required = true) @PathVariable String codRegion) {
         RegionDto region = regionService.buscarRegion(codRegion);
         return ResponseEntity.status(HttpStatus.OK).body(region);
     }
@@ -86,8 +86,7 @@ public class RegionController {
         @ApiResponse(responseCode = "404", description = "No se encuentra la región con el código ingresado")
     })
     @DeleteMapping("/{codRegion}")
-    @Parameter(name = "codRegion", description = "Código de la región a eliminar", required = true)
-    public ResponseEntity<?> eliminarRegion(@PathVariable String codRegion) {
+    public ResponseEntity<?> eliminarRegion(@Parameter(name = "codRegion", description = "Código de la región a eliminar", required = true) @PathVariable String codRegion) {
         regionService.eliminarRegion(codRegion);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
