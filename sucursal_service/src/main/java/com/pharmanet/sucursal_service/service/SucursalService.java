@@ -97,7 +97,7 @@ public class SucursalService {
         if (sucursalRepository.findByNombreSucursal(dto.getNombreSucursal()).isPresent()) {
             Sucursal verificar = sucursalRepository.findByNombreSucursal(dto.getNombreSucursal())
                 .orElseThrow(() -> new InternalError());
-            if (verificar.getCodSucursal() != dto.getNombreSucursal())
+            if (verificar.getCodSucursal() != dto.getCodSucursal())
                 throw new ResourceAlreadyExistsException("Ya existe una sucursal con el nombre " + dto.getNombreSucursal());
         }
 

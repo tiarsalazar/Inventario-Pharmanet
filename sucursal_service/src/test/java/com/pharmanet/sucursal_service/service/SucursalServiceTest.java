@@ -16,7 +16,6 @@ import org.springframework.data.domain.Pageable;
 
 import com.pharmanet.sucursal_service.client.UbicacionFeignClient;
 import com.pharmanet.sucursal_service.dto.SucursalDTO;
-import com.pharmanet.sucursal_service.dto.SucursalMapper;
 import com.pharmanet.sucursal_service.entity.Sucursal;
 import com.pharmanet.sucursal_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.sucursal_service.exception.ResourceNotFoundException;
@@ -27,6 +26,8 @@ import feign.FeignException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -41,9 +42,6 @@ public class SucursalServiceTest {
     @Mock
     private SucursalRepository repo;
 
-    @Mock
-    private SucursalMapper mapper;
-
     @InjectMocks
     SucursalService service;
 
@@ -51,120 +49,95 @@ public class SucursalServiceTest {
     @Test
     @DisplayName("Agrega una sucursal exitosamente")
     void save_GoodCase() {
-        // GIVEN
         SucursalDTO dto = new SucursalDTO();
         dto.setCodSucursal("SU0001");
         dto.setNombreSucursal("FARMACIA 1");
         dto.setCodComuna(1);
         dto.setCodRegion("1");
 
+        Sucursal entity = new Sucursal();
+
         when(repo.findByCodSucursal("SU0001")).thenReturn(Optional.empty());
         when(repo.findByNombreSucursal("FARMACIA 1")).thenReturn(Optional.empty());
-        when(service.convertirCodSucursal("SU0001")).thenReturn("SU0001");
         when(feign.validarUbicacion(1, "1")).thenReturn(null);
+        when(repo.save(any(Sucursal.class))).thenReturn(entity);
 
-        // WHEN
         SucursalDTO resultado = service.agregarSucursal(dto);
 
-        // THEN
         assertNotNull(resultado);
         assertEquals(dto, resultado);
         verify(repo, times(1)).findByCodSucursal("SU0001");
         verify(repo, times(1)).findByNombreSucursal("FARMACIA 1");
-        verify(service, times(1)).convertirCodSucursal("SU0001");
         verify(feign, times(1)).validarUbicacion(1, "1");
     }
 
     // convertirCodSucursal
     @Test
+    @DisplayName("El código de la sucursal ingresado es normal y se ingresa exitosamente")
     void conversion_NormalCase() {
-        // GIVEN
-        SucursalDTO dto = new SucursalDTO();
-        dto.setCodSucursal("SU0001");
+        String codigo = "SU0001";
 
-        when(service.convertirCodSucursal("SU0001")).thenReturn("SU0001");
+        String resultado = service.convertirCodSucursal(codigo);
 
-        // WHEN
-        SucursalDTO resultado = service.agregarSucursal(dto);
-
-        // THEN
-        assertNotNull(resultado.getCodSucursal());
-        assertEquals("SU0001", resultado.getCodSucursal());
-        verify(service, times(1)).convertirCodSucursal("SU0001");
+        assertNotNull(resultado);
+        assertEquals(codigo, resultado);
     }
 
     @Test
-    @DisplayName("Convierte el código de la sucursal en caso límite: Menos de 7 carácteres que no empiezan por SU")
+    @DisplayName("El código ingresado es menor a 6 carácteres y no es el esperado")
     void conversion_LimitCase() {
-        // GIVEN
-        SucursalDTO dto = new SucursalDTO();
-        dto.setCodSucursal("0001");
+        String codigo = "0001";
 
-        when(service.convertirCodSucursal("0001")).thenReturn("SU0001");
+        String resultado = service.convertirCodSucursal(codigo);
 
-        // WHEN
-        SucursalDTO resultado = service.agregarSucursal(dto);
-
-        // THEN
-        assertNotNull(resultado.getCodSucursal());
-        assertEquals("SU0001", resultado.getCodSucursal());
-        verify(service, times(1)).convertirCodSucursal("0001");
+        assertNotNull(resultado);
+        assertEquals("SU0001", resultado);
     }
 
     @Test
+    @DisplayName("El código ingresado no es válido")
     void shouldThrowConversion_BadCase() {
-        // GIVEN
-        SucursalDTO dto = new SucursalDTO();
-        dto.setCodRegion("000111111");
+        String codigo = "000111111";
 
-        when(service.convertirCodSucursal("000111111"));
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> service.convertirCodSucursal(codigo));
 
-        // WHEN
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> service.agregarSucursal(dto));
-
-        // THEN
-        assertEquals("El código ingresado no es válido. Ingrese un código menor o igual a 6 carácteres o que empiece con 'SU'", exception);
-        verify(service, times(1)).convertirCodSucursal("000111111");
+        assertNotNull(exception);
+        assertEquals("El código ingresado no es válido. Ingrese un código menor o igual a 6 carácteres o que empiece con 'SU'", exception.getMessage());
     }
 
     @Test
+    @DisplayName("Devuelve una sucursal exitosamente")
     void shouldFindByCodSucursal_whenExists() {
 
-        // GIVEN
         Sucursal entidad = new Sucursal();
         entidad.setCodSucursal("SU0001");
 
-        SucursalDTO dto =  new SucursalDTO("SU0001", null, "5", 12, "CALLE 9");
+        SucursalDTO dto =  new SucursalDTO();
+        dto.setCodSucursal("SU0001");
 
         when(repo.findByCodSucursal("SU0001"))
             .thenReturn(Optional.of(entidad));
-        
-        when(mapper.toDto(entidad)).thenReturn(dto);
 
-        // WHEN
         SucursalDTO resultado = service.buscarSucursalPorCodSucursal("SU0001");
 
-        // THEN
         assertNotNull(resultado);
         assertEquals(dto, resultado);
     }
 
-    // EXCEPTIONS
-
     @Test
+    @DisplayName("No se encuentra la sucursal")
     void shouldThrow_notFound() {
 
-        // GIVEN
         when(repo.findByCodSucursal("SU0001")).thenReturn(Optional.empty());
 
-        // WHEN + THEN
         assertThrows(ResourceNotFoundException.class, () -> service.buscarSucursalPorCodSucursal("SU0001"));
+
     }
 
     @Test
+    @DisplayName("Ya exite la sucursal con el código ingresado")
     void shouldThrow_alreadyExistsCodSucursal() {
 
-        // GIVEN
         Sucursal entity = new Sucursal();
         entity.setCodSucursal("SU0001");
 
@@ -173,59 +146,62 @@ public class SucursalServiceTest {
 
         when(repo.findByCodSucursal("SU0001")).thenReturn(Optional.of(entity));
 
-        // WHEN
         ResourceAlreadyExistsException exception = assertThrows(ResourceAlreadyExistsException.class, () -> service.agregarSucursal(dto));
 
-        // THEN
         assertEquals("Ya existe una sucursal con el código: SU0001", exception.getMessage());
         verify(repo, times(1)).findByCodSucursal("SU0001");
     }
 
     @Test
+    @DisplayName("Ya existe una sucursal con el nombre ingresado")
     void shouldThrow_alreadyExistsNombreSucursal() {
-        // GIVEN
         Sucursal entity = new Sucursal();
+        entity.setCodSucursal("SU0001");
         entity.setNombreSucursal("FARMACIA 1");
 
         SucursalDTO dto = new SucursalDTO();
+        entity.setCodSucursal("SU0001");
         dto.setNombreSucursal("FARMACIA 1");
 
+        when(repo.findByCodSucursal("SU0001")).thenReturn(Optional.empty());
         when(repo.findByNombreSucursal("FARMACIA 1")).thenReturn(Optional.of(entity));
         
-        // WHEN
         ResourceAlreadyExistsException exception = assertThrows(ResourceAlreadyExistsException.class, () -> service.agregarSucursal(dto));
 
-        // THEN
-        assertEquals("Ya existe una sucursal con el nombre FARMACIA 1", exception);
+        assertEquals("Ya existe una sucursal con el nombre FARMACIA 1", exception.getMessage());
         verify(repo, times(1)).findByNombreSucursal("FARMACIA 1");
     }
 
     @Test
+    @DisplayName("Ocurre un error al intentar conectar con otro microservicio")
     void shouldThrow_FeignException() {
 
-        // GIVEN
         SucursalDTO dto = new SucursalDTO();
         dto.setCodComuna(1);
         dto.setCodRegion("1");
 
-        when(feign.validarUbicacion(1, "1")).thenThrow(FeignException.class);
+        when(repo.findByCodSucursal(any())).thenReturn(Optional.empty());
+        when(repo.findByNombreSucursal(any())).thenReturn(Optional.empty());
+        when(feign.validarUbicacion(1, "1")).thenThrow(mock(FeignException.class));
 
-        // WHEN
         ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> service.agregarSucursal(dto));
 
-        // THEN
-        assertEquals("Ubicación inválida para comuna 1", exception);
+        assertEquals("Ubicación inválida para comuna 1", exception.getMessage());
     }
 
     @Test
     @DisplayName("Devuelve un pageable con todas las sucursales")
     void shouldReturnAllSucursales() {
 
-        // GIVEN
         Pageable pageable = PageRequest.of(0, 10);
 
         Sucursal entity = new Sucursal();
         entity.setCodSucursal("SU0001");
+        entity.setCodRegion("RM");
+
+        SucursalDTO dto = new SucursalDTO();
+        dto.setCodSucursal("SU0001");
+        dto.setCodRegion("RM");
 
         List<Sucursal> lista = List.of(entity);
 
@@ -233,24 +209,25 @@ public class SucursalServiceTest {
 
         when(repo.findAll(pageable)).thenReturn(page);
 
-        // WHEN
         Page<SucursalDTO> resultado = service.mostrarTodasLasSucursales(pageable);
 
-        // THEN
         assertNotNull(resultado);
         assertEquals("SU0001", resultado.getContent().get(0).getCodSucursal());
-        verify(repo, times(1)).findAll();
+        verify(repo, times(1)).findAll(pageable);
     }
 
     @Test
     void shouldReturnSucursalesByRegion() {
 
-        // GIVEN
         Pageable pageable = PageRequest.of(0, 10);
 
         Sucursal entidad = new Sucursal();
         entidad.setCodSucursal("SU0001");
         entidad.setCodRegion("RM");
+
+        SucursalDTO dto = new SucursalDTO();
+        dto.setCodSucursal("SU0001");
+        dto.setCodRegion("RM");
 
         List<Sucursal> lista = List.of(entidad);
 
@@ -259,11 +236,9 @@ public class SucursalServiceTest {
         when(repo.findByCodRegion("RM", pageable))
                 .thenReturn(page);
 
-        // WHEN
         Page<SucursalDTO> resultado =
                 service.buscarPorRegion("RM", pageable);
 
-        // THEN
         assertNotNull(resultado);
         assertEquals(1, resultado.getTotalElements());
         assertEquals("SU0001", resultado.getContent().get(0).getCodSucursal());
