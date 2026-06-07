@@ -32,7 +32,7 @@ public class RecepcionMapper {
     public DetalleRecepcion toDetalleEntity(DetalleRecepcionRequest request){
         DetalleRecepcion detalle = new DetalleRecepcion();
         detalle.setSku(request.getSku());
-        detalle.setCantidad(request.getCantidad());
+        detalle.setCantidad(request.getCantidad().intValueExact());
         detalle.setCodLote(request.getCodLote());
         detalle.setFechaVencimiento(request.getFechaVencimiento());
         detalle.setPrecioUnitario(request.getPrecioUnitario());

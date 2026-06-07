@@ -18,6 +18,7 @@ import com.pharmanet.abastecimiento_service.dto.recepcion.RecepcionResponse;
 import com.pharmanet.abastecimiento_service.entity.Recepcion;
 import com.pharmanet.abastecimiento_service.enums.EstadoRecepcion;
 import com.pharmanet.abastecimiento_service.exception.BusinessException;
+import com.pharmanet.abastecimiento_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.abastecimiento_service.exception.ResourceNotFoundException;
 import com.pharmanet.abastecimiento_service.exception.ServiceCommunicationException;
 import com.pharmanet.abastecimiento_service.mapper.RecepcionMapper;
@@ -64,6 +65,9 @@ public class RecepcionService {
     @Transactional(readOnly = true)
     public Page<RecepcionResponse> buscarPorFecha(String codSucursal, LocalDate inicio, LocalDate fin, Pageable pageable){
         log.info("Obteniendo historial de recepciones por rango de fechas: {} - {}", inicio, fin);
+        if (inicio.isAfter(fin)){
+            throw new BusinessException("La fecha de inicio no puede ser posterior a fecha de termino.");
+        }
         return recepRepo.findByCodSucursalAndFechaIngresoBetween(codSucursal, inicio.atStartOfDay(), fin.atTime(LocalTime.MAX), pageable)
             .map(recepMapper::toRecepcionResponse);
     }
@@ -127,8 +131,6 @@ public class RecepcionService {
         log.info("Recepcion ID {} eliminada exitosamente", id);
     }
 
-    
-
         // === METODOS PRIVADOS ===
     
     // Valida que Recepcion no este duplicada por rut proveedor, tipo y numero de documento.
@@ -137,7 +139,7 @@ public class RecepcionService {
             request.getRutProveedor(), request.getTipoDocumento(),request.getNumeroDocumento())){
                 log.warn("[VALIDACION] Intento de registro duplicado documento {} proveedor {}",
                 request.getNumeroDocumento(), request.getRutProveedor());
-                throw new BusinessException("La recepción de este documento ya se encuentra registrada en el sistema.");
+                throw new ResourceAlreadyExistsException("La recepción de este documento ya se encuentra registrada en el sistema.");
         }
     }
 
@@ -186,7 +188,7 @@ public class RecepcionService {
         try {
             usuarioClient.buscarPorRun(run);
         } catch (FeignException.NotFound e) {
-            throw new ResourceNotFoundException("Usuario no encontrada con RUN: " + run);
+            throw new ResourceNotFoundException("Usuario no encontrado con RUN: " + run);
         } catch (FeignException e) {
             log.error("Error de Feign al comunicar con el servicio de Usuarios.");
             throw new ServiceCommunicationException("Error al comunicarse con el servicio de Usuario.");

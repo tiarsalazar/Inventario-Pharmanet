@@ -18,6 +18,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -78,7 +79,7 @@ public class RecepcionController {
 
     @PostMapping("/sucursales/{codSucursal}/registrar")
     public ResponseEntity<RecepcionResponse> registrarRecepcion(
-            @PathVariable String codSucursal, @RequestBody RecepcionRequest request,
+            @PathVariable String codSucursal,@Valid @RequestBody RecepcionRequest request,
             @RequestHeader("X-Run-Usuario") String runUsuario) {
         return ResponseEntity.status(HttpStatus.CREATED).body(recepServ.registrarRecepcion(request, runUsuario, codSucursal));
     }

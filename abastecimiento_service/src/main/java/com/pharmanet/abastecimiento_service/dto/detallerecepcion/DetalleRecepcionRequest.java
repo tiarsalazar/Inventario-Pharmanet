@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -25,7 +26,8 @@ public class DetalleRecepcionRequest {
     private String sku;
     @NotNull(message = "Cantidad es obligatoria")
     @Min(value = 1, message = "Cantidad debe ser mayor a 0")
-    private Integer cantidad;
+    @Digits(integer = 6, fraction = 0, message = "La cantidad debe ser un número entero sin decimales")
+    private BigDecimal cantidad;
     @NotBlank(message = "Lote es obligatorio")
     @Size(max = 30, message = "Lote no puede superar 30 caracteres")
     private String codLote;
