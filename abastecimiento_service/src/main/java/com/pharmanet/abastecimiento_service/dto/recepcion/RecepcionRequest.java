@@ -5,6 +5,7 @@ import java.util.List;
 import com.pharmanet.abastecimiento_service.dto.detallerecepcion.DetalleRecepcionRequest;
 import com.pharmanet.abastecimiento_service.enums.TipoDocumento;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -18,6 +19,7 @@ import lombok.Setter;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Schema(description = "Modelo de entrada para recepcion.")
 public class RecepcionRequest {
     @NotBlank(message = "Numero de documento es obligatorio.")
     @Size(max = 30, message = "Numero de documento no puede superar 30 caracteres.")

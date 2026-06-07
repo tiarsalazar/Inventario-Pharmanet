@@ -8,6 +8,7 @@ import com.pharmanet.abastecimiento_service.dto.detallerecepcion.DetalleRecepcio
 import com.pharmanet.abastecimiento_service.enums.EstadoRecepcion;
 import com.pharmanet.abastecimiento_service.enums.TipoDocumento;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ import lombok.Setter;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Schema(description = "Modelo de respuesta para recepcion.")
 public class RecepcionResponse {
     private Long id;
     private String runUsuario;

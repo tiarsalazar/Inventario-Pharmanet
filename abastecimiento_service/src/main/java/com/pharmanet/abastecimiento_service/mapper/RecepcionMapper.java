@@ -41,6 +41,7 @@ public class RecepcionMapper {
 
     public RecepcionResponse toRecepcionResponse(Recepcion recepcion){
         RecepcionResponse response = new RecepcionResponse();
+        response.setId(recepcion.getId());
         response.setRunUsuario(recepcion.getRunUsuario());
         response.setCodSucursal(recepcion.getCodSucursal());
         response.setNumeroDocumento(recepcion.getNumeroDocumento());

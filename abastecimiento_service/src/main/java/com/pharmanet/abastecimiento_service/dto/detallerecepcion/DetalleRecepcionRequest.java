@@ -3,6 +3,7 @@ package com.pharmanet.abastecimiento_service.dto.detallerecepcion;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Min;
@@ -17,6 +18,7 @@ import lombok.Setter;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Schema(description = "Modelo de entrada de detalles para recepcion.")
 public class DetalleRecepcionRequest {
     @NotBlank(message = "SKU es obligatorio")
     @Size(max = 30, message = "SKU no debe superar 30 caracteres")
