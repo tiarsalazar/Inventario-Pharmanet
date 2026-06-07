@@ -30,7 +30,7 @@ public class RegionService {
             throw new DuplicatedResourceException("La region con el codigo " + dto.getCodRegion() + " ya está registrada.");
         }
 
-        Region region = 
+        Region region = RegionMapper.toEntity(dto);
         return regionRepository.save(region);
     }
 
