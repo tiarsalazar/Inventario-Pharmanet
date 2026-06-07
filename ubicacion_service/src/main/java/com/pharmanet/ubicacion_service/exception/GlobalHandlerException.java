@@ -15,9 +15,9 @@ public class GlobalHandlerException {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 
-    @ExceptionHandler(DuplicatedResourceException.class)
-    public ResponseEntity<ErrorResponse> handlerDuplicatedResourceException(DuplicatedResourceException ex) {
-        ErrorResponse error = new ErrorResponse(409, "Conflic", ex.getMessage());
+    @ExceptionHandler(ResourceAlreadyExistsException.class)
+    public ResponseEntity<ErrorResponse> handlerResourceAlreadyExistsException(ResourceAlreadyExistsException ex) {
+        ErrorResponse error = new ErrorResponse(409, "Conflict", ex.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
     }
 

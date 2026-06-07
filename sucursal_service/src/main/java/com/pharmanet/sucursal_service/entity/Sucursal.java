@@ -2,8 +2,6 @@ package com.pharmanet.sucursal_service.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -27,29 +25,27 @@ public class Sucursal {
     @Column(name = "sucursal_id")
     private Long id;
 
+    @Column(name = "cod_sucursal", nullable = false, unique = true, length = 8)
+    private String codSucursal;
+
     @Column(name = "nombre_sucursal", unique = true, length = 30)
     private String nombreSucursal;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "tipo_sucursal", nullable = false)
-    private TipoSucursal tipoSucursal;
-
-    @Column(name = "region_id", nullable = false, length = 30)
-    private Integer regionId;
-    @Column(name = "comuna_id", nullable = false, length = 40)
-    private Integer comunaId;
+    @Column(name = "cod_region", nullable = false, length = 2)
+    private String codRegion;
+    @Column(name = "cod_comuna", nullable = false)
+    private Integer codComuna;
     @Column(nullable = false, length = 100)
     private String direccion;
 
     @Column(nullable = false, length = 15)
     private String estado = "activo"; // Sucursales activas por defecto
 
-    public Sucursal(Long id, String nombreSucursal, TipoSucursal tipoSucursal, Integer regionId, Integer comunaId, String direccion) {
-        this.id = id;
+    public Sucursal(String codSucursal, String nombreSucursal, String codRegion, Integer codComuna, String direccion) {
+        this.codSucursal = codSucursal;
         this.nombreSucursal = nombreSucursal;
-        this.tipoSucursal = tipoSucursal;
-        this.regionId = regionId;
-        this.comunaId = comunaId;
+        this.codRegion = codRegion;
+        this.codComuna = codComuna;
         this.direccion = direccion;
     }
 }

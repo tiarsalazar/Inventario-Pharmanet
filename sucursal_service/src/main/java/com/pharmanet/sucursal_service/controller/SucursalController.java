@@ -1,7 +1,8 @@
 package com.pharmanet.sucursal_service.controller;
 
-import java.util.List;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,51 +33,51 @@ public class SucursalController {
     private final SucursalService sucursalService;
 
     @GetMapping
-    public ResponseEntity<List<SucursalDTO>> mostrarTodasLasSucursales() {
+    public ResponseEntity<Page<SucursalDTO>> mostrarTodasLasSucursales(@PageableDefault (size = 10, sort = "codSucursal") Pageable pageable) {
         
         log.info("Inicia búsqueda de todas las sucursales.");
-        List<SucursalDTO> sucursales = sucursalService.mostrarTodasLasSucursales();
+        Page<SucursalDTO> sucursales = sucursalService.mostrarTodasLasSucursales(pageable);
         return ResponseEntity.status(HttpStatus.OK).body(sucursales);
     }
 
-    @GetMapping("/{codInterno}")
+    @GetMapping("/{codSucursal}")
     public ResponseEntity<SucursalDTO> buscarSucursal(@PathVariable
             @NotBlank(message = "El código interno no puede estar vacío")
             @Size(max = 10, message = "Máximo 10 caracteres")
-            String codInterno) {
+            String codSucursal) {
         
-        SucursalDTO sucursalDTO = sucursalService.buscarSucursal(codInterno);
-        return ResponseEntity.status(HttpStatus.OK).body(sucursalDTO);
+        SucursalDTO sucursal = sucursalService.buscarSucursalPorCodSucursal(codSucursal);
+        return ResponseEntity.status(HttpStatus.OK).body(sucursal);
     }
 
     @GetMapping("/region")
-    public ResponseEntity<List<SucursalDTO>> buscarPorRegion(@RequestParam String region) {
+    public ResponseEntity<Page<SucursalDTO>> buscarPorRegion(@PageableDefault (size = 10, sort = "codSucursal") Pageable pageable, @RequestParam String region) {
 
-        List<SucursalDTO> sucursalesEnRegion = sucursalService.buscarPorRegion(region);
+        Page<SucursalDTO> sucursalesEnRegion = sucursalService.buscarPorRegion(region, pageable);
         return ResponseEntity.status(HttpStatus.OK).body(sucursalesEnRegion);
     }
 
     @PostMapping
-    public ResponseEntity<SucursalDTO> agregarSucursal(@Valid @RequestBody SucursalDTO sucursalAAgregar) {
+    public ResponseEntity<SucursalDTO> agregarSucursal(@Valid @RequestBody SucursalDTO nueva) {
 
-        SucursalDTO sucursalDTO = sucursalService.agregarSucursal(sucursalAAgregar);
-        return ResponseEntity.status(HttpStatus.CREATED).body(sucursalDTO);
+        SucursalDTO dto = sucursalService.agregarSucursal(nueva);
+        return ResponseEntity.status(HttpStatus.CREATED).body(dto);
     }
 
     @PutMapping
-    public ResponseEntity<Void> actualizarSucursal(@Valid @RequestBody SucursalDTO sucursalDTO) {
+    public ResponseEntity<Void> actualizarSucursal(@Valid @RequestBody SucursalDTO nueva) {
 
-        sucursalService.actualizarSucursal(sucursalDTO);
+        sucursalService.actualizarSucursal(nueva);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    @DeleteMapping("/{codInterno}")
+    @DeleteMapping("/{codSucursal}")
     public ResponseEntity<Void> eliminarSucursal(@PathVariable
             @NotBlank(message = "El código interno no puede estar vacío")
             @Size(max = 10, message = "Máximo 10 caracteres")
-            String codInterno) {
+            String codSucursal) {
 
-        sucursalService.eliminarSucursal(codInterno);
+        sucursalService.eliminarSucursal(codSucursal);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

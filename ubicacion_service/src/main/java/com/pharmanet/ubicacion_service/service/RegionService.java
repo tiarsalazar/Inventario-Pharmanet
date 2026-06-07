@@ -5,8 +5,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.pharmanet.ubicacion_service.dto.RegionDto;
+import com.pharmanet.ubicacion_service.dto.RegionMapper;
 import com.pharmanet.ubicacion_service.entity.Region;
-import com.pharmanet.ubicacion_service.exception.DuplicatedResourceException;
+import com.pharmanet.ubicacion_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.ubicacion_service.exception.ResourceNotFoundException;
 import com.pharmanet.ubicacion_service.repository.RegionRepository;
 
@@ -26,44 +27,53 @@ public class RegionService {
         log.info("Inicia agregado de región.");
         log.debug("dto: {}", dto);
 
-        if (regionRepository.findByCodRegion(dto.getCodRegion()).isPresent()) {
-            throw new DuplicatedResourceException("La region con el codigo " + dto.getCodRegion() + " ya está registrada.");
+        log.info("Validación de que región no exista");
+        if (regionRepository.findByCodRegion(dto.getCodRegion()).isPresent() || regionRepository.findByDescripcion(dto.getDescripcion()).isPresent()) {
+            throw new ResourceAlreadyExistsException("La región ya se encuentra registrada.");
         }
 
         Region region = RegionMapper.toEntity(dto);
+<<<<<<< HEAD
         return regionRepository.save(region);
+=======
+        return RegionMapper.toDto(regionRepository.save(region));
+>>>>>>> 0981e1fbdacbc34fc2934fc3813f6def889cc28c
     }
 
-    public Region buscarRegion(Integer id) {
-        log.info("Inicia búsqueda de región por ID");
-        log.debug("id: {}", id);
+    public RegionDto buscarRegion(String codRegion) {
+        log.info("Inicia búsqueda de región por código de región.");
+        log.debug("codRegion: {}", codRegion);
 
-        Region region = regionRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la reguón con el ID: " + id));
+        log.info("Valida que la región exista.");
+        Region region = regionRepository.findByCodRegion(codRegion)
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la región con el código: " + codRegion));
 
-        return region;
+        return RegionMapper.toDto(region);
     }
-    public Page<Region> mostrarTodasRegiones(Pageable pageable) {
-        return regionRepository.findAll(pageable);
+    public Page<RegionDto> mostrarTodasRegiones(Pageable pageable) {
+        return regionRepository.findAll(pageable)
+                .map(RegionMapper::toDto);
     }
 
-    public void actualizarRegion(Region region) {
+    public void actualizarRegion(RegionDto dto) {
         log.info("Inicia actualización de región");
-        log.debug("region: {}", region);
+        log.debug("dto: {}", dto);
 
-        if (!regionRepository.existsById(region.getRegionId())) {
-            throw new ResourceNotFoundException("No se encuentra la región con el ID: " + region.getRegionId());
-        }
+        log.info("Valida que la región exista.");
+        Region region = regionRepository.findByCodRegion(dto.getCodRegion())
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la región con el código: " + dto.getCodRegion()));
+
+        region = RegionMapper.update(region, dto);
 
         regionRepository.save(region);
     }
 
-    public void eliminarRegion(Integer id) {
+    public void eliminarRegion(String codRegion) {
         log.info("Inicia eliminación de la región");
-        log.debug("id: {}", id);
+        log.debug("codRegion: {}", codRegion);
 
-        Region region = regionRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la región con el ID: " + id));
+        Region region = regionRepository.findByCodRegion(codRegion)
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la región con el código: " + codRegion));
 
         regionRepository.delete(region);
     }

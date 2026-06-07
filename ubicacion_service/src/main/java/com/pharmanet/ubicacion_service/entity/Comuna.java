@@ -1,7 +1,5 @@
 package com.pharmanet.ubicacion_service.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,8 +33,7 @@ public class Comuna {
     @Column(nullable = false, unique = true, length = 30)
     private String descripcion;
 
-    @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "cod_region", nullable = false)
+    @JoinColumn(name = "region", referencedColumnName = "cod_region", nullable = false)
     private Region region;
 }
