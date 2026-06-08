@@ -6650,3 +6650,8 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2026-06-08T12:55:54.892-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
 2026-06-08T12:55:54.893-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ComunaDto(codComuna=1, descripcion=ARICA, region=15)]
 2026-06-08T12:55:54.894-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-08T12:58:53.173-04:00  INFO 24580 --- [ubicacion-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-08T12:58:53.180-04:00  INFO 24580 --- [ubicacion-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-08T12:58:53.183-04:00  INFO 24580 --- [ubicacion-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T12:58:53.187-04:00  INFO 24580 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-08T12:58:53.193-04:00  INFO 24580 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

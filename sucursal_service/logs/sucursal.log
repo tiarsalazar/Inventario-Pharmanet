@@ -1516,3 +1516,151 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'mi_base_datos_dev
 2026-06-08T12:57:20.323-04:00  INFO 7144 --- [sucursal-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-08T12:57:20.324-04:00  INFO 7144 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
 2026-06-08T12:57:20.327-04:00  INFO 7144 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-06-08T13:03:41.364-04:00  INFO 19344 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : Starting SucursalServiceApplicationTests using Java 21.0.8 with PID 19344 (started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service)
+2026-06-08T13:03:41.365-04:00  INFO 19344 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : The following 1 profile is active: "dev"
+2026-06-08T13:03:42.068-04:00  INFO 19344 --- [sucursal-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T13:03:42.118-04:00  INFO 19344 --- [sucursal-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2026-06-08T13:03:42.297-04:00  INFO 19344 --- [sucursal-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9ae6db13-537f-3697-bae3-34b1cfff4531
+2026-06-08T13:03:42.833-04:00  INFO 19344 --- [sucursal-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T13:03:42.968-04:00  INFO 19344 --- [sucursal-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a262980
+2026-06-08T13:03:42.970-04:00  INFO 19344 --- [sucursal-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-08T13:03:43.371-04:00  INFO 19344 --- [sucursal-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/mi_base_datos_dev (MySQL 5.5)
+2026-06-08T13:03:43.413-04:00  INFO 19344 --- [sucursal-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.022s)
+2026-06-08T13:03:43.423-04:00  INFO 19344 --- [sucursal-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `mi_base_datos_dev`: 3
+2026-06-08T13:03:43.426-04:00  INFO 19344 --- [sucursal-service] [main] o.f.core.internal.command.DbMigrate      : Schema `mi_base_datos_dev` is up to date. No migration necessary.
+2026-06-08T13:03:43.528-04:00  INFO 19344 --- [sucursal-service] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08T13:03:43.595-04:00  INFO 19344 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08T13:03:43.888-04:00  INFO 19344 --- [sucursal-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08T13:03:43.931-04:00  WARN 19344 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-08T13:03:43.934-04:00  WARN 19344 --- [sucursal-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-08T13:03:43.946-04:00  INFO 19344 --- [sucursal-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/mi_base_datos_dev]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: mi_base_datos_dev/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08T13:03:44.477-04:00  INFO 19344 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08T13:03:44.515-04:00  INFO 19344 --- [sucursal-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T13:03:44.597-04:00  INFO 19344 --- [sucursal-service] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08T13:03:44.839-04:00  WARN 19344 --- [sucursal-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08T13:03:45.538-04:00  INFO 19344 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : Started SucursalServiceApplicationTests in 4.493 seconds (process running for 6.926)
+2026-06-08T13:03:45.609-04:00  INFO 19344 --- [sucursal-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T13:03:45.612-04:00  INFO 19344 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-08T13:03:45.620-04:00  INFO 19344 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-08T13:07:03.785-04:00  INFO 14912 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : Starting SucursalServiceApplicationTests using Java 21.0.8 with PID 14912 (started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service)
+2026-06-08T13:07:03.787-04:00  INFO 14912 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : The following 1 profile is active: "dev"
+2026-06-08T13:07:04.481-04:00  INFO 14912 --- [sucursal-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T13:07:04.528-04:00  INFO 14912 --- [sucursal-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
+2026-06-08T13:07:04.697-04:00  INFO 14912 --- [sucursal-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9ae6db13-537f-3697-bae3-34b1cfff4531
+2026-06-08T13:07:05.169-04:00  INFO 14912 --- [sucursal-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T13:07:05.323-04:00  INFO 14912 --- [sucursal-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@786cc1df
+2026-06-08T13:07:05.325-04:00  INFO 14912 --- [sucursal-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-08T13:07:05.728-04:00  INFO 14912 --- [sucursal-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/mi_base_datos_dev (MySQL 5.5)
+2026-06-08T13:07:05.774-04:00  INFO 14912 --- [sucursal-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.026s)
+2026-06-08T13:07:05.782-04:00  INFO 14912 --- [sucursal-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `mi_base_datos_dev`: 3
+2026-06-08T13:07:05.784-04:00  INFO 14912 --- [sucursal-service] [main] o.f.core.internal.command.DbMigrate      : Schema `mi_base_datos_dev` is up to date. No migration necessary.
+2026-06-08T13:07:05.874-04:00  INFO 14912 --- [sucursal-service] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08T13:07:05.921-04:00  INFO 14912 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08T13:07:06.212-04:00  INFO 14912 --- [sucursal-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08T13:07:06.270-04:00  WARN 14912 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-08T13:07:06.274-04:00  WARN 14912 --- [sucursal-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-08T13:07:06.291-04:00  INFO 14912 --- [sucursal-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/mi_base_datos_dev]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: mi_base_datos_dev/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08T13:07:06.809-04:00  INFO 14912 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08T13:07:06.849-04:00  INFO 14912 --- [sucursal-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T13:07:06.921-04:00  INFO 14912 --- [sucursal-service] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08T13:07:07.236-04:00  WARN 14912 --- [sucursal-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08T13:07:08.006-04:00  INFO 14912 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : Started SucursalServiceApplicationTests in 4.579 seconds (process running for 6.996)
+2026-06-08T13:07:08.079-04:00  INFO 14912 --- [sucursal-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T13:07:08.082-04:00  INFO 14912 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-08T13:07:08.089-04:00  INFO 14912 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-08T13:13:22.615-04:00  INFO 17288 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : Starting SucursalServiceApplicationTests using Java 21.0.8 with PID 17288 (started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service)
+2026-06-08T13:13:22.617-04:00  INFO 17288 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : The following 1 profile is active: "dev"
+2026-06-08T13:13:23.361-04:00  INFO 17288 --- [sucursal-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T13:13:23.421-04:00  INFO 17288 --- [sucursal-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interface.
+2026-06-08T13:13:23.608-04:00  INFO 17288 --- [sucursal-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9ae6db13-537f-3697-bae3-34b1cfff4531
+2026-06-08T13:13:24.110-04:00  INFO 17288 --- [sucursal-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T13:13:24.250-04:00  INFO 17288 --- [sucursal-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24536f07
+2026-06-08T13:13:24.252-04:00  INFO 17288 --- [sucursal-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-08T13:13:24.655-04:00  INFO 17288 --- [sucursal-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/mi_base_datos_dev (MySQL 5.5)
+2026-06-08T13:13:24.697-04:00  INFO 17288 --- [sucursal-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.023s)
+2026-06-08T13:13:24.706-04:00  INFO 17288 --- [sucursal-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `mi_base_datos_dev`: 3
+2026-06-08T13:13:24.709-04:00  INFO 17288 --- [sucursal-service] [main] o.f.core.internal.command.DbMigrate      : Schema `mi_base_datos_dev` is up to date. No migration necessary.
+2026-06-08T13:13:24.816-04:00  INFO 17288 --- [sucursal-service] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08T13:13:24.889-04:00  INFO 17288 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08T13:13:25.220-04:00  INFO 17288 --- [sucursal-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08T13:13:25.269-04:00  WARN 17288 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-08T13:13:25.273-04:00  WARN 17288 --- [sucursal-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-08T13:13:25.290-04:00  INFO 17288 --- [sucursal-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/mi_base_datos_dev]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: mi_base_datos_dev/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08T13:13:25.796-04:00  INFO 17288 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08T13:13:25.838-04:00  INFO 17288 --- [sucursal-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T13:13:25.914-04:00  INFO 17288 --- [sucursal-service] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08T13:13:26.206-04:00  WARN 17288 --- [sucursal-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08T13:13:26.867-04:00  INFO 17288 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : Started SucursalServiceApplicationTests in 4.574 seconds (process running for 6.977)
+2026-06-08T13:13:26.945-04:00  INFO 17288 --- [sucursal-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T13:13:26.947-04:00  INFO 17288 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-08T13:13:26.955-04:00  INFO 17288 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-08T13:14:36.772-04:00  INFO 50056 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : Starting SucursalServiceApplicationTests using Java 21.0.8 with PID 50056 (started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service)
+2026-06-08T13:14:36.774-04:00  INFO 50056 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : The following 1 profile is active: "dev"
+2026-06-08T13:14:37.441-04:00  INFO 50056 --- [sucursal-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T13:14:37.498-04:00  INFO 50056 --- [sucursal-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface.
+2026-06-08T13:14:37.658-04:00  INFO 50056 --- [sucursal-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9ae6db13-537f-3697-bae3-34b1cfff4531
+2026-06-08T13:14:38.131-04:00  INFO 50056 --- [sucursal-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T13:14:38.271-04:00  INFO 50056 --- [sucursal-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c2f310c
+2026-06-08T13:14:38.272-04:00  INFO 50056 --- [sucursal-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-08T13:14:38.672-04:00  INFO 50056 --- [sucursal-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/mi_base_datos_dev (MySQL 5.5)
+2026-06-08T13:14:38.727-04:00  INFO 50056 --- [sucursal-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.036s)
+2026-06-08T13:14:38.740-04:00  INFO 50056 --- [sucursal-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `mi_base_datos_dev`: 3
+2026-06-08T13:14:38.744-04:00  INFO 50056 --- [sucursal-service] [main] o.f.core.internal.command.DbMigrate      : Schema `mi_base_datos_dev` is up to date. No migration necessary.
+2026-06-08T13:14:38.843-04:00  INFO 50056 --- [sucursal-service] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08T13:14:38.918-04:00  INFO 50056 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08T13:14:39.281-04:00  INFO 50056 --- [sucursal-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08T13:14:39.330-04:00  WARN 50056 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-08T13:14:39.333-04:00  WARN 50056 --- [sucursal-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-08T13:14:39.347-04:00  INFO 50056 --- [sucursal-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/mi_base_datos_dev]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: mi_base_datos_dev/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08T13:14:39.857-04:00  INFO 50056 --- [sucursal-service] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08T13:14:39.894-04:00  INFO 50056 --- [sucursal-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T13:14:39.968-04:00  INFO 50056 --- [sucursal-service] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08T13:14:40.222-04:00  WARN 50056 --- [sucursal-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08T13:14:40.937-04:00  INFO 50056 --- [sucursal-service] [main] c.p.s.SucursalServiceApplicationTests    : Started SucursalServiceApplicationTests in 4.506 seconds (process running for 6.811)
+2026-06-08T13:14:41.011-04:00  INFO 50056 --- [sucursal-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T13:14:41.014-04:00  INFO 50056 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-08T13:14:41.020-04:00  INFO 50056 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

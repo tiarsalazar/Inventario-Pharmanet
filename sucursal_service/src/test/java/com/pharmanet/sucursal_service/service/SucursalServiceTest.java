@@ -160,7 +160,7 @@ public class SucursalServiceTest {
         entity.setNombreSucursal("FARMACIA 1");
 
         SucursalDTO dto = new SucursalDTO();
-        entity.setCodSucursal("SU0001");
+        dto.setCodSucursal("SU0001");
         dto.setNombreSucursal("FARMACIA 1");
 
         when(repo.findByCodSucursal("SU0001")).thenReturn(Optional.empty());
@@ -168,7 +168,7 @@ public class SucursalServiceTest {
         
         ResourceAlreadyExistsException exception = assertThrows(ResourceAlreadyExistsException.class, () -> service.agregarSucursal(dto));
 
-        assertEquals("Ya existe una sucursal con el nombre FARMACIA 1", exception.getMessage());
+        assertEquals("Ya existe una sucursal con el nombre: FARMACIA 1", exception.getMessage());
         verify(repo, times(1)).findByNombreSucursal("FARMACIA 1");
     }
 
@@ -177,6 +177,7 @@ public class SucursalServiceTest {
     void shouldThrow_FeignException() {
 
         SucursalDTO dto = new SucursalDTO();
+        dto.setCodSucursal("SU0001");
         dto.setCodComuna(1);
         dto.setCodRegion("1");
 
@@ -277,7 +278,7 @@ public class SucursalServiceTest {
         );
 
         assertNotNull(exception);
-        assertEquals("No se encuentra la sucursal con el código: ", exception.getMessage());
+        assertEquals("No se encuentra la sucursal con el código: SU0001", exception.getMessage());
     }
 
     @Test
@@ -306,11 +307,10 @@ public class SucursalServiceTest {
 
         service.verificarNombreUnico(entidad);
 
-        verify(repo, times(1)).findByNombreSucursal("FARMACIA1");
+        verify(repo, times(2)).findByNombreSucursal("FARMACIA1");
     }
 
     @Test
-    
     void nombreUnico_BadCase() {
         Sucursal entidad = new Sucursal();
         entidad.setCodSucursal("SU0001");
@@ -327,7 +327,7 @@ public class SucursalServiceTest {
 
         assertNotNull(exception);
         assertEquals("Ya existe una sucursal con el nombre: FARMACIA1", exception.getMessage());
-        verify(repo, times(1)).findByNombreSucursal("FARMACIA1");
+        verify(repo, times(2)).findByNombreSucursal("FARMACIA1");
     }
 
     @Test

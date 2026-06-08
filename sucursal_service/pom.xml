@@ -171,6 +171,58 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.12</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-check</id>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<rule>
+									<element>BUNDLE</element>
+									<limits>
+										<limit>
+											<counter>LINE</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>0.80</minimum> <!--Aquí se define el % de cobertura por líneas-->
+										</limit>
+										<limit>
+											<counter>BRANCH</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>0.80</minimum> <!--Aquí se define el % de cobertura por rama (if, else, switch) -->
+										</limit>
+									</limits>
+								</rule>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+				<excludes>
+					<exclude>com/pharmanet/sucursal_service/SucursalServiceApplication.java</exclude>
+					<exclude>com/pharmanet/sucursal_service/dto/*.java</exclude>
+					<exclude>com/pharmanet/sucursal_service/model/*.java</exclude>
+					<exclude>com/pharmanet/sucursal_service/repository/*.java</exclude>
+				</excludes>
+			</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
