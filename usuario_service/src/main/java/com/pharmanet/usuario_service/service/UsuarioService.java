@@ -30,27 +30,27 @@ public class UsuarioService {
 
     private final SucursalFeignClient sucursalFeignClient;
 
-    public UsuarioDTO agregarUsuario(UsuarioDTO usuarioDTO) {
+    public UsuarioDTO agregarUsuario(UsuarioDTO dto) {
         log.info("Se inicia funcionalidad de agregar usuario");
-        log.debug("vDTO: {}", usuarioDTO);
+        log.debug("DTO: {}", dto);
 
         log.info("Se verifica que no existan registros del usuario en el sistema");
-        log.debug("RUN: {}", usuarioDTO.getRun());
-        if (usuarioRepository.findByRun(usuarioDTO.getRun()).isPresent()) {
-            throw new NotUniqueUsuarioException("El usuario ya existe en la bd");
+        log.debug("RUN: {}", dto.getRun());
+        if (usuarioRepository.findByRun(dto.getRun()).isPresent()) {
+            throw new NotUniqueUsuarioException("Ya existe el usuario con el run: " + dto.getRun());
         }
 
-        log.info("Se verifica la existencia de la FK de sucursal");
-        log.debug("codInterno: {}", usuarioDTO.getCodSucursal());
+        log.info("Se verifica la existencia de la sucursal");
+        log.debug("codSucursal: {}", dto.getCodSucursal());
         try {
-            sucursalFeignClient.buscarSucursal(usuarioDTO.getCodSucursal());
+            sucursalFeignClient.buscarSucursal(dto.getCodSucursal());
         } catch (FeignException.InternalServerError e) {
-            log.info("No se encuentra sucursal {} asociada al usuario {}", usuarioDTO.getCodSucursal(), usuarioDTO.getRun());
-            throw new ResourceNotFoundException("No se encuentra la sucursal: " + usuarioDTO.getCodSucursal());
+            log.info("No se encuentra sucursal {} asociada al usuario {}", dto.getCodSucursal(), dto.getRun());
+            throw new ResourceNotFoundException("No se encuentra la sucursal con el código: " + dto.getCodSucursal());
         }
 
         log.info("Se transforma el dto a modelo");
-        Usuario usuario = UsuarioMapper.toModel(usuarioDTO);
+        Usuario usuario = UsuarioMapper.toModel(dto);
         log.info("Se agrega usuario");
         usuarioRepository.save(usuario);
 
