@@ -9,8 +9,8 @@ public class UsuarioMapper {
             usuario.getNombreCompleto(),
             usuario.getCorreoInstitucional(),
             usuario.getTelefono(),
-            usuario.getCodInterno(),
-            usuario.getProfesion().toLowerCase()
+            usuario.getCodSucursal(),
+            usuario.getProfesion().toUpperCase()
         );
     }
 
@@ -19,8 +19,8 @@ public class UsuarioMapper {
             usuarioDTO.getNombreCompleto(),
             usuarioDTO.getCorreoInstitucional(),
             usuarioDTO.getTelefono(),
-            usuarioDTO.getCodInterno(),
-            usuarioDTO.getProfesion().toLowerCase()
+            usuarioDTO.getCodSucursal(),
+            usuarioDTO.getProfesion().toUpperCase()
         );
     }
 }

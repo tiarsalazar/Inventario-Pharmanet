@@ -4,10 +4,7 @@ CREATE TABLE usuario(
     nombre_completo VARCHAR2(80) NOT NULL,
     correo_institucional VARCHAR2(30) NOT NULL CONSTRAINT un_correo_usuario UNIQUE,
     telefono VARCHAR2(12) NOT NULL,
-    cod_interno VARCHAR2(30) NOT NULL,
+    cod_sucursal VARCHAR2(30) NOT NULL,
     profesion VARCHAR2(30) NOT NULL,
-    direccion VARCHAR2(100),
-    comuna VARCHAR2(30),
-    region VARCHAR2(30),
     CONSTRAINT pk_usuario PRIMARY KEY (usuario_id)
 );

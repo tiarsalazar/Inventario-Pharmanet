@@ -43,7 +43,7 @@ public class SucursalController {
     @GetMapping("/{codSucursal}")
     public ResponseEntity<SucursalDTO> buscarSucursal(@PathVariable
             @NotBlank(message = "El código interno no puede estar vacío")
-            @Size(max = 10, message = "Máximo 10 caracteres")
+            @Size(max = 8, message = "Máximo 8 caracteres")
             String codSucursal) {
         
         SucursalDTO sucursal = sucursalService.buscarSucursalPorCodSucursal(codSucursal);

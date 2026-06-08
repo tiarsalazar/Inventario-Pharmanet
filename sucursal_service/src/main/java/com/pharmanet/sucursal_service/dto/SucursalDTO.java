@@ -2,6 +2,7 @@ package com.pharmanet.sucursal_service.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +15,7 @@ public class SucursalDTO {
 
     @NotBlank(message = "Campo obligatorio")
     @Size(max = 8, message = "Largo máximo 8 caracteres")
+    @Pattern(regexp = "^[A-Z0-9]+$", message = "Solo mayúsculas y números")
     private String codSucursal;
 
     @Size(min = 5, max = 30, message = "El campo debe tener entre 5 y 30 caracteres")

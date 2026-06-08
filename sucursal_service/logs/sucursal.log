@@ -1664,3 +1664,277 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'mi_base_datos_dev
 2026-06-08T13:14:41.011-04:00  INFO 50056 --- [sucursal-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-08T13:14:41.014-04:00  INFO 50056 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-08T13:14:41.020-04:00  INFO 50056 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-08T15:34:06.760-04:00  INFO 4104 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : Starting SucursalServiceApplication using Java 21.0.8 with PID 4104 (C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service)
+2026-06-08T15:34:06.764-04:00  INFO 4104 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : The following 1 profile is active: "dev"
+2026-06-08T15:34:06.807-04:00  INFO 4104 --- [sucursal-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-08T15:34:06.808-04:00  INFO 4104 --- [sucursal-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-08T15:34:07.365-04:00  INFO 4104 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T15:34:07.414-04:00  INFO 4104 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 1 JPA repository interface.
+2026-06-08T15:34:07.542-04:00  INFO 4104 --- [sucursal-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e934a96c-59d8-37f6-841a-ed1a6a146c82
+2026-06-08T15:34:07.920-04:00  INFO 4104 --- [sucursal-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-06-08T15:34:07.934-04:00  INFO 4104 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-08T15:34:07.935-04:00  INFO 4104 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08T15:34:07.984-04:00  INFO 4104 --- [sucursal-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1174 ms
+2026-06-08T15:34:08.303-04:00  INFO 4104 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T15:34:09.877-04:00  WARN 4104 --- [sucursal-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Access denied for user 'root'@'localhost' (using password: NO)
+---------------------------------------------------------------------------------------------------------
+SQL State  : 28000
+Error Code : 1045
+Message    : Access denied for user 'root'@'localhost' (using password: NO)
+
+2026-06-08T15:34:09.882-04:00  INFO 4104 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-08T15:34:09.892-04:00  INFO 4104 --- [sucursal-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-08T15:34:09.909-04:00 ERROR 4104 --- [sucursal-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Access denied for user 'root'@'localhost' (using password: NO)
+---------------------------------------------------------------------------------------------------------
+SQL State  : 28000
+Error Code : 1045
+Message    : Access denied for user 'root'@'localhost' (using password: NO)
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.sucursal_service.SucursalServiceApplication.main(SucursalServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Access denied for user 'root'@'localhost' (using password: NO)
+---------------------------------------------------------------------------------------------------------
+SQL State  : 28000
+Error Code : 1045
+Message    : Access denied for user 'root'@'localhost' (using password: NO)
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: Access denied for user 'root'@'localhost' (using password: NO)
+---------------------------------------------------------------------------------------------------------
+SQL State  : 28000
+Error Code : 1045
+Message    : Access denied for user 'root'@'localhost' (using password: NO)
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:840) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+
+2026-06-08T15:38:12.353-04:00  INFO 17972 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : Starting SucursalServiceApplication using Java 21.0.8 with PID 17972 (C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service)
+2026-06-08T15:38:12.357-04:00  INFO 17972 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : The following 1 profile is active: "dev"
+2026-06-08T15:38:12.401-04:00  INFO 17972 --- [sucursal-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-08T15:38:12.402-04:00  INFO 17972 --- [sucursal-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-08T15:38:12.931-04:00  INFO 17972 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T15:38:12.974-04:00  INFO 17972 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
+2026-06-08T15:38:13.097-04:00  INFO 17972 --- [sucursal-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e934a96c-59d8-37f6-841a-ed1a6a146c82
+2026-06-08T15:38:13.556-04:00  INFO 17972 --- [sucursal-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-06-08T15:38:13.574-04:00  INFO 17972 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-08T15:38:13.576-04:00  INFO 17972 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08T15:38:13.648-04:00  INFO 17972 --- [sucursal-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1246 ms
+2026-06-08T15:38:14.032-04:00  INFO 17972 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T15:38:15.511-04:00  WARN 17972 --- [sucursal-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Unknown database 'mi_base_datos_dev'
+-------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'mi_base_datos_dev'
+
+2026-06-08T15:38:15.515-04:00  INFO 17972 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-08T15:38:15.523-04:00  INFO 17972 --- [sucursal-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-08T15:38:15.538-04:00 ERROR 17972 --- [sucursal-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Unknown database 'mi_base_datos_dev'
+-------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'mi_base_datos_dev'
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.sucursal_service.SucursalServiceApplication.main(SucursalServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Unknown database 'mi_base_datos_dev'
+-------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'mi_base_datos_dev'
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: Unknown database 'mi_base_datos_dev'
+-------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1049
+Message    : Unknown database 'mi_base_datos_dev'
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'mi_base_datos_dev'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:840) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+
+2026-06-08T15:39:36.673-04:00  INFO 13160 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : Starting SucursalServiceApplication using Java 21.0.8 with PID 13160 (C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service)
+2026-06-08T15:39:36.677-04:00  INFO 13160 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : The following 1 profile is active: "dev"
+2026-06-08T15:39:36.717-04:00  INFO 13160 --- [sucursal-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-08T15:39:36.717-04:00  INFO 13160 --- [sucursal-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-08T15:39:37.234-04:00  INFO 13160 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T15:39:37.276-04:00  INFO 13160 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 1 JPA repository interface.
+2026-06-08T15:39:37.396-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e934a96c-59d8-37f6-841a-ed1a6a146c82
+2026-06-08T15:39:37.722-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-06-08T15:39:37.732-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-08T15:39:37.733-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08T15:39:37.772-04:00  INFO 13160 --- [sucursal-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1054 ms
+2026-06-08T15:39:38.049-04:00  INFO 13160 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T15:39:38.166-04:00  INFO 13160 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a35a849
+2026-06-08T15:39:38.167-04:00  INFO 13160 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-08T15:39:38.564-04:00  INFO 13160 --- [sucursal-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/mi_base_datos_dev (MySQL 5.5)
+2026-06-08T15:39:38.598-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `mi_base_datos_dev`.`flyway_schema_history` does not exist yet
+2026-06-08T15:39:38.601-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.020s)
+2026-06-08T15:39:38.619-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `mi_base_datos_dev`.`flyway_schema_history` ...
+2026-06-08T15:39:38.649-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `mi_base_datos_dev`: << Empty Schema >>
+2026-06-08T15:39:38.656-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `mi_base_datos_dev` to version "1 - create table"
+2026-06-08T15:39:38.677-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `mi_base_datos_dev` to version "3 - insert"
+2026-06-08T15:39:38.688-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `mi_base_datos_dev`, now at version v3 (execution time 00:00.009s)
+2026-06-08T15:39:38.758-04:00  INFO 13160 --- [sucursal-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08T15:39:38.853-04:00  INFO 13160 --- [sucursal-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08T15:39:39.275-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08T15:39:39.330-04:00  WARN 13160 --- [sucursal-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-08T15:39:39.333-04:00  WARN 13160 --- [sucursal-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-08T15:39:39.347-04:00  INFO 13160 --- [sucursal-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/mi_base_datos_dev]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: mi_base_datos_dev/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08T15:39:40.024-04:00  INFO 13160 --- [sucursal-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08T15:39:40.084-04:00  INFO 13160 --- [sucursal-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T15:39:40.153-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08T15:39:40.341-04:00  WARN 13160 --- [sucursal-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08T15:39:40.747-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-06-08T15:39:40.754-04:00  INFO 13160 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : Started SucursalServiceApplication in 4.483 seconds (process running for 5.017)
+2026-06-08T15:40:07.620-04:00  INFO 13160 --- [sucursal-service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 6 class path changes (0 additions, 0 deletions, 6 modifications)
+2026-06-08T15:40:07.624-04:00  INFO 13160 --- [sucursal-service] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-08T15:40:07.634-04:00  INFO 13160 --- [sucursal-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-08T15:40:07.638-04:00  INFO 13160 --- [sucursal-service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T15:40:07.641-04:00  INFO 13160 --- [sucursal-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-08T15:40:07.649-04:00  INFO 13160 --- [sucursal-service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-08T15:40:07.735-04:00  INFO 13160 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : Starting SucursalServiceApplication using Java 21.0.8 with PID 13160 (C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\sucursal_service)
+2026-06-08T15:40:07.735-04:00  INFO 13160 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : The following 1 profile is active: "dev"
+2026-06-08T15:40:07.875-04:00  INFO 13160 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T15:40:07.883-04:00  INFO 13160 --- [sucursal-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 1 JPA repository interface.
+2026-06-08T15:40:07.911-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e934a96c-59d8-37f6-841a-ed1a6a146c82
+2026-06-08T15:40:07.949-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-06-08T15:40:07.950-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-08T15:40:07.950-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08T15:40:07.978-04:00  INFO 13160 --- [sucursal-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 240 ms
+2026-06-08T15:40:08.012-04:00  INFO 13160 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-06-08T15:40:08.015-04:00  INFO 13160 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a766fc7
+2026-06-08T15:40:08.016-04:00  INFO 13160 --- [sucursal-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-06-08T15:40:08.021-04:00  INFO 13160 --- [sucursal-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/mi_base_datos_dev (MySQL 5.5)
+2026-06-08T15:40:08.030-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.004s)
+2026-06-08T15:40:08.035-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `mi_base_datos_dev`: 3
+2026-06-08T15:40:08.037-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `mi_base_datos_dev` is up to date. No migration necessary.
+2026-06-08T15:40:08.047-04:00  INFO 13160 --- [sucursal-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08T15:40:08.065-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08T15:40:08.067-04:00  WARN 13160 --- [sucursal-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-08T15:40:08.068-04:00  WARN 13160 --- [sucursal-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-08T15:40:08.068-04:00  INFO 13160 --- [sucursal-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/mi_base_datos_dev]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: mi_base_datos_dev/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08T15:40:08.111-04:00  INFO 13160 --- [sucursal-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08T15:40:08.123-04:00  INFO 13160 --- [sucursal-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T15:40:08.175-04:00  WARN 13160 --- [sucursal-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08T15:40:08.270-04:00  INFO 13160 --- [sucursal-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-06-08T15:40:08.276-04:00  INFO 13160 --- [sucursal-service] [restartedMain] c.p.s.SucursalServiceApplication         : Started SucursalServiceApplication in 0.576 seconds (process running for 32.538)
+2026-06-08T15:40:08.278-04:00  INFO 13160 --- [sucursal-service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-06-08T15:40:52.028-04:00  INFO 13160 --- [sucursal-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-08T15:40:52.037-04:00  INFO 13160 --- [sucursal-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-08T15:40:52.040-04:00  INFO 13160 --- [sucursal-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T15:40:52.041-04:00  INFO 13160 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-06-08T15:40:52.044-04:00  INFO 13160 --- [sucursal-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.

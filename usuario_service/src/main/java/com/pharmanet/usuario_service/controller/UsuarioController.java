@@ -47,35 +47,35 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.OK).body(usuarioDto);
     }
 
-    @GetMapping("profesion")
-    public ResponseEntity<Page<UsuarioDTO>> buscarPorProfesion(@RequestParam String profesion, @PageableDefault(size = 10, sort = "nombreCompleto") Pageable pageable) {
-        Page<UsuarioDTO> usuariosPorProfesion = usuarioService.buscarPorProfesion(profesion, pageable);
+    @GetMapping("/profesion")
+    public ResponseEntity<Page<UsuarioDTO>> buscarPorProfesion(@RequestParam String prof, @PageableDefault(size = 10, sort = "nombreCompleto") Pageable pageable) {
+        Page<UsuarioDTO> usuariosPorProfesion = usuarioService.buscarPorProfesion(prof, pageable);
         
         return ResponseEntity.status(HttpStatus.OK).body(usuariosPorProfesion);
     }
     
-    @GetMapping("sucursal")
-    public ResponseEntity<Page<UsuarioDTO>> buscarPorSucursal(@RequestParam String codInterno, @PageableDefault(size = 10, sort = "nombreCompleto") Pageable pageable) {
-        Page<UsuarioDTO> usuariosPorSucursal = usuarioService.buscarPorSucursal(codInterno, pageable);
+    @GetMapping("/sucursal")
+    public ResponseEntity<Page<UsuarioDTO>> buscarPorSucursal(@RequestParam String su, @PageableDefault(size = 10, sort = "nombreCompleto") Pageable pageable) {
+        Page<UsuarioDTO> usuariosPorSucursal = usuarioService.buscarPorSucursal(su, pageable);
         
         return ResponseEntity.status(HttpStatus.OK).body(usuariosPorSucursal);
     }
 
-    @PostMapping("validado")
+    @PostMapping("/validado")
     public boolean validarUsuarioVenta(@RequestBody UsuarioRequest request) {
         return usuarioService.validarUsuarioVenta(request);
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioDTO> agregarUsuario(@Valid @RequestBody UsuarioDTO usuarioDTO) {
-        UsuarioDTO agregado = usuarioService.agregarUsuario(usuarioDTO);
+    public ResponseEntity<UsuarioDTO> agregarUsuario(@Valid @RequestBody UsuarioDTO dto) {
+        UsuarioDTO agregado = usuarioService.agregarUsuario(dto);
         
         return ResponseEntity.status(HttpStatus.CREATED).body(agregado);
     }
     
     @PutMapping
-    public ResponseEntity<?> actualizarUsuario(@Valid @RequestBody UsuarioDTO usuarioDTO) {
-        usuarioService.actualizarUsuario(usuarioDTO);
+    public ResponseEntity<?> actualizarUsuario(@Valid @RequestBody UsuarioDTO dto) {
+        usuarioService.actualizarUsuario(dto);
         
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }

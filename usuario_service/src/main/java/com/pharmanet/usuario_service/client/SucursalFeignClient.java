@@ -12,9 +12,9 @@ import jakarta.validation.constraints.Size;
 @FeignClient(name = "sucursal-service", url = "http://localhost:8081")
 public interface SucursalFeignClient {
 
-    @GetMapping("/api/v1/sucursales/{codInterno}")
+    @GetMapping("/api/v1/sucursales/{codSucursal}")
     SucursalDTO buscarSucursal(@PathVariable
             @NotBlank(message = "El código interno no puede estar vacío")
-            @Size(max = 10, message = "Máximo 10 caracteres")
-            String codInterno);
+            @Size(max = 8, message = "Máximo 8 caracteres")
+            String codSucursal);
 }

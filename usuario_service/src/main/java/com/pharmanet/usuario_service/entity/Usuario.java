@@ -39,24 +39,17 @@ public class Usuario {
     @Column(nullable = false, length = 12)
     private String telefono;
 
-    @Column(name = "cod_interno", nullable = false)
-    private String codInterno;
+    @Column(name = "cod_sucursal", nullable = false)
+    private String codSucursal;
     @Column(nullable = false, length = 30)
     private String profesion;
-    
-    @Column(length = 100)
-    private String direccion;
-    @Column(length = 30)
-    private String comuna;
-    @Column(length = 30)
-    private String region;
 
-    public Usuario(String run, String nombreCompleto, String correoInstitucional, String telefono, String codInterno, String profesion) {
+    public Usuario(String run, String nombreCompleto, String correoInstitucional, String telefono, String codSucursal, String profesion) {
         this.run = run;
         this.nombreCompleto = nombreCompleto;
         this.correoInstitucional = correoInstitucional;
         this.telefono = telefono;
-        this.codInterno = codInterno;
+        this.codSucursal = codSucursal;
         this.profesion = profesion;
     }
 }

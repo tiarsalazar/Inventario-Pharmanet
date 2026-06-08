@@ -10,8 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UsuarioRequest {
 
+    // RUN sin puntos y con guión
     @NotBlank(message = "Este campo no puede estar vacío")
-    private String runVendedor; // RUN sin puntos y con guión
+    private String runVendedor;
 
     private String codSucursal;
 

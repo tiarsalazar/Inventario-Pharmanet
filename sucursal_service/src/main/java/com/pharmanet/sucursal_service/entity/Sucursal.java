@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class Sucursal {
     private Long id;
 
     @Column(name = "cod_sucursal", nullable = false, unique = true, length = 8)
+    @Pattern(regexp = "^[A-Z0-9]+$", message = "Solo mayúsculas y números")
     private String codSucursal;
 
     @Column(name = "nombre_sucursal", unique = true, length = 30)

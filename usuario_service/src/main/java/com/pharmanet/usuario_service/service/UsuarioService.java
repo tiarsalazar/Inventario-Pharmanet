@@ -40,13 +40,13 @@ public class UsuarioService {
             throw new NotUniqueUsuarioException("El usuario ya existe en la bd");
         }
 
-        log.info("Se verifica la existencia de la FK de sucursal (código interno)");
-        log.debug("codInterno: {}", usuarioDTO.getCodInterno());
+        log.info("Se verifica la existencia de la FK de sucursal");
+        log.debug("codInterno: {}", usuarioDTO.getCodSucursal());
         try {
-            sucursalFeignClient.buscarSucursal(usuarioDTO.getCodInterno());
+            sucursalFeignClient.buscarSucursal(usuarioDTO.getCodSucursal());
         } catch (FeignException.InternalServerError e) {
-            log.info("No se encuentra sucursal {} asociada al usuario {}", usuarioDTO.getCodInterno(), usuarioDTO.getRun());
-            throw new ResourceNotFoundException("No se encuentra la sucursal: " + usuarioDTO.getCodInterno());
+            log.info("No se encuentra sucursal {} asociada al usuario {}", usuarioDTO.getCodSucursal(), usuarioDTO.getRun());
+            throw new ResourceNotFoundException("No se encuentra la sucursal: " + usuarioDTO.getCodSucursal());
         }
 
         log.info("Se transforma el dto a modelo");
@@ -71,15 +71,17 @@ public class UsuarioService {
 
     public Page<UsuarioDTO> buscarPorProfesion(String profesion, Pageable pageable) {
         log.info("Inicia búsqueda por profesion");
+        profesion = profesion.toUpperCase();
         log.debug("profesion: {}", profesion);
         return usuarioRepository.findByProfesion(profesion, pageable)
             .map(UsuarioMapper::toDTO);
     }
 
-    public Page<UsuarioDTO> buscarPorSucursal(String codInterno, Pageable pageable) {
-        log.info("Inicia búsqueda por código interno de sucursal");
-        log.debug("codInterno: {}", codInterno);
-        return usuarioRepository.findByCodInterno(codInterno, pageable)
+    public Page<UsuarioDTO> buscarPorSucursal(String codSucursal, Pageable pageable) {
+        log.info("Inicia búsqueda por código de la sucursal");
+        codSucursal.toUpperCase();
+        log.debug("codSucursal: {}", codSucursal);
+        return usuarioRepository.findByCodSucursal(codSucursal, pageable)
             .map(UsuarioMapper::toDTO);
     }
 
@@ -103,15 +105,6 @@ public class UsuarioService {
 
         log.debug("idUsuario: {}", usuarioVerificado.getId());
         usuario.setId(usuarioVerificado.getId());
-
-        log.debug("direccion: {}", usuario.getDireccion());
-        usuario.setDireccion(usuarioVerificado.getDireccion());
-
-        log.debug("comuna: {}", usuarioVerificado.getComuna());
-        usuario.setComuna(usuarioVerificado.getComuna());
-
-        log.debug("region: {}", usuarioVerificado.getRegion());
-        usuario.setRegion(usuarioVerificado.getRegion());
         
         log.info("Se actualiza el usuario");
         usuarioRepository.save(usuario);
@@ -147,7 +140,7 @@ public class UsuarioService {
         }
 
         log.info("Valida que el usuario ingresado se encuentra en la sucursal indicada");
-        if (!codSucursal.equals(usuario.getCodInterno())) {
+        if (!codSucursal.equals(usuario.getCodSucursal())) {
             log.warn("El usuario {} no se encuentra en la sucursal {}", run, codSucursal);return false;
         }
 

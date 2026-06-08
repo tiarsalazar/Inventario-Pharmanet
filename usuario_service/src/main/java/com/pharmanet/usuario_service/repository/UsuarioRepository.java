@@ -16,6 +16,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     Page<Usuario> findByProfesion(String profesion, Pageable pageable);
 
-    Page<Usuario> findByCodInterno(String codInterno, Pageable pageable);
+    Page<Usuario> findByCodSucursal(String codSucursal, Pageable pageable);
 
 }

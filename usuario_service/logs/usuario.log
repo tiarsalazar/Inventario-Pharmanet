@@ -627,3 +627,539 @@ Caused by: java.lang.ClassNotFoundException: ValidadoVentaDTO
 2026-05-24T22:35:40.505-04:00  INFO 13532 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-24T22:35:40.509-04:00  INFO 13532 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
 2026-05-24T22:35:40.875-04:00  INFO 13532 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2026-06-08T15:26:23.267-04:00  INFO 6832 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.8 with PID 6832 (C:\Users\VI-Alumno\Inventario-Pharmanet\usuario_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\usuario_service)
+2026-06-08T15:26:23.271-04:00  INFO 6832 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-06-08T15:26:23.307-04:00  INFO 6832 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\VI-Alumno\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/VI-Alumno/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-06-08T15:26:23.307-04:00  INFO 6832 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-08T15:26:23.308-04:00  INFO 6832 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-08T15:26:23.774-04:00  INFO 6832 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T15:26:23.809-04:00  INFO 6832 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interface.
+2026-06-08T15:26:23.920-04:00  INFO 6832 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-06-08T15:26:24.234-04:00  INFO 6832 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-06-08T15:26:24.246-04:00  INFO 6832 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-08T15:26:24.246-04:00  INFO 6832 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08T15:26:24.293-04:00  INFO 6832 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 985 ms
+2026-06-08T15:26:24.635-04:00  INFO 6832 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T15:26:25.763-04:00  WARN 6832 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/usuario_service/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/usuario_service/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+2026-06-08T15:26:25.769-04:00  INFO 6832 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-08T15:26:25.781-04:00  INFO 6832 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-08T15:26:25.802-04:00 ERROR 6832 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/usuario_service/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/usuario_service/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/usuario_service/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/usuario_service/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/usuario_service/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12263
+Message    : ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/usuario_service/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLException: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/usuario_service/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12263: Fallo al acceder a tnsnames.ora en el directorio configurado como administrador de TNS: C:/Users/bobip/Documents/Inventario-y-Logistica/usuario_service/Wallet_bdUsuario. El archivo no existe o no se puede acceder a él.
+https://docs.oracle.com/error-help/db/ora-12263/
+	at oracle.net.resolver.TNSNamesNamingAdapter.resolve(TNSNamesNamingAdapter.java:143) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.NameResolver.resolveName(NameResolver.java:178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.resolveTNSAddress(AddrResolution.java:920) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.initConnStrategy(AddrResolution.java:649) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.resolver.AddrResolution.<init>(AddrResolution.java:464) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.<init>(NSProtocol.java:260) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.<init>(NSProtocolNIO.java:162) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1064) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 38 common frames omitted
+	Suppressed: oracle.net.ns.NetException: ORA-17866: Formato numérico no válido para el número de puerto
+https://docs.oracle.com/error-help/db/ora-17866/
+		at oracle.net.resolver.HostnameNamingAdapter.resolve(HostnameNamingAdapter.java:192) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+		... 45 common frames omitted
+
+2026-06-08T15:41:05.932-04:00  INFO 10128 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.8 with PID 10128 (C:\Users\VI-Alumno\Inventario-Pharmanet\usuario_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\usuario_service)
+2026-06-08T15:41:05.935-04:00  INFO 10128 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-06-08T15:41:05.992-04:00  INFO 10128 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\VI-Alumno\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/VI-Alumno/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-06-08T15:41:05.993-04:00  INFO 10128 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-08T15:41:05.994-04:00  INFO 10128 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-08T15:41:06.677-04:00  INFO 10128 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T15:41:06.738-04:00  INFO 10128 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
+2026-06-08T15:41:06.879-04:00  INFO 10128 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-06-08T15:41:07.391-04:00  INFO 10128 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-06-08T15:41:07.402-04:00  INFO 10128 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-08T15:41:07.402-04:00  INFO 10128 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08T15:41:07.451-04:00  INFO 10128 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1457 ms
+2026-06-08T15:41:07.860-04:00  INFO 10128 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T15:41:09.390-04:00  INFO 10128 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@1d4881ec
+2026-06-08T15:41:09.391-04:00  INFO 10128 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-08T15:41:09.506-04:00  INFO 10128 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-06-08T15:41:11.386-04:00  WARN 10128 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Validate failed: Migrations have failed validation
+Migration checksum mismatch for migration version 1
+-> Applied to database : -790953123
+-> Resolved locally    : -1291713954
+Either revert the changes to the migration, or run repair to update the schema history.
+Migration checksum mismatch for migration version 3
+-> Applied to database : 952101790
+-> Resolved locally    : 1699351546
+Either revert the changes to the migration, or run repair to update the schema history.
+Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
+2026-06-08T15:41:11.388-04:00  INFO 10128 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-08T15:41:12.421-04:00  INFO 10128 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-08T15:41:12.424-04:00  INFO 10128 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-08T15:41:12.432-04:00  INFO 10128 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-08T15:41:12.444-04:00 ERROR 10128 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Validate failed: Migrations have failed validation
+Migration checksum mismatch for migration version 1
+-> Applied to database : -790953123
+-> Resolved locally    : -1291713954
+Either revert the changes to the migration, or run repair to update the schema history.
+Migration checksum mismatch for migration version 3
+-> Applied to database : 952101790
+-> Resolved locally    : 1699351546
+Either revert the changes to the migration, or run repair to update the schema history.
+Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Validate failed: Migrations have failed validation
+Migration checksum mismatch for migration version 1
+-> Applied to database : -790953123
+-> Resolved locally    : -1291713954
+Either revert the changes to the migration, or run repair to update the schema history.
+Migration checksum mismatch for migration version 3
+-> Applied to database : 952101790
+-> Resolved locally    : 1699351546
+Either revert the changes to the migration, or run repair to update the schema history.
+Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Migration checksum mismatch for migration version 1
+-> Applied to database : -790953123
+-> Resolved locally    : -1291713954
+Either revert the changes to the migration, or run repair to update the schema history.
+Migration checksum mismatch for migration version 3
+-> Applied to database : 952101790
+-> Resolved locally    : 1699351546
+Either revert the changes to the migration, or run repair to update the schema history.
+Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
+	at org.flywaydb.core.Flyway.lambda$migrate$3(Flyway.java:199) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:240) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+
+2026-06-08T15:53:55.032-04:00  INFO 15328 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.8 with PID 15328 (C:\Users\VI-Alumno\Inventario-Pharmanet\usuario_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\usuario_service)
+2026-06-08T15:53:55.035-04:00  INFO 15328 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-06-08T15:53:55.087-04:00  INFO 15328 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\VI-Alumno\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/VI-Alumno/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-06-08T15:53:55.087-04:00  INFO 15328 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-08T15:53:55.088-04:00  INFO 15328 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-08T15:53:55.602-04:00  INFO 15328 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T15:53:55.641-04:00  INFO 15328 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 JPA repository interface.
+2026-06-08T15:53:55.748-04:00  INFO 15328 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-06-08T15:53:56.097-04:00  INFO 15328 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-06-08T15:53:56.108-04:00  INFO 15328 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-08T15:53:56.109-04:00  INFO 15328 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08T15:53:56.166-04:00  INFO 15328 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1076 ms
+2026-06-08T15:53:56.513-04:00  INFO 15328 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T15:55:01.469-04:00  WARN 15328 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (7b637a9f-7a1d-449f-b6cb-b6900fc4a021)
+
+java.sql.SQLException: ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: oracle.net.ns.NetException: ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+	at oracle.net.ns.NSProtocolNIO.createRefusePacketException(NSProtocolNIO.java:970) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.handleConnectPacketResponse(NSProtocolNIO.java:496) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.negotiateConnection(NSProtocolNIO.java:286) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:365) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3507) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1091) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 38 common frames omitted
+
+2026-06-08T15:55:02.479-04:00  WARN 15328 --- [usuario-service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12529
+Message    : ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+
+2026-06-08T15:55:02.482-04:00  INFO 15328 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-08T15:55:02.490-04:00  INFO 15328 --- [usuario-service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-08T15:55:02.504-04:00 ERROR 15328 --- [usuario-service] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12529
+Message    : ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at com.pharmanet.usuario_service.UsuarioServiceApplication.main(UsuarioServiceApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.6.jar:4.0.6]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12529
+Message    : ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 66000
+Error Code : 12529
+Message    : ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 20 common frames omitted
+Caused by: java.sql.SQLException: ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:1896) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1212) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1178) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:106) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:887) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:694) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 26 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12529: TNS:solicitud de conexión rechazada según las reglas de filtro actuales (CONNECTION_ID=mC15F+JlQVSCqR8/NTbpsQ==)
+https://docs.oracle.com/error-help/db/ora-12529/
+	at oracle.net.ns.NSProtocolNIO.createRefusePacketException(NSProtocolNIO.java:970) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.handleConnectPacketResponse(NSProtocolNIO.java:496) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocolNIO.negotiateConnection(NSProtocolNIO.java:286) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:365) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3507) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1091) ~[ojdbc8-23.9.0.25.07.jar:23.9.0.25.07]
+	... 38 common frames omitted
+
+2026-06-08T16:01:08.336-04:00  INFO 7528 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Starting UsuarioServiceApplication using Java 21.0.8 with PID 7528 (C:\Users\VI-Alumno\Inventario-Pharmanet\usuario_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\usuario_service)
+2026-06-08T16:01:08.340-04:00  INFO 7528 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-06-08T16:01:08.388-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\VI-Alumno\.m2\repository\com\oracle\database\jdbc\ojdbc8\23.9.0.25.07\ojdbc8-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Users/VI-Alumno/.m2/repository/com/oracle/database/jdbc/ojdbc8/23.9.0.25.07/oraclepki.jar
+2026-06-08T16:01:08.389-04:00  INFO 7528 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-08T16:01:08.389-04:00  INFO 7528 --- [usuario-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-08T16:01:09.042-04:00  INFO 7528 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T16:01:09.092-04:00  INFO 7528 --- [usuario-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2026-06-08T16:01:09.243-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf2aed27-e235-36b3-90a4-53c399437315
+2026-06-08T16:01:09.684-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-06-08T16:01:09.697-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-08T16:01:09.698-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08T16:01:09.747-04:00  INFO 7528 --- [usuario-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1358 ms
+2026-06-08T16:01:10.162-04:00  INFO 7528 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T16:01:10.957-04:00  INFO 7528 --- [usuario-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@1d4881ec
+2026-06-08T16:01:10.959-04:00  INFO 7528 --- [usuario-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-08T16:01:10.987-04:00  INFO 7528 --- [usuario-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-06-08T16:01:11.353-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "BD_USUARIO"."flyway_schema_history" does not exist yet
+2026-06-08T16:01:11.356-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.079s)
+2026-06-08T16:01:11.859-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "BD_USUARIO"."flyway_schema_history" ...
+2026-06-08T16:01:12.055-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": << Empty Schema >>
+2026-06-08T16:01:12.074-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "BD_USUARIO" to version "1 - create table usuario"
+2026-06-08T16:01:12.255-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "BD_USUARIO" to version "2 - checks"
+2026-06-08T16:01:12.364-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "BD_USUARIO" to version "3 - insert usuario"
+2026-06-08T16:01:12.584-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 3 migrations to schema "BD_USUARIO", now at version v3 (execution time 00:00.239s)
+2026-06-08T16:01:12.674-04:00  INFO 7528 --- [usuario-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08T16:01:12.739-04:00  INFO 7528 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08T16:01:13.141-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08T16:01:13.255-04:00  INFO 7528 --- [usuario-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08T16:01:13.947-04:00  INFO 7528 --- [usuario-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08T16:01:13.953-04:00  INFO 7528 --- [usuario-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T16:01:14.025-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08T16:01:14.221-04:00  WARN 7528 --- [usuario-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08T16:01:14.445-04:00 DEBUG 7528 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-06-08T16:01:14.470-04:00 DEBUG 7528 --- [usuario-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-06-08T16:01:14.491-04:00 DEBUG 7528 --- [usuario-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-08T16:01:14.535-04:00 DEBUG 7528 --- [usuario-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-08T16:01:14.652-04:00  INFO 7528 --- [usuario-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-06-08T16:01:14.661-04:00  INFO 7528 --- [usuario-service] [restartedMain] c.p.u.UsuarioServiceApplication          : Started UsuarioServiceApplication in 6.702 seconds (process running for 7.245)
+2026-06-08T16:03:14.425-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-08T16:03:14.425-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-08T16:03:14.425-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-08T16:03:14.426-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-08T16:03:14.427-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3f9c00de
+2026-06-08T16:03:14.427-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2a6f050c
+2026-06-08T16:03:14.427-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-08T16:03:14.428-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-06-08T16:03:14.434-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/usuarios", parameters={}
+2026-06-08T16:03:14.444-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#mostrarTodos(Pageable)
+2026-06-08T16:03:14.462-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.controller.UsuarioController       : Se inicia búsqueda de todos los usuarios
+2026-06-08T16:03:14.477-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Inicia búsqueda de todos los usuarios
+2026-06-08T16:03:14.784-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:03:14.785-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 2 containing com.pharmanet.usuario_service.dto.UsuarioDTO instances]
+2026-06-08T16:03:14.841-04:00  WARN 7528 --- [usuario-service] [http-nio-8082-exec-1] ration$PageModule$WarningLoggingModifier : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-06-08T16:03:14.856-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-08T16:03:23.686-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/usuarios/21435244-0", parameters={}
+2026-06-08T16:03:23.687-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#buscarPorRun(String)
+2026-06-08T16:03:23.715-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Se inicia búsqueda del usuario por RUN
+2026-06-08T16:03:23.985-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Se transforma modelo a dto
+2026-06-08T16:03:23.986-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:03:23.987-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [UsuarioDTO(run=21435244-0, nombreCompleto=Andrea Ortega Rivero, correoInstitucional=andrea_ortega@ph (truncated)...]
+2026-06-08T16:03:23.989-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-08T16:04:04.177-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/usuarios/profesion?pro=devops", parameters={masked}
+2026-06-08T16:04:04.178-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#buscarPorProfesion(String, Pageable)
+2026-06-08T16:04:04.181-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<org.springframework.data.domain.Page<com.pharmanet.usuario_service.dto.UsuarioDTO>> com.pharmanet.usuario_service.controller.UsuarioController.buscarPorProfesion(java.lang.String,org.springframework.data.domain.Pageable): Required request parameter 'prof' for method parameter type String is not present
+2026-06-08T16:04:04.183-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.usuario_service.exception.GlobalHandlerException#handlerException(Exception)
+2026-06-08T16:04:04.184-04:00 ERROR 7528 --- [usuario-service] [http-nio-8082-exec-4] c.p.u.exception.GlobalHandlerException   : Error: Required request parameter 'prof' for method parameter type String is not present
+2026-06-08T16:04:04.185-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:04:04.186-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(fecha=2026-06-08T16:04:04.184831100, estado=500, error=Internal Server Error, mensaje= (truncated)...]
+2026-06-08T16:04:04.188-04:00  WARN 7528 --- [usuario-service] [http-nio-8082-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'prof' for method parameter type String is not present]
+2026-06-08T16:04:04.189-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2026-06-08T16:04:13.972-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/usuarios/profesion?prof=devops", parameters={masked}
+2026-06-08T16:04:13.973-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#buscarPorProfesion(String, Pageable)
+2026-06-08T16:04:13.979-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-5] c.p.u.service.UsuarioService             : Inicia búsqueda por profesion
+2026-06-08T16:04:14.014-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:04:14.014-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 0 containing UNKNOWN instances]
+2026-06-08T16:04:14.015-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-08T16:04:27.253-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/usuarios/profesion?prof=DEVOPS", parameters={masked}
+2026-06-08T16:04:27.253-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#buscarPorProfesion(String, Pageable)
+2026-06-08T16:04:27.259-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-7] c.p.u.service.UsuarioService             : Inicia búsqueda por profesion
+2026-06-08T16:04:27.277-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:04:27.277-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.pharmanet.usuario_service.dto.UsuarioDTO instances]
+2026-06-08T16:04:27.279-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-08T16:04:45.429-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/usuarios/profesion?prof=ANALISTA%20QUIMICO", parameters={masked}
+2026-06-08T16:04:45.429-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#buscarPorProfesion(String, Pageable)
+2026-06-08T16:04:45.436-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-8] c.p.u.service.UsuarioService             : Inicia búsqueda por profesion
+2026-06-08T16:04:45.460-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:04:45.462-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.pharmanet.usuario_service.dto.UsuarioDTO instances]
+2026-06-08T16:04:45.463-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-08T16:06:56.592-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/usuarios/sucursal?su=SU0001", parameters={masked}
+2026-06-08T16:06:56.592-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#buscarPorSucursal(String, Pageable)
+2026-06-08T16:06:56.619-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-2] c.p.u.service.UsuarioService             : Inicia búsqueda por código de la sucursal
+2026-06-08T16:06:56.709-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:06:56.710-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.pharmanet.usuario_service.dto.UsuarioDTO instances]
+2026-06-08T16:06:56.711-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-08T16:07:25.445-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/usuarios", parameters={}
+2026-06-08T16:07:25.446-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#actualizarUsuario(UsuarioDTO)
+2026-06-08T16:07:25.522-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioDTO(run=18253765-9, nombreCompleto=Felipe Andrés Romero Salazar, correoInstitucional=felipe_r (truncated)...]
+2026-06-08T16:07:25.591-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Inicia actualización del usuario
+2026-06-08T16:07:25.591-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Se verifica que el usuario exista
+2026-06-08T16:07:25.623-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Se transfiere información
+2026-06-08T16:07:25.623-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-1] c.p.u.service.UsuarioService             : Se actualiza el usuario
+2026-06-08T16:07:25.632-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:07:25.633-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2026-06-08T16:07:25.633-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2026-06-08T16:07:55.318-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/usuarios", parameters={}
+2026-06-08T16:07:55.318-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#actualizarUsuario(UsuarioDTO)
+2026-06-08T16:07:55.319-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioDTO(run=18253765-9, nombreCompleto=Felipe Andrés Romero Salazar, correoInstitucional=felipe_r (truncated)...]
+2026-06-08T16:07:55.325-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Inicia actualización del usuario
+2026-06-08T16:07:55.325-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Se verifica que el usuario exista
+2026-06-08T16:07:55.345-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Se transfiere información
+2026-06-08T16:07:55.346-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-3] c.p.u.service.UsuarioService             : Se actualiza el usuario
+2026-06-08T16:07:55.347-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:07:55.348-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2026-06-08T16:07:55.348-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2026-06-08T16:07:56.908-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/usuarios", parameters={}
+2026-06-08T16:07:56.909-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#actualizarUsuario(UsuarioDTO)
+2026-06-08T16:07:56.910-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioDTO(run=18253765-9, nombreCompleto=Felipe Andrés Romero Salazar, correoInstitucional=felipe_r (truncated)...]
+2026-06-08T16:07:56.915-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-4] c.p.u.service.UsuarioService             : Inicia actualización del usuario
+2026-06-08T16:07:56.915-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-4] c.p.u.service.UsuarioService             : Se verifica que el usuario exista
+2026-06-08T16:07:56.922-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-4] c.p.u.service.UsuarioService             : Se transfiere información
+2026-06-08T16:07:56.922-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-4] c.p.u.service.UsuarioService             : Se actualiza el usuario
+2026-06-08T16:07:56.923-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:07:56.923-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2026-06-08T16:07:56.923-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2026-06-08T16:08:02.444-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/usuarios", parameters={}
+2026-06-08T16:08:02.444-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#agregarUsuario(UsuarioDTO)
+2026-06-08T16:08:02.445-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioDTO(run=18253765-9, nombreCompleto=Felipe Andrés Romero Salazar, correoInstitucional=felipe_r (truncated)...]
+2026-06-08T16:08:02.457-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-6] c.p.u.service.UsuarioService             : Se inicia funcionalidad de agregar usuario
+2026-06-08T16:08:02.457-04:00  INFO 7528 --- [usuario-service] [http-nio-8082-exec-6] c.p.u.service.UsuarioService             : Se verifica que no existan registros del usuario en el sistema
+2026-06-08T16:08:02.478-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.usuario_service.exception.GlobalHandlerException#handlerNotUniqueSucursalException(NotUniqueUsuarioException)
+2026-06-08T16:08:02.479-04:00 ERROR 7528 --- [usuario-service] [http-nio-8082-exec-6] c.p.u.exception.GlobalHandlerException   : Objeto no encontrado: El usuario ya existe en la bd
+2026-06-08T16:08:02.480-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:08:02.480-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(fecha=2026-06-08T16:08:02.479808100, estado=409, error=Conflict, mensaje=El usuario ya (truncated)...]
+2026-06-08T16:08:02.481-04:00  WARN 7528 --- [usuario-service] [http-nio-8082-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.pharmanet.usuario_service.exception.NotUniqueUsuarioException: El usuario ya existe en la bd]
+2026-06-08T16:08:02.481-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
+2026-06-08T16:08:15.816-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/usuarios", parameters={}
+2026-06-08T16:08:15.816-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.usuario_service.controller.UsuarioController#actualizarUsuario(UsuarioDTO)
+2026-06-08T16:08:15.817-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UsuarioDTO(run=18253765-9, nombreCompleto=Felipe Andrés Romero Salazar, correoInstitucional=felipe_r (truncated)...]
+2026-06-08T16:08:15.823-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.pharmanet.usuario_service.exception.GlobalHandlerException#handlerMethodArgumentNotValidException(MethodArgumentNotValidException)
+2026-06-08T16:08:15.825-04:00 ERROR 7528 --- [usuario-service] [http-nio-8082-exec-5] c.p.u.exception.GlobalHandlerException   : Error de validación: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> com.pharmanet.usuario_service.controller.UsuarioController.actualizarUsuario(com.pharmanet.usuario_service.dto.UsuarioDTO): [Field error in object 'usuarioDTO' on field 'codSucursal': rejected value [null]; codes [NotNull.usuarioDTO.codSucursal,NotNull.codSucursal,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [usuarioDTO.codSucursal,codSucursal]; arguments []; default message [codSucursal]]; default message [Este campo no puede estar vacío]] 
+2026-06-08T16:08:15.826-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-06-08T16:08:15.826-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(fecha=2026-06-08T16:08:15.825408800, estado=400, error=Bad Request, mensaje=codSucursa (truncated)...]
+2026-06-08T16:08:15.827-04:00  WARN 7528 --- [usuario-service] [http-nio-8082-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> com.pharmanet.usuario_service.controller.UsuarioController.actualizarUsuario(com.pharmanet.usuario_service.dto.UsuarioDTO): [Field error in object 'usuarioDTO' on field 'codSucursal': rejected value [null]; codes [NotNull.usuarioDTO.codSucursal,NotNull.codSucursal,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [usuarioDTO.codSucursal,codSucursal]; arguments []; default message [codSucursal]]; default message [Este campo no puede estar vacío]] ]
+2026-06-08T16:08:15.828-04:00 DEBUG 7528 --- [usuario-service] [http-nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2026-06-08T16:08:41.636-04:00  INFO 7528 --- [usuario-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-08T16:08:41.647-04:00  INFO 7528 --- [usuario-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-08T16:08:41.651-04:00  INFO 7528 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T16:08:41.654-04:00  INFO 7528 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-08T16:08:42.034-04:00  INFO 7528 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
