@@ -6578,3 +6578,75 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2026-06-08T12:53:46.638-04:00  INFO 43664 --- [ubicacion-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-08T12:53:46.643-04:00  INFO 43664 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-08T12:53:46.647-04:00  INFO 43664 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-08T12:54:50.579-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 24580 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-08T12:54:50.581-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-08T12:54:50.617-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-08T12:54:50.617-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-08T12:54:51.199-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T12:54:51.235-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+2026-06-08T12:54:51.610-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-08T12:54:51.620-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-08T12:54:51.621-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08T12:54:51.667-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1049 ms
+2026-06-08T12:54:51.848-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T12:54:51.972-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@201bec0a
+2026-06-08T12:54:51.973-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-08T12:54:52.362-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-08T12:54:52.400-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.020s)
+2026-06-08T12:54:52.408-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: 2
+2026-06-08T12:54:52.411-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_ubicacion` is up to date. No migration necessary.
+2026-06-08T12:54:52.472-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08T12:54:52.509-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-08T12:54:52.815-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08T12:54:52.865-04:00  WARN 24580 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-08T12:54:52.877-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08T12:54:53.474-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08T12:54:53.481-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T12:54:53.545-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08T12:54:53.752-04:00  WARN 24580 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08T12:54:53.864-04:00 DEBUG 24580 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2026-06-08T12:54:53.882-04:00 DEBUG 24580 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-08T12:54:53.901-04:00 DEBUG 24580 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-08T12:54:53.935-04:00 DEBUG 24580 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-08T12:54:54.075-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-08T12:54:54.079-04:00  INFO 24580 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 3.84 seconds (process running for 4.255)
+2026-06-08T12:55:14.026-04:00  INFO 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-08T12:55:14.027-04:00  INFO 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-08T12:55:14.027-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-08T12:55:14.027-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-08T12:55:14.028-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@54cc6bb5
+2026-06-08T12:55:14.029-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@55c1d9a3
+2026-06-08T12:55:14.029-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-08T12:55:14.029-04:00  INFO 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-08T12:55:14.035-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/comunas/validado/1/15", parameters={}
+2026-06-08T12:55:14.043-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.ComunaController#validarUbicacion(Integer, String)
+2026-06-08T12:55:14.063-04:00  INFO 24580 --- [ubicacion-service] [http-nio-8087-exec-1] c.p.u.service.ComunaService              : Inicia búsqueda de comuna
+2026-06-08T12:55:14.384-04:00  INFO 24580 --- [ubicacion-service] [http-nio-8087-exec-1] c.p.ubicacion_service.dto.ComunaMapper   : Inicia conversión a de entidad a objeto dto
+2026-06-08T12:55:14.406-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-08T12:55:14.408-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ComunaDto(codComuna=1, descripcion=ARICA, region=15)]
+2026-06-08T12:55:14.445-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-08T12:55:26.421-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/comunas/validado/1/15", parameters={}
+2026-06-08T12:55:26.421-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.ComunaController#validarUbicacion(Integer, String)
+2026-06-08T12:55:26.423-04:00  INFO 24580 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.u.service.ComunaService              : Inicia búsqueda de comuna
+2026-06-08T12:55:26.427-04:00  INFO 24580 --- [ubicacion-service] [http-nio-8087-exec-2] c.p.ubicacion_service.dto.ComunaMapper   : Inicia conversión a de entidad a objeto dto
+2026-06-08T12:55:26.429-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-08T12:55:26.429-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ComunaDto(codComuna=1, descripcion=ARICA, region=15)]
+2026-06-08T12:55:26.430-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-08T12:55:54.884-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/comunas/validado/1/15", parameters={}
+2026-06-08T12:55:54.884-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.pharmanet.ubicacion_service.controller.ComunaController#validarUbicacion(Integer, String)
+2026-06-08T12:55:54.886-04:00  INFO 24580 --- [ubicacion-service] [http-nio-8087-exec-3] c.p.u.service.ComunaService              : Inicia búsqueda de comuna
+2026-06-08T12:55:54.890-04:00  INFO 24580 --- [ubicacion-service] [http-nio-8087-exec-3] c.p.ubicacion_service.dto.ComunaMapper   : Inicia conversión a de entidad a objeto dto
+2026-06-08T12:55:54.892-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-06-08T12:55:54.893-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ComunaDto(codComuna=1, descripcion=ARICA, region=15)]
+2026-06-08T12:55:54.894-04:00 DEBUG 24580 --- [ubicacion-service] [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
