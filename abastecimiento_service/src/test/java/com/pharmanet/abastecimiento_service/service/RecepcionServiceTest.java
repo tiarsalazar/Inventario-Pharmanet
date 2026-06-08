@@ -62,8 +62,8 @@ public class RecepcionServiceTest {
     private RecepcionService recepServ;
 
     @Test
-    @DisplayName("Debe retornar la recepcion correcta si existe por ID y Sucursal")
-    void buscarPorIdExitoso(){
+    @DisplayName("Deberia retornar la recepcion correcta si existe por ID y Sucursal")
+    void deberiaRetornarRecepcion_cuandoExistePorIdYSucursal(){
         // GIVEN
         Long idABuscar = 1L;
         String codSucursal = "SU0001";
@@ -91,8 +91,8 @@ public class RecepcionServiceTest {
     }
 
     @Test
-    @DisplayName("Debe lanzar ResourceNotFoundException cuando la recepcion no exista.")
-    void buscarPorIdNoExiste(){
+    @DisplayName("Deberia lanzar ResourceNotFoundException cuando la recepcion no exista por el ID y codSucursal.")
+    void deberiaLanzarResourceNotFoundException_cuandoRecepcionNoExistePorId(){
         // GIVEN
         Long idInexistente = 2L;
         String codSucursal = "SU0001";
@@ -109,8 +109,8 @@ public class RecepcionServiceTest {
     }
 
     @Test
-    @DisplayName("Debe retornar una pagina de recepciones por Sucursal")
-    void buscarPorSucursal(){
+    @DisplayName("Deberia retornar una pagina de recepciones al buscar por codigo de Sucursal")
+    void deberiaRetornarPaginaDeRecepciones_cuandoSeBuscaPorSucursal(){
         // GIVEN
         String codSucursal = "SU0001";
         Pageable pageable = PageRequest.of(0, 10);
@@ -141,8 +141,8 @@ public class RecepcionServiceTest {
     }
 
     @Test
-    @DisplayName("Debe retornar una pagina de recepciones por rango de fechas y Sucursal")
-    void buscarPorFecha(){
+    @DisplayName("Debe retornar una pagina de recepciones cuando se busca por rango de fechas y codigo Sucursal")
+    void deberiaRetornarPaginaDeRecepciones_cuandoSeBuscaPorRangoDeFechasYSucursal(){
         // GIVEN
         String codSucursal = "SU0001";
         LocalDate inicio = LocalDate.of(2025, 05, 01);
@@ -182,8 +182,8 @@ public class RecepcionServiceTest {
     }
 
     @Test
-    @DisplayName("Debe retornar una pagina de recepciones por Usuario y Sucursal")
-    void buscarPorUsuarioExitoso(){
+    @DisplayName("Debe retornar una pagina de recepciones por RUN Usuario si existe y codigo Sucursal")
+    void deberiaRetornarPaginaDeRecepciones_cuandoUsuarioExisteYBuscaPorSucursal(){
         // GIVEN
         String runUsuario = "11111111-1";
         String codSucursal = "SU0001";
@@ -219,8 +219,8 @@ public class RecepcionServiceTest {
     }
 
     @Test
-    @DisplayName("Deberia lanzar ResourceNotFoundException cuando el usuario no existe.")
-    void buscarPorUsuarioNotFound(){
+    @DisplayName("Deberia lanzar ResourceNotFoundException cuando el usuario no existe al buscar por RUN Usuario.")
+    void deberiaLanzarResourceNotFoundException_cuandoUsuarioNoExisteAlBuscarPorUsuario(){
         // GIVEN
         String runInexistente = "11111111-1";
         String codSucursal = "SU0001";
@@ -296,7 +296,7 @@ public class RecepcionServiceTest {
 
     @Test
     @DisplayName("Debería lanzar ResourceNotFoundException cuando el usuario que registra no existe")
-    void deberiaLanzarResourceNotFoundExceptionCuandoUsuarioNoExisteAlRegistrar() {
+    void deberiaLanzarResourceNotFoundException_cuandoUsuarioNoExisteAlRegistrar() {
         // GIVEN
         String runInexistente = "99999999-9";
         String codSucursal = "SU0001";
@@ -315,7 +315,7 @@ public class RecepcionServiceTest {
 
     @Test
     @DisplayName("Debería lanzar ResourceAlreadyExistsException cuando el documento ya fue registrado antes")
-    void deberiaLanzarResourceAlreadyExistsExceptionCuandoDocumentoEstaDuplicado() {
+    void deberiaLanzarResourceAlreadyExistsException_cuandoDocumentoEstaDuplicado() {
         // GIVEN
         String runUsuario = "11222333-4";
         String codSucursal = "SU0001";
@@ -342,7 +342,7 @@ public class RecepcionServiceTest {
 
     @Test
     @DisplayName("Debería lanzar BusinessException cuando el microservicio de Inventario retorna 404 Not Found")
-    void deberiaLanzarBusinessExceptionCuandoInventarioRetorna404() {
+    void deberiaLanzarBusinessException_cuandoInventarioRetorna404() {
         // GIVEN
         String runUsuario = "11222333-4";
         String codSucursal = "SU0001";
@@ -382,7 +382,7 @@ public class RecepcionServiceTest {
 
     @Test
     @DisplayName("Debería lanzar ServiceCommunicationException cuando el microservicio de Inventario está caído")
-    void deberiaLanzarServiceCommunicationExceptionCuandoInventarioEstaCaido() {
+    void deberiaLanzarServiceCommunicationException_cuandoInventarioEstaCaido() {
         // GIVEN
         String runUsuario = "11222333-4";
         String codSucursal = "SU0001";
@@ -421,7 +421,7 @@ public class RecepcionServiceTest {
 
     @Test
     @DisplayName("Debería cambiar el estado a CANCELADA cuando la recepción existe")
-    void cancelarRecepcionExitosamente() {
+    void deberiaCancelarRecepcionExitosamente() {
         // GIVEN
         Long id = 1L;
         String codSucursal = "SU0001";
@@ -444,7 +444,7 @@ public class RecepcionServiceTest {
 
     @Test
     @DisplayName("Debería lanzar ResourceNotFoundException al cancelar una recepción que no existe")
-    void cancelarRecepcionNotFound() {
+    void deberiaLanzarResourceNotFoundException_cuandoRecepcionNoExisteAlCancelar() {
         // GIVEN
         Long idInexistente = 99L;
         String codSucursal = "SU0001";
@@ -461,7 +461,7 @@ public class RecepcionServiceTest {
 
     @Test
     @DisplayName("Debería eliminar la recepción exitosamente cuando existe")
-    void eliminarRecepcionExitosamente() {
+    void deberiaEliminarRecepcionExitosamente() {
         // GIVEN
         Long id = 1L;
         String codSucursal = "SU0001";
@@ -483,7 +483,7 @@ public class RecepcionServiceTest {
 
     @Test
     @DisplayName("Debería lanzar ResourceNotFoundException al intentar eliminar una recepción que no existe")
-    void eliminarRecepcionNotFound() {
+    void deberiaLanzarResourceNotFoundException_cuandoRecepcionNoExisteAlEliminar() {
         // GIVEN
         Long idInexistente = 99L;
         String codSucursal = "SU0001";
