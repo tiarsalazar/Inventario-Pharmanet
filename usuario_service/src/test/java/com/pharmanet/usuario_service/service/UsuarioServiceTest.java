@@ -43,8 +43,10 @@ public class UsuarioServiceTest {
         dto.setCodSucursal("SU0001");
 
         when(repo.findByRun("111111111-1")).thenReturn(Optional.of(entidad));
-        when(feign.buscarSucursal("SU0001")).thenReturn()
+        when(feign.buscarSucursal("SU0001")).thenReturn();
         
+        UsuarioDTO resultado = service.agregarUsuario(dto);
 
+        assertNotNull(resultado);
     }
 }
