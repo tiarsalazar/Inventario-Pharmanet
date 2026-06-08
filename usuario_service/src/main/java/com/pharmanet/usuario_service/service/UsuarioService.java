@@ -11,7 +11,7 @@ import com.pharmanet.usuario_service.dto.UsuarioDTO;
 import com.pharmanet.usuario_service.dto.UsuarioMapper;
 import com.pharmanet.usuario_service.dto.UsuarioRequest;
 import com.pharmanet.usuario_service.entity.Usuario;
-import com.pharmanet.usuario_service.exception.NotUniqueUsuarioException;
+import com.pharmanet.usuario_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.usuario_service.exception.ResourceNotFoundException;
 import com.pharmanet.usuario_service.repository.UsuarioRepository;
 
@@ -37,7 +37,7 @@ public class UsuarioService {
         log.info("Se verifica que no existan registros del usuario en el sistema");
         log.debug("RUN: {}", dto.getRun());
         if (usuarioRepository.findByRun(dto.getRun()).isPresent()) {
-            throw new NotUniqueUsuarioException("Ya existe el usuario con el run: " + dto.getRun());
+            throw new ResourceAlreadyExistsException("Ya existe el usuario con el run: " + dto.getRun());
         }
 
         log.info("Se verifica la existencia de la sucursal");

@@ -22,10 +22,10 @@ public class GlobalHandlerException {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 
-    @ExceptionHandler(NotUniqueUsuarioException.class)
-    public ResponseEntity<ErrorResponse> handlerNotUniqueSucursalException(NotUniqueUsuarioException ex) {
+    @ExceptionHandler(ResourceAlreadyExistsException.class)
+    public ResponseEntity<ErrorResponse> handlerNotUniqueSucursalException(ResourceAlreadyExistsException ex) {
         ErrorResponse error = new ErrorResponse(409, "Conflict", ex.getMessage());
-        log.error("Objeto no encontrado: {}", ex.getMessage());
+        log.error("Objeto ya existe en la base de datos: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
     }
 
