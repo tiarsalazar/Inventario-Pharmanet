@@ -56,13 +56,6 @@ public class RecepcionService {
     }
 
     @Transactional(readOnly = true)
-    public Page<RecepcionResponse> buscarRecepcionPorProveedor(String rutProveedor, String codSucursal, Pageable pageable){
-        log.info("Obteniendo historial de recepciones por proveedor: {}", rutProveedor);
-        return recepRepo.findByRutProveedorAndCodSucursal(rutProveedor, codSucursal, pageable)
-            .map(recepMapper::toRecepcionResponse);
-    }
-
-    @Transactional(readOnly = true)
     public Page<RecepcionResponse> buscarPorFecha(String codSucursal, LocalDate inicio, LocalDate fin, Pageable pageable){
         log.info("Obteniendo historial de recepciones por rango de fechas: {} - {}", inicio, fin);
         if (inicio.isAfter(fin)){
@@ -75,6 +68,7 @@ public class RecepcionService {
     @Transactional(readOnly = true)
     public Page<RecepcionResponse> buscarPorUsuario(String runUsuario, String codSucursal, Pageable pageable){
         log.info("Obteniendo historial de recepciones de usuario run: {}", runUsuario);
+        validarExistenciaUsuario(runUsuario);
         return recepRepo.findByRunUsuarioAndCodSucursal(runUsuario, codSucursal, pageable)
         .map(recepMapper::toRecepcionResponse);
     }
@@ -87,7 +81,7 @@ public class RecepcionService {
         request.getNumeroDocumento(), request.getRutProveedor());
 
         log.info("Validacion de usuario {} con feign", runUsuario);
-        validarUsuario(runUsuario);
+        validarExistenciaUsuario(runUsuario);
         validarDocumentoDuplicado(request);
 
         Recepcion recepcion = recepMapper.toRecepcionEntity(request, runUsuario, codSucursal);
@@ -184,7 +178,7 @@ public class RecepcionService {
     }
 
     // Valida existencia de Usuario con FEIGN
-    private void validarUsuario(String run) {
+    private void validarExistenciaUsuario(String run) {
         try {
             usuarioClient.buscarPorRun(run);
         } catch (FeignException.NotFound e) {

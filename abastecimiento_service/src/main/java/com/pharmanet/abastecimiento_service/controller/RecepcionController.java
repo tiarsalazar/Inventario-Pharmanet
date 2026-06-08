@@ -56,12 +56,6 @@ public class RecepcionController {
             @PathVariable String codSucursal, Pageable pageable){
         return ResponseEntity.ok(recepServ.buscarRecepcionPorSucursal(codSucursal, pageable));
     }
-    
-    @GetMapping("/sucursales/{codSucursal}/proveedores")
-    public ResponseEntity<Page<RecepcionResponse>> buscarPorRutProveedor(
-            @PathVariable String codSucursal, @RequestParam String rutProveedor, Pageable pageable) {
-        return ResponseEntity.ok(recepServ.buscarRecepcionPorProveedor(rutProveedor, codSucursal, pageable));
-    }
 
     @GetMapping("/sucursales/{codSucursal}/fechas")
     public ResponseEntity<Page<RecepcionResponse>> buscarPorFecha(
