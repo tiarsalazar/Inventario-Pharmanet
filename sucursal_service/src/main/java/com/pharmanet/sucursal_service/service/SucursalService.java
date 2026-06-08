@@ -31,6 +31,9 @@ public class SucursalService {
         log.info("Inicia agregado de sucursal.");
         log.debug("dto: {}" + dto);
 
+        dto.setCodSucursal(convertirCodSucursal(dto.getCodSucursal()));
+        log.debug("codSucursal: {}", dto.getCodSucursal());
+
         log.info("Válida que el código de la sucursal sea único.");
         if(sucursalRepository.findByCodSucursal(dto.getCodSucursal()).isPresent()) {
             throw new ResourceAlreadyExistsException("Ya existe una sucursal con el código: " + dto.getCodSucursal());
@@ -40,9 +43,6 @@ public class SucursalService {
         if(sucursalRepository.findByNombreSucursal(dto.getNombreSucursal()).isPresent()) {
             throw new ResourceAlreadyExistsException("Ya existe una sucursal con el nombre: " + dto.getNombreSucursal());
         }
-
-        dto.setCodSucursal(convertirCodSucursal(dto.getCodSucursal()));
-        log.debug("codSucursal: {}", dto.getCodSucursal());
 
         log.info("Verifica que la ubicación ingresada sea válida.");
         log.debug("comuna: {}, region: {}", dto.getCodComuna(), dto.getCodRegion());

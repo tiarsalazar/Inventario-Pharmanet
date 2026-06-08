@@ -89,7 +89,7 @@ public class ComunaService {
         log.debug("comunaId: {}, region: {}", comuna, region);
 
         return ComunaMapper.toDto(
-            comunaRepository.findByComunaIdAndRegion_RegionId(comuna, region)
-                .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el id: " + comuna + " y la región: " + region)));
+            comunaRepository.findByCodComunaAndRegion_CodRegion(comuna, region)
+                .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el código: " + comuna + " y la región: " + region)));
     }
 }

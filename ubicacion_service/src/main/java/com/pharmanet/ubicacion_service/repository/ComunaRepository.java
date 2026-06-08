@@ -14,6 +14,6 @@ public interface ComunaRepository extends JpaRepository<Comuna, Integer> {
 
     Optional<Comuna> findByDescripcion(String desc);
 
-    Optional<Comuna> findByComunaIdAndRegion_RegionId(Integer comu, String region);
+    Optional<Comuna> findByCodComunaAndRegion_CodRegion(Integer comu, String region);
 
 }

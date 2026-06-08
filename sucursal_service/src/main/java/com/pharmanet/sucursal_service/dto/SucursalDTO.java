@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 public class SucursalDTO {
 
     @NotBlank(message = "Campo obligatorio")
+    @Size(max = 8, message = "Largo máximo 8 caracteres")
     private String codSucursal;
 
     @Size(min = 5, max = 30, message = "El campo debe tener entre 5 y 30 caracteres")

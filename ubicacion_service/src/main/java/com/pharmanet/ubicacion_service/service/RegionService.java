@@ -33,11 +33,7 @@ public class RegionService {
         }
 
         Region region = RegionMapper.toEntity(dto);
-<<<<<<< HEAD
-        return regionRepository.save(region);
-=======
         return RegionMapper.toDto(regionRepository.save(region));
->>>>>>> 0981e1fbdacbc34fc2934fc3813f6def889cc28c
     }
 
     public RegionDto buscarRegion(String codRegion) {
