@@ -87,12 +87,29 @@ public class UsuarioServiceTest {
 
     @Test
     @DisplayName("Error al conectar al ms sucursal: la sucursal ingresada no existe")
-    void shouldThrow_FeignClientException() {
+    void saveShouldThrow_FeignClientException() {
+
+        UsuarioDTO dto = new UsuarioDTO();
+        dto.setRun("11111111-1");
+        dto.setCodSucursal("SU0001");
+
         when(repo.findByRun("11111111-1")).thenReturn(Optional.empty());
-        when(feign.buscarSucursal("C"))
-        FeignClientException exception = assertThrows(FeignClientException.class,
+
+        when(feign.buscarSucursal("SU0001")).thenThrow(FeignClientException.class);
+
+        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class,
+            () -> service.agregarUsuario(dto)
+        );
+
+        assertNotNull(exception);
+        assertEquals("No se encuentra la sucursal con el código: SU0001", exception.getMessage());
+        assertThrows(FeignClientException.class,
             () -> feign.buscarSucursal("SU0001")
-        )
+        );
+
+        verify(repo, times(1)).findByRun("11111111-1");
+        verify(feign, times(1)).buscarSucursal("SU0001");
+        
     }
 
     // ==================================

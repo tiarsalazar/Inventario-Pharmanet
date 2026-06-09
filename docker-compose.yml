@@ -1,0 +1,41 @@
+services:
+
+  euerka-server:
+    build ./eureka-service
+    container_name: eureka-service
+    ports:
+      - "8761:8761"
+
+  api-gateway:
+    build ./api-gateway
+    container_name: eureka-service
+    ports:
+      - "8081:8081"
+    
+  sucursal-service:
+    build ./sucursal-service
+    container_name: sucursal-service
+    ports:
+      - "8088:8088"
+    depends_on:
+    - eureka-service
+    environment:
+      DB_URL:
+      DB_USERNAME:
+      DB_PASSWORD: 
+
+
+  ubicacion-service:
+    build ./ubicacion-service
+    container_name: ubicacion-service
+    ports:
+      - "8087:8087"
+
+  producto-service:
+    build ./producto-service
+    container_name: 
+
+networks:
+  default:
+  name: microservicios-network
+  
