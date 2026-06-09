@@ -90,7 +90,7 @@ public class UsuarioServiceTest {
         );
 
         assertNotNull(exception);
-        assertEquals("Ya existe un usuario con el rut 11111111-1", exception.getMessage());
+        assertEquals("Ya existe un usuario con el run: 11111111-1", exception.getMessage());
 
         verify(repo, times(1)).findByRun("11111111-1");
     }
@@ -131,6 +131,7 @@ public class UsuarioServiceTest {
     void shouldReturnUsuario_WhenExists() {
         Usuario entidad = new Usuario();
         entidad.setRun("11111111-1");
+        entidad.setProfesion("TEC FARMACIA");
         when(repo.findByRun("11111111-1")).thenReturn(Optional.of(entidad));
 
         UsuarioDTO resultado = service.buscarPorRun("11111111-1");
@@ -199,9 +200,12 @@ public class UsuarioServiceTest {
 
         Usuario entidad = new Usuario();
         entidad.setCodSucursal("SU0001");
+        entidad.setProfesion("TEC FARMACIA");
 
         UsuarioDTO dto = new UsuarioDTO();
         dto.setCodSucursal("SU0001");
+        dto.setProfesion("TEC FARMACIA");
+
 
         List<Usuario> lista = List.of(entidad);
 
@@ -231,6 +235,7 @@ public class UsuarioServiceTest {
 
         Usuario entidad = new Usuario();
         entidad.setRun(run);
+        entidad.setProfesion("TEC FARMACIA");
 
         UsuarioDTO dto = new UsuarioDTO();
         dto.setRun(run);
@@ -258,9 +263,11 @@ public class UsuarioServiceTest {
     void update_NormalCase() {
         Usuario entidad = new Usuario();
         entidad.setRun("11111111-1");
+        entidad.setProfesion("TEC FARMACIA");
 
         UsuarioDTO dto = new UsuarioDTO();
         dto.setRun("11111111-1");
+        dto.setProfesion("TEC FARMACIA");
 
         when(repo.findByRun("11111111-1")).thenReturn(Optional.of(entidad));
         when(repo.save(entidad)).thenReturn(entidad);

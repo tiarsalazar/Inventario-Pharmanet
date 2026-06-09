@@ -134,7 +134,7 @@ public class UsuarioService {
         if (!entidad.getProfesion().equals("TEC FARMACIA")
             && !entidad.getProfesion().equals("ANALISTA QUIMICO")) {
             log.warn("El usuario no está autorizado para vender el/los producto/s. Profesión: {}", entidad.getProfesion());
-            return new UsuarioResponse(false, "El usuario con el run: " + run + " no está autorizado para vender el/los producto/s.");
+            return new UsuarioResponse(false, "El usuario con el run: " + run + " no está autorizado para vender el/los productos.");
         }
 
         log.info("Valida que el usuario ingresado se encuentra en la sucursal indicada");
@@ -146,7 +146,7 @@ public class UsuarioService {
         if (!receta.equals("SIN_RECETA")) {
             log.info("Valida presencia de un analista químico en la farmacia");
         
-            List<Usuario> analistaQuimico = usuarioRepository.findByProfesionAndCodSucursal("analista quimico", codSucursal);
+            List<Usuario> analistaQuimico = usuarioRepository.findByProfesionAndCodSucursal("ANALISTA QUIMICO", codSucursal);
             if (analistaQuimico.isEmpty()) {
                 log.warn("No hay ANALISTA QUÍMICO en la sucursal con el código: {}", codSucursal);
                 return new UsuarioResponse(false, "No hay ANALISTA QUÍMICO en la sucursal con el código: " + codSucursal);
@@ -154,6 +154,6 @@ public class UsuarioService {
         }
         
         log.info("Validación de usuario aprobada");
-        return new UsuarioResponse(true, "La venta del vendedor con el run " + run + " es válida");
+        return new UsuarioResponse(true, "La venta del vendedor con el run: " + run + " es válida");
     }
 }

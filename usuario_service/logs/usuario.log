@@ -1163,3 +1163,44 @@ https://docs.oracle.com/error-help/db/ora-12529/
 2026-06-08T16:08:41.651-04:00  INFO 7528 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-08T16:08:41.654-04:00  INFO 7528 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-08T16:08:42.034-04:00  INFO 7528 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-09T19:18:17.950-04:00  INFO 32388 --- [usuario-service] [main] c.p.u.UsuarioServiceApplicationTests     : Starting UsuarioServiceApplicationTests using Java 21.0.8 with PID 32388 (started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\usuario_service)
+2026-06-09T19:18:17.952-04:00  INFO 32388 --- [usuario-service] [main] c.p.u.UsuarioServiceApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2026-06-09T19:18:17.983-04:00 DEBUG 32388 --- [usuario-service] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@194012a2
+2026-06-09T19:18:18.696-04:00  INFO 32388 --- [usuario-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-09T19:18:18.746-04:00  INFO 32388 --- [usuario-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2026-06-09T19:18:18.907-04:00  INFO 32388 --- [usuario-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=88cc2772-faa8-3134-a94d-aebcaa4c93d4
+2026-06-09T19:18:19.513-04:00  INFO 32388 --- [usuario-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-09T19:18:20.324-04:00  INFO 32388 --- [usuario-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@29a50a11
+2026-06-09T19:18:20.325-04:00  INFO 32388 --- [usuario-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-09T19:18:20.346-04:00  INFO 32388 --- [usuario-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@bdusuario_high (Oracle 19.31)
+2026-06-09T19:18:20.807-04:00  INFO 32388 --- [usuario-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.155s)
+2026-06-09T19:18:20.879-04:00  INFO 32388 --- [usuario-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "BD_USUARIO": 3
+2026-06-09T19:18:20.896-04:00  INFO 32388 --- [usuario-service] [main] o.f.core.internal.command.DbMigrate      : Schema "BD_USUARIO" is up to date. No migration necessary.
+2026-06-09T19:18:21.007-04:00  INFO 32388 --- [usuario-service] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-09T19:18:21.087-04:00  INFO 32388 --- [usuario-service] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-09T19:18:21.416-04:00  INFO 32388 --- [usuario-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-09T19:18:21.530-04:00  INFO 32388 --- [usuario-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@bdusuario_high]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 19.31
+	Default catalog/schema: undefined/BD_USUARIO
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-09T19:18:22.242-04:00  INFO 32388 --- [usuario-service] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-09T19:18:22.250-04:00  INFO 32388 --- [usuario-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-09T19:18:22.343-04:00  INFO 32388 --- [usuario-service] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-09T19:18:22.595-04:00  WARN 32388 --- [usuario-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-09T19:18:22.947-04:00 DEBUG 32388 --- [usuario-service] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-06-09T19:18:22.974-04:00 DEBUG 32388 --- [usuario-service] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-06-09T19:18:22.994-04:00 DEBUG 32388 --- [usuario-service] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-09T19:18:23.041-04:00 DEBUG 32388 --- [usuario-service] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-09T19:18:23.320-04:00  INFO 32388 --- [usuario-service] [main] c.p.u.UsuarioServiceApplicationTests     : Started UsuarioServiceApplicationTests in 5.691 seconds (process running for 8.141)
+2026-06-09T19:18:23.376-04:00 DEBUG 32388 --- [usuario-service] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@194012a2, started on Tue Jun 09 19:18:17 CLT 2026
+2026-06-09T19:18:23.380-04:00  INFO 32388 --- [usuario-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-09T19:18:23.383-04:00  INFO 32388 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-09T19:18:23.452-04:00  INFO 32388 --- [usuario-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
