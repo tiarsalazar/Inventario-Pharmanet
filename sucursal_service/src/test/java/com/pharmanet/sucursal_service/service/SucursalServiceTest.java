@@ -215,6 +215,7 @@ public class SucursalServiceTest {
         assertNotNull(resultado);
         assertEquals(1, resultado.getTotalElements());
         assertEquals("SU0001", resultado.getContent().get(0).getCodSucursal());
+        
         verify(repo, times(1)).findAll(pageable);
     }
 

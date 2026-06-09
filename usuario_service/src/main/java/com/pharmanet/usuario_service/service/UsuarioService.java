@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 import com.pharmanet.usuario_service.client.SucursalFeignClient;
 import com.pharmanet.usuario_service.dto.UsuarioDTO;
 import com.pharmanet.usuario_service.dto.UsuarioMapper;
-import com.pharmanet.usuario_service.dto.UsuarioRequest;
+import com.pharmanet.usuario_service.dto.MsResponse.UsuarioRequest;
+import com.pharmanet.usuario_service.dto.MsResponse.UsuarioResponse;
 import com.pharmanet.usuario_service.entity.Usuario;
 import com.pharmanet.usuario_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.usuario_service.exception.ResourceNotFoundException;
@@ -73,6 +74,7 @@ public class UsuarioService {
         log.info("Inicia búsqueda por profesion");
         profesion = profesion.toUpperCase();
         log.debug("profesion: {}", profesion);
+
         return usuarioRepository.findByProfesion(profesion, pageable)
             .map(UsuarioMapper::toDTO);
     }
@@ -81,33 +83,29 @@ public class UsuarioService {
         log.info("Inicia búsqueda por código de la sucursal");
         codSucursal.toUpperCase();
         log.debug("codSucursal: {}", codSucursal);
+
         return usuarioRepository.findByCodSucursal(codSucursal, pageable)
             .map(UsuarioMapper::toDTO);
     }
 
     public Page<UsuarioDTO> mostrarTodos(Pageable pageable) {
-        log.info("Inicia búsqueda de todos los usuarios"); // cambiarlo a controller
         return usuarioRepository.findAll(pageable)
             .map(UsuarioMapper::toDTO);
     }
 
-    public void actualizarUsuario(UsuarioDTO usuarioDTO) {
+    public void actualizarUsuario(UsuarioDTO dto) {
         log.info("Inicia actualización del usuario");
-        log.debug("usuarioDTO: {}", usuarioDTO);
+        log.debug("usuarioDTO: {}", dto);
 
         log.info("Se verifica que el usuario exista");
-        Usuario usuarioVerificado = usuarioRepository.findByRun(usuarioDTO.getRun())
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el usuario: " + usuarioDTO.getRun()));
+        Usuario entidad = usuarioRepository.findByRun(dto.getRun())
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el usuario con el run: " + dto.getRun()));
 
-        Usuario usuario = UsuarioMapper.toModel(usuarioDTO);
+        UsuarioMapper.update(entidad, dto);
 
-        log.info("Se transfiere información");
-
-        log.debug("idUsuario: {}", usuarioVerificado.getId());
-        usuario.setId(usuarioVerificado.getId());
+        log.debug("actualizada: {}", entidad);
         
-        log.info("Se actualiza el usuario");
-        usuarioRepository.save(usuario);
+        usuarioRepository.save(entidad);
     }
 
     public void eliminarUsuario(String run) {
@@ -115,47 +113,47 @@ public class UsuarioService {
 
         log.info("Verificar que el usuario exista");
         Usuario usuario = usuarioRepository.findByRun(run)
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el usuario: " + run));
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el usuario con el run: " + run));
 
         usuarioRepository.delete(usuario);
     }
 
-    public boolean validarUsuarioVenta(UsuarioRequest request) {
+    public UsuarioResponse validarUsuarioVenta(UsuarioRequest request) {
         log.info("Inicia validación de venta");
         log.debug("run: {}, codSucursal: {}, receta: {}", request.getRunVendedor(), request.getCodSucursal(), request.getReceta());
 
         String run = request.getRunVendedor();
-        String codSucursal = request.getCodSucursal();
-        String receta = request.getReceta();
+        String codSucursal = request.getCodSucursal().toUpperCase();
+        String receta = request.getReceta().toUpperCase();
 
         log.info("Verifica existencia de usuario");
-        Usuario usuario = usuarioRepository.findByRun(run)
+        Usuario entidad = usuarioRepository.findByRun(run)
             .orElseThrow(() -> new ResourceNotFoundException("Usuario no encontrado"));
 
-        log.info("Valida credenciales del usuario");
-        if (!usuario.getProfesion().equalsIgnoreCase("TECNICO EN FARMACIA")
-            && !usuario.getProfesion().equalsIgnoreCase("ANALISTA QUIMICO")) {
-            log.warn("El usuario no tiene las credenciales para vender los producto/s. Profesion: {}", usuario.getProfesion());
-            return false;
+        log.info("Valida autorización del usuario");
+        if (!entidad.getProfesion().equals("TEC FARMACIA")
+            && !entidad.getProfesion().equals("ANALISTA QUIMICO")) {
+            log.warn("El usuario no está autorizado para vender el/los producto/s. Profesión: {}", entidad.getProfesion());
+            return new UsuarioResponse(false, "El usuario con el run: " + run + " no está autorizado para vender el/los producto/s.");
         }
 
         log.info("Valida que el usuario ingresado se encuentra en la sucursal indicada");
-        if (!codSucursal.equals(usuario.getCodSucursal())) {
-            log.warn("El usuario {} no se encuentra en la sucursal {}", run, codSucursal);return false;
+        if (!codSucursal.equals(entidad.getCodSucursal())) {
+            log.warn("El usuario {} no se encuentra en la sucursal {}", run, codSucursal);
+            return new UsuarioResponse(false, "El usuario no se encuentra en la sucursal con el código: " + codSucursal);
         }
 
-        if (!receta.equalsIgnoreCase("SIN RECETA")) {
+        if (!receta.equals("SIN_RECETA")) {
             log.info("Valida presencia de un analista químico en la farmacia");
         
-            List<Usuario> analistaQuimico = usuarioRepository.findByProfesion("analista quimico", null)
-                .toList();
+            List<Usuario> analistaQuimico = usuarioRepository.findByProfesionAndCodSucursal("analista quimico", codSucursal);
             if (analistaQuimico.isEmpty()) {
-                log.warn("No hay ANALISTA QUÍMICO en la sucursal {}", codSucursal);
-                return false;
+                log.warn("No hay ANALISTA QUÍMICO en la sucursal con el código: {}", codSucursal);
+                return new UsuarioResponse(false, "No hay ANALISTA QUÍMICO en la sucursal con el código: " + codSucursal);
             }
         }
         
         log.info("Validación de usuario aprobada");
-        return true;
+        return new UsuarioResponse(true, "La venta del vendedor con el run " + run + " es válida");
     }
 }

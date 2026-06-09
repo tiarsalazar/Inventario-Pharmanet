@@ -4,7 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pharmanet.usuario_service.dto.UsuarioDTO;
-import com.pharmanet.usuario_service.dto.UsuarioRequest;
+import com.pharmanet.usuario_service.dto.MsResponse.UsuarioRequest;
+import com.pharmanet.usuario_service.dto.MsResponse.UsuarioResponse;
 import com.pharmanet.usuario_service.service.UsuarioService;
 
 import jakarta.validation.Valid;
@@ -62,7 +63,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/validado")
-    public boolean validarUsuarioVenta(@RequestBody UsuarioRequest request) {
+    public UsuarioResponse validarUsuarioVenta(@RequestBody UsuarioRequest request) {
         return usuarioService.validarUsuarioVenta(request);
     }
 

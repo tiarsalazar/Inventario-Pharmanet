@@ -1,4 +1,4 @@
-package com.pharmanet.usuario_service.dto;
+package com.pharmanet.usuario_service.dto.MsResponse;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
