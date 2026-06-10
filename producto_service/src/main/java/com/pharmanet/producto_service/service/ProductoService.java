@@ -25,23 +25,25 @@ public class ProductoService {
 
     final private ProductoRepository productoRepository;
 
-    public ProductoDto agregarProducto(ProductoDto productoDto) {
+    public ProductoDto agregarProducto(ProductoDto dto) {
         log.info("Inicia guardado de producto");
-        log.debug("productoDto: {}", productoDto);
+        log.debug("dto: {}", dto);
 
         log.info("Valida que no se encuentre en el sistema");
-        if(productoRepository.findBySku(productoDto.getSku()).isPresent()) {
-            log.warn("El producto {} ya se encuentra registrado en el sistema.", productoDto.getSku());
-            throw new ProductoNotUniqueException("El producto " + productoDto.getSku() + " ya se encuentra registrado en el sistema");
+        if(productoRepository.findBySku(dto.getSku()).isPresent()) {
+            log.warn("El producto {} ya se encuentra registrado en el sistema.", dto.getSku());
+            throw new ProductoNotUniqueException("El producto " + dto.getSku() + " ya se encuentra registrado en el sistema");
         }
 
-        Producto producto = ProductoMapper.toModel(productoDto);
+        dto.setSku(procesarSku(dto.getSku()));
+
+        Producto entidad = ProductoMapper.toModel(dto);
 
         log.info("Guarda producto");
-        log.debug("producto: {}", producto);
-        productoRepository.save(producto);
+        log.debug("entidad: {}", entidad);
+        productoRepository.save(entidad);
 
-        return ProductoMapper.toDto(producto);
+        return ProductoMapper.toDto(entidad);
     }
 
     public ProductoDto buscarPorSku(String sku) {
@@ -112,9 +114,25 @@ public class ProductoService {
         log.info("Se inicia procedimiento para calular precio de venta total");
         log.debug("sku: {} cantidad: {}", sku, cantidad);
 
-        Producto producto = productoRepository.findBySku(sku)
+        Producto entidad = productoRepository.findBySku(sku)
                 .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + sku));
 
-        return producto.getPrecioVenta().multiply(new BigDecimal(cantidad));
+        return entidad.getPrecioVenta().multiply(new BigDecimal(cantidad));
+    }
+
+    public String procesarSku(String sku) {
+        log.info("Inicia el proceso del sku del producto");
+        log.debug("sku: {}", sku);
+
+        sku = sku.toUpperCase();
+
+        if (!sku.startsWith("PR")) {
+            if (sku.length() >= 9) {
+                throw new IllegalArgumentException("El código ingresado no es válido. Ingrese un código menor o igual a 8 carácteres o que empiece con 'PR'");
+            }
+            sku = "PR" + sku;
+        }
+
+        return sku;
     }
 }

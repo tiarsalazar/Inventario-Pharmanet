@@ -1,6 +1,6 @@
 CREATE TABLE producto (
     producto_id BIGINT NOT NULL AUTO_INCREMENT,
-    sku VARCHAR(30) NOT NULL UNIQUE,
+    sku VARCHAR(10) NOT NULL UNIQUE,
     nombre_comercial VARCHAR(100) NOT NULL,
     principio_activo VARCHAR(80) NOT NULL,
     laboratorio VARCHAR(100),

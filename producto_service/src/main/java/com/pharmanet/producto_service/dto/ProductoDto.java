@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class ProductoDto {
 
     @NotBlank(message = "Este campo no puede estar vacío")
-    @Size(max = 30, message = "Máximo 30 caracteres")
+    @Size(min = 3, max = 10, message = "Máximo 10 caracteres")
     private String sku; // CÓDIGO DE PRODUCTO
     
     @NotBlank(message = "Este campo no puede estar vacío")

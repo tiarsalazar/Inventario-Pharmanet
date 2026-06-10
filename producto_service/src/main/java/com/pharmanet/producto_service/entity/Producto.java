@@ -29,8 +29,9 @@ public class Producto {
     @Column(name = "producto_id")
     private Long id;
 
-    @Column(nullable = false, unique = true, length = 30)
-    private String sku; // CÓDIGO DE PRODUCTO
+    // CÓDIGO DE PRODUCTO
+    @Column(nullable = false, unique = true, length = 10)
+    private String sku;
     @Column(name = "nombre_comercial", nullable = false, length = 100)
     private String nombreComercial;
     
