@@ -6,12 +6,10 @@ import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import com.pharmanet.abastecimiento_service.entity.Recepcion;
 import com.pharmanet.abastecimiento_service.enums.TipoDocumento;
 
-@Repository
 public interface RecepcionRepository extends JpaRepository<Recepcion, Long>{
     boolean existsByRutProveedorAndTipoDocumentoAndNumeroDocumento(
         String rutProveedor, TipoDocumento tipoDocumento, String numeroDocumento);
