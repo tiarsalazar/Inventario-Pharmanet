@@ -75,7 +75,7 @@ public class ProductoController {
 
     @PostMapping("/calcular")
     public BigDecimal calcularPrecioTotalVenta(@RequestParam String sku, @RequestParam int cantidad) {
-        return productoService.calcularPrecioTotalVenta(sku, cantidad);
+        return productoService.calcularPrecioTotal(sku, cantidad);
     }
 
     @PostMapping
