@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.pharmanet.producto_service.dto.ProductoDto;
 import com.pharmanet.producto_service.dto.ProductoMapper;
 import com.pharmanet.producto_service.entity.Producto;
-import com.pharmanet.producto_service.exception.ProductoNotUniqueException;
+import com.pharmanet.producto_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.producto_service.exception.ResourceNotFoundException;
 import com.pharmanet.producto_service.repository.ProductoRepository;
 
@@ -25,6 +25,10 @@ public class ProductoService {
 
     final private ProductoRepository productoRepository;
 
+    // ===================================================
+    // MÉTODOS INTERNOS
+    // ===================================================
+
     public ProductoDto agregarProducto(ProductoDto dto) {
         log.info("Inicia guardado de producto");
         log.debug("dto: {}", dto);
@@ -32,7 +36,7 @@ public class ProductoService {
         log.info("Valida que no se encuentre en el sistema");
         if(productoRepository.findBySku(dto.getSku()).isPresent()) {
             log.warn("El producto {} ya se encuentra registrado en el sistema.", dto.getSku());
-            throw new ProductoNotUniqueException("El producto " + dto.getSku() + " ya se encuentra registrado en el sistema");
+            throw new ResourceAlreadyExistsException("Ya existe un producto con el sku: " + dto.getSku());
         }
 
         dto.setSku(procesarSku(dto.getSku()));
@@ -52,7 +56,7 @@ public class ProductoService {
 
         return productoRepository.findBySku(sku)
             .map(ProductoMapper::toDto)
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto: " + sku));
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + sku));
     }
 
     public Page<ProductoDto> buscarPorPrincipioActivo(String principioActivo, Pageable pageable) {
@@ -69,7 +73,7 @@ public class ProductoService {
 
         if (min > max) {
             log.warn("El valor ingresado como mínimo supera al valor ingresado como máximo");
-            throw new IllegalArgumentException("El valor ingresado como mínimo no puede ser superior al valor ingresado como máximo");
+            throw new IllegalArgumentException("El mínimo excede al máximo");
         }
 
         return productoRepository.findByPrecioVentaBetween(min, max, pageable)
@@ -86,7 +90,7 @@ public class ProductoService {
         log.debug("productoDto: {}", productoDto);
 
         Producto confirmado = productoRepository.findBySku(productoDto.getSku())
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra registrado el producto " + productoDto.getSku()));
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + productoDto.getSku()));
 
         productoRepository.save(ProductoMapper.updateModel(confirmado, productoDto));
         log.info("Producto guardado");
@@ -102,15 +106,35 @@ public class ProductoService {
         productoRepository.delete(producto);
     }
 
+    public String procesarSku(String sku) {
+        log.info("Inicia el proceso del sku del producto");
+        log.debug("sku: {}", sku);
+
+        sku = sku.toUpperCase();
+
+        if (!sku.startsWith("PR")) {
+            if (sku.length() > 8) {
+                throw new IllegalArgumentException("Sku inválido. Ingrese con un sku menor o igual a 8 carácteres o que empiece 'PR'");
+            }
+            sku = "PR" + sku;
+        }
+
+        return sku;
+    }
+
+    // ===================================================
+    // MÉTODOS EXTERNOS
+    // ===================================================
+    
     public String obtenerReceta(String sku) {
         log.info("Inicia búsqueda de tipo de receta");
         log.debug(sku);
-        Producto producto = productoRepository.findBySku(sku).orElseThrow(() -> new ResourceNotFoundException("No existe un producto con el sku: " + sku));
+        Producto producto = productoRepository.findBySku(sku).orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + sku));
         
         return producto.getReceta().toString();
     }
 
-    public BigDecimal calcularPrecioTotalVenta(String sku, int cantidad) {
+    public BigDecimal calcularPrecioTotal(String sku, int cantidad) {
         log.info("Se inicia procedimiento para calular precio de venta total");
         log.debug("sku: {} cantidad: {}", sku, cantidad);
 
@@ -120,19 +144,5 @@ public class ProductoService {
         return entidad.getPrecioVenta().multiply(new BigDecimal(cantidad));
     }
 
-    public String procesarSku(String sku) {
-        log.info("Inicia el proceso del sku del producto");
-        log.debug("sku: {}", sku);
 
-        sku = sku.toUpperCase();
-
-        if (!sku.startsWith("PR")) {
-            if (sku.length() >= 9) {
-                throw new IllegalArgumentException("El código ingresado no es válido. Ingrese un código menor o igual a 8 carácteres o que empiece con 'PR'");
-            }
-            sku = "PR" + sku;
-        }
-
-        return sku;
-    }
 }

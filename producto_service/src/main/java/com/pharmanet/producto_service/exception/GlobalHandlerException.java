@@ -24,8 +24,8 @@ public class GlobalHandlerException {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }
 
-    @ExceptionHandler(ProductoNotUniqueException.class)
-    public ResponseEntity<ErrorResponse> handlerProductoNotUniqueException(ProductoNotUniqueException ex) {
+    @ExceptionHandler(ResourceAlreadyExistsException.class)
+    public ResponseEntity<ErrorResponse> handlerProductoNotUniqueException(ResourceAlreadyExistsException ex) {
         ErrorResponse response = new ErrorResponse(409, "Conflict", ex.getMessage());
 
         return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
