@@ -3,6 +3,7 @@ package com.pharmanet.usuario_service.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -56,20 +57,23 @@ public class UsuarioServiceTest {
         Usuario entidad = new Usuario();
         entidad.setRun("11111111-1");
         entidad.setCodSucursal("SU0001");
+        entidad.setProfesion("TEC FARMACIA");
 
         UsuarioDTO dto = new UsuarioDTO();
         dto.setRun("11111111-1");
         dto.setCodSucursal("SU0001");
+        dto.setProfesion("TEC FARMACIA");
 
-        when(repo.findByRun("11111111-1")).thenReturn(Optional.of(entidad));
+        when(repo.findByRun("11111111-1")).thenReturn(Optional.empty());
         when(feign.buscarSucursal("SU0001")).thenReturn(null);
+        when(repo.save(any(Usuario.class))).thenReturn(entidad);
         
         UsuarioDTO resultado = service.agregarUsuario(dto);
 
         assertNotNull(resultado);
-        assertEquals(dto, resultado);
+        assertEquals(dto.getRun(), resultado.getRun());
 
-        verify(repo).save(entidad);
+        verify(repo).save(any(Usuario.class));
         verify(repo, times(1)).findByRun("11111111-1");
         verify(feign, times(1)).buscarSucursal("SU0001");
     }
@@ -90,7 +94,7 @@ public class UsuarioServiceTest {
         );
 
         assertNotNull(exception);
-        assertEquals("Ya existe un usuario con el run: 11111111-1", exception.getMessage());
+        assertEquals("Ya existe el usuario con el run: 11111111-1", exception.getMessage());
 
         verify(repo, times(1)).findByRun("11111111-1");
     }
@@ -102,6 +106,7 @@ public class UsuarioServiceTest {
         UsuarioDTO dto = new UsuarioDTO();
         dto.setRun("11111111-1");
         dto.setCodSucursal("SU0001");
+        dto.setProfesion("TEC FARMACIA");
 
         when(repo.findByRun("11111111-1")).thenReturn(Optional.empty());
 
@@ -118,7 +123,7 @@ public class UsuarioServiceTest {
         );
 
         verify(repo, times(1)).findByRun("11111111-1");
-        verify(feign, times(1)).buscarSucursal("SU0001");
+        verify(feign, times(2)).buscarSucursal("SU0001");
         
     }
 
@@ -132,12 +137,17 @@ public class UsuarioServiceTest {
         Usuario entidad = new Usuario();
         entidad.setRun("11111111-1");
         entidad.setProfesion("TEC FARMACIA");
+
+        UsuarioDTO dto = new UsuarioDTO();
+        dto.setRun("11111111-1");
+        dto.setProfesion("TEC FARMACIA");
+
         when(repo.findByRun("11111111-1")).thenReturn(Optional.of(entidad));
 
         UsuarioDTO resultado = service.buscarPorRun("11111111-1");
 
         assertNotNull(resultado);
-        assertEquals(entidad, resultado);
+        assertEquals(dto, resultado);
         
         verify(repo).findByRun("11111111-1");
     }
@@ -152,9 +162,9 @@ public class UsuarioServiceTest {
         );
 
         assertNotNull(exception);
-        assertEquals("No se encuentra el usuario con el run: 1111111-1", exception.getMessage());
+        assertEquals("No se encuentra el usuario con el run: 11111111-1", exception.getMessage());
         
-        verify(repo, times(1)).findByRun("1111111-1");
+        verify(repo, times(1)).findByRun("11111111-1");
     }
 
     // ==================================

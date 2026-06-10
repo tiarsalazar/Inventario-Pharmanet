@@ -45,7 +45,7 @@ public class UsuarioService {
         log.debug("codSucursal: {}", dto.getCodSucursal());
         try {
             sucursalFeignClient.buscarSucursal(dto.getCodSucursal());
-        } catch (FeignException.InternalServerError e) {
+        } catch (FeignException.FeignClientException e) {
             log.info("No se encuentra sucursal {} asociada al usuario {}", dto.getCodSucursal(), dto.getRun());
             throw new ResourceNotFoundException("No se encuentra la sucursal con el código: " + dto.getCodSucursal());
         }
@@ -64,7 +64,7 @@ public class UsuarioService {
         log.debug("RUN: {}", run);
 
         Usuario usuario = usuarioRepository.findByRun(run)
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el usuario: " + run));
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el usuario con el run: " + run));
 
         log.info("Se transforma modelo a dto");
         return UsuarioMapper.toDTO(usuario);
@@ -134,7 +134,7 @@ public class UsuarioService {
         if (!entidad.getProfesion().equals("TEC FARMACIA")
             && !entidad.getProfesion().equals("ANALISTA QUIMICO")) {
             log.warn("El usuario no está autorizado para vender el/los producto/s. Profesión: {}", entidad.getProfesion());
-            return new UsuarioResponse(false, "El usuario con el run: " + run + " no está autorizado para vender el/los productos.");
+            return new UsuarioResponse(false, "El usuario con el run: " + run + " no está autorizado para vender el/los productos");
         }
 
         log.info("Valida que el usuario ingresado se encuentra en la sucursal indicada");

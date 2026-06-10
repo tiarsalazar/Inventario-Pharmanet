@@ -164,6 +164,37 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+    			<groupId>org.jacoco</groupId>
+    			<artifactId>jacoco-maven-plugin</artifactId>
+    			<version>0.8.11</version> <configuration>
+        			<excludes>
+            			<exclude>**/dto/MsResponse</exclude>
+						<exclude>**/dto/ErrorResponse.class</exclude>
+						<exclude>**/dto/SucursalDTO.class</exclude>
+						<exclude>**/dto/UsuarioDTO.class</exclude>
+            			<exclude>**/entity/**</exclude>
+            			<exclude>**/exception/**</exclude>
+            			<exclude>**/config/**</exclude>
+            			<exclude>**/enums/**</exclude>
+            			<exclude>**/*Application.**</exclude>
+					</excludes>
+    			</configuration>
+    			<executions>
+        			<execution>
+            			<goals>
+                			<goal>prepare-agent</goal>
+            			</goals>
+        			</execution>
+        			<execution>
+            			<id>report</id>
+            			<phase>test</phase>
+            			<goals>
+                			<goal>report</goal>
+            			</goals>
+        			</execution>
+    			</executions>
+			</plugin>
 		</plugins>
 	</build>
 
