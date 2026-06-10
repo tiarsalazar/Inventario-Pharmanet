@@ -94,11 +94,7 @@ public class RecepcionService {
         log.info("Enviando stock de recepcion ID {} a servicio Inventario", guardada.getId());
         procesarIngresoInventario(guardada, runUsuario);
 
-        guardada.setEstado(EstadoRecepcion.PROCESADA);
-        Recepcion response = recepRepo.save(guardada);
-        log.info("Recepcion {} procesada correctamente", guardada.getId());
-
-        return recepMapper.toRecepcionResponse(response);
+        return recepMapper.toRecepcionResponse(guardada);
     }
 
 

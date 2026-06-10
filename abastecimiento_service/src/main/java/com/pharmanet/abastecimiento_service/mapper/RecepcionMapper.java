@@ -10,6 +10,7 @@ import com.pharmanet.abastecimiento_service.dto.recepcion.RecepcionRequest;
 import com.pharmanet.abastecimiento_service.dto.recepcion.RecepcionResponse;
 import com.pharmanet.abastecimiento_service.entity.DetalleRecepcion;
 import com.pharmanet.abastecimiento_service.entity.Recepcion;
+import com.pharmanet.abastecimiento_service.enums.EstadoRecepcion;
 
 @Component
 public class RecepcionMapper {
@@ -21,6 +22,7 @@ public class RecepcionMapper {
         recepcion.setNumeroDocumento(request.getNumeroDocumento());
         recepcion.setTipoDocumento(request.getTipoDocumento());
         recepcion.setRutProveedor(request.getRutProveedor());
+        recepcion.setEstado(EstadoRecepcion.PROCESADA);
 
         request.getDetalles().stream()
         .map(this::toDetalleEntity)

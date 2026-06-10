@@ -280,7 +280,6 @@ public class RecepcionServiceTest {
         when(recepMapper.toRecepcionEntity(request, runUsuario, codSucursal)).thenReturn(recepcionNueva);
         when(recepRepo.save(recepcionNueva)).thenReturn(recepcionGuardada);
         doNothing().when(inventarioClient).registrarStockRecepcion(any(), eq(runUsuario));
-        when(recepRepo.save(recepcionGuardada)).thenReturn(recepcionGuardada);
         when(recepMapper.toRecepcionResponse(recepcionGuardada)).thenReturn(response);
 
         // WHEN
@@ -290,7 +289,7 @@ public class RecepcionServiceTest {
         assertNotNull(resultado, "El response de la recepción guardada no debería ser nulo");
         assertEquals(50L, resultado.getId(), "El ID de la recepción no coincide con el esperado");
         assertEquals("1234", resultado.getNumeroDocumento(), "El número de documento no coincide");
-        verify(recepRepo, times(2)).save(any(Recepcion.class));
+        verify(recepRepo, times(1)).save(recepcionNueva);
         verify(inventarioClient, times(1)).registrarStockRecepcion(any(), eq(runUsuario));
     }
 

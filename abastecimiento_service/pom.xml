@@ -125,9 +125,11 @@
         			<excludes>
             			<exclude>**/dto/**</exclude>
             			<exclude>**/entity/**</exclude>
-            			<exclude>**/exception/**</exclude>
+            			<exclude>**/repository/**</exclude>
+						<exclude>**/exception/**</exclude>
             			<exclude>**/config/**</exclude>
             			<exclude>**/enums/**</exclude>
+						<exclude>**/client/**</exclude>
             			<exclude>**/*Application.**</exclude>
 					</excludes>
     			</configuration>

@@ -56,7 +56,7 @@ public class Recepcion {
     private BigDecimal montoTotal;
     @Enumerated(EnumType.STRING)
     @Column(name = "estado_recepcion", nullable = false)
-    private EstadoRecepcion estado = EstadoRecepcion.PENDIENTE;
+    private EstadoRecepcion estado;
 
     @OneToMany(mappedBy = "recepcion", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DetalleRecepcion> detalles = new ArrayList<>();
