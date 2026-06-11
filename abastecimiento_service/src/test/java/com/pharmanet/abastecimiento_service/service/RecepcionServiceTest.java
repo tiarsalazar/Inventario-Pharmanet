@@ -10,6 +10,7 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 import java.math.BigDecimal;
@@ -65,29 +66,29 @@ public class RecepcionServiceTest {
     @DisplayName("Deberia retornar la recepcion correcta si existe por ID y Sucursal")
     void deberiaRetornarRecepcion_cuandoExistePorIdYSucursal(){
         // GIVEN
-        Long idABuscar = 1L;
+        Long id = 1L;
         String codSucursal = "SU0001";
 
         Recepcion recepcion = new Recepcion();
-        recepcion.setId(idABuscar);
+        recepcion.setId(id);
         recepcion.setCodSucursal(codSucursal);
 
         RecepcionResponse response = new RecepcionResponse();
-        response.setId(idABuscar);
+        response.setId(id);
         response.setCodSucursal(codSucursal);
 
-        when(recepRepo.findByIdAndCodSucursal(idABuscar, codSucursal))
-        .thenReturn(Optional.of(recepcion));
-
+        when(recepRepo.findByIdAndCodSucursal(id, codSucursal)).thenReturn(Optional.of(recepcion));
         when(recepMapper.toRecepcionResponse(recepcion)).thenReturn(response);
 
         // WHEN
-        RecepcionResponse resultado = recepServ.buscarPorId(idABuscar, codSucursal);
+        RecepcionResponse resultado = recepServ.buscarPorId(id, codSucursal);
 
         // THEN
-        assertNotNull(resultado, "La respuesta no debería ser nula");
-        assertEquals(idABuscar, resultado.getId(), "El ID devuelto no coincide");
-        verify(recepRepo, times(1)).findByIdAndCodSucursal(idABuscar, codSucursal);
+        assertNotNull(resultado);
+        assertEquals(id, resultado.getId());
+        verify(recepRepo, times(1)).findByIdAndCodSucursal(id, codSucursal);
+        verify(recepMapper, times(1)).toRecepcionResponse(recepcion);
+        verifyNoMoreInteractions(recepRepo, recepMapper);
     }
 
     @Test
@@ -97,15 +98,13 @@ public class RecepcionServiceTest {
         Long idInexistente = 2L;
         String codSucursal = "SU0001";
 
-        when(recepRepo.findByIdAndCodSucursal(idInexistente, codSucursal))
-        .thenReturn(Optional.empty());
+        when(recepRepo.findByIdAndCodSucursal(idInexistente, codSucursal)).thenReturn(Optional.empty());
 
         // WHEN & THEN
-        assertThrows(ResourceNotFoundException.class, () -> {
-            recepServ.buscarPorId(idInexistente, codSucursal);
+        assertThrows(ResourceNotFoundException.class, () -> {recepServ.buscarPorId(idInexistente, codSucursal);
         });
         verify(recepRepo, times(1)).findByIdAndCodSucursal(idInexistente, codSucursal);
-
+        verifyNoMoreInteractions(recepRepo);
     }
 
     @Test
