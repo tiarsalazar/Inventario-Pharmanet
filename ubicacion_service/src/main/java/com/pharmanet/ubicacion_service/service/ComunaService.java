@@ -31,7 +31,7 @@ public class ComunaService {
         log.debug("comuna: {}", comuna);
 
         if (comunaRepository.findByCodComuna(comuna.getCodComuna()).isPresent() || comunaRepository.findByDescripcion(comuna.getDescripcion()).isPresent()) {
-            throw new ResourceAlreadyExistsException("La comuna ya se encuentra registrada.");
+            throw new ResourceAlreadyExistsException("Ya existe la comuna con ese código o descripción");
         }
 
         Region region = regionRepository.findByCodRegion(comuna.getRegion())
@@ -62,9 +62,9 @@ public class ComunaService {
         log.debug("dto: {}", dto);
 
         Comuna comuna = comunaRepository.findByCodComuna(dto.getCodComuna())
-            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el código " + dto.getCodComuna()));
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el código: " + dto.getCodComuna()));
 
-        Region region = (dto.getRegion().isEmpty())
+        Region region = (dto.getRegion() == null || dto.getRegion().isEmpty())
             ? comuna.getRegion()
             : regionRepository.findByCodRegion(dto.getRegion())
                 .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la región con el código: " + dto.getRegion()));
@@ -90,6 +90,6 @@ public class ComunaService {
 
         return ComunaMapper.toDto(
             comunaRepository.findByCodComunaAndRegion_CodRegion(comuna, region)
-                .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el código: " + comuna + " y la región: " + region)));
+                .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la comuna con el código: " + comuna + " de la región: " + region)));
     }
 }
