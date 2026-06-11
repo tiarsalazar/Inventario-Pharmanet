@@ -123,19 +123,16 @@ public class RecepcionServiceTest {
         List<Recepcion> lista = List.of(recepcion);
         Page<Recepcion> pagina = new PageImpl<>(lista, pageable, lista.size());
 
-        when(recepRepo.findByCodSucursal(codSucursal, pageable))
-        .thenReturn(pagina);
-
+        when(recepRepo.findByCodSucursal(codSucursal, pageable)).thenReturn(pagina);
         when(recepMapper.toRecepcionResponse(recepcion)).thenReturn(response);
 
         // WHEN
         Page<RecepcionResponse> resultado = recepServ.buscarRecepcionPorSucursal(codSucursal, pageable);
 
         // THEN
-        assertNotNull(resultado, "La pagina de respuesta no debería ser nula");
-        assertNotNull(resultado.getContent(), "El contenido de la página no debería ser nulo");
-        assertEquals(1, resultado.getContent().size(), "La página debería contener exactamente 1 elemento");
-        assertEquals(codSucursal, resultado.getContent().get(0).getCodSucursal(), "El código de sucursal no coincide");
+        assertNotNull(resultado);
+        assertEquals(1, resultado.getContent().size());
+        assertEquals(codSucursal, resultado.getContent().get(0).getCodSucursal());
         verify(recepRepo, times(1)).findByCodSucursal(codSucursal, pageable);
     }
 
@@ -158,26 +155,18 @@ public class RecepcionServiceTest {
         Page<Recepcion> pagina = new PageImpl<>(lista, pageable, lista.size());
 
         when(recepRepo.findByCodSucursalAndFechaIngresoBetween(
-            eq(codSucursal),
-            eq(inicio.atStartOfDay()),
-            eq(fin.atTime(LocalTime.MAX)),
-            eq(pageable)))
-        .thenReturn(pagina);
-
+            codSucursal, inicio.atStartOfDay(), fin.atTime(LocalTime.MAX), pageable)).thenReturn(pagina);
         when(recepMapper.toRecepcionResponse(recepcion)).thenReturn(response);
 
         // WHEN
         Page<RecepcionResponse> resultado = recepServ.buscarPorFecha(codSucursal, inicio, fin, pageable);
 
         // THEN
-        assertNotNull(resultado, "La pagina de respuesta no debería ser nula");
-        assertNotNull(resultado.getContent(), "El contenido de la página no debería ser nulo");
-        assertEquals(1, resultado.getContent().size(), "La página debería contener exactamente 1 elemento");
-        assertEquals(codSucursal, resultado.getContent().get(0).getCodSucursal(), "El código de sucursal no coincide");
-        verify(recepRepo, times(1)).findByCodSucursalAndFechaIngresoBetween(eq(codSucursal), 
-                eq(inicio.atStartOfDay()), 
-                eq(fin.atTime(LocalTime.MAX)), 
-                eq(pageable));
+        assertNotNull(resultado);
+        assertEquals(1, resultado.getContent().size());
+        assertEquals(codSucursal, resultado.getContent().get(0).getCodSucursal());
+        verify(recepRepo, times(1)).findByCodSucursalAndFechaIngresoBetween(
+            codSucursal, inicio.atStartOfDay(), fin.atTime(LocalTime.MAX), pageable);
     }
 
     @Test
@@ -209,11 +198,11 @@ public class RecepcionServiceTest {
         Page<RecepcionResponse> resultado = recepServ.buscarPorUsuario(runUsuario, codSucursal, pageable);
 
         // THEN
-        assertNotNull(resultado, "La pagina de respuesta no debería ser nula");
-        assertNotNull(resultado.getContent(), "El contenido de la página no debería ser nulo");
-        assertEquals(1, resultado.getContent().size(), "La página debería contener exactamente 1 elemento");
-        assertEquals(codSucursal, resultado.getContent().get(0).getCodSucursal(), "El código de sucursal no coincide");
-        assertEquals(runUsuario, resultado.getContent().get(0).getRunUsuario(), "El RUN del usuario no coincide");
+        assertNotNull(resultado);
+        assertNotNull(resultado.getContent());
+        assertEquals(1, resultado.getContent().size());
+        assertEquals(codSucursal, resultado.getContent().get(0).getCodSucursal());
+        assertEquals(runUsuario, resultado.getContent().get(0).getRunUsuario());
         verify(recepRepo, times(1)).findByRunUsuarioAndCodSucursal(runUsuario, codSucursal, pageable);
     }
 
@@ -285,9 +274,9 @@ public class RecepcionServiceTest {
         RecepcionResponse resultado = recepServ.registrarRecepcion(request, runUsuario, codSucursal);
 
         // THEN 
-        assertNotNull(resultado, "El response de la recepción guardada no debería ser nulo");
-        assertEquals(50L, resultado.getId(), "El ID de la recepción no coincide con el esperado");
-        assertEquals("1234", resultado.getNumeroDocumento(), "El número de documento no coincide");
+        assertNotNull(resultado);
+        assertEquals(50L, resultado.getId());
+        assertEquals("1234", resultado.getNumeroDocumento());
         verify(recepRepo, times(1)).save(recepcionNueva);
         verify(inventarioClient, times(1)).registrarStockRecepcion(any(), eq(runUsuario));
     }
@@ -413,7 +402,6 @@ public class RecepcionServiceTest {
         assertThrows(ServiceCommunicationException.class, () -> {
             recepServ.registrarRecepcion(request, runUsuario, codSucursal);
         });
-
         verify(recepRepo, times(1)).save(any(Recepcion.class));
     }
 
@@ -453,7 +441,6 @@ public class RecepcionServiceTest {
         assertThrows(ResourceNotFoundException.class, () -> {
             recepServ.cancelarRecepcionPorId(idInexistente, codSucursal);
         });
-
         verify(recepRepo, never()).save(any());
     }
 
@@ -469,7 +456,6 @@ public class RecepcionServiceTest {
         recepcion.setCodSucursal(codSucursal);
 
         when(recepRepo.findByIdAndCodSucursal(id, codSucursal)).thenReturn(Optional.of(recepcion));
-        
         doNothing().when(recepRepo).delete(recepcion);
 
         // WHEN
