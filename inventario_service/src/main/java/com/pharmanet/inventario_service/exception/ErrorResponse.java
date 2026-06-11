@@ -1,25 +1,25 @@
 package com.pharmanet.inventario_service.exception;
 
-import java.util.List;
+import java.time.LocalDateTime;
+import java.util.Map;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-@Getter @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class ErrorResponse {
+public record ErrorResponse(
+    LocalDateTime timestamp,
+    int status,
+    String error,
+    String message,
+    String path,
 
-    private int status;
-    private String error;
-    private String mensaje;
-    private List<ValidationError> errors;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    Map<String, String> errors
+) {
+    public ErrorResponse(int status, String error, String message, String path){
+        this(LocalDateTime.now(), status, error, message, path, null);
+    }
 
-    public ErrorResponse(int status, String error, String mensaje) {
-        this.status = status;
-        this.error = error;
-        this.mensaje = mensaje;
+    public ErrorResponse(int status, String error, String message, String path, Map<String, String> errors){
+        this(LocalDateTime.now(), status, error, message, path, errors);
     }
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import feign.FeignException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -52,6 +53,17 @@ public class GlobalExceptionHandler {
             HttpStatus.BAD_REQUEST.getReasonPhrase(),
             ex.getMessage(),
             request.getRequestURI())));
+    }
+
+    @ExceptionHandler(NoResourceFoundException.class)
+        public ResponseEntity<ErrorResponse> handleNoResourceFound(NoResourceFoundException ex, HttpServletRequest request){
+        log.warn("Endpoint no encontrado: {}", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+            .body(new ErrorResponse(
+            HttpStatus.NOT_FOUND.value(),
+            HttpStatus.NOT_FOUND.getReasonPhrase(),
+            "El recurso (Endpoint) solicitado no existe.",
+            request.getRequestURI()));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

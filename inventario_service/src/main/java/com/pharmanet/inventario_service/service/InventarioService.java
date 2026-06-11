@@ -126,7 +126,7 @@ public class InventarioService {
             Lote lotePersistido = inventario.getLotes().stream()
                 .filter(l -> l.getCodLote().equals(detalleRequest.getCodLote()))
                 .findFirst()
-                .orElseThrow(() -> new ResourceNotFoundException("Error al persistir lote"));
+                .orElseThrow(() -> new ResourceNotFoundException("Error al persistir, lote no encontrado"));
 
             movRepo.save(crearMovimiento(TipoMovimiento.ENTRADA, inventario.getSku(), request.getCodSucursal(),
                 detalleRequest.getCantidad(), runUsuario, lotePersistido));
