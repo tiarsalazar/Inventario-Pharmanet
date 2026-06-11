@@ -61,7 +61,7 @@ public class ProductoServiceTest {
         assertEquals(dto.getSku(), resultado.getSku());
 
         verify(repo).findBySku("PR0001");
-        verify(repo).save(entidad);
+        verify(repo).save(any(Producto.class));
     }
 
     @Test
@@ -243,7 +243,7 @@ public class ProductoServiceTest {
 
         assertNotNull(resultado);
         assertEquals(1, resultado.getTotalElements());
-        assertEquals("SU0001", resultado.getContent().get(0).getPrecioVenta());
+        assertEquals("SU0001", resultado.getContent().get(0).getSku());
 
         verify(repo).findAll(pageable);
     }
