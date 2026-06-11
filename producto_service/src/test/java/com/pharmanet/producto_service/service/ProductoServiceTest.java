@@ -9,6 +9,7 @@ import static org.mockito.Mockito.when;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.junit.jupiter.api.DisplayName;
@@ -23,6 +24,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 import com.pharmanet.producto_service.dto.ProductoDto;
+import com.pharmanet.producto_service.entity.ClaseReceta;
 import com.pharmanet.producto_service.entity.Producto;
 import com.pharmanet.producto_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.producto_service.exception.ResourceNotFoundException;
@@ -100,7 +102,7 @@ public class ProductoServiceTest {
         String resultado = service.procesarSku(sku);
 
         assertNotNull(resultado);
-        assertEquals("SU00000001", resultado);
+        assertEquals("PR00000001", resultado);
     }
 
     @Test
@@ -199,7 +201,7 @@ public class ProductoServiceTest {
 
         assertNotNull(resultado);
         assertEquals(1, resultado.getTotalElements());
-        assertEquals(7000, resultado.getContent().get(0).getPrecioVenta());
+        assertEquals(new BigDecimal(7000), resultado.getContent().get(0).getPrecioVenta());
 
         verify(repo).findByPrecioVentaBetween(5000, 8000, pageable);
     }
@@ -219,7 +221,7 @@ public class ProductoServiceTest {
     }
 
     // ===========================================
-    // BUSCAR POR PRECIO VENTA
+    // MOSTRAR TODOS
     // ===========================================
 
     @Test
@@ -324,8 +326,147 @@ public class ProductoServiceTest {
     // OBTENER RECETA
     // ===========================================
 
+    @Test
+    @DisplayName("Obtiene la clase de receta de SIN_RECETA")
+    void shouldReturnReceta_SIN_RECETA() {
+
+        Producto entidad = new Producto();
+        entidad.setSku("PR0001");
+        entidad.setReceta(ClaseReceta.SIN_RECETA);
+
+        List<String> lista = List.of("PR0001");
+
+        when(repo.findBySku("PR0001")).thenReturn(Optional.of(entidad));
+
+        String resultado = service.obtenerReceta(lista);
+
+        assertNotNull(resultado);
+        assertEquals("SIN_RECETA", resultado);
+
+        verify(repo).findBySku("PR0001");
+        
+    }
+
+    @Test
+    @DisplayName("Obtiene la clase de receta de RECETA_PRESENTADA")
+    void shouldReturnReceta_RECETA_PRESENTADA() {
+
+        Producto entidad = new Producto();
+        entidad.setSku("PR0001");
+        entidad.setReceta(ClaseReceta.RECETA_PRESENTADA);
+
+        List<String> lista = List.of("PR0001");
+
+        when(repo.findBySku("PR0001")).thenReturn(Optional.of(entidad));
+
+        String resultado = service.obtenerReceta(lista);
+
+        assertNotNull(resultado);
+        assertEquals("RECETA_PRESENTADA", resultado);
+
+        verify(repo).findBySku("PR0001");
+        
+    }
+
+    @Test
+    @DisplayName("Obtiene la clase de receta de RECETA_RETENIDA")
+    void shouldReturnReceta_RECETA_RETENIDA() {
+
+        Producto entidad = new Producto();
+        entidad.setSku("PR0001");
+        entidad.setReceta(ClaseReceta.RECETA_RETENIDA);
+
+        List<String> lista = List.of("PR0001");
+
+        when(repo.findBySku("PR0001")).thenReturn(Optional.of(entidad));
+
+        String resultado = service.obtenerReceta(lista);
+
+        assertNotNull(resultado);
+        assertEquals("RECETA_RETENIDA", resultado);
+
+        verify(repo).findBySku("PR0001");
+        
+    }
+
+    @Test
+    @DisplayName("No encuentra el producto ingresado")
+    void shouldReturnReceta_NotFound() {
+
+        List<String> lista = List.of("PR0001");
+
+        when(repo.findBySku("PR0001")).thenReturn(Optional.empty());
+
+        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> service.obtenerReceta(lista));
+
+        assertNotNull(exception);
+        assertEquals("No se encuentra el producto con el sku: PR0001", exception.getMessage());
+
+        verify(repo).findBySku("PR0001");
+        
+    }
+
     // ===========================================
     // CALCULAR PRECIO TOTAL
     // ===========================================
+
+    @Test
+    @DisplayName("Obtiene el precio total de una venta")
+    void shouldReturnTotal_NormalCase() {
+        Producto entidad = new Producto();
+        entidad.setSku("PR0001");
+        entidad.setPrecioVenta(new BigDecimal(12000));
+
+        Map<String, Integer> map = Map.of("PR0001", 1);
+
+        when(repo.findBySku("PR0001")).thenReturn(Optional.of(entidad));
+
+        BigDecimal resultado = service.calcularPrecioTotal(map);
+
+        assertNotNull(resultado);
+        assertEquals(new BigDecimal(12000), resultado);
+
+        verify(repo).findBySku("PR0001");
+    }
+
+    @Test
+    @DisplayName("Obtiene el precio total de una venta de varios productos")
+    void shouldReturnTotal_LimitCase() {
+        Producto entidad1 = new Producto();
+        entidad1.setSku("PR0001");
+        entidad1.setPrecioVenta(new BigDecimal(12000));
+
+        Producto entidad2 = new Producto();
+        entidad2.setSku("PR0002");
+        entidad2.setPrecioVenta(new BigDecimal(6000));
+
+        Map<String, Integer> map = Map.of("PR0001", 5, "PR0002", 4);
+
+        when(repo.findBySku("PR0001")).thenReturn(Optional.of(entidad1));
+        when(repo.findBySku("PR0002")).thenReturn(Optional.of(entidad2));
+
+        BigDecimal resultado = service.calcularPrecioTotal(map);
+
+        assertNotNull(resultado);
+        assertEquals(new BigDecimal(84000), resultado);
+
+        verify(repo).findBySku("PR0001");
+    }
+
+    @Test
+    @DisplayName("No encuentra el producto")
+    void shouldReturnTotal_NotFound() {
+
+        Map<String, Integer> map = Map.of("PR0001", 1);
+
+        when(repo.findBySku("PR0001")).thenReturn(Optional.empty());
+
+        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> service.calcularPrecioTotal(map));
+
+        assertNotNull(exception);
+        assertEquals("No se encuentra el producto con el sku: PR0001", exception.getMessage());
+
+        verify(repo).findBySku("PR0001");
+    }
     
 }

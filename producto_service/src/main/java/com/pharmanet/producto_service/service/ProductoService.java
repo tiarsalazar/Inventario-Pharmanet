@@ -1,13 +1,15 @@
 package com.pharmanet.producto_service.service;
 
 import java.math.BigDecimal;
-
+import java.util.List;
+import java.util.Map;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.pharmanet.producto_service.dto.ProductoDto;
 import com.pharmanet.producto_service.dto.ProductoMapper;
+import com.pharmanet.producto_service.entity.ClaseReceta;
 import com.pharmanet.producto_service.entity.Producto;
 import com.pharmanet.producto_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.producto_service.exception.ResourceNotFoundException;
@@ -33,13 +35,13 @@ public class ProductoService {
         log.info("Inicia guardado de producto");
         log.debug("dto: {}", dto);
 
+        dto.setSku(procesarSku(dto.getSku()));
+
         log.info("Valida que no se encuentre en el sistema");
         if(productoRepository.findBySku(dto.getSku()).isPresent()) {
             log.warn("El producto {} ya se encuentra registrado en el sistema.", dto.getSku());
             throw new ResourceAlreadyExistsException("Ya existe un producto con el sku: " + dto.getSku());
         }
-
-        dto.setSku(procesarSku(dto.getSku()));
 
         Producto entidad = ProductoMapper.toModel(dto);
 
@@ -126,22 +128,43 @@ public class ProductoService {
     // MÉTODOS EXTERNOS
     // ===================================================
     
-    public String obtenerReceta(String sku) {
-        log.info("Inicia búsqueda de tipo de receta");
-        log.debug(sku);
-        Producto producto = productoRepository.findBySku(sku).orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + sku));
+    public String obtenerReceta(List<String> skus) {
+        log.info("Inicia búsqueda de tipo de receta de mayor jerarquía");
+        log.debug("skus: {}", skus);
+
+        List<Producto> productos = skus.stream()
+            .map(p -> productoRepository.findBySku(p)
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + p)))
+            .toList();
+
+        String receta = "SIN_RECETA";
+
+        for (Producto p : productos) {
+            if (p.getReceta().equals(ClaseReceta.RECETA_PRESENTADA)) {
+                receta = "RECETA_PRESENTADA";
+            } else if (p.getReceta().equals(ClaseReceta.RECETA_RETENIDA)) {
+                receta = "RECETA_RETENIDA";
+                break;
+            }
+        }
         
-        return producto.getReceta().toString();
+        return receta;
     }
 
-    public BigDecimal calcularPrecioTotal(String sku, int cantidad) {
+    public BigDecimal calcularPrecioTotal(Map<String, Integer> productos) {
         log.info("Se inicia procedimiento para calular precio de venta total");
-        log.debug("sku: {} cantidad: {}", sku, cantidad);
+        log.debug("productos: {}", productos);
 
-        Producto entidad = productoRepository.findBySku(sku)
-                .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + sku));
+        BigDecimal total = new BigDecimal(0);
 
-        return entidad.getPrecioVenta().multiply(new BigDecimal(cantidad));
+        // Obtiene el precio de la venta de cada producto y lo multiplica por la cantidad
+        for (Map.Entry<String, Integer> p : productos.entrySet()) {
+            total = total.add(productoRepository.findBySku(p.getKey())
+                .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el producto con el sku: " + p.getKey()))
+                .getPrecioVenta().multiply(new BigDecimal(p.getValue())));
+        }
+
+        return total;
     }
 
 

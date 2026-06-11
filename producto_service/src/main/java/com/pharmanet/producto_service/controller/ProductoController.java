@@ -1,6 +1,8 @@
 package com.pharmanet.producto_service.controller;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -67,15 +69,17 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.OK).body(prodPorPrecioVenta);
     }
 
-    @GetMapping("/receta/{sku}")
-    public String obtenerReceta(@PathVariable String sku) {
-        return productoService.obtenerReceta(sku);
+    @PostMapping("/recetas")
+    public ResponseEntity<String> obtenerReceta(@RequestBody List<String> skus) {
+        String recetaMayor = productoService.obtenerReceta(skus);
+        return ResponseEntity.status(HttpStatus.OK).body(recetaMayor);
     }
     
 
     @PostMapping("/calcular")
-    public BigDecimal calcularPrecioTotalVenta(@RequestParam String sku, @RequestParam int cantidad) {
-        return productoService.calcularPrecioTotal(sku, cantidad);
+    public ResponseEntity<BigDecimal> calcularPrecioTotalVenta(@RequestBody Map<String, Integer> productos) {
+        BigDecimal totalVenta = productoService.calcularPrecioTotal(productos);
+        return ResponseEntity.status(HttpStatus.OK).body(totalVenta);
     }
 
     @PostMapping
