@@ -66,7 +66,7 @@ public class VentaService {
         } else if(!dto.getFechaVenta().equals(LocalDate.now())) {
             throw new IllegalArgumentException("La fecha de la venta no puede ser distinta a la fecha actual. Fecha ingresada: "
             + dto.getFechaVenta()
-            + "Fecha actual: " + LocalDate.now());
+            + ". Fecha actual: " + LocalDate.now());
         }
 
         log.info("Obtiene tipo de receta del producto");
@@ -83,7 +83,7 @@ public class VentaService {
         try {
             receta = productoFeignClient.obtenerReceta(skus)
                 .getBody();
-        } catch (Exception e) {
+        } catch (FeignException.FeignClientException e) {
             throw new ResourceNotFoundException("No se ha encontrado alguno de los productos ingresados");
         }
 
@@ -156,6 +156,10 @@ public class VentaService {
         return detalleVentas;
     }
 
+    // ==========================================
+    // READ
+    // ==========================================
+
     public Page<VentaDto> mostrarTodos(Pageable pageable) {
         return ventaRepository.findAll(pageable)
             .map(VentaMapper::toDto);
@@ -206,6 +210,10 @@ public class VentaService {
             .map(VentaMapper::toDto);
     }
 
+    // ==========================================
+    // UPDATE
+    // ==========================================
+
     public void actualizarVenta(VentaDto dto) {
         log.info("Inicia actualización de dto");
         log.debug("dto: {}", dto);
@@ -216,6 +224,10 @@ public class VentaService {
         Venta venta = VentaMapper.toModel(dto);
         ventaRepository.save(venta);
     }
+
+    // ==========================================
+    // DELETE
+    // ==========================================
 
     public void eliminarVenta(Long codVenta) {
         log.info("Inicia eliminación de la venta");
