@@ -1,6 +1,7 @@
 package com.pharmanet.inventario_service.service;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,7 +92,7 @@ public class InventarioService {
     @Transactional(readOnly = true)
     public Page<MovimientoResponse> obtenerMovimientoPorFecha(String codSucursal, LocalDate inicio, LocalDate fin, Pageable pageable){
         log.info("Obteniendo movimientos entre: {} y {}", inicio, fin);
-        return movRepo.findByCodSucursalAndFechaBetween(codSucursal, inicio.atStartOfDay(), fin.atTime(23, 59, 59), pageable)
+        return movRepo.findByCodSucursalAndFechaBetween(codSucursal, inicio.atStartOfDay(), fin.atTime(LocalTime.MAX), pageable)
             .map(mapper::toMovimientoResponse);
     }
 
