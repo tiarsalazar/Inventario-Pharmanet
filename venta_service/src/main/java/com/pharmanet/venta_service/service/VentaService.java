@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import com.pharmanet.venta_service.client.InventarioFeignClient;
 import com.pharmanet.venta_service.client.ProductoFeignClient;
 import com.pharmanet.venta_service.client.UsuarioFeignClient;
-import com.pharmanet.venta_service.dto.SolicitudVenta;
+import com.pharmanet.venta_service.dto.RegistroVenta;
 import com.pharmanet.venta_service.dto.VentaDto;
 import com.pharmanet.venta_service.dto.VentaMapper;
 import com.pharmanet.venta_service.dto.connector.FeignClientResponse;
@@ -21,6 +21,7 @@ import com.pharmanet.venta_service.entity.Venta;
 import com.pharmanet.venta_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.venta_service.exception.ResourceNotFoundException;
 import com.pharmanet.venta_service.exception.VentaInvalida;
+import com.pharmanet.venta_service.repository.DetalleVentaRepository;
 import com.pharmanet.venta_service.repository.VentaRepository;
 import com.pharmanet.venta_service.request.InventarioRequest;
 import com.pharmanet.venta_service.request.UsuarioRequest;
@@ -44,13 +45,13 @@ public class VentaService {
 
     private final VentaRepository ventaRepository;
 
-    private final DetalleVenta detalleVentaRepository;
+    private final DetalleVentaRepository detalleVentaRepository;
 
     // ==========================================
     // SAVE
     // ==========================================
 
-    public SolicitudVenta agregarVenta(SolicitudVenta dto) {
+    public RegistroVenta agregarVenta(RegistroVenta dto) {
         log.info("Inicia funcionalidad de agregar venta");
         log.debug("dto: {}", dto);
 
@@ -137,14 +138,12 @@ public class VentaService {
             detalleVentaRepository.save(dv);
         }
 
-        log.info("Agrega nueva venta");
-        log.debug("venta: {}", venta);
-        return VentaMapper.toDto(ventaRepository.save(venta));
+        return VentaMapper.toRegistroVenta(venta, detalleVentas);
     }
 
     public List<DetalleVenta> convertirDetalleVenta(Map<String, Integer> productos) {
 
-        log.info("Conversión de productos a detalle ventas")
+        log.info("Conversión de productos a detalle ventas");
         List<DetalleVenta> detalleVentas = new ArrayList<>();
 
         for (Map.Entry<String, Integer> p : productos.entrySet()) {
@@ -162,15 +161,16 @@ public class VentaService {
             .map(VentaMapper::toDto);
     }
 
-    public VentaDto buscarPorCodVenta(Long codVenta) {
+    public RegistroVenta buscarPorCodVenta(Long codVenta) {
         log.info("Inicia búsqueda de venta por codVenta");
         log.debug("codVenta: {}", codVenta);
     
         Venta venta = ventaRepository.findByCodVenta(codVenta)
-            .orElseThrow(() -> new ResourceNotFoundException("No existe una venta con el codVenta: " + codVenta));
+            .orElseThrow(() -> new ResourceNotFoundException("No existe una venta con el código: " + codVenta));
+
+        List<DetalleVenta> detallesVenta = detalleVentaRepository.findByVenta_CodVenta(codVenta);
         
-        log.info("Convierte a dto y retorna");
-        return VentaMapper.toDto(venta);
+        return VentaMapper.toRegistroVenta(venta, detallesVenta);
     }
 
     public Page<VentaDto> buscarPorFechas(LocalDate inicio, LocalDate termino, Pageable pageable) {
@@ -178,9 +178,12 @@ public class VentaService {
 
         log.info("Valida que la fecha de inicio sea anterior a la fecha de término");
         log.debug("Inicio: {} Término: {}", inicio, termino);
-        if (!inicio.isBefore(termino)) {
+
+        if (!inicio.isBefore(termino))
             throw new IllegalArgumentException("La fecha de inicio debe ser anterior a la fecha de término");
-        }
+
+        if (inicio.isBefore(LocalDate.parse("1998/01/01")))
+            throw new IllegalArgumentException("No hay registros antes de la fecha 1998");
 
         log.info("Devuelve page de ventas");
         return ventaRepository.findByFechaVentaBetween(inicio, termino, pageable)
@@ -192,9 +195,11 @@ public class VentaService {
         log.debug("día: {}", dia);
         
         log.info("Valida que la fecha ingresada sea igual o anterior a la actual");
-        if (dia.isAfter(LocalDate.now())) {
+        if (dia.isAfter(LocalDate.now()))
             throw new IllegalArgumentException("La fecha de inicio no puede ser posterior a la fecha actual");
-        }
+
+        if (dia.isBefore(LocalDate.parse("1998/01/01")))
+            throw new IllegalArgumentException("No hay registros antes de la fecha 1998");
 
         log.info("Devuelve page de ventas");
         return ventaRepository.findByFechaVenta(dia, pageable)
@@ -205,20 +210,19 @@ public class VentaService {
         log.info("Inicia actualización de dto");
         log.debug("dto: {}", dto);
         
-        if (!ventaRepository.findByCodVenta(dto.getCodVenta()).isPresent()) {
-            throw new ResourceNotFoundException("No se encuentra el producto con el ID: " + dto.getCodVenta());
-        }
+        if (!ventaRepository.findByCodVenta(dto.getCodVenta()).isPresent())
+            throw new ResourceNotFoundException("No se encuentra la venta con el código: " + dto.getCodVenta());
 
         Venta venta = VentaMapper.toModel(dto);
         ventaRepository.save(venta);
     }
 
     public void eliminarVenta(Long codVenta) {
-        log.info("Inicia eliminación de producto");
+        log.info("Inicia eliminación de la venta");
         log.debug("codVenta: {}", codVenta);
 
         Venta venta = ventaRepository.findByCodVenta(codVenta)
-            .orElseThrow(() -> new ResourceNotFoundException("No existe un producto con el codVenta: " + codVenta));
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la venta con el código: " + codVenta));
 
         ventaRepository.delete(venta);
     }

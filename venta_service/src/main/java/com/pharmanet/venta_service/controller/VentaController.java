@@ -3,6 +3,7 @@ package com.pharmanet.venta_service.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pharmanet.venta_service.dto.RegistroVenta;
 import com.pharmanet.venta_service.dto.VentaDto;
 import com.pharmanet.venta_service.service.VentaService;
 
@@ -45,9 +46,9 @@ public class VentaController {
     
 
     @GetMapping("/{codVenta}")
-    public ResponseEntity<VentaDto> buscarPorCodVenta(@PathVariable Long codVenta) {
-        VentaDto ventaDto = ventaService.buscarPorCodVenta(codVenta);
-        return ResponseEntity.status(HttpStatus.OK).body(ventaDto);
+    public ResponseEntity<RegistroVenta> buscarPorCodVenta(@PathVariable Long codVenta) {
+        RegistroVenta dto = ventaService.buscarPorCodVenta(codVenta);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @GetMapping("/entre_fechas")
@@ -67,9 +68,9 @@ public class VentaController {
     }
 
     @PostMapping
-    public ResponseEntity<VentaDto> agregarVenta(@Valid @RequestBody VentaDto ventaDto) {
-        VentaDto venta = ventaService.agregarVenta(ventaDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(venta);
+    public ResponseEntity<RegistroVenta> agregarVenta(@Valid @RequestBody RegistroVenta dto) {
+        RegistroVenta resultado = ventaService.agregarVenta(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(resultado);
     }
     
     @PutMapping

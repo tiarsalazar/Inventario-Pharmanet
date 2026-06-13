@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SolicitudVenta {
+public class RegistroVenta {
 
     @NotNull(message = "Este campo no puede estar vacío.")
     private Long codVenta;
@@ -32,7 +32,7 @@ public class SolicitudVenta {
 
     private LocalDate fechaVenta;
 
-    public SolicitudVenta(Long codVenta, String codSucursal, String run, Map<String, Integer> productos) {
+    public RegistroVenta(Long codVenta, String codSucursal, String run, Map<String, Integer> productos) {
         this.codVenta = codVenta;
         this.codSucursal = codSucursal;
         this.run = run;
