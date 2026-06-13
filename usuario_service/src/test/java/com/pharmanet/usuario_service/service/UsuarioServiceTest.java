@@ -25,8 +25,8 @@ import org.springframework.data.domain.Pageable;
 
 import com.pharmanet.usuario_service.client.SucursalFeignClient;
 import com.pharmanet.usuario_service.dto.UsuarioDTO;
-import com.pharmanet.usuario_service.dto.MsResponse.UsuarioRequest;
-import com.pharmanet.usuario_service.dto.MsResponse.UsuarioResponse;
+import com.pharmanet.usuario_service.dto.connector.UsuarioRequest;
+import com.pharmanet.usuario_service.dto.connector.UsuarioResponse;
 import com.pharmanet.usuario_service.entity.Usuario;
 import com.pharmanet.usuario_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.usuario_service.exception.ResourceNotFoundException;
@@ -340,7 +340,7 @@ public class UsuarioServiceTest {
     void validarUsuario_NormalCase() {
 
         UsuarioRequest request = new UsuarioRequest();
-        request.setRunVendedor("11111111-1");
+        request.setRun("11111111-1");
         request.setCodSucursal("SU0001");
         request.setReceta("SIN_RECETA");
 
@@ -366,7 +366,7 @@ public class UsuarioServiceTest {
     void validarUsuario_LimitCase() {
 
         UsuarioRequest request = new UsuarioRequest();
-        request.setRunVendedor("11111111-1");
+        request.setRun("11111111-1");
         request.setCodSucursal("SU0001");
         request.setReceta("RECETA_PRESENTADA");
 
@@ -396,7 +396,7 @@ public class UsuarioServiceTest {
     void validarUsuario_BadCase_NoAutorizado() {
 
         UsuarioRequest request = new UsuarioRequest();
-        request.setRunVendedor("11111111-1");
+        request.setRun("11111111-1");
         request.setCodSucursal("SU0001");
         request.setReceta("RECETA_RETENIDA");
 
@@ -422,7 +422,7 @@ public class UsuarioServiceTest {
     void validarUsuario_BadCase_DistintaSucursal() {
 
         UsuarioRequest request = new UsuarioRequest();
-        request.setRunVendedor("11111111-1");
+        request.setRun("11111111-1");
         request.setCodSucursal("SU0001");
         request.setReceta("SIN_RECETA");
 
@@ -448,7 +448,7 @@ public class UsuarioServiceTest {
     void validarUsuario_BadCase_SinAnalistaQuimico() {
 
         UsuarioRequest request = new UsuarioRequest();
-        request.setRunVendedor("11111111-1");
+        request.setRun("11111111-1");
         request.setCodSucursal("SU0001");
         request.setReceta("RECETA_PRESENTADA");
 

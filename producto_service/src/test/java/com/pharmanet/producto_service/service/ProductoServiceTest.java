@@ -421,7 +421,7 @@ public class ProductoServiceTest {
 
         when(repo.findBySku("PR0001")).thenReturn(Optional.of(entidad));
 
-        BigDecimal resultado = service.calcularPrecioTotal(map);
+        BigDecimal resultado = service.calcularPrecioVentaTotal(map);
 
         assertNotNull(resultado);
         assertEquals(new BigDecimal(12000), resultado);
@@ -445,7 +445,7 @@ public class ProductoServiceTest {
         when(repo.findBySku("PR0001")).thenReturn(Optional.of(entidad1));
         when(repo.findBySku("PR0002")).thenReturn(Optional.of(entidad2));
 
-        BigDecimal resultado = service.calcularPrecioTotal(map);
+        BigDecimal resultado = service.calcularPrecioVentaTotal(map);
 
         assertNotNull(resultado);
         assertEquals(new BigDecimal(84000), resultado);
@@ -461,7 +461,7 @@ public class ProductoServiceTest {
 
         when(repo.findBySku("PR0001")).thenReturn(Optional.empty());
 
-        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> service.calcularPrecioTotal(map));
+        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> service.calcularPrecioVentaTotal(map));
 
         assertNotNull(exception);
         assertEquals("No se encuentra el producto con el sku: PR0001", exception.getMessage());

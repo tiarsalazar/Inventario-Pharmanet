@@ -1,5 +1,9 @@
 package com.pharmanet.venta_service.request;
 
+import java.util.List;
+
+import com.pharmanet.venta_service.entity.DetalleVenta;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -18,8 +22,8 @@ public class InventarioRequest {
     private String codSucursal;
     
     @NotBlank(message = "Este campo no puede ser nulo")
-    private String runVendedor;
+    private String run;
 
     @NotNull(message = "Este campo no ser nulo")
-    private Integer cantidad;
+    private List<DetalleVenta> productos;
 }

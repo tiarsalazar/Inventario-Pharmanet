@@ -151,7 +151,7 @@ public class ProductoService {
         return receta;
     }
 
-    public BigDecimal calcularPrecioTotal(Map<String, Integer> productos) {
+    public BigDecimal calcularPrecioVentaTotal(Map<String, Integer> productos) {
         log.info("Se inicia procedimiento para calular precio de venta total");
         log.debug("productos: {}", productos);
 

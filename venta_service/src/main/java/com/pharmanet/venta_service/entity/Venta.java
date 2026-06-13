@@ -1,12 +1,14 @@
 package com.pharmanet.venta_service.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
@@ -31,28 +33,24 @@ public class Venta {
     @Column(name = "cod_venta", nullable = false)
     private Long codVenta;
 
-    @Column(nullable = false)
-    private String sku;
-
     @Column(name = "cod_sucursal", nullable = false, unique = true)
     private String codSucursal;
 
-    @Column(name = "run_vendedor", nullable = false)
+    @Column(name = "run", nullable = false)
     @Pattern(regexp = "^[0-9]{7,8}-[0-9kK]$", message = "RUN inválido")
-    private String runVendedor;
+    private String run;
     
+    @OneToMany(mappedBy = "venta")
     @Column(nullable = false)
-    private Integer cantidad;
+    private List<DetalleVenta> detalleVentas;
 
     @Column(name = "fecha_venta", nullable = false)
     private LocalDate fechaVenta;
     
-    public Venta(Long codVenta, String sku, String codSucursal, int cantidad, String runVendedor, LocalDate fechaVenta) {
+    public Venta(Long codVenta, String codSucursal, String run, LocalDate fechaVenta) {
         this.codVenta = codVenta;
-        this.sku = sku;
         this.codSucursal = codSucursal;
-        this.cantidad = cantidad;
-        this.runVendedor = runVendedor;
+        this.run = run;
         this.fechaVenta = fechaVenta;
     }
 }

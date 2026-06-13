@@ -1,6 +1,9 @@
 package com.pharmanet.venta_service.service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,12 +12,15 @@ import org.springframework.stereotype.Service;
 import com.pharmanet.venta_service.client.InventarioFeignClient;
 import com.pharmanet.venta_service.client.ProductoFeignClient;
 import com.pharmanet.venta_service.client.UsuarioFeignClient;
+import com.pharmanet.venta_service.dto.SolicitudVenta;
 import com.pharmanet.venta_service.dto.VentaDto;
 import com.pharmanet.venta_service.dto.VentaMapper;
+import com.pharmanet.venta_service.dto.connector.FeignClientResponse;
+import com.pharmanet.venta_service.entity.DetalleVenta;
 import com.pharmanet.venta_service.entity.Venta;
+import com.pharmanet.venta_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.venta_service.exception.ResourceNotFoundException;
 import com.pharmanet.venta_service.exception.VentaInvalida;
-import com.pharmanet.venta_service.exception.VentaNotUniqueException;
 import com.pharmanet.venta_service.repository.VentaRepository;
 import com.pharmanet.venta_service.request.InventarioRequest;
 import com.pharmanet.venta_service.request.UsuarioRequest;
@@ -38,70 +44,117 @@ public class VentaService {
 
     private final VentaRepository ventaRepository;
 
-    public VentaDto agregarVenta(VentaDto ventaDto) {
-        log.info("Inicia funcionalidad de guardado de venta");
-        log.debug("id: {}", ventaDto.getCodVenta());
+    private final DetalleVenta detalleVentaRepository;
+
+    // ==========================================
+    // SAVE
+    // ==========================================
+
+    public SolicitudVenta agregarVenta(SolicitudVenta dto) {
+        log.info("Inicia funcionalidad de agregar venta");
+        log.debug("dto: {}", dto);
 
         log.info("Valida que la venta no haya sido registrada anteriormente");
-        if (ventaRepository.findByCodVenta(ventaDto.getCodVenta()).isPresent()) {
-            throw new VentaNotUniqueException("Ya existe una venta con el id: " + ventaDto.getCodVenta());
+        if (ventaRepository.findByCodVenta(dto.getCodVenta()).isPresent()) {
+            throw new ResourceAlreadyExistsException("Ya existe una venta con el código: " + dto.getCodVenta());
         }
 
         log.info("Valida que la fecha de la venta sea exactamente igual a la de ingreso");
-        if(!ventaDto.getFechaVenta().equals(LocalDate.now())) {
-            throw new IllegalArgumentException("La fecha de la venta no puede ser distinta a la fecha actual.\nFecha ingresada: "
-            + ventaDto.getFechaVenta()
-            + "\nFecha actual: " + LocalDate.now());
+        if (dto.getFechaVenta() == null) {
+            dto.setFechaVenta(LocalDate.now());
+        } else if(!dto.getFechaVenta().equals(LocalDate.now())) {
+            throw new IllegalArgumentException("La fecha de la venta no puede ser distinta a la fecha actual. Fecha ingresada: "
+            + dto.getFechaVenta()
+            + "Fecha actual: " + LocalDate.now());
         }
 
         log.info("Obtiene tipo de receta del producto");
-        log.debug("sku: {}", ventaDto.getSku());
+
+        List<DetalleVenta> detalleVentas = convertirDetalleVenta(dto.getProductos());
+
+        List<String> skus = detalleVentas.stream()
+            .map(DetalleVenta::getSku)
+            .toList();
+
+        log.debug("skus: {}", skus);
 
         String receta;
         try {
-            receta = productoFeignClient.obtenerReceta(ventaDto.getSku());
+            receta = productoFeignClient.obtenerReceta(skus)
+                .getBody();
         } catch (Exception e) {
-            throw new ResourceNotFoundException("No se ha encontrado un producto con el sku: " + ventaDto.getSku());
+            throw new ResourceNotFoundException("No se ha encontrado alguno de los productos ingresados");
         }
 
-        log.info("Valida que el usuario pueda vender producto");
+        log.info("Valida que la venta del usuario sea efectiva");
         
         UsuarioRequest usuarioRequest = new UsuarioRequest();
-        usuarioRequest.setRunVendedor(ventaDto.getRunVendedor());
-        usuarioRequest.setCodSucursal(ventaDto.getCodSucursal());
+        usuarioRequest.setRun(dto.getRun());
+        usuarioRequest.setCodSucursal(dto.getCodSucursal());
         usuarioRequest.setReceta(receta);
-        log.debug("runVendedor: {}, codSucursal: {}, receta: {}", usuarioRequest.getRunVendedor(), usuarioRequest.getCodSucursal(), receta);
+        log.debug("run: {}, codSucursal: {}, receta: {}", usuarioRequest.getRun(), usuarioRequest.getCodSucursal(), receta);
 
-        boolean validacion;
+        FeignClientResponse usuarioValido;
         try {
-            validacion = usuarioFeignClient.validarUsuarioVenta(usuarioRequest);
+            usuarioValido = usuarioFeignClient.validarUsuarioVenta(usuarioRequest)
+                .getBody();
         } catch (FeignException e) {
-            throw new VentaInvalida("El usuario ingresado " + ventaDto.getRunVendedor() + " no se encuentra disponible para realizar la venta");
+            throw new VentaInvalida("No se encuentra el usuario con el run: " + usuarioRequest.getRun());
         }
 
-        if (!validacion) {
-            throw new VentaInvalida("El usuario ingresado " + ventaDto.getRunVendedor() + " no se encuentra disponible para realizar la venta");
-        }
+        if (!usuarioValido.isEstado())
+            throw new VentaInvalida(usuarioValido.getMensaje());
 
         log.info("Envío de solicitud de venta a inventario");
+        FeignClientResponse inventarioValido;
         try {
             InventarioRequest inventarioRequest = new InventarioRequest();
-            inventarioRequest.setRunVendedor(ventaDto.getRunVendedor());
-            inventarioRequest.setCodSucursal(ventaDto.getCodSucursal());
-            inventarioRequest.setSku(ventaDto.getSku());
-            inventarioRequest.setCantidad(ventaDto.getCantidad());
-            log.debug("runVendedor: {}, codSucursal: {}, sku: {}, cantidad: {}", inventarioRequest.getRunVendedor(), inventarioRequest.getCodSucursal(), inventarioRequest.getSku(), inventarioRequest.getCantidad());
-            inventarioFeignClient.procesarVenta(inventarioRequest);
+            inventarioRequest.setRun(dto.getRun());
+            inventarioRequest.setCodSucursal(dto.getCodSucursal());
+            inventarioRequest.setProductos(detalleVentas);
+            log.debug("runVendedor: {}, codSucursal: {}, productos: {}", inventarioRequest.getRun(), inventarioRequest.getCodSucursal(), inventarioRequest.getProductos());
+
+            inventarioValido = inventarioFeignClient.procesarVenta(inventarioRequest)
+                .getBody();
         } catch (FeignException e){
-            throw new VentaInvalida("No existe un inventario con el código de la sucursal: " + ventaDto.getCodSucursal() + " ni el sku: " + ventaDto.getSku() + " o no hay stock disponible.");
+            throw new VentaInvalida("No existe un inventario con el código de la sucursal: " + dto.getCodSucursal() + " o alguno de los productos no está disponible");
         }
 
-        log.info("Convierte ventaDto en modelo");
-        Venta venta = VentaMapper.toModel(ventaDto);
+        if (!inventarioValido.isEstado())
+            throw new VentaInvalida(inventarioValido.getMensaje());
+
+        log.info("Agrega la venta");
+
+        Venta venta = ventaRepository.save(new Venta(
+            dto.getCodVenta(),
+            dto.getCodSucursal(),
+            dto.getRun(),
+            dto.getFechaVenta()));
+
+        log.info("Agrega los detalles de ventas");
+        for (DetalleVenta dv : detalleVentas) {
+            dv.setVenta(venta);
+            detalleVentaRepository.save(dv);
+        }
 
         log.info("Agrega nueva venta");
         log.debug("venta: {}", venta);
         return VentaMapper.toDto(ventaRepository.save(venta));
+    }
+
+    public List<DetalleVenta> convertirDetalleVenta(Map<String, Integer> productos) {
+
+        log.info("Conversión de productos a detalle ventas")
+        List<DetalleVenta> detalleVentas = new ArrayList<>();
+
+        for (Map.Entry<String, Integer> p : productos.entrySet()) {
+            if (p.getValue() <= 0) throw new IllegalArgumentException("Escoga al menos un producto");
+
+            DetalleVenta entidad = new DetalleVenta(p.getKey(), p.getValue());
+            detalleVentas.add(entidad);
+        }
+
+        return detalleVentas;
     }
 
     public Page<VentaDto> mostrarTodos(Pageable pageable) {

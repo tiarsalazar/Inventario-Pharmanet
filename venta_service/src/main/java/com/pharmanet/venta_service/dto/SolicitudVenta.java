@@ -3,6 +3,7 @@ package com.pharmanet.venta_service.dto;
 import java.time.LocalDate;
 import java.util.Map;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class VentaDto {
+public class SolicitudVenta {
 
     @NotNull(message = "Este campo no puede estar vacío.")
     private Long codVenta;
@@ -25,12 +26,17 @@ public class VentaDto {
     @Pattern(regexp = "^[0-9]{7,8}-[0-9kK]$", message = "RUN inválido")
     private String run;
 
+    @NotNull(message = "Este campo no puede estar vacío.")
+    @Min(value = 1, message = "Ingrese al menos un producto.")
+    private Map<String, Integer> productos;
+
     private LocalDate fechaVenta;
 
-    public VentaDto(Long codVenta, String codSucursal, Map<String, Integer> productos, String run, LocalDate fechaVenta) {
+    public SolicitudVenta(Long codVenta, String codSucursal, String run, Map<String, Integer> productos) {
         this.codVenta = codVenta;
         this.codSucursal = codSucursal;
         this.run = run;
+        this.productos = productos;
         this.fechaVenta = LocalDate.now();
     }
 }

@@ -76,9 +76,9 @@ public class ProductoController {
     }
     
 
-    @PostMapping("/calcular")
-    public ResponseEntity<BigDecimal> calcularPrecioTotalVenta(@RequestBody Map<String, Integer> productos) {
-        BigDecimal totalVenta = productoService.calcularPrecioTotal(productos);
+    @PostMapping("/calcular-total")
+    public ResponseEntity<BigDecimal> calcularPrecioVentaTotal(@RequestBody Map<String, Integer> productos) {
+        BigDecimal totalVenta = productoService.calcularPrecioVentaTotal(productos);
         return ResponseEntity.status(HttpStatus.OK).body(totalVenta);
     }
 
