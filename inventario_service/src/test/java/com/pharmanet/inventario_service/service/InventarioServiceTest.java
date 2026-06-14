@@ -5,7 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -37,16 +41,21 @@ import com.pharmanet.inventario_service.dto.lote.LoteResponse;
 import com.pharmanet.inventario_service.dto.movimiento.MovimientoResponse;
 import com.pharmanet.inventario_service.dto.recepcion.DetalleRecepcionRequest;
 import com.pharmanet.inventario_service.dto.recepcion.RecepcionRequest;
+import com.pharmanet.inventario_service.dto.venta.DetalleVentaRequest;
+import com.pharmanet.inventario_service.dto.venta.VentaRequest;
 import com.pharmanet.inventario_service.entity.Inventario;
 import com.pharmanet.inventario_service.entity.Lote;
 import com.pharmanet.inventario_service.entity.Movimiento;
 import com.pharmanet.inventario_service.enums.EstadoLote;
 import com.pharmanet.inventario_service.exception.BusinessException;
 import com.pharmanet.inventario_service.exception.ResourceNotFoundException;
+import com.pharmanet.inventario_service.exception.ServiceCommunicationException;
 import com.pharmanet.inventario_service.mapper.InventarioMapper;
 import com.pharmanet.inventario_service.repository.InventarioRepository;
 import com.pharmanet.inventario_service.repository.LoteRepository;
 import com.pharmanet.inventario_service.repository.MovimientoRepository;
+
+import feign.FeignException;
 
 @ExtendWith(MockitoExtension.class)
 public class InventarioServiceTest {
@@ -320,7 +329,6 @@ public class InventarioServiceTest {
         verify(mapper).toMovimientoResponse(movimiento);
     }
 
-
     @Test
     @DisplayName("Deberia hacer un ingreso de stock exitosamente cuando Recepcion haga una peticion")
     void deberiaIngresarStock_CuandoRecepcionHagaUnaPeticionExitosamente(){
@@ -389,12 +397,174 @@ public class InventarioServiceTest {
         verify(movRepo).save(any(Movimiento.class));
     }
 
+    @Test
+    @DisplayName("Deberia lanzar ResourceNotFoundException cuando la sucursal no existe en el sistema")
+    void registrarRecepcion_DeberiaLanzarException_CuandoSucursalNoExiste() {
+        // GIVEN
+        String runUsuario = "11222333-4";
+        String codSucursal = "SU-ERRONEA";
+
+        RecepcionRequest recepcionRequest = new RecepcionRequest();
+        recepcionRequest.setCodSucursal(codSucursal);
+        recepcionRequest.setDetalles(List.of(new DetalleRecepcionRequest()));
+
+        FeignException.NotFound feignException = mock(FeignException.NotFound.class);
+        doThrow(feignException).when(sucursalClient).buscarSucursal(codSucursal);
+
+        // WHEN & THEN
+        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> {
+            invService.registrarRecepcion(recepcionRequest, runUsuario);
+        });
+        assertTrue(exception.getMessage().contains("Sucursal no encontrada con codigo sucursal: " + codSucursal));
+        verify(productoClient, never()).buscarPorSku(anyString());
+        verify(invRepo, never()).save(any(Inventario.class));
+        verify(movRepo, never()).save(any(Movimiento.class));
+    }
+
+    @Test
+    @DisplayName("Deberia lanzar ResourceNotFoundException cuando el producto en el detalle no existe")
+    void registrarRecepcion_DeberiaLanzarException_CuandoProductoNoExiste() {
+        // GIVEN
+        String runUsuario = "11222333-4";
+        String codSucursal = "SU0001";
+        String skuErroneo = "PR-ERROR";
+
+        DetalleRecepcionRequest detalleRequest = new DetalleRecepcionRequest();
+        detalleRequest.setSku(skuErroneo);
+
+        RecepcionRequest recepcionRequest = new RecepcionRequest();
+        recepcionRequest.setCodSucursal(codSucursal);
+        recepcionRequest.setDetalles(List.of(detalleRequest));
+
+        doNothing().when(sucursalClient).buscarSucursal(codSucursal);
+
+        FeignException.NotFound feignException = mock(FeignException.NotFound.class);
+        doThrow(feignException).when(productoClient).buscarPorSku(skuErroneo);
+
+        // WHEN & THEN
+        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> {
+            invService.registrarRecepcion(recepcionRequest, runUsuario);
+        });
+
+        assertTrue(exception.getMessage().contains("Producto no encontrado con sku: " + skuErroneo));
+        verify(invRepo, never()).save(any(Inventario.class));
+        verify(movRepo, never()).save(any(Movimiento.class));
+    }
+
+    @Test
+    @DisplayName("Deberia lanzar ServiceCommunicationException cuando el cliente de sucursales falla por error de red")
+    void registrarRecepcion_DeberiaLanzarCommunicationException_CuandoFeignFalla() {
+        // GIVEN
+        String runUsuario = "11222333-4";
+        String codSucursal = "SU0001";
+
+        RecepcionRequest recepcionRequest = new RecepcionRequest();
+        recepcionRequest.setCodSucursal(codSucursal);
+        recepcionRequest.setDetalles(List.of(new DetalleRecepcionRequest()));
+
+        FeignException genFException = mock(FeignException.class);
+        when(genFException.status()).thenReturn(500);
+        doThrow(genFException).when(sucursalClient).buscarSucursal(codSucursal);
+
+        // WHEN & THEN
+        assertThrows(ServiceCommunicationException.class, () -> {
+            invService.registrarRecepcion(recepcionRequest, runUsuario);
+        });
+        verify(invRepo, never()).save(any(Inventario.class));
+    }
+
     // AGREGAR LOS CAMINOS TRISTES PARA EL INGRESO DE STOCK
 
     @Test
-    @DisplayName("Deberia rebajar Stock de Inventario exitosamente cuando Venta envia una peticion")
-    void deberiaRestarStockDeUnInventarioCuandoVentaEnviaPeticionExitosamente(){
+    @DisplayName("Deberia rebajar stock de inventarios cuando venta hace la peticion.")
+    void deberiaRebajarStock_CuandoVentaHaceUnaPeticionExitosamente(){
+        //GIVEN
+        String sku = "PR0001";
+        String codSucursal = "SU0001";
 
+        VentaRequest ventaRequest = new VentaRequest();
+        ventaRequest.setCodSucursal(codSucursal);
+        ventaRequest.setRun("11222333-4");
+
+        DetalleVentaRequest detalleVentaRequest = new DetalleVentaRequest();
+        detalleVentaRequest.setSku(sku);
+        detalleVentaRequest.setCantidad(60);
+
+        Inventario inventario = new Inventario();
+        inventario.setSku(sku);
+        inventario.setCodSucursal(codSucursal);
+        inventario.setStockTotal(150);
+
+        Lote lote1 = new Lote();
+        lote1.setCodLote("LOT-PR0001-001");
+        lote1.setCantidad(50);
+        lote1.setFechaVencimiento(LocalDate.of(2027, 12, 31));
+        lote1.setEstado(EstadoLote.ACTIVO);
+        lote1.setInventario(inventario);
+
+        Lote lote2 = new Lote();
+        lote2.setCodLote("LOT-PR0001-002");
+        lote2.setCantidad(100); 
+        lote2.setFechaVencimiento(LocalDate.of(2028, 7, 15));
+        lote2.setEstado(EstadoLote.ACTIVO);
+        lote2.setInventario(inventario);
+
+        List<Lote> listaLotes = new ArrayList<>(List.of(lote1, lote2));
+        inventario.setLotes(listaLotes);
+
+        ventaRequest.setProductos(List.of(detalleVentaRequest));
+
+        doNothing().when(sucursalClient).buscarSucursal(codSucursal);
+        doNothing().when(productoClient).buscarPorSku(sku);
+        when(invRepo.findBySkuAndCodSucursal(sku, codSucursal)).thenReturn(Optional.of(inventario));
+        when(loteRepo.findByInventarioAndEstadoAndCantidadGreaterThanOrderByFechaVencimientoAsc(
+            inventario, EstadoLote.ACTIVO, 0)).thenReturn(listaLotes);
+
+        //WHEN
+        invService.procesarVenta(ventaRequest);
+
+        //THEN
+        assertEquals(0, lote1.getCantidad(), "El lote 2 debió quedar vacío (0 unidades)");
+        assertEquals(EstadoLote.AGOTADO, lote1.getEstado(), "El estado del lote 2 debió cambiar a AGOTADO");
+        assertEquals(90, lote2.getCantidad(), "El lote 1 debió quedar con 90 unidades");
+        assertEquals(EstadoLote.ACTIVO, lote2.getEstado(), "El lote 1 debe seguir ACTIVO");
+        verify(invRepo, times(1)).save(inventario);
+        verify(movRepo, times(2)).save(any());
+    }
+
+    @Test
+    @DisplayName("Deberia lanzar BusinessException cuando el stock total es insuficiente para la venta")
+    void procesarVenta_DeberiaLanzarException_CuandoStockInsuficiente() {
+        // GIVEN
+        String sku = "PR0001";
+        String codSucursal = "SU0001";
+
+        VentaRequest ventaRequest = new VentaRequest();
+        ventaRequest.setCodSucursal(codSucursal);
+        ventaRequest.setRun("11222333-4");
+
+        DetalleVentaRequest detalle = new DetalleVentaRequest();
+        detalle.setSku(sku);
+        detalle.setCantidad(100);
+        ventaRequest.setProductos(List.of(detalle));
+
+        Inventario inventario = new Inventario();
+        inventario.setSku(sku);
+        inventario.setCodSucursal(codSucursal);
+        inventario.setStockTotal(40);
+
+        doNothing().when(sucursalClient).buscarSucursal(codSucursal);
+        doNothing().when(productoClient).buscarPorSku(sku);
+        when(invRepo.findBySkuAndCodSucursal(sku, codSucursal)).thenReturn(Optional.of(inventario));
+
+        // WHEN & THEN
+        BusinessException exception = assertThrows(BusinessException.class, () -> {
+        invService.procesarVenta(ventaRequest);
+        });
+
+        assertTrue(exception.getMessage().contains("Stock insuficiente para sku: " + sku));
+        verify(loteRepo, never()).findByInventarioAndEstadoAndCantidadGreaterThanOrderByFechaVencimientoAsc(any(), any(), anyInt());
+        verify(invRepo, never()).save(any(Inventario.class));
     }
 
     @Test
