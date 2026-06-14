@@ -26,8 +26,8 @@ public class RegistroVenta {
     @Pattern(regexp = "^[0-9]{7,8}-[0-9kK]$", message = "RUN inválido")
     private String run;
 
-    @NotNull(message = "Este campo no puede estar vacío.")
-    @Min(value = 1, message = "Ingrese al menos un producto.")
+    @NotBlank(message = "Este campo no puede estar vacío")
+    @Min(value = 1, message = "Ingrese al menos un producto")
     private Map<String, Integer> productos;
 
     private LocalDate fechaVenta;

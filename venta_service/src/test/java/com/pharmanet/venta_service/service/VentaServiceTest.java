@@ -58,7 +58,7 @@ public class VentaServiceTest {
     private VentaService service;
 
     // ==========================================================
-    // SAVE VENTA PROCESS
+    // SAVE VENTA
     // ==========================================================
 
     @Test
