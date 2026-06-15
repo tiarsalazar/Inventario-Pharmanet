@@ -1,5 +1,6 @@
 package com.pharmanet.venta_service.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import jakarta.validation.constraints.NotBlank;
@@ -24,6 +25,9 @@ public class VentaDto {
     @Pattern(regexp = "^[0-9]{7,8}-[0-9kK]$", message = "RUN inválido")
     private String run;
 
-    @NotNull(message = "Este campo no puede estar vacío.")
+    @NotNull(message = "Este campo no puede estar vacío")
     private LocalDate fechaVenta;
+
+    @NotNull(message = "Esta campo no puede estar vacío")
+    private BigDecimal montoTotal;
 }

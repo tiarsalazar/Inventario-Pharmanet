@@ -1,5 +1,6 @@
 package com.pharmanet.venta_service.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -46,11 +47,15 @@ public class Venta {
 
     @Column(name = "fecha_venta", nullable = false)
     private LocalDate fechaVenta;
+
+    @Column(name = "monto_total", nullable = false)
+    private BigDecimal montoTotal;
     
-    public Venta(Long codVenta, String codSucursal, String run, LocalDate fechaVenta) {
+    public Venta(Long codVenta, String codSucursal, String run, LocalDate fechaVenta, BigDecimal montoTotal) {
         this.codVenta = codVenta;
         this.codSucursal = codSucursal;
         this.run = run;
         this.fechaVenta = fechaVenta;
+        this.montoTotal = montoTotal;
     }
 }

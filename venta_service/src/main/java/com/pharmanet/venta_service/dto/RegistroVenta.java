@@ -1,5 +1,6 @@
 package com.pharmanet.venta_service.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Map;
 
@@ -32,7 +33,17 @@ public class RegistroVenta {
 
     private LocalDate fechaVenta;
 
+    private BigDecimal montoTotal;
+
     public RegistroVenta(Long codVenta, String codSucursal, String run, Map<String, Integer> productos) {
+        this.codVenta = codVenta;
+        this.codSucursal = codSucursal;
+        this.run = run;
+        this.productos = productos;
+        this.fechaVenta = LocalDate.now();
+    }
+
+    public RegistroVenta(Long codVenta, String codSucursal, String run, Map<String, Integer> productos, BigDecimal montoTotal) {
         this.codVenta = codVenta;
         this.codSucursal = codSucursal;
         this.run = run;

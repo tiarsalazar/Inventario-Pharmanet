@@ -1,5 +1,6 @@
 package com.pharmanet.venta_service.service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -84,7 +85,7 @@ public class VentaService {
             receta = productoFeignClient.obtenerReceta(skus)
                 .getBody();
         } catch (FeignException.FeignClientException e) {
-            throw new ResourceNotFoundException("No se ha encontrado alguno de los productos ingresados");
+            throw new ResourceNotFoundException("No se encuentra al menos uno de los productos ingresados");
         }
 
         log.info("Valida que la venta del usuario sea efectiva");
@@ -100,7 +101,7 @@ public class VentaService {
             usuarioValido = usuarioFeignClient.validarUsuarioVenta(usuarioRequest)
                 .getBody();
         } catch (FeignException e) {
-            throw new VentaInvalida("No se encuentra el usuario con el run: " + usuarioRequest.getRun());
+            throw new ResourceNotFoundException("No se encuentra el usuario con el run: " + usuarioRequest.getRun());
         }
 
         if (!usuarioValido.isEstado())
@@ -117,12 +118,18 @@ public class VentaService {
 
             inventarioValido = inventarioFeignClient.procesarVenta(inventarioRequest)
                 .getBody();
-        } catch (FeignException e){
+        } catch (FeignException.FeignClientException ex){
             throw new VentaInvalida("No existe un inventario con el código de la sucursal: " + dto.getCodSucursal() + " o alguno de los productos no está disponible");
         }
 
         if (!inventarioValido.isEstado())
             throw new VentaInvalida(inventarioValido.getMensaje());
+
+        BigDecimal montoTotal = productoFeignClient.calcularPrecioVentaTotal(dto.getProductos())
+            .getBody();
+        
+        if (dto.getMontoTotal() != null && dto.getMontoTotal() != montoTotal)
+            throw new VentaInvalida("El monto ingresado distinto al monto calculado. Monto ingresado: $" + dto.getMontoTotal() + ". Monto total: $" + montoTotal);
 
         log.info("Agrega la venta");
 
@@ -130,7 +137,8 @@ public class VentaService {
             dto.getCodVenta(),
             dto.getCodSucursal(),
             dto.getRun(),
-            dto.getFechaVenta()));
+            dto.getFechaVenta(),
+            montoTotal));
 
         log.info("Agrega los detalles de ventas");
         for (DetalleVenta dv : detalleVentas) {
@@ -147,7 +155,7 @@ public class VentaService {
         List<DetalleVenta> detalleVentas = new ArrayList<>();
 
         for (Map.Entry<String, Integer> p : productos.entrySet()) {
-            if (p.getValue() <= 0) throw new IllegalArgumentException("Escoga al menos un producto");
+            if (p.getValue() <= 0) throw new IllegalArgumentException("La cantidad ingresada por producto no puede ser igual o inferior a 0");
 
             DetalleVenta entidad = new DetalleVenta(p.getKey(), p.getValue());
             detalleVentas.add(entidad);
@@ -180,7 +188,7 @@ public class VentaService {
     public Page<VentaDto> buscarPorFechas(LocalDate inicio, LocalDate termino, Pageable pageable) {
         log.info("Inicia búsqueda de ventas entre fechas indicadas");
 
-        log.info("Valida que la fecha de inicio sea anterior a la fecha de término");
+        log.info("Valida que la fecha ingresada sea válida");
         log.debug("Inicio: {} Término: {}", inicio, termino);
 
         if (!inicio.isBefore(termino))
@@ -188,6 +196,9 @@ public class VentaService {
 
         if (inicio.isBefore(LocalDate.parse("1998/01/01")))
             throw new IllegalArgumentException("No hay registros antes de la fecha 1998");
+
+        if (termino.isAfter(LocalDate.now()))
+            throw new IllegalArgumentException("La fecha de término no puede ser posterior a la actual");
 
         log.info("Devuelve page de ventas");
         return ventaRepository.findByFechaVentaBetween(inicio, termino, pageable)
@@ -200,7 +211,7 @@ public class VentaService {
         
         log.info("Valida que la fecha ingresada sea igual o anterior a la actual");
         if (dia.isAfter(LocalDate.now()))
-            throw new IllegalArgumentException("La fecha de inicio no puede ser posterior a la fecha actual");
+            throw new IllegalArgumentException("La fecha ingresada no puede ser posterior a la actual");
 
         if (dia.isBefore(LocalDate.parse("1998/01/01")))
             throw new IllegalArgumentException("No hay registros antes de la fecha 1998");

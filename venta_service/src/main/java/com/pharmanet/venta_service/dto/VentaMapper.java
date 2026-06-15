@@ -28,6 +28,8 @@ public class VentaMapper {
 
         dto.setFechaVenta(venta.getFechaVenta());
 
+        dto.setMontoTotal(venta.getMontoTotal());
+
         return dto;
     }
 
@@ -38,7 +40,8 @@ public class VentaMapper {
         return new VentaDto(entidad.getCodVenta(),
             entidad.getCodSucursal(),
             entidad.getRun(),
-            entidad.getFechaVenta()
+            entidad.getFechaVenta(),
+            entidad.getMontoTotal()
         );
     }
 
@@ -49,7 +52,8 @@ public class VentaMapper {
         return new Venta(dto.getCodVenta(),
             dto.getCodSucursal(),
             dto.getRun(),
-            (dto.getFechaVenta() == null) ? LocalDate.now() : dto.getFechaVenta()
+            (dto.getFechaVenta() == null) ? LocalDate.now() : dto.getFechaVenta(),
+            dto.getMontoTotal()
         );
     }
 
