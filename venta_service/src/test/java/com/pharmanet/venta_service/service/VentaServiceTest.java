@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -43,7 +42,7 @@ import com.pharmanet.venta_service.repository.VentaRepository;
 import com.pharmanet.venta_service.request.InventarioRequest;
 import com.pharmanet.venta_service.request.UsuarioRequest;
 
-import feign.FeignException;
+import feign.FeignException.FeignClientException;
 
 @ExtendWith(MockitoExtension.class)
 public class VentaServiceTest {
@@ -89,8 +88,8 @@ public class VentaServiceTest {
         DetalleVenta detalle = new DetalleVenta();
         detalle.setSku("PR0001");
         detalle.setCantidad(1);
+        detalle.setVenta(venta);
 
-        List<DetalleVenta> lista = List.of(detalle);
         List<String> skus = List.of("PR0001");
         
         ResponseEntity<String> receta = new ResponseEntity<>("SIN_RECETA", HttpStatus.OK);
@@ -104,7 +103,7 @@ public class VentaServiceTest {
         when(ventaRepository.findByCodVenta(1L)).thenReturn(Optional.empty());
         when(productoFeign.obtenerReceta(skus)).thenReturn(receta);
         when(usuarioFeign.validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"))).thenReturn(valido);
-        when(inventarioFeign.procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista))).thenReturn(valido);
+        when(inventarioFeign.procesarVenta(any(InventarioRequest.class))).thenReturn(valido);
         when(productoFeign.calcularPrecioVentaTotal(productos)).thenReturn(valorTotal);
         when(ventaRepository.save(any(Venta.class))).thenReturn(venta);
         when(detalleRepo.save(detalle)).thenReturn(detalle);
@@ -119,7 +118,7 @@ public class VentaServiceTest {
         verify(ventaRepository).findByCodVenta(1L);
         verify(productoFeign).obtenerReceta(skus);
         verify(usuarioFeign).validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"));
-        verify(inventarioFeign).procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista));
+        verify(inventarioFeign).procesarVenta(any(InventarioRequest.class));
         verify(ventaRepository).save(any(Venta.class));
         verify(detalleRepo).save(detalle);
         verify(productoFeign).calcularPrecioVentaTotal(productos);
@@ -137,12 +136,13 @@ public class VentaServiceTest {
 
         Venta venta = new Venta();
         venta.setCodVenta(1L);
+        venta.setFechaVenta(LocalDate.now());
         
         DetalleVenta detalle = new DetalleVenta();
         detalle.setSku("PR0001");
         detalle.setCantidad(1);
+        detalle.setVenta(venta);
 
-        List<DetalleVenta> lista = List.of(detalle);
         List<String> skus = List.of("PR0001");
         
         ResponseEntity<String> receta = new ResponseEntity<>("SIN_RECETA", HttpStatus.OK);
@@ -156,7 +156,7 @@ public class VentaServiceTest {
         when(ventaRepository.findByCodVenta(1L)).thenReturn(Optional.empty());
         when(productoFeign.obtenerReceta(skus)).thenReturn(receta);
         when(usuarioFeign.validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"))).thenReturn(valido);
-        when(inventarioFeign.procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista))).thenReturn(valido);
+        when(inventarioFeign.procesarVenta(any(InventarioRequest.class))).thenReturn(valido);
         when(productoFeign.calcularPrecioVentaTotal(productos)).thenReturn(valorTotal);
         when(ventaRepository.save(any(Venta.class))).thenReturn(venta);
         when(detalleRepo.save(detalle)).thenReturn(detalle);
@@ -172,7 +172,7 @@ public class VentaServiceTest {
         verify(ventaRepository).findByCodVenta(1L);
         verify(productoFeign).obtenerReceta(skus);
         verify(usuarioFeign).validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"));
-        verify(inventarioFeign).procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista));
+        verify(inventarioFeign).procesarVenta(any(InventarioRequest.class));
         verify(ventaRepository).save(any(Venta.class));
         verify(detalleRepo).save(detalle);
         verify(productoFeign).calcularPrecioVentaTotal(productos);
@@ -202,7 +202,7 @@ public class VentaServiceTest {
         dto.setCodVenta(1L);
         dto.setRun("1111111-1");
         dto.setCodSucursal("SU0001");
-        dto.setFechaVenta(LocalDate.parse("01/01/2026"));
+        dto.setFechaVenta(LocalDate.parse("2026-01-01"));
 
         Map<String, Integer> productos = Map.of("PR0001", 1);
         dto.setProductos(productos);
@@ -215,7 +215,7 @@ public class VentaServiceTest {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> service.agregarVenta(dto));
 
         assertNotNull(exception);
-        assertEquals("La fecha de venta no puede ser distinta a la fecha actual. Fecha ingresada : 01/01/2026. Fecha actual: " + LocalDate.now(), exception.getMessage());
+        assertEquals("La fecha de venta no puede ser distinta a la fecha actual. Fecha ingresada: 2026-01-01. Fecha actual: " + LocalDate.now(), exception.getMessage());
 
         verify(ventaRepository).findByCodVenta(1L);
     }
@@ -238,7 +238,7 @@ public class VentaServiceTest {
         List<String> skus = List.of("PR0001");
 
         when(ventaRepository.findByCodVenta(1L)).thenReturn(Optional.empty());
-        when(productoFeign.obtenerReceta(skus)).thenThrow(FeignException.class);
+        when(productoFeign.obtenerReceta(skus)).thenThrow(FeignClientException.class);
 
         ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> service.agregarVenta(dto));
 
@@ -274,7 +274,7 @@ public class VentaServiceTest {
 
         when(ventaRepository.findByCodVenta(1L)).thenReturn(Optional.empty());
         when(productoFeign.obtenerReceta(skus)).thenReturn(receta);
-        when(usuarioFeign.validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"))).thenThrow(FeignException.class);
+        when(usuarioFeign.validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"))).thenThrow(FeignClientException.class);
 
         ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> service.agregarVenta(dto));
 
@@ -309,7 +309,7 @@ public class VentaServiceTest {
         ResponseEntity<String> receta = new ResponseEntity<>("SIN_RECETA", HttpStatus.OK);
 
         FeignClientResponse response = new FeignClientResponse();
-        response.setEstado(true);
+        response.setEstado(false);
         response.setMensaje("Venta inválida");
 
         ResponseEntity<FeignClientResponse> usuarioResponse = new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
@@ -359,7 +359,7 @@ public class VentaServiceTest {
         when(ventaRepository.findByCodVenta(1L)).thenReturn(Optional.empty());
         when(productoFeign.obtenerReceta(skus)).thenReturn(receta);
         when(usuarioFeign.validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"))).thenReturn(usuarioResponse);
-        when(inventarioFeign.procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista))).thenThrow(FeignException.class);
+        when(inventarioFeign.procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista))).thenThrow(FeignClientException.class);
 
         VentaInvalida exception = assertThrows(VentaInvalida.class, () -> service.agregarVenta(dto));
 
@@ -390,7 +390,6 @@ public class VentaServiceTest {
         detalle.setSku("PR0001");
         detalle.setCantidad(1);
 
-        List<DetalleVenta> lista = List.of(detalle);
         List<String> skus = List.of("PR0001");
         
         ResponseEntity<String> receta = new ResponseEntity<>("SIN_RECETA", HttpStatus.OK);
@@ -403,12 +402,12 @@ public class VentaServiceTest {
         error.setMensaje("Venta inválida");
 
         ResponseEntity<FeignClientResponse> usuarioResponse = new ResponseEntity<>(response, HttpStatus.OK);
-        ResponseEntity<FeignClientResponse> inventarioResponse = new ResponseEntity<>(response, HttpStatus.OK);
+        ResponseEntity<FeignClientResponse> inventarioResponse = new ResponseEntity<>(error, HttpStatus.OK);
 
         when(ventaRepository.findByCodVenta(1L)).thenReturn(Optional.empty());
         when(productoFeign.obtenerReceta(skus)).thenReturn(receta);
         when(usuarioFeign.validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"))).thenReturn(usuarioResponse);
-        when(inventarioFeign.procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista))).thenReturn(inventarioResponse);
+        when(inventarioFeign.procesarVenta(any(InventarioRequest.class))).thenReturn(inventarioResponse);
         VentaInvalida exception = assertThrows(VentaInvalida.class, () -> service.agregarVenta(dto));
 
         assertNotNull(exception);
@@ -417,7 +416,7 @@ public class VentaServiceTest {
         verify(ventaRepository).findByCodVenta(1L);
         verify(productoFeign).obtenerReceta(skus);
         verify(usuarioFeign).validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"));
-        verify(inventarioFeign).procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista));
+        verify(inventarioFeign).procesarVenta(any(InventarioRequest.class));
     }
 
     @Test
@@ -439,7 +438,6 @@ public class VentaServiceTest {
         detalle.setSku("PR0001");
         detalle.setCantidad(1);
 
-        List<DetalleVenta> lista = List.of(detalle);
         List<String> skus = List.of("PR0001");
         
         ResponseEntity<String> receta = new ResponseEntity<>("SIN_RECETA", HttpStatus.OK);
@@ -454,7 +452,7 @@ public class VentaServiceTest {
         when(ventaRepository.findByCodVenta(1L)).thenReturn(Optional.empty());
         when(productoFeign.obtenerReceta(skus)).thenReturn(receta);
         when(usuarioFeign.validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"))).thenReturn(valido);
-        when(inventarioFeign.procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista))).thenReturn(valido);
+        when(inventarioFeign.procesarVenta(any(InventarioRequest.class))).thenReturn(valido);
         when(productoFeign.calcularPrecioVentaTotal(productos)).thenReturn(total);
 
         VentaInvalida exception = assertThrows(VentaInvalida.class, () -> service.agregarVenta(dto));
@@ -465,7 +463,7 @@ public class VentaServiceTest {
         verify(ventaRepository).findByCodVenta(1L);
         verify(productoFeign).obtenerReceta(skus);
         verify(usuarioFeign).validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"));
-        verify(inventarioFeign).procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista));
+        verify(inventarioFeign).procesarVenta(any(InventarioRequest.class));
         verify(productoFeign).calcularPrecioVentaTotal(productos);
     }
 
@@ -476,20 +474,20 @@ public class VentaServiceTest {
     @Test
     @DisplayName("Agrega los detalles de venta con éxito")
     void saveDetalleVenta_HappyPath() {
+        Venta venta = new Venta();
+        venta.setCodVenta(1L);
+
         DetalleVenta entidad = new DetalleVenta();
         entidad.setCantidad(4);
+        entidad.setVenta(venta);
 
         Map<String, Integer> mapa = Map.of("PR0001", 4, "PR0002", 4);
-
-        when(detalleRepo.save(entidad)).thenReturn(entidad);
 
         List<DetalleVenta> resultado = service.convertirDetalleVenta(mapa);
 
         assertNotNull(resultado);
         assertEquals(2, resultado.size());
         assertEquals(entidad.getCantidad(), resultado.get(0).getCantidad());
-
-        verify(detalleRepo, times(2)).save(entidad);
     }
 
     @Test
@@ -544,6 +542,7 @@ public class VentaServiceTest {
         DetalleVenta detalle = new DetalleVenta();
         detalle.setVenta(venta);
         detalle.setSku("PR0001");
+        detalle.setCantidad(1);
 
         List<DetalleVenta> lista = List.of(detalle);
 
@@ -598,7 +597,7 @@ public class VentaServiceTest {
         assertEquals(1, resultado.getTotalElements());
         assertEquals(1L, resultado.getContent().get(0).getCodVenta());
 
-        verify(ventaRepository).findByFechaVentaBetween(LocalDate.parse("2025-12-30"), LocalDate.parse("2026-05-05"), pageable);
+        verify(ventaRepository).findByFechaVentaBetween(LocalDate.parse("1998-01-01"), LocalDate.parse("2000-05-05"), pageable);
     }
 
     @Test

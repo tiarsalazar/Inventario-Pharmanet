@@ -27,7 +27,6 @@ import com.pharmanet.venta_service.repository.VentaRepository;
 import com.pharmanet.venta_service.request.InventarioRequest;
 import com.pharmanet.venta_service.request.UsuarioRequest;
 
-import feign.FeignException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -65,7 +64,7 @@ public class VentaService {
         if (dto.getFechaVenta() == null) {
             dto.setFechaVenta(LocalDate.now());
         } else if(!dto.getFechaVenta().equals(LocalDate.now())) {
-            throw new IllegalArgumentException("La fecha de la venta no puede ser distinta a la fecha actual. Fecha ingresada: "
+            throw new IllegalArgumentException("La fecha de venta no puede ser distinta a la fecha actual. Fecha ingresada: "
             + dto.getFechaVenta()
             + ". Fecha actual: " + LocalDate.now());
         }
@@ -84,7 +83,7 @@ public class VentaService {
         try {
             receta = productoFeignClient.obtenerReceta(skus)
                 .getBody();
-        } catch (FeignException.FeignClientException e) {
+        } catch (Exception ex) {
             throw new ResourceNotFoundException("No se encuentra al menos uno de los productos ingresados");
         }
 
@@ -100,7 +99,7 @@ public class VentaService {
         try {
             usuarioValido = usuarioFeignClient.validarUsuarioVenta(usuarioRequest)
                 .getBody();
-        } catch (FeignException e) {
+        } catch (Exception ex) {
             throw new ResourceNotFoundException("No se encuentra el usuario con el run: " + usuarioRequest.getRun());
         }
 
@@ -118,7 +117,7 @@ public class VentaService {
 
             inventarioValido = inventarioFeignClient.procesarVenta(inventarioRequest)
                 .getBody();
-        } catch (FeignException.FeignClientException ex){
+        } catch (Exception ex){
             throw new VentaInvalida("No existe un inventario con el código de la sucursal: " + dto.getCodSucursal() + " o alguno de los productos no está disponible");
         }
 
@@ -128,8 +127,8 @@ public class VentaService {
         BigDecimal montoTotal = productoFeignClient.calcularPrecioVentaTotal(dto.getProductos())
             .getBody();
         
-        if (dto.getMontoTotal() != null && dto.getMontoTotal() != montoTotal)
-            throw new VentaInvalida("El monto ingresado distinto al monto calculado. Monto ingresado: $" + dto.getMontoTotal() + ". Monto total: $" + montoTotal);
+        if (dto.getMontoTotal() != null && dto.getMontoTotal().compareTo(montoTotal) != 0)
+            throw new VentaInvalida("Monto ingresado distinto al monto calculado. Monto ingresado: $" + dto.getMontoTotal() + ". Monto total: $" + montoTotal);
 
         log.info("Agrega la venta");
 
@@ -178,7 +177,7 @@ public class VentaService {
         log.debug("codVenta: {}", codVenta);
     
         Venta venta = ventaRepository.findByCodVenta(codVenta)
-            .orElseThrow(() -> new ResourceNotFoundException("No existe una venta con el código: " + codVenta));
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la venta con el código: " + codVenta));
 
         List<DetalleVenta> detallesVenta = detalleVentaRepository.findByVenta_CodVenta(codVenta);
         
@@ -194,7 +193,7 @@ public class VentaService {
         if (!inicio.isBefore(termino))
             throw new IllegalArgumentException("La fecha de inicio debe ser anterior a la fecha de término");
 
-        if (inicio.isBefore(LocalDate.parse("1998/01/01")))
+        if (inicio.isBefore(LocalDate.parse("1998-01-01")))
             throw new IllegalArgumentException("No hay registros antes de la fecha 1998");
 
         if (termino.isAfter(LocalDate.now()))
@@ -213,7 +212,7 @@ public class VentaService {
         if (dia.isAfter(LocalDate.now()))
             throw new IllegalArgumentException("La fecha ingresada no puede ser posterior a la actual");
 
-        if (dia.isBefore(LocalDate.parse("1998/01/01")))
+        if (dia.isBefore(LocalDate.parse("1998-01-01")))
             throw new IllegalArgumentException("No hay registros antes de la fecha 1998");
 
         log.info("Devuelve page de ventas");

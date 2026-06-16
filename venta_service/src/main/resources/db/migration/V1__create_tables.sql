@@ -11,7 +11,7 @@ CREATE TABLE detalle_venta (
     detalle_venta BIGINT AUTO_INCREMENT PRIMARY KEY,
     sku VARCHAR(10) NOT NULL,
     cantidad INT NOT NULL,
-    cod_venta LONG NOT NULL,
+    cod_venta BIGINT NOT NULL,
     CONSTRAINT FK_DETALLE_VENTA_VENTA FOREIGN KEY (cod_venta)
     REFERENCES venta(cod_venta)
 );
