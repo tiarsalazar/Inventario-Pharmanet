@@ -50,7 +50,7 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.OK).body(productoDto);
     }
 
-    @GetMapping("/principioActivo")
+    @GetMapping("/principio-activo")
     public ResponseEntity<Page<ProductoDto>> buscarPorPrincipioActivo(@RequestParam String activo,
         @PageableDefault(size = 10, sort = {"nombreComercial", "precioVenta"}) Pageable pageable) {
         Page<ProductoDto> prodPorActivo = productoService.buscarPorPrincipioActivo(activo, pageable);
@@ -58,7 +58,7 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.OK).body(prodPorActivo);
     }
 
-    @GetMapping("/precioVenta")
+    @GetMapping("/precio-venta")
     public ResponseEntity<Page<ProductoDto>> buscarPorPrecioVenta(
         @RequestParam @Min(value = 0, message = "El valor no puede ser negativo") int min,
         @RequestParam @Min(value = 0, message = "El valor no puede ser negativo") int max,
