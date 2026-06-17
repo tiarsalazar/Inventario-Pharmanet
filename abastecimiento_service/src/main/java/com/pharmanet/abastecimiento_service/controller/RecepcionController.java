@@ -86,7 +86,7 @@ public class RecepcionController {
     
     // ==== PETICIONES POST ====
 
-    @Operation(summary = "Registrar una nueva recepción", description = "Crea el documento físico-lógico de recepción e impacta dinámicamente el módulo de inventario mediante comunicación remota.")
+    @Operation(summary = "Registrar una nueva recepción", description = "Registra una nueva recepcion, guardando los datos y solicitando a Inventario el ingreso del stock.")
     @ApiResponses({
         @ApiResponse(responseCode = "201", description = "Recepción registrada y stock actualizado con éxito."),
         @ApiResponse(responseCode = "400", description = "Datos de entrada con errores de validación o fallas lógicas de negocio."),
@@ -118,7 +118,7 @@ public class RecepcionController {
     
     // ==== PETICIONES DELETE ====
 
-    @Operation(summary = "Eliminar físicamente una recepción", description = "Remueve permanentemente el registro de la base de datos relacional.")
+    @Operation(summary = "Eliminar físicamente una recepción", description = "Remueve permanentemente el registro de la recepcion de la base de datos.")
     @ApiResponses({
         @ApiResponse(responseCode = "204", description = "Registro eliminado físicamente de manera correcta."),
         @ApiResponse(responseCode = "404", description = "Registro no encontrado.")
