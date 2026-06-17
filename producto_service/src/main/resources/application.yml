@@ -1,9 +1,9 @@
 server:
-    port: 8082
+    port: 8083
 
 spring:
     application:
-        name: usuario-service
+        name: producto-service
     profiles:
         active: dev
     output:
@@ -11,9 +11,9 @@ spring:
             enabled: ALWAYS
 
     datasource:
-        url: jdbc:oracle:thin:@bdusuario_high?TNS_ADMIN=C:/Users/VI-Alumno/Inventario-Pharmanet/usuario_service/Wallet_BDUSUARIO
-        username: BD_USUARIO
-        password: Duocuc12345.
+        url: jdbc:mysql://localhost:3306/bd_producto
+        username: root
+        password: 
 
     flyway:
         enabled: true
@@ -33,7 +33,7 @@ springdoc:
 
 logging:
     file:
-        name: logs/usuario.log
+        name: logs/producto.log
         path: logs
     level:
         org:
@@ -54,7 +54,7 @@ spring:
             on-profile: dev
             
     datasource:
-        url: jdbc:mysql://localhost:3306/bd_usuario_dev
+        url: jdbc:mysql://localhost:3306/bd_producto_dev
         username: root
         password: 
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -71,7 +71,7 @@ spring:
             on-profile: test
 
     datasource:
-        url: jdbc:mysql://localhost:3306/bd_usuario_test
+        url: jdbc:mysql://localhost:3306/bd_producto_test
         username: root
         password: 
         driver-class-name: com.mysql.cj.jdbc.Driver

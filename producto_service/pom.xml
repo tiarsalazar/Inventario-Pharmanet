@@ -116,6 +116,12 @@
 			<artifactId>junit-jupiter-engine</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>3.0.2</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -178,6 +184,33 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+    			<groupId>org.jacoco</groupId>
+    			<artifactId>jacoco-maven-plugin</artifactId>
+    			<version>0.8.11</version> <configuration>
+        			<excludes>
+						<exclude>**/dto/ErrorResponse.class</exclude>
+						<exclude>**/dto/ProductoDto.class</exclude>
+            			<exclude>**/entity/**</exclude>
+            			<exclude>**/exception/**</exclude>
+            			<exclude>**/*Application.**</exclude>
+					</excludes>
+    			</configuration>
+    			<executions>
+        			<execution>
+            			<goals>
+                			<goal>prepare-agent</goal>
+            			</goals>
+        			</execution>
+        			<execution>
+            			<id>report</id>
+            			<phase>test</phase>
+            			<goals>
+                			<goal>report</goal>
+            			</goals>
+        			</execution>
+    			</executions>
 			</plugin>
 		</plugins>
 	</build>
