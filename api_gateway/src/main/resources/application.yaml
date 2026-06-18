@@ -28,6 +28,8 @@ spring:
                   uri: lb://PRODUCT-SERVICE
                   predicates:
                     - Path=/api/v1/productos/**
+
+                    
 eureka:
     client:
         service-url:

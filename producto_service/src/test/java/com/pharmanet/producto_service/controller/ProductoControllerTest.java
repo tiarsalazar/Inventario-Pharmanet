@@ -12,26 +12,18 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.pharmanet.producto_service.dto.ProductoDto;
-import com.pharmanet.producto_service.entity.Producto;
-import com.pharmanet.producto_service.repository.ProductoRepository;
 import com.pharmanet.producto_service.service.ProductoService;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.math.BigDecimal;
-import java.util.Optional;
 
 @WebMvcTest(ProductoController.class)
 public class ProductoControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
 
     @MockitoBean
     private ProductoService productoService;
@@ -46,56 +38,8 @@ public class ProductoControllerTest {
     }
 
     // ====================================
-    // HTTP METHOD POST
-    // ====================================
- 
-    /*@Test
-    @DisplayName("POST: Agrega un producto")
-    public void cuandoAgregarProducto_EntoncesEstados201() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/productos")
-            .content(objectMapper.writeValueAsString(dto))
-            .contentType(MediaType.APPLICATION_JSON))
-        .andExpect(status().isCreated())
-        .andExpect(MockMvcResultMatchers.content()
-            .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
-    }*/
-
-    /*@Test
-    @DisplayName("POST: Obtener receta de mayor restricción")
-    public void cuandoObtenerReceta_EntoncesEstado200() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/productos/recetas")
-            .content(("[\"PR0001\", \"PR0002\", \"PR0003\", \"PR0004\"]"))
-            .contentType(MediaType.APPLICATION_JSON))
-        .andExpect(status().isOk())
-        .andExpect(MockMvcResultMatchers.content()
-            .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
-    }*/
-
-    /*@Test
-    @DisplayName("POST: Obtener precio total de la venta")
-    public void cuandoCalcularPrecioVentaTotal_EntoncesEstados200() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/productos/calcular-total")
-            .content(("""
-            {"PR0001" : 2, "PR0002": 1}
-            """))
-            .contentType(MediaType.APPLICATION_JSON))
-        .andExpect(status().isOk())
-        .andExpect(MockMvcResultMatchers.content()
-            .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
-    }*/
-
-    // ====================================
     // HTTP METHOD GET
     // ====================================
-
-    /*@Test
-    @DisplayName("GET: Trae todos los productos")
-    public void cuandoMostrarTodos_EntoncesEstados200() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/productos"))
-        .andExpect(status().isOk())
-        .andExpect(MockMvcResultMatchers.content()
-            .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
-    }*/
 
     @Test
     @DisplayName("GET: Busca un producto por el sku")
@@ -108,27 +52,6 @@ public class ProductoControllerTest {
         .andExpect(MockMvcResultMatchers.content()
             .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
     }
-
-    /*@Test
-    @DisplayName("GET: Busca productos por principio activo")
-    public void cuandoBuscarPorPrincipioActivo_EntoncesEstados200() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/productos/principio-activo")
-            .param("activo", "ibuprofeno"))
-        .andExpect(status().isOk())
-        .andExpect(MockMvcResultMatchers.content()
-            .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
-    }*/
-
-    /*@Test
-    @DisplayName("GET: Busca productos por precio venta")
-    public void cuandoBuscarPorPrecioVenta_EntoncesEstados200() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/productos/precio-venta")
-            .param("min", "500")
-            .param("max", "40000"))
-        .andExpect(status().isOk())
-        .andExpect(MockMvcResultMatchers.content()
-            .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
-    }*/
 
     // ====================================
     // HTTP METHOD PUT
