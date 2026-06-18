@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import com.pharmanet.usuario_service.client.SucursalFeignClient;
 import com.pharmanet.usuario_service.dto.UsuarioDTO;
 import com.pharmanet.usuario_service.dto.UsuarioMapper;
-import com.pharmanet.usuario_service.dto.MsResponse.UsuarioRequest;
-import com.pharmanet.usuario_service.dto.MsResponse.UsuarioResponse;
+import com.pharmanet.usuario_service.dto.connector.UsuarioRequest;
+import com.pharmanet.usuario_service.dto.connector.UsuarioResponse;
 import com.pharmanet.usuario_service.entity.Usuario;
 import com.pharmanet.usuario_service.exception.ResourceAlreadyExistsException;
 import com.pharmanet.usuario_service.exception.ResourceNotFoundException;
@@ -120,9 +120,9 @@ public class UsuarioService {
 
     public UsuarioResponse validarUsuarioVenta(UsuarioRequest request) {
         log.info("Inicia validación de venta");
-        log.debug("run: {}, codSucursal: {}, receta: {}", request.getRunVendedor(), request.getCodSucursal(), request.getReceta());
+        log.debug("run: {}, codSucursal: {}, receta: {}", request.getRun(), request.getCodSucursal(), request.getReceta());
 
-        String run = request.getRunVendedor();
+        String run = request.getRun();
         String codSucursal = request.getCodSucursal().toUpperCase();
         String receta = request.getReceta().toUpperCase();
 

@@ -29,7 +29,7 @@ public class RegionService {
 
         log.info("Validación de que región no exista");
         if (regionRepository.findByCodRegion(dto.getCodRegion()).isPresent() || regionRepository.findByDescripcion(dto.getDescripcion()).isPresent()) {
-            throw new ResourceAlreadyExistsException("La región ya se encuentra registrada.");
+            throw new ResourceAlreadyExistsException("Ya existe la región con ese código o descripción");
         }
 
         Region region = RegionMapper.toEntity(dto);

@@ -3,6 +3,7 @@ package com.pharmanet.venta_service.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pharmanet.venta_service.dto.RegistroVenta;
 import com.pharmanet.venta_service.dto.VentaDto;
 import com.pharmanet.venta_service.service.VentaService;
 
@@ -37,7 +38,7 @@ public class VentaController {
     private final VentaService ventaService;
 
     @GetMapping
-    public ResponseEntity<Page<VentaDto>> mostrarTodos(@PageableDefault(size = 10, sort = {"fechaVenta", "sku"}) Pageable pageable) {
+    public ResponseEntity<Page<VentaDto>> mostrarTodos(@PageableDefault(size = 10, sort = {"fechaVenta", "codVenta"}) Pageable pageable) {
         log.info("Inicia búsqueda de todas las ventas");
         Page<VentaDto> ventas = ventaService.mostrarTodos(pageable);
         return ResponseEntity.status(HttpStatus.OK).body(ventas);
@@ -45,31 +46,31 @@ public class VentaController {
     
 
     @GetMapping("/{codVenta}")
-    public ResponseEntity<VentaDto> buscarPorCodVenta(@PathVariable Long codVenta) {
-        VentaDto ventaDto = ventaService.buscarPorCodVenta(codVenta);
-        return ResponseEntity.status(HttpStatus.OK).body(ventaDto);
+    public ResponseEntity<RegistroVenta> buscarPorCodVenta(@PathVariable Long codVenta) {
+        RegistroVenta dto = ventaService.buscarPorCodVenta(codVenta);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @GetMapping("/entre_fechas")
     public ResponseEntity<Page<VentaDto>> buscarPorFechas(
         @Valid @RequestParam LocalDate inicio,
         @RequestParam @DateTimeFormat(iso = ISO.DATE) LocalDate termino,
-        @PageableDefault (size = 10, sort = {"fechaVenta", "sku"}) Pageable pageable) {
+        @PageableDefault (size = 10, sort = {"fechaVenta", "codVenta"}) Pageable pageable) {
         Page<VentaDto> resultado = ventaService.buscarPorFechas(inicio, termino, pageable);
         return ResponseEntity.status(HttpStatus.OK).body(resultado);
     }
     
     @GetMapping("/dia/{dia}")
     public ResponseEntity<Page<VentaDto>> buscarPorDia(@PathVariable @DateTimeFormat (iso = ISO.DATE) LocalDate dia,
-        @PageableDefault(size = 10, sort= "sku") Pageable pageable) {
+        @PageableDefault(size = 10, sort= "codVenta") Pageable pageable) {
         Page<VentaDto> ventasPorDia = ventaService.buscarPorDia(dia, pageable);
         return ResponseEntity.status(HttpStatus.OK).body(ventasPorDia);
     }
 
     @PostMapping
-    public ResponseEntity<VentaDto> agregarVenta(@Valid @RequestBody VentaDto ventaDto) {
-        VentaDto venta = ventaService.agregarVenta(ventaDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(venta);
+    public ResponseEntity<RegistroVenta> agregarVenta(@Valid @RequestBody RegistroVenta dto) {
+        RegistroVenta resultado = ventaService.agregarVenta(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(resultado);
     }
     
     @PutMapping

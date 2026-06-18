@@ -1,4 +1,4 @@
-package com.pharmanet.usuario_service.dto.MsResponse;
+package com.pharmanet.usuario_service.dto.connector;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ public class UsuarioRequest {
 
     // RUN sin puntos y con guión
     @NotBlank(message = "Este campo no puede estar vacío")
-    private String runVendedor;
+    private String run;
 
     private String codSucursal;
 

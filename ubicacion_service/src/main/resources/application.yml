@@ -1,0 +1,82 @@
+server:
+    port: 8087
+
+spring:
+    application:
+        name: ubicacion-service
+    profiles:
+        active: dev
+    output:
+        ansi:
+            enabled: ALWAYS
+
+    datasource:
+        url: jdbc:mysql://localhost:3306/bd_ubicacion
+        username: root
+        password: 
+
+    flyway:
+        enabled: true
+        locations: classpath:db/migration
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+
+springdoc:
+    api-docs:
+        enabled: true   
+    swagger-ui:
+        enabled: true
+        path: /doc/swagger-ui
+
+logging:
+    file:
+        name: logs/ubicacion.log
+        path: logs
+    level:
+        org:
+            springframework:
+                web: DEBUG
+            hibernate:
+                SQL: INFO
+        root: INFO
+    logback:
+        rollingpolicy:
+            max-file-size: 10MB
+            max-history: 30
+
+---
+spring:
+    config:
+        activate:
+            on-profile: dev
+            
+    datasource:
+        url: jdbc:mysql://localhost:3306/bd_ubicacion_dev
+        username: root
+        password: 
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+        hibernate:
+            ddl-auto: validate
+
+        show-sql: true
+        
+---
+spring:
+    config:
+        activate:
+            on-profile: test
+
+    datasource:
+        url: jdbc:mysql://localhost:3306/bd_ubicacion_test
+        username: root
+        password: 
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+        hibernate:
+            ddl-auto: validate
+
+        show-sql: true

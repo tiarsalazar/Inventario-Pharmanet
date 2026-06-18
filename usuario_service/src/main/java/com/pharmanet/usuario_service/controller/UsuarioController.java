@@ -4,8 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pharmanet.usuario_service.dto.UsuarioDTO;
-import com.pharmanet.usuario_service.dto.MsResponse.UsuarioRequest;
-import com.pharmanet.usuario_service.dto.MsResponse.UsuarioResponse;
+import com.pharmanet.usuario_service.dto.connector.UsuarioRequest;
+import com.pharmanet.usuario_service.dto.connector.UsuarioResponse;
 import com.pharmanet.usuario_service.service.UsuarioService;
 
 import jakarta.validation.Valid;

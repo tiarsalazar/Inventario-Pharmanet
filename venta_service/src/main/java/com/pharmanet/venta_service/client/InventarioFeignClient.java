@@ -1,9 +1,11 @@
 package com.pharmanet.venta_service.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.pharmanet.venta_service.dto.connector.FeignClientResponse;
 import com.pharmanet.venta_service.request.InventarioRequest;
 
 import jakarta.validation.Valid;
@@ -12,5 +14,5 @@ import jakarta.validation.Valid;
 public interface InventarioFeignClient {
 
     @PostMapping("/api/v1/inventarios/ventas")
-    void procesarVenta(@Valid @RequestBody InventarioRequest request);
+    ResponseEntity<FeignClientResponse> procesarVenta(@Valid @RequestBody InventarioRequest request);
 }
