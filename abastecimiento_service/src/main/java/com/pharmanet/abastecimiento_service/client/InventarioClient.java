@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.pharmanet.abastecimiento_service.dto.inventario.IngresoInventario;
 
-@FeignClient(name = "inventario-service", url = "http://localhost:8084")
+@FeignClient(name = "inventario-service")
 public interface InventarioClient {
     @PostMapping("/api/v1/inventarios/recepciones")
     void registrarStockRecepcion(

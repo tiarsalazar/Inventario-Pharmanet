@@ -1,34 +1,52 @@
 server:
-    port: 8081
+  port: 8081
 
 spring:
-    application:
-        name: api-gateway
+  application:
+    name: api_gateway
 
-    cloud:
-        gateway:
-            routes:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
 
-                - id: usuario-service
-                  uri: lb://USUARIO-SERVICE
-                  predicates:
-                    - Path=/api/v1/usuarios/**
+            - id: usuario-service
+              uri: lb://USUARIO-SERVICE
+              predicates:
+                - Path=/api/v1/usuarios/**
 
-                - id: sucursal-service
-                  uri: lb://SUCURSAL-SERVICE
-                  predicates:
-                    - Path=/api/v1/sucursales/**
+            - id: sucursal-service
+              uri: lb://SUCURSAL-SERVICE
+              predicates:
+                - Path=/api/v1/sucursales/**
 
-                - id: ubicacion-service
-                  uri: lb://UBICACION-SERVICE
-                  predicates:
-                    - Path=/api/v1/ubicaciones/**
+            - id: ubicacion-service
+              uri: lb://UBICACION-SERVICE
+              predicates:
+                - Path=/api/v1/ubicaciones/**
 
-                - id: producto-service
-                  uri: lb://PRODUCT-SERVICE
-                  predicates:
-                    - Path=/api/v1/productos/**
+            - id: producto-service
+              uri: lb://PRODUCTO-SERVICE
+              predicates:
+                - Path=/api/v1/productos/**
+                
+            - id: venta-service
+              uri: lb://VENTA-SERVICE
+              predicates:
+                - Path=/api/v1/ventas/**
+
+            - id: inventario-service
+              uri: lb://INVENTARIO-SERVICE
+              predicates:
+                - Path=/api/v1/inventarios/**
+
+            - id: abastecimiento-service
+              uri: lb://ABASTECIMIENTO-SERVICE
+              predicates:
+                - Path=/api/v1/recepciones/**
+
 eureka:
-    client:
-        service-url:
-            defaultZone: http://localhost:8761/eureka/
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
