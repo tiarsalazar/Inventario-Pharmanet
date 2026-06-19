@@ -18,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
 
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -46,7 +47,7 @@ public class VentaController {
     @GetMapping
     @Operation(summary = "Obtiene todas las ventas", description = "Obtiene un pageable de todas las ventas")
     @ApiResponse(responseCode = "200", description = "Obtiene un pageable de todas las ventas")
-    public ResponseEntity<Page<VentaDto>> mostrarTodos(@PageableDefault(size = 10, sort = {"fechaVenta", "codVenta"}) Pageable pageable) {
+    public ResponseEntity<Page<VentaDto>> mostrarTodos(@PageableDefault(size = 10, sort = {"fechaVenta", "codVenta"}) @ParameterObject Pageable pageable) {
         log.info("Inicia búsqueda de todas las ventas");
         Page<VentaDto> ventas = ventaService.mostrarTodos(pageable);
         return ResponseEntity.status(HttpStatus.OK).body(ventas);
@@ -64,7 +65,7 @@ public class VentaController {
         return ResponseEntity.status(HttpStatus.OK).body(venta);
     }
 
-    @GetMapping("/entre_fechas")
+    @GetMapping("/entre-fechas")
     @Operation(summary = "Busca ventas entre dos fechas", description = "Obtiene un pageable de las ventas entre la fecha de inicio y de término")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Obtiene un pageable de las ventas entre dos fechas"),

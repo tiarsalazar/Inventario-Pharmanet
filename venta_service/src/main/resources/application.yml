@@ -30,6 +30,7 @@ springdoc:
     swagger-ui:
         enabled: true
         path: /doc/swagger-ui
+    default-flat-param-object: true
 
 logging:
     file:

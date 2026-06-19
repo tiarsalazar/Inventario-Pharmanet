@@ -1,0 +1,7 @@
+version 2
+JvmtiExport can_access_local_variables 240
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 96
+# -79663920 ciObject found
+instanceKlass org/springframework/core/env/AbstractPropertyResolver
+compile 

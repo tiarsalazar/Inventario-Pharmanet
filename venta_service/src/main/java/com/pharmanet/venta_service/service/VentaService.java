@@ -197,7 +197,7 @@ public class VentaService {
             throw new IllegalArgumentException("No hay registros antes de la fecha 1998");
 
         if (termino.isAfter(LocalDate.now()))
-            throw new IllegalArgumentException("La fecha de término no puede ser posterior a la actual");
+            throw new IllegalArgumentException("La fecha de término no puede ser posterior a la fecha actual");
 
         log.info("Devuelve page de ventas");
         return ventaRepository.findByFechaVentaBetween(inicio, termino, pageable)
@@ -210,7 +210,7 @@ public class VentaService {
         
         log.info("Valida que la fecha ingresada sea igual o anterior a la actual");
         if (dia.isAfter(LocalDate.now()))
-            throw new IllegalArgumentException("La fecha ingresada no puede ser posterior a la actual");
+            throw new IllegalArgumentException("La fecha ingresada no puede ser posterior a la fecha actual");
 
         if (dia.isBefore(LocalDate.parse("1998-01-01")))
             throw new IllegalArgumentException("No hay registros antes de la fecha 1998");

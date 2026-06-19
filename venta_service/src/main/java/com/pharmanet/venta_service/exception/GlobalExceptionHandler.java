@@ -1,6 +1,6 @@
 package com.pharmanet.venta_service.exception;
 
-import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,17 +33,16 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handlerMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
-        List<ValidationError> errores = ex.getBindingResult()
-            .getFieldErrors()
-            .stream()
-            .map(err -> new ValidationError(
-                err.getField(),
-                err.getDefaultMessage()))
-            .toList();
+        String mensaje = ex.getBindingResult()
+        .getFieldErrors()
+        .stream()
+        .map(err -> err.getField() + ": " + err.getDefaultMessage())
+        .collect(Collectors.joining(", "));
 
-        ErrorResponse error = new ErrorResponse(500, "Bad Request", "Se encontraron el/los siguiente(s) error(es):", errores);
+        ErrorResponse error = new ErrorResponse(400, "Bad Request", mensaje);
 
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);    }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
 
     @ExceptionHandler(VentaInvalida.class)
     public ResponseEntity<ErrorResponse> handlerVentaInvalida(VentaInvalida ex) {
@@ -52,8 +51,8 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handlerException(Exception ex) {
-        ErrorResponse error = new ErrorResponse(500, "Internar Server Error", "Ha ocurrido un error en el sistema. Si el problema persiste, comuníquese con el administrador.");
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
+    public ResponseEntity<String> handlerException(Exception ex) {
+        //ErrorResponse error = new ErrorResponse(500, "Internar Server Error", "Ha ocurrido un error en el sistema. Si el problema persiste, comuníquese con el administrador.");
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Exception" + ex.getMessage());
     }
 }

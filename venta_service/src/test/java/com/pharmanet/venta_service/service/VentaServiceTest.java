@@ -630,7 +630,7 @@ public class VentaServiceTest {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> service.buscarPorFechas(LocalDate.parse("2026-01-31"), LocalDate.parse("2027-05-05"), pageable));
 
         assertNotNull(exception);
-        assertEquals("La fecha de término no puede ser posterior a la actual", exception.getMessage());
+        assertEquals("La fecha de término no puede ser posterior a la fecha actual", exception.getMessage());
     }
 
     // ==========================================================
@@ -669,7 +669,7 @@ public class VentaServiceTest {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> service.buscarPorDia(LocalDate.parse("2050-12-31"), pageable));
 
         assertNotNull(exception);
-        assertEquals("La fecha ingresada no puede ser posterior a la actual", exception.getMessage());
+        assertEquals("La fecha ingresada no puede ser posterior a la fecha actual", exception.getMessage());
     }
 
     @Test
