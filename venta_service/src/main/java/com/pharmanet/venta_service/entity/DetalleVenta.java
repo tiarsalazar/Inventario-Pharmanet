@@ -23,6 +23,7 @@ public class DetalleVenta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "detalle_venta_id")
     private Long id;
 
     @Column(nullable = false)
@@ -33,7 +34,7 @@ public class DetalleVenta {
     private Integer cantidad;
 
     @ManyToOne
-    @JoinColumn(name = "venta_id", nullable = false)
+    @JoinColumn(name = "cod_venta", nullable = false)
     private Venta venta;
 
     public DetalleVenta(String sku, Integer cantidad) {

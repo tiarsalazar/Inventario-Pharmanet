@@ -38,7 +38,7 @@ public class RegionController {
 
     @GetMapping
     @Operation(summary = "Obtiene todas las regiones", description = "Obtiene un pageable de todas las regiones")
-    @ApiResponse(responseCode = "200", description = "Se obtiene una lista de todos los pageables")
+    @ApiResponse(responseCode = "200", description = "Se obtiene un pageable de todas las regiones")
     public ResponseEntity<Page<RegionDto>> mostrarTodos(@PageableDefault(size = 10, sort = "codRegion") Pageable pageable) {
         log.info("Inicia búsqueda de todas las regiones.");
         Page<RegionDto> regiones = regionService.mostrarTodasRegiones(pageable);
@@ -49,7 +49,6 @@ public class RegionController {
     @Operation(summary = "Busca una región", description = "Busca una región por código de región")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Obtiene una región exitosamente"),
-        @ApiResponse(responseCode = "409", description = "Ya existe una región con los datos ingresados"),
         @ApiResponse(responseCode = "404", description = "Región no encontrada")
     })
     public ResponseEntity<RegionDto> buscarRegion(@Parameter(name = "codRegion", description = "Código de la region", required = true) @PathVariable String codRegion) {
@@ -61,7 +60,8 @@ public class RegionController {
     @Operation(summary = "Agrega una región", description = "Agrega una región nueva")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "201", description = "Agrega una región exitosamente"),
-        @ApiResponse(responseCode = "400", description = "Fallo en las validaciones")
+        @ApiResponse(responseCode = "400", description = "Fallo en las validaciones"),
+        @ApiResponse(responseCode = "409", description = "Ya existe una región con ese código")
     })
     public ResponseEntity<RegionDto> agregarRegion(@Valid @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Región a crear", required = true) @RequestBody RegionDto region) {
         RegionDto resultado = regionService.agregarRegion(region);

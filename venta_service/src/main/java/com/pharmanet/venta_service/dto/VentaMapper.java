@@ -64,7 +64,6 @@ public class VentaMapper {
         actual.setCodVenta(nueva.getCodVenta());
         actual.setCodSucursal(nueva.getCodSucursal());
         actual.setRun(nueva.getRun());
-        actual.setFechaVenta(nueva.getFechaVenta());
 
         return actual;
     }

@@ -227,12 +227,11 @@ public class VentaService {
     public void actualizarVenta(VentaDto dto) {
         log.info("Inicia actualización de dto");
         log.debug("dto: {}", dto);
-        
-        if (!ventaRepository.findByCodVenta(dto.getCodVenta()).isPresent())
-            throw new ResourceNotFoundException("No se encuentra la venta con el código: " + dto.getCodVenta());
 
-        Venta venta = VentaMapper.toModel(dto);
-        ventaRepository.save(venta);
+        Venta entidad = ventaRepository.findByCodVenta(dto.getCodVenta())
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la venta con el código: " + dto.getCodVenta()));
+
+        ventaRepository.save(entidad);
     }
 
     // ==========================================
