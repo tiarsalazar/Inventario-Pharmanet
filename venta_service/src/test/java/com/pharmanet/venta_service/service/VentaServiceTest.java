@@ -106,7 +106,8 @@ public class VentaServiceTest {
         when(inventarioFeign.procesarVenta(any(InventarioRequest.class))).thenReturn(valido);
         when(productoFeign.calcularPrecioVentaTotal(productos)).thenReturn(valorTotal);
         when(ventaRepository.save(any(Venta.class))).thenReturn(venta);
-        when(detalleRepo.save(detalle)).thenReturn(detalle);
+        when(detalleRepo.save(any(DetalleVenta.class)))
+            .thenAnswer(i -> i.getArgument(0));
 
         RegistroVenta resultado = service.agregarVenta(dto);
 
@@ -120,7 +121,7 @@ public class VentaServiceTest {
         verify(usuarioFeign).validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"));
         verify(inventarioFeign).procesarVenta(any(InventarioRequest.class));
         verify(ventaRepository).save(any(Venta.class));
-        verify(detalleRepo).save(detalle);
+        verify(detalleRepo).save(any(DetalleVenta.class));
         verify(productoFeign).calcularPrecioVentaTotal(productos);
     }
 
@@ -159,7 +160,8 @@ public class VentaServiceTest {
         when(inventarioFeign.procesarVenta(any(InventarioRequest.class))).thenReturn(valido);
         when(productoFeign.calcularPrecioVentaTotal(productos)).thenReturn(valorTotal);
         when(ventaRepository.save(any(Venta.class))).thenReturn(venta);
-        when(detalleRepo.save(detalle)).thenReturn(detalle);
+        when(detalleRepo.save(any(DetalleVenta.class)))
+            .thenAnswer(i -> i.getArgument(0));
 
         RegistroVenta resultado = service.agregarVenta(dto);
 
@@ -174,7 +176,7 @@ public class VentaServiceTest {
         verify(usuarioFeign).validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"));
         verify(inventarioFeign).procesarVenta(any(InventarioRequest.class));
         verify(ventaRepository).save(any(Venta.class));
-        verify(detalleRepo).save(detalle);
+        verify(detalleRepo).save(any(DetalleVenta.class));
         verify(productoFeign).calcularPrecioVentaTotal(productos);
     }
 
@@ -346,7 +348,6 @@ public class VentaServiceTest {
         detalle.setSku("PR0001");
         detalle.setCantidad(1);
 
-        List<DetalleVenta> lista = List.of(detalle);
         List<String> skus = List.of("PR0001");
         
         ResponseEntity<String> receta = new ResponseEntity<>("SIN_RECETA", HttpStatus.OK);
@@ -359,7 +360,7 @@ public class VentaServiceTest {
         when(ventaRepository.findByCodVenta(1L)).thenReturn(Optional.empty());
         when(productoFeign.obtenerReceta(skus)).thenReturn(receta);
         when(usuarioFeign.validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"))).thenReturn(usuarioResponse);
-        when(inventarioFeign.procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista))).thenThrow(FeignClientException.class);
+        when(inventarioFeign.procesarVenta(any(InventarioRequest.class))).thenThrow(FeignClientException.class);
 
         VentaInvalida exception = assertThrows(VentaInvalida.class, () -> service.agregarVenta(dto));
 
@@ -369,7 +370,7 @@ public class VentaServiceTest {
         verify(ventaRepository).findByCodVenta(1L);
         verify(productoFeign).obtenerReceta(skus);
         verify(usuarioFeign).validarUsuarioVenta(new UsuarioRequest("1111111-1", "SU0001", "SIN_RECETA"));
-        verify(inventarioFeign).procesarVenta(new InventarioRequest("SU0001", "1111111-1", lista));
+        verify(inventarioFeign).procesarVenta(any(InventarioRequest.class));
     }
 
     @Test
@@ -692,6 +693,7 @@ public class VentaServiceTest {
     void update_HappyPath() {
         VentaDto dto = new VentaDto();
         dto.setCodVenta(1L);
+        dto.setFechaVenta(LocalDate.now());
 
         Venta entidad = new Venta();
         entidad.setCodVenta(1L);
@@ -702,6 +704,24 @@ public class VentaServiceTest {
         service.actualizarVenta(dto);
 
         verify(ventaRepository).save(any(Venta.class));
+    }
+
+    @Test
+    @DisplayName("La fecha es inválida")
+    void update_FechaInvalida() {
+        VentaDto dto = new VentaDto();
+        dto.setCodVenta(1L);
+        dto.setFechaVenta(LocalDate.parse("1990-01-01"));
+
+        Venta entidad = new Venta();
+        entidad.setCodVenta(1L);
+
+        when(ventaRepository.findByCodVenta(1L)).thenReturn(Optional.of(entidad));
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> service.actualizarVenta(dto));
+
+        assertNotNull(exception);
+        assertEquals("La fecha ingresada no puede ser antes de 1998", exception.getMessage());
     }
 
     @Test

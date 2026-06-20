@@ -181,6 +181,8 @@ public class VentaService {
 
         List<DetalleVenta> detallesVenta = detalleVentaRepository.findByVenta_CodVenta(codVenta);
         
+        log.debug("cantidad detalles: {}", detallesVenta.size());
+
         return VentaMapper.toRegistroVenta(venta, detallesVenta);
     }
 
@@ -230,6 +232,9 @@ public class VentaService {
 
         Venta entidad = ventaRepository.findByCodVenta(dto.getCodVenta())
             .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la venta con el código: " + dto.getCodVenta()));
+    
+        if (dto.getFechaVenta().isBefore(LocalDate.parse("1998-01-01")))
+            throw new IllegalArgumentException("La fecha ingresada no puede ser antes de 1998");
 
         ventaRepository.save(entidad);
     }

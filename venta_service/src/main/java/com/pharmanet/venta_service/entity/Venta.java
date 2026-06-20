@@ -6,6 +6,7 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -41,8 +42,7 @@ public class Venta {
     @Pattern(regexp = "^[0-9]{7,8}-[0-9kK]$", message = "RUN inválido")
     private String run;
     
-    @OneToMany(mappedBy = "venta")
-    @Column(nullable = false)
+    @OneToMany(mappedBy = "venta", fetch = FetchType.LAZY)
     private List<DetalleVenta> detalleVentas;
 
     @Column(name = "fecha_venta", nullable = false)

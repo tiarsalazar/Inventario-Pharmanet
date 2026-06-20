@@ -15,7 +15,8 @@ public class VentaMapper {
 
     public static RegistroVenta toRegistroVenta(Venta venta, List<DetalleVenta> lista) {
         log.info("Inicia creación de nueva solicitud de venta");
-        log.debug("venta: {}, detalleVentas: {}", venta, lista);
+        log.debug("venta: {}", venta);
+        log.debug("detallesVenta: {}", lista);
 
         RegistroVenta dto = new RegistroVenta();
         dto.setCodVenta(venta.getCodVenta());
@@ -61,9 +62,10 @@ public class VentaMapper {
         log.info("Inicia actualización de venta en el mapper");
         log.debug("actual: {}, nueva: {}", actual, nueva);
 
-        actual.setCodVenta(nueva.getCodVenta());
         actual.setCodSucursal(nueva.getCodSucursal());
         actual.setRun(nueva.getRun());
+        actual.setFechaVenta(nueva.getFechaVenta());
+        actual.setMontoTotal(nueva.getMontoTotal());
 
         return actual;
     }
