@@ -58,11 +58,13 @@ public class UsuarioServiceTest {
         entidad.setRun("11111111-1");
         entidad.setCodSucursal("SU0001");
         entidad.setProfesion("TEC FARMACIA");
+        entidad.setCorreoInstitucional("xxxxx@pharmanet.cl");
 
         UsuarioDTO dto = new UsuarioDTO();
         dto.setRun("11111111-1");
         dto.setCodSucursal("SU0001");
         dto.setProfesion("TEC FARMACIA");
+        dto.setCorreoInstitucional("xxxxx@pharmanet.cl");
 
         when(repo.findByRun("11111111-1")).thenReturn(Optional.empty());
         when(feign.buscarSucursal("SU0001")).thenReturn(null);
@@ -274,10 +276,12 @@ public class UsuarioServiceTest {
         Usuario entidad = new Usuario();
         entidad.setRun("11111111-1");
         entidad.setProfesion("TEC FARMACIA");
+        entidad.setCorreoInstitucional("xxxxx@pharmanet.cl");
 
         UsuarioDTO dto = new UsuarioDTO();
         dto.setRun("11111111-1");
         dto.setProfesion("TEC FARMACIA");
+        dto.setCorreoInstitucional("xxxxx@pharmanet.cl");
 
         when(repo.findByRun("11111111-1")).thenReturn(Optional.of(entidad));
         when(repo.save(entidad)).thenReturn(entidad);

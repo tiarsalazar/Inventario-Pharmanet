@@ -193,6 +193,7 @@
 						<exclude>**/dto/SucursalDTO.class</exclude>
             			<exclude>**/entity/**</exclude>
             			<exclude>**/exception/**</exclude>
+						<exclude>**/repository/**</exclude>
             			<exclude>**/config/**</exclude>
             			<exclude>**/enums/**</exclude>
             			<exclude>**/*Application.**</exclude>

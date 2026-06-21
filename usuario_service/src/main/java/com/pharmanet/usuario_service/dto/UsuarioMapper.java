@@ -10,25 +10,33 @@ public class UsuarioMapper {
     public static UsuarioDTO toDTO(Usuario usuario) {
         log.info("Convierte una entidad en un objeto DTO");
 
-        return new UsuarioDTO(usuario.getRun(),
-            usuario.getNombreCompleto(),
-            usuario.getCorreoInstitucional(),
-            usuario.getTelefono(),
-            usuario.getCodSucursal(),
-            usuario.getProfesion().toUpperCase()
-        );
+        UsuarioDTO dto = new UsuarioDTO();
+        dto.setRun(usuario.getRun());
+        dto.setNombreCompleto(usuario.getNombreCompleto());
+        dto.setCorreoInstitucional(usuario.getCorreoInstitucional());
+        dto.setTelefono(usuario.getTelefono());
+        dto.setCodSucursal(usuario.getCodSucursal());
+        dto.setProfesion(usuario.getProfesion());
+        
+        log.debug("dto: {}", dto);
+
+        return dto;
     }
 
-    public static Usuario toModel(UsuarioDTO usuarioDTO) {
+    public static Usuario toModel(UsuarioDTO dto) {
         log.info("Convierte un objeto dto en una entidad");
 
-        return new Usuario(usuarioDTO.getRun(),
-            usuarioDTO.getNombreCompleto(),
-            usuarioDTO.getCorreoInstitucional(),
-            usuarioDTO.getTelefono(),
-            usuarioDTO.getCodSucursal(),
-            usuarioDTO.getProfesion().toUpperCase()
-        );
+        Usuario entidad = new Usuario();
+        entidad.setRun(dto.getRun());
+        entidad.setNombreCompleto(dto.getNombreCompleto());
+        entidad.setCorreoInstitucional(dto.getCorreoInstitucional().toLowerCase());
+        entidad.setTelefono(dto.getTelefono());
+        entidad.setCodSucursal(dto.getCodSucursal());
+        entidad.setProfesion(dto.getProfesion().toUpperCase());
+        
+        log.debug("entidad: {}", entidad);
+
+        return entidad;
     }
 
     public static Usuario update(Usuario actual, UsuarioDTO nuevo) {
@@ -36,10 +44,10 @@ public class UsuarioMapper {
         
         actual.setRun(nuevo.getRun());
         actual.setNombreCompleto(nuevo.getNombreCompleto());
-        actual.setCorreoInstitucional(nuevo.getCorreoInstitucional());
+        actual.setCorreoInstitucional(nuevo.getCorreoInstitucional().toLowerCase());
         actual.setTelefono(nuevo.getTelefono());
         actual.setCodSucursal(nuevo.getCodSucursal());
-        actual.setProfesion(nuevo.getProfesion());
+        actual.setProfesion(nuevo.getProfesion().toUpperCase());
 
         return actual;
     }

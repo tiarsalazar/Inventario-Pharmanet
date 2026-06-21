@@ -51,8 +51,8 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handlerException(Exception ex) {
-        //ErrorResponse error = new ErrorResponse(500, "Internar Server Error", "Ha ocurrido un error en el sistema. Si el problema persiste, comuníquese con el administrador.");
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Exception" + ex.getMessage());
+    public ResponseEntity<ErrorResponse> handlerException(Exception ex) {
+        ErrorResponse error = new ErrorResponse(500, "Internar Server Error", "Ha ocurrido un error en el sistema. Si el problema persiste, comuníquese con el administrador.");
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
     }
 }

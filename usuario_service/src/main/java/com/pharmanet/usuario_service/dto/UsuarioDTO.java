@@ -1,5 +1,6 @@
 package com.pharmanet.usuario_service.dto;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -24,6 +25,10 @@ public class UsuarioDTO {
 
     @NotBlank(message = "Esta campo no puede estar vacío")
     @Size(max = 30, message = "Máximo 30 caracteres")
+    @Email(message = "Debe ingresar un correo válido")
+    @Pattern(regexp = "^[A-Za-z0-9._%+-]+@pharmanet\\.cl$",
+        message = "Formato inválido: Debe ser el correo institucional (@pharmanet.cl)"
+    )
     private String correoInstitucional;
 
     @NotBlank(message = "Esta campo no puede estar vacío")
@@ -34,6 +39,8 @@ public class UsuarioDTO {
     private String codSucursal;
 
     @NotBlank(message = "Esta campo no puede estar vacío")
-    @Size(max = 30, message = "Máximo 30 caracteres")
+    @Pattern(regexp =  "(?i)^(TEC FARMACIA|ANALISTA QUIMICO|DEVOPS)$",
+        message = "La profesión debe ser TEC FARMACIA, ANALISTA QUIMICO, DEVOPS"
+    )
     private String profesion;
 }
