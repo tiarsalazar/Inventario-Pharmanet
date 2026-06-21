@@ -13,6 +13,85 @@ services:
       - "8081:8081"
     depends_on:
       - eureka-server
+    environment:
+      EUREKA_URL: http://eureka-server:8761/eureka
+
+  # BASES DE DATOS
+
+  mysql-sucursal:
+    image: mysql:8
+    container_name: mysql-sucursal
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: sucursal_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
+
+  mysql-ubicacion:
+    image: mysql:8
+    container_name: mysql-ubicacion
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: ubicacion_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
+  mysql-producto:
+    image: mysql:8
+    container_name: mysql-producto
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_DATABASE: producto_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
+
+  mysql-venta:
+    image: mysql:8
+    container_name: mysql-venta
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_DATABASE: venta_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
+
+  oracle-usuario:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle-usuario
+    ports:
+      - "1521:1521"
+    environment: 
+      APP_USER: admin
+      APP_PASSWORD: admin
+      ORACLE_PASSWORD: root
+
+  postgres-inventario:
+    image: postgres:15
+    container_name: postgres-inventario
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: inventario_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+
+  postgres-abastecimiento:
+    image: postgres:15
+    container_name: postgres-abastecimiento
+    ports: 
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: abastecimiento_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+
+  # MICROSERVICIOS
     
   sucursal-service:
     build: ./sucursal_service
@@ -21,10 +100,12 @@ services:
       - "8088:8088"
     depends_on:
       - eureka-server
+      - mysql-sucursal
     environment:
-      DB_URL:
-      DB_USERNAME:
-      DB_PASSWORD: 
+      DB_URL: jdbc:mysql://mysql-sucursal:3306/sucursal_db
+      DB_USERNAME: admin
+      DB_PASSWORD: admin
+      EUREKA_URL: http://eureka-server:8761/eureka
 
   ubicacion-service:
     build: ./ubicacion_service
@@ -33,6 +114,12 @@ services:
       - "8087:8087"
     depends_on:
       - eureka-server
+      - mysql-ubicacion
+    environment:
+      DB_URL: jdbc:mysql://mysql-ubicacion:3306/ubicacion_db
+      DB_USERNAME: admin
+      DB_PASSWORD: admin
+      EUREKA_URL: http://eureka-server:8761/eureka
 
   producto-service:
     build: ./producto_service
@@ -41,6 +128,12 @@ services:
       - "8083:8083"
     depends_on:
       - eureka-server
+      - mysql-producto
+    environment:
+      DB_URL: jdbc:mysql://mysql-producto:3306/producto_db
+      DB_USERNAME: admin
+      DB_PASSWORD: admin
+      EUREKA_URL: http://eureka-server:8761/eureka
 
   venta-service:
     build: ./venta_service
@@ -49,6 +142,12 @@ services:
       - "8086:8086"
     depends_on:
       - eureka-server
+      - mysql-venta
+    environment:
+      DB_URL: jdbc:mysql://mysql-venta:3306/venta_db
+      DB_USERNAME: admin
+      DB_PASSWORD: admin
+      EUREKA_URL: http://eureka-server:8761/eureka
 
   usuario-service:
     build: ./usuario_service
@@ -57,6 +156,12 @@ services:
       - "8082:8082"
     depends_on:
       - eureka-server
+      - oracle-usuario
+    environment:
+      DB_URL: jdbc:oracle:thin:@oracle-usuario:1521:FREE
+      DB_USERNAME: admin
+      DB_PASSWORD: admin
+      EUREKA_URL: http://eureka-server:8761/eureka
 
   inventario-service:
     build: ./inventario_service
@@ -65,6 +170,12 @@ services:
       - "8084:8084"
     depends_on:
       - eureka-server
+      - postgres-inventario
+    environment:
+      DB_URL: jdbc:postgresql://postgres-inventario:5432/inventario_db
+      DB_USERNAME: admin
+      DB_PASSWORD: admin
+      EUREKA_URL: http://eureka-server:8761/eureka
 
   abastecimiento-service:
     build: ./abastecimiento_service
@@ -73,6 +184,12 @@ services:
       - "8085:8085"
     depends_on:
       - eureka-server
+      - postgres-abastecimiento
+    environment:
+      DB_URL: jdbc:postgresql://postgres-abastecimiento:5432/abastecimiento_db
+      DB_USERNAME: admin
+      DB_PASSWORD: admin
+      EUREKA_URL: http://eureka-server:8761/eureka
 
 networks:
   default:

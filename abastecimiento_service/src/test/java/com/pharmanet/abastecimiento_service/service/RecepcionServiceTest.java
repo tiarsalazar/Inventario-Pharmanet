@@ -1,10 +1,22 @@
 package com.pharmanet.abastecimiento_service.service;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.never;
@@ -12,19 +24,6 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.List;
-import java.util.Optional;
-
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -101,8 +100,9 @@ public class RecepcionServiceTest {
         when(recepRepo.findByIdAndCodSucursal(idInexistente, codSucursal)).thenReturn(Optional.empty());
 
         // WHEN & THEN
-        assertThrows(ResourceNotFoundException.class, () -> {recepServ.buscarPorId(idInexistente, codSucursal);
+        ResourceNotFoundException ex = assertThrows(ResourceNotFoundException.class, () -> {recepServ.buscarPorId(idInexistente, codSucursal);
         });
+        assertEquals("Recepcion no encontrada.", ex.getMessage());
         verify(recepRepo, times(1)).findByIdAndCodSucursal(idInexistente, codSucursal);
         verifyNoMoreInteractions(recepRepo);
     }
@@ -218,9 +218,10 @@ public class RecepcionServiceTest {
         doThrow(feignNotFound).when(usuarioClient).buscarPorRun(runInexistente);
 
         // WHEN & THEN
-        assertThrows(ResourceNotFoundException.class, () -> {
+        ResourceNotFoundException ex = assertThrows(ResourceNotFoundException.class, () -> {
             recepServ.buscarPorUsuario(runInexistente, codSucursal, pageable);
         });
+        assertEquals("Usuario no encontrado con RUN: 11111111-1", ex.getMessage());
         verify(recepRepo, never()).findByRunUsuarioAndCodSucursal(runInexistente, codSucursal, pageable);
     }
 
@@ -293,9 +294,10 @@ public class RecepcionServiceTest {
         doThrow(feignNotFound).when(usuarioClient).buscarPorRun(runInexistente);
 
         // WHEN & THEN 
-        assertThrows(ResourceNotFoundException.class, () -> {
+        ResourceNotFoundException ex =  assertThrows(ResourceNotFoundException.class, () -> {
             recepServ.registrarRecepcion(request, runInexistente, codSucursal);
         });
+        assertEquals("Usuario no encontrado con RUN: 99999999-9", ex.getMessage());
         verify(recepRepo, never()).save(any());
         verify(inventarioClient, never()).registrarStockRecepcion(any(), any());
     }
@@ -320,9 +322,10 @@ public class RecepcionServiceTest {
                 request.getNumeroDocumento())).thenReturn(true);
 
         // WHEN & THEN
-        assertThrows(ResourceAlreadyExistsException.class, () -> {
+        ResourceAlreadyExistsException ex = assertThrows(ResourceAlreadyExistsException.class, () -> {
             recepServ.registrarRecepcion(request, runUsuario, codSucursal);
         });
+        assertEquals("La recepción de este documento ya se encuentra registrada en el sistema.", ex.getMessage());
         verify(recepMapper, never()).toRecepcionEntity(any(), any(), any());
         verify(recepRepo, never()).save(any());
     }
@@ -360,10 +363,10 @@ public class RecepcionServiceTest {
         doThrow(feignNotFound).when(inventarioClient).registrarStockRecepcion(any(), eq(runUsuario));
 
         // WHEN & THEN
-        assertThrows(BusinessException.class, () -> {
+        BusinessException ex = assertThrows(BusinessException.class, () -> {
             recepServ.registrarRecepcion(request, runUsuario, codSucursal);
         });
-
+        assertEquals("No se pudo registrar la recepción.", ex.getMessage());
         verify(recepRepo, times(1)).save(any(Recepcion.class));
     }
 
@@ -399,9 +402,10 @@ public class RecepcionServiceTest {
         doThrow(FeignException.class).when(inventarioClient).registrarStockRecepcion(any(), eq(runUsuario));
 
         // WHEN & THEN
-        assertThrows(ServiceCommunicationException.class, () -> {
+        ServiceCommunicationException ex = assertThrows(ServiceCommunicationException.class, () -> {
             recepServ.registrarRecepcion(request, runUsuario, codSucursal);
         });
+        assertEquals("Error de comunicación con el servicio de Inventario al actualizar stock.", ex.getMessage());
         verify(recepRepo, times(1)).save(any(Recepcion.class));
     }
 
@@ -438,9 +442,10 @@ public class RecepcionServiceTest {
         when(recepRepo.findByIdAndCodSucursal(idInexistente, codSucursal)).thenReturn(Optional.empty());
 
         // WHEN & THEN
-        assertThrows(ResourceNotFoundException.class, () -> {
+        ResourceNotFoundException ex = assertThrows(ResourceNotFoundException.class, () -> {
             recepServ.cancelarRecepcionPorId(idInexistente, codSucursal);
         });
+        assertEquals("Recepcion no encontrada.", ex.getMessage());
         verify(recepRepo, never()).save(any());
     }
 
@@ -475,10 +480,10 @@ public class RecepcionServiceTest {
         when(recepRepo.findByIdAndCodSucursal(idInexistente, codSucursal)).thenReturn(Optional.empty());
 
         // WHEN & THEN
-        assertThrows(ResourceNotFoundException.class, () -> {
+        ResourceNotFoundException ex = assertThrows(ResourceNotFoundException.class, () -> {
             recepServ.eliminarRecepcionPorId(idInexistente, codSucursal);
         });
-
+        assertEquals("Recepcion no encontrada.", ex.getMessage());
         verify(recepRepo, never()).delete(any());
     }
 }
