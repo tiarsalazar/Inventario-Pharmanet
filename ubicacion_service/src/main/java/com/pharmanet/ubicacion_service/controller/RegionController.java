@@ -15,6 +15,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -39,7 +40,7 @@ public class RegionController {
     @GetMapping
     @Operation(summary = "Obtiene todas las regiones", description = "Obtiene un pageable de todas las regiones")
     @ApiResponse(responseCode = "200", description = "Se obtiene un pageable de todas las regiones")
-    public ResponseEntity<Page<RegionDto>> mostrarTodos(@PageableDefault(size = 10, sort = "codRegion") Pageable pageable) {
+    public ResponseEntity<Page<RegionDto>> mostrarTodos(@PageableDefault(size = 10, sort = "codRegion") @ParameterObject Pageable pageable) {
         log.info("Inicia búsqueda de todas las regiones.");
         Page<RegionDto> regiones = regionService.mostrarTodasRegiones(pageable);
         return ResponseEntity.status(HttpStatus.OK).body(regiones);
@@ -68,13 +69,13 @@ public class RegionController {
         return ResponseEntity.status(HttpStatus.CREATED).body(resultado);
     }
     
+    @PutMapping
     @Operation(summary = "Actualiza una región")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "204", description = "Actualiza una región exitosamente"),
         @ApiResponse(responseCode = "404", description = "No se encuentra la región a actualizar"),
         @ApiResponse(responseCode = "400", description = "Fallo en las validaciones")
     })
-    @PutMapping
     public ResponseEntity<?> actualizarRegion(@Valid @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Región a actualizar", required = true) @RequestBody RegionDto region) {
         regionService.actualizarRegion(region);   
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();

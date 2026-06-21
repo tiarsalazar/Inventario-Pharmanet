@@ -11,9 +11,9 @@ spring:
             enabled: ALWAYS
 
     datasource:
-        url: jdbc:oracle:thin:@bdusuario_high?TNS_ADMIN=C:/Users/bobip/Documents/Inventario-y-Logistica/usuario_service/Wallet_bdUsuario
-        username: BD_USUARIO
-        password: Duocuc12345.
+        url: ${DB_URL}
+        username: ${DB_USERNAME}
+        password: ${DB_PASSWORD}
 
     flyway:
         enabled: true
