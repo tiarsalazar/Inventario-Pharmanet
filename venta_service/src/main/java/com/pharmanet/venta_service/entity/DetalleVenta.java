@@ -36,7 +36,7 @@ public class DetalleVenta {
     private Integer cantidad;
 
     @ManyToOne
-    @JoinColumn(name = "cod_venta", nullable = false)
+    @JoinColumn(name = "venta_id", nullable = false)
     private Venta venta;
 
     public DetalleVenta(String sku, Integer cantidad) {

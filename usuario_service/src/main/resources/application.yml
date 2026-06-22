@@ -11,9 +11,9 @@ spring:
             enabled: ALWAYS
 
     datasource:
-        url: ${DB_URL}
-        username: ${DB_USERNAME}
-        password: ${DB_PASSWORD}
+        url: C:\Users\VI-Alumno\Inventario-Pharmanet\usuario_service\Wallet_bdUsuario
+        username: BD_USUARIO
+        password: Duocuc12345.
 
     flyway:
         enabled: true

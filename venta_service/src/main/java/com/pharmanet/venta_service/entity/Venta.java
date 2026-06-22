@@ -32,7 +32,7 @@ public class Venta {
     @Column(name = "venta_id")
     private Long id;
 
-    @Column(name = "cod_venta", nullable = false)
+    @Column(name = "cod_venta", nullable = false, unique = true)
     private Long codVenta;
 
     @Column(name = "cod_sucursal", nullable = false, unique = true)

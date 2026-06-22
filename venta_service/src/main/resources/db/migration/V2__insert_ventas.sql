@@ -32,8 +32,8 @@ insert into venta (venta_id, cod_venta, cod_sucursal, run, fecha_venta, monto_to
 insert into venta (venta_id, cod_venta, cod_sucursal, run, fecha_venta, monto_total) values (30, 129, 'SU0005', '18253765-9', '2026/03/09', 9000);
 
 -- POBLAR TABLA DETALLE VENTA
-INSERT INTO detalle_venta (detalle_venta_id, sku, cantidad, cod_venta) VALUES
-(1, 'PR0001', 2, 100),
-(2, 'PR0004', 1, 100),
-(3, 'PR0002', 2, 101),
-(4, 'PR0010', 3, 102);
+INSERT INTO detalle_venta (detalle_venta_id, sku, cantidad, venta_id) VALUES
+(1, 'PR0001', 2, 1),
+(2, 'PR0004', 1, 1),
+(3, 'PR0002', 2, 2),
+(4, 'PR0010', 3, 3);

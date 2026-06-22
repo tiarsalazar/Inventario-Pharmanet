@@ -31,7 +31,7 @@ public class GlobalHandlerException {
     // Captura duplicados en atributos únicos
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ErrorResponse> handlerDataIntegrityViolationException(DataIntegrityViolationException ex) {
-        ErrorResponse error = new ErrorResponse(400, "Bad Request", "Ya existe un registro con ese código o nombre");
+        ErrorResponse error = new ErrorResponse(400, "Bad Request", "Falla en las validaciones");
         log.error("Error de propiedad única: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }

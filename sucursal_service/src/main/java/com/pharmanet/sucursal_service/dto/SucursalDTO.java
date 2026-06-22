@@ -1,5 +1,6 @@
 package com.pharmanet.sucursal_service.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(name = "Sucursal DTO", description = "Objeto sucursal con la información accesible al usuario")
 public class SucursalDTO {
 
     @NotBlank(message = "Campo obligatorio")

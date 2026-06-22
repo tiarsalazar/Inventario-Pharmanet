@@ -9,6 +9,8 @@ import com.pharmanet.venta_service.service.VentaService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -63,7 +65,7 @@ public class VentaController {
     public ResponseEntity<RegistroVenta> buscarPorCodVenta(@PathVariable Long codVenta) {
         RegistroVenta venta = ventaService.buscarPorCodVenta(codVenta);
         return ResponseEntity.status(HttpStatus.OK).body(venta);
-    }
+    } 
 
     @GetMapping("/entre-fechas")
     @Operation(summary = "Busca ventas entre dos fechas", description = "Obtiene un pageable de las ventas entre la fecha de inicio y de término")
@@ -94,7 +96,10 @@ public class VentaController {
     @PostMapping
     @Operation(summary = "Agregar una venta")
     @ApiResponses(value = {
-        @ApiResponse(responseCode = "201", description = "Agrega una venta exitosamente"),
+        @ApiResponse(responseCode = "201", description = "Agrega una venta exitosamente",
+            content = { @Content(mediaType = "application/json",
+            schema = @Schema(implementation = RegistroVenta.class)) }
+        ),
         @ApiResponse(responseCode = "400", description = "Fallo en las validaciones"),
         @ApiResponse(responseCode = "409", description = "Ya existe una venta con ese código")
     })
@@ -105,7 +110,9 @@ public class VentaController {
 
     @Operation(summary = "Actualiza una venta")
     @ApiResponses(value = {
-        @ApiResponse(responseCode = "204", description = "Actualiza una venta exitosamente"),
+        @ApiResponse(responseCode = "204", description = "Actualiza una venta exitosamente",
+            content = { @Content(mediaType = "application/json",
+            schema = @Schema(implementation = RegistroVenta.class)) }),
         @ApiResponse(responseCode = "404", description = "No se encuentra la venta a actualizar"),
         @ApiResponse(responseCode = "400", description = "Fallo en las validaciones")
     })

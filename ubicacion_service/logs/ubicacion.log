@@ -774,3 +774,180 @@
 2026-06-21T17:25:49.727-04:00  INFO 10792 --- [ubicacion-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-21T17:25:49.742-04:00  INFO 10792 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-21T17:25:49.787-04:00  INFO 10792 --- [ubicacion-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-22T16:29:55.031-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 18336 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-22T16:29:55.037-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-22T16:29:55.105-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-22T16:29:55.106-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-22T16:29:56.114-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T16:29:56.230-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 2 JPA repository interfaces.
+2026-06-22T16:29:56.538-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fbb4b9ab-60a7-32ab-a904-25b8891dbf46
+2026-06-22T16:29:57.025-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-22T16:29:57.043-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T16:29:57.044-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-22T16:29:57.107-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2001 ms
+2026-06-22T16:29:57.411-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T16:29:57.587-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5dd8e73c
+2026-06-22T16:29:57.589-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T16:29:57.992-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-22T16:29:58.026-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `bd_ubicacion`.`flyway_schema_history` does not exist yet
+2026-06-22T16:29:58.028-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.018s)
+2026-06-22T16:29:58.049-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `bd_ubicacion`.`flyway_schema_history` ...
+2026-06-22T16:29:58.085-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: << Empty Schema >>
+2026-06-22T16:29:58.092-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_ubicacion` to version "1 - create tables"
+2026-06-22T16:29:58.134-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema `bd_ubicacion` to version "2 - inserts"
+2026-06-22T16:29:58.162-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `bd_ubicacion`, now at version v2 (execution time 00:00.032s)
+2026-06-22T16:29:58.256-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-22T16:29:58.314-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-22T16:29:58.716-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T16:29:58.768-04:00  WARN 18336 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T16:29:58.780-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T16:29:59.514-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T16:29:59.520-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T16:29:59.595-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-22T16:30:00.084-04:00  WARN 18336 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T16:30:00.213-04:00 DEBUG 18336 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2026-06-22T16:30:00.260-04:00 DEBUG 18336 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-22T16:30:00.293-04:00 DEBUG 18336 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-22T16:30:00.350-04:00 DEBUG 18336 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-22T16:30:00.627-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2026-06-22T16:30:00.691-04:00  WARN 18336 --- [ubicacion-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-22T16:30:00.823-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-06-22T16:30:00.845-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-06-22T16:30:00.853-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-22T16:30:00.863-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-06-22T16:30:00.863-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-06-22T16:30:00.863-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-06-22T16:30:00.864-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-06-22T16:30:00.864-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-06-22T16:30:00.864-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-06-22T16:30:00.864-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-06-22T16:30:01.101-04:00 DEBUG 18336 --- [ubicacion-service] [restartedMain] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:30:01.126-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-06-22T16:30:01.128-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-06-22T16:30:01.129-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-22T16:30:01.131-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1782160201130 with initial instances count: 1
+2026-06-22T16:30:01.134-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application UBICACION-SERVICE with eureka with status UP
+2026-06-22T16:30:01.135-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782160201135, current=UP, previous=STARTING]
+2026-06-22T16:30:01.137-04:00  INFO 18336 --- [ubicacion-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_UBICACION-SERVICE/VIAAOE02UL0001.duoc.acad:ubicacion-service:8087: registering service...
+2026-06-22T16:30:01.148-04:00 DEBUG 18336 --- [ubicacion-service] [DiscoveryClient-InstanceInfoReplicator-%d] o.s.web.client.DefaultRestClient         : Writing [InstanceInfo [instanceId = VIAAOE02UL0001.duoc.acad:ubicacion-service:8087, appName = UBICACION-SERVICE, hostName = VIAAOE02UL0001.duoc.acad, status = UP, ipAddr = 10.213.0.131, port = 8087, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@5c105aa5] as "application/json" with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2026-06-22T16:30:01.166-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-22T16:30:01.167-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8087
+2026-06-22T16:30:01.184-04:00  INFO 18336 --- [ubicacion-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_UBICACION-SERVICE/VIAAOE02UL0001.duoc.acad:ubicacion-service:8087 - registration status: 204
+2026-06-22T16:30:01.213-04:00  INFO 18336 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 6.646 seconds (process running for 7.564)
+2026-06-22T16:30:31.147-04:00 DEBUG 18336 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:31:01.177-04:00 DEBUG 18336 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:31:31.210-04:00 DEBUG 18336 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:32:01.230-04:00 DEBUG 18336 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:32:31.252-04:00 DEBUG 18336 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:49:09.623-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Starting UbicacionServiceApplication using Java 21.0.8 with PID 22532 (C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service\target\classes started by VI-Alumno in C:\Users\VI-Alumno\Inventario-Pharmanet\ubicacion_service)
+2026-06-22T16:49:09.629-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : The following 1 profile is active: "dev"
+2026-06-22T16:49:09.691-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-22T16:49:09.691-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-22T16:49:10.681-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T16:49:10.782-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 2 JPA repository interfaces.
+2026-06-22T16:49:11.143-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fbb4b9ab-60a7-32ab-a904-25b8891dbf46
+2026-06-22T16:49:11.634-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8087 (http)
+2026-06-22T16:49:11.651-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T16:49:11.652-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-22T16:49:11.718-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2026 ms
+2026-06-22T16:49:12.016-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T16:49:12.163-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5dd8e73c
+2026-06-22T16:49:12.165-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T16:49:12.572-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/bd_ubicacion (MySQL 5.5)
+2026-06-22T16:49:12.620-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.027s)
+2026-06-22T16:49:12.629-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `bd_ubicacion`: 2
+2026-06-22T16:49:12.632-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `bd_ubicacion` is up to date. No migration necessary.
+2026-06-22T16:49:12.708-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-22T16:49:12.753-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-22T16:49:13.119-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T16:49:13.174-04:00  WARN 22532 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T16:49:13.186-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/bd_ubicacion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: bd_ubicacion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T16:49:13.857-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T16:49:13.864-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T16:49:13.939-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-22T16:49:14.374-04:00  WARN 22532 --- [ubicacion-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T16:49:14.505-04:00 DEBUG 22532 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2026-06-22T16:49:14.534-04:00 DEBUG 22532 --- [ubicacion-service] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-22T16:49:14.563-04:00 DEBUG 22532 --- [ubicacion-service] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-22T16:49:14.615-04:00 DEBUG 22532 --- [ubicacion-service] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-22T16:49:14.878-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2026-06-22T16:49:14.934-04:00  WARN 22532 --- [ubicacion-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-22T16:49:15.030-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-06-22T16:49:15.051-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-06-22T16:49:15.055-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-22T16:49:15.062-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-06-22T16:49:15.063-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-06-22T16:49:15.063-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-06-22T16:49:15.064-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-06-22T16:49:15.064-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-06-22T16:49:15.064-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-06-22T16:49:15.065-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-06-22T16:49:15.312-04:00 DEBUG 22532 --- [ubicacion-service] [restartedMain] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:49:15.323-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-06-22T16:49:15.325-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-06-22T16:49:15.327-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-22T16:49:15.329-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1782161355329 with initial instances count: 0
+2026-06-22T16:49:15.333-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application UBICACION-SERVICE with eureka with status UP
+2026-06-22T16:49:15.334-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1782161355334, current=UP, previous=STARTING]
+2026-06-22T16:49:15.336-04:00  INFO 22532 --- [ubicacion-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_UBICACION-SERVICE/VIAAOE02UL0001.duoc.acad:ubicacion-service:8087: registering service...
+2026-06-22T16:49:15.345-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-InstanceInfoReplicator-%d] o.s.web.client.DefaultRestClient         : Writing [InstanceInfo [instanceId = VIAAOE02UL0001.duoc.acad:ubicacion-service:8087, appName = UBICACION-SERVICE, hostName = VIAAOE02UL0001.duoc.acad, status = UP, ipAddr = 10.213.0.131, port = 8087, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@7186999f] as "application/json" with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2026-06-22T16:49:15.355-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8087 (http) with context path '/'
+2026-06-22T16:49:15.356-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8087
+2026-06-22T16:49:15.363-04:00  INFO 22532 --- [ubicacion-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_UBICACION-SERVICE/VIAAOE02UL0001.duoc.acad:ubicacion-service:8087 - registration status: 204
+2026-06-22T16:49:15.376-04:00  INFO 22532 --- [ubicacion-service] [restartedMain] c.p.u.UbicacionServiceApplication        : Started UbicacionServiceApplication in 6.192 seconds (process running for 7.091)
+2026-06-22T16:49:45.341-04:00  INFO 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-06-22T16:49:45.341-04:00  INFO 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-06-22T16:49:45.342-04:00  INFO 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-06-22T16:49:45.345-04:00  INFO 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-06-22T16:49:45.345-04:00  INFO 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-06-22T16:49:45.346-04:00  INFO 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2026-06-22T16:49:45.348-04:00  INFO 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-06-22T16:49:45.357-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:49:45.367-04:00  INFO 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-06-22T16:50:15.387-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:50:45.413-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:51:15.434-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:51:45.468-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:52:15.491-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:52:45.518-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:53:15.545-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:53:45.572-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:54:15.076-04:00  INFO 22532 --- [ubicacion-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-22T16:54:15.593-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:54:45.613-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:55:15.642-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:55:45.674-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:56:15.699-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:56:45.731-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:57:15.758-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:57:45.780-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:58:15.811-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:58:45.832-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:59:15.092-04:00  INFO 22532 --- [ubicacion-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-06-22T16:59:15.854-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T16:59:45.879-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T17:00:15.901-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T17:00:45.935-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2026-06-22T17:01:15.960-04:00 DEBUG 22532 --- [ubicacion-service] [DiscoveryClient-CacheRefreshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]

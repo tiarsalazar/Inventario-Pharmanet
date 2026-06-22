@@ -11,9 +11,9 @@ spring:
             enabled: ALWAYS
 
     datasource:
-        url:  ${DB_URL}
-        username: ${DB_USERNAME}
-        password: ${DB_PASSWORD}
+        url:  jdbc:mysql://localhost:3306/bd_venta
+        username: root
+        password: 
 
     flyway:
         enabled: true
@@ -41,7 +41,7 @@ logging:
             springframework:
                 web: DEBUG
             hibernate:
-                SQL: DEBUG
+                SQL: INFO
         root: DEBUG
     logback:
         rollingpolicy:
