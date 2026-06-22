@@ -11,10 +11,9 @@ spring:
             enabled: ALWAYS
 
     datasource:
-        url: jdbc:mysql://localhost:3306/bd_ubicacion
-        username: root
-        password: 
-
+        url:  ${DB_URL}
+        username: ${DB_USERNAME}
+        password: ${DB_PASSWORD}
     flyway:
         enabled: true
         locations: classpath:db/migration
@@ -46,37 +45,3 @@ logging:
         rollingpolicy:
             max-file-size: 10MB
             max-history: 30
-
----
-spring:
-    config:
-        activate:
-            on-profile: dev
-            
-    datasource:
-        url: jdbc:mysql://localhost:3306/bd_ubicacion_dev
-        username: root
-        password: 
-        driver-class-name: com.mysql.cj.jdbc.Driver
-    jpa:
-        hibernate:
-            ddl-auto: validate
-
-        show-sql: true
-        
----
-spring:
-    config:
-        activate:
-            on-profile: test
-
-    datasource:
-        url: jdbc:mysql://localhost:3306/bd_ubicacion_test
-        username: root
-        password: 
-        driver-class-name: com.mysql.cj.jdbc.Driver
-    jpa:
-        hibernate:
-            ddl-auto: validate
-
-        show-sql: true

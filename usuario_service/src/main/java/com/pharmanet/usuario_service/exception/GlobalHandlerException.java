@@ -51,11 +51,11 @@ public class GlobalHandlerException {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handlerException(Exception ex) {
-        ErrorResponse error = new ErrorResponse(500,
+    public ResponseEntity<String> handlerException(Exception e) {
+        /*ErrorResponse error = new ErrorResponse(500,
             "Internal Server Error",
             "Ha ocurrido un error del servidor. Si el problema persiste comuníquese con el administrador");
-        log.error("Error: {}", ex.getMessage());
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
+        log.error("Error: {}", ex.getMessage()); */
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
     }
 }

@@ -101,6 +101,15 @@ public class UsuarioService {
         Usuario entidad = usuarioRepository.findByRun(dto.getRun())
             .orElseThrow(() -> new ResourceNotFoundException("No se encuentra el usuario con el run: " + dto.getRun()));
 
+        log.info("Se verifica la existencia de la sucursal");
+        log.debug("codSucursal: {}", dto.getCodSucursal());
+        try {
+            sucursalFeignClient.buscarSucursal(dto.getCodSucursal());
+        } catch (FeignException.FeignClientException e) {
+            log.info("No se encuentra sucursal {}", dto.getCodSucursal());
+            throw new ResourceNotFoundException("No se encuentra la sucursal con el código: " + dto.getCodSucursal());
+        }
+
         UsuarioMapper.update(entidad, dto);
 
         log.debug("actualizada: {}", entidad);

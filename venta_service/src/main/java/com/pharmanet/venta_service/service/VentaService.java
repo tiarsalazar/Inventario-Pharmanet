@@ -181,6 +181,8 @@ public class VentaService {
 
         List<DetalleVenta> detallesVenta = detalleVentaRepository.findByVenta_CodVenta(codVenta);
         
+        log.debug("cantidad detalles: {}", detallesVenta.size());
+
         return VentaMapper.toRegistroVenta(venta, detallesVenta);
     }
 
@@ -197,7 +199,7 @@ public class VentaService {
             throw new IllegalArgumentException("No hay registros antes de la fecha 1998");
 
         if (termino.isAfter(LocalDate.now()))
-            throw new IllegalArgumentException("La fecha de término no puede ser posterior a la actual");
+            throw new IllegalArgumentException("La fecha de término no puede ser posterior a la fecha actual");
 
         log.info("Devuelve page de ventas");
         return ventaRepository.findByFechaVentaBetween(inicio, termino, pageable)
@@ -210,7 +212,7 @@ public class VentaService {
         
         log.info("Valida que la fecha ingresada sea igual o anterior a la actual");
         if (dia.isAfter(LocalDate.now()))
-            throw new IllegalArgumentException("La fecha ingresada no puede ser posterior a la actual");
+            throw new IllegalArgumentException("La fecha ingresada no puede ser posterior a la fecha actual");
 
         if (dia.isBefore(LocalDate.parse("1998-01-01")))
             throw new IllegalArgumentException("No hay registros antes de la fecha 1998");
@@ -227,12 +229,14 @@ public class VentaService {
     public void actualizarVenta(VentaDto dto) {
         log.info("Inicia actualización de dto");
         log.debug("dto: {}", dto);
-        
-        if (!ventaRepository.findByCodVenta(dto.getCodVenta()).isPresent())
-            throw new ResourceNotFoundException("No se encuentra la venta con el código: " + dto.getCodVenta());
 
-        Venta venta = VentaMapper.toModel(dto);
-        ventaRepository.save(venta);
+        Venta entidad = ventaRepository.findByCodVenta(dto.getCodVenta())
+            .orElseThrow(() -> new ResourceNotFoundException("No se encuentra la venta con el código: " + dto.getCodVenta()));
+    
+        if (dto.getFechaVenta().isBefore(LocalDate.parse("1998-01-01")))
+            throw new IllegalArgumentException("La fecha ingresada no puede ser antes de 1998");
+
+        ventaRepository.save(entidad);
     }
 
     // ==========================================
