@@ -11,9 +11,9 @@ spring:
             enabled: ALWAYS
 
     datasource:
-        url: C:\Users\VI-Alumno\Inventario-Pharmanet\usuario_service\Wallet_bdUsuario
-        username: BD_USUARIO
-        password: Duocuc12345.
+        url: ${DB_URL}
+        username: ${DB_USERNAME}
+        password: ${DB_PASSWORD}
 
     flyway:
         enabled: true
@@ -22,7 +22,7 @@ spring:
 eureka:
     client:
         service-url:
-            defaultZone: http://localhost:8761/eureka/
+            defaultZone: ${EUREKA_URL}
 
 springdoc:
     api-docs:
@@ -46,3 +46,29 @@ logging:
         rollingpolicy:
             max-file-size: 10MB
             max-history: 30
+
+---
+# PERFIL DE PRUEBAS (test) -> Base de datos mágica en memoria RAM
+spring:
+  config:
+    activate:
+      on-profile: test
+
+  datasource:
+    # Esto crea una BD PostgreSQL simulada en la memoria RAM
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update 
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+  # Apagamos Flyway en los tests para que no intente aplicar migraciones reales en la RAM
+  flyway:
+    enabled: false
