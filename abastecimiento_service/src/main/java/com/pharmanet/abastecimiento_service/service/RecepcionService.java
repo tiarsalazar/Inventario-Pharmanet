@@ -163,7 +163,7 @@ public class RecepcionService {
             inventarioClient.registrarStockRecepcion(ingresoInventario, runUsuario);
         } catch (FeignException.NotFound ex) {
             log.warn("Inventario retorno 404 para recepcion ID {}: {}", recepcion.getId(), ex.getMessage());
-            throw new BusinessException("No se pudo registrar la recepción: " + ex.getMessage());
+            throw new BusinessException("No se pudo registrar la recepción.");
         } catch (FeignException ex) {
             log.error("Error de Feign al comunicar con Inventario.");
             throw new ServiceCommunicationException("Error de comunicación con el servicio de Inventario al actualizar stock.");

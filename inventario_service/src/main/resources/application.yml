@@ -1,0 +1,77 @@
+spring:
+  application:
+    name: inventario-service
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format-sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 50
+  output:
+    ansi:
+      enabled: always
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: 8084
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+      hibernate:
+        SQL: INFO
+    root: INFO
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}
+
+---
+# PERFIL DE PRUEBAS (test) -> Base de datos mágica en memoria RAM
+spring:
+  config:
+    activate:
+      on-profile: test
+
+  datasource:
+    # Esto crea una BD PostgreSQL simulada en la memoria RAM
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update 
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+  # Apagamos Flyway en los tests para que no intente aplicar migraciones reales en la RAM
+  flyway:
+    enabled: false

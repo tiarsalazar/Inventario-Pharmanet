@@ -1,12 +1,23 @@
 package com.pharmanet.inventario_service.service;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
@@ -15,18 +26,6 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -112,7 +111,8 @@ public class InventarioServiceTest {
         when(invRepo.findBySkuAndCodSucursal(sku, codSucursal)).thenReturn(Optional.empty());
 
         //WHEN Y THEN
-        assertThrows(ResourceNotFoundException.class, () -> invService.obtenerInventarioPorSku(sku, codSucursal));
+        ResourceNotFoundException ex = assertThrows(ResourceNotFoundException.class, () -> invService.obtenerInventarioPorSku(sku, codSucursal));
+        assertEquals("Inventario no encontrado para sku: PR0001", ex.getMessage());
         verify(invRepo, times(1)).findBySkuAndCodSucursal(sku, codSucursal);
     }
 
@@ -145,8 +145,8 @@ public class InventarioServiceTest {
     }
 
     @Test
-    @DisplayName("Deberia devolver ResourceNotFoundException cuando Inventario no es encontrado por sku y codigo sucursal")
-    void deberiaDevolverResourceNotFound_cuandoInventarioNoEncontradoPorSkuYSucursal(){
+    @DisplayName("Deberia devolver ResourceNotFoundException cuando Inventario con detalles no es encontrado por sku y codigo sucursal")
+    void deberiaDevolverResourceNotFound_cuandoInventarioDetalleNoEncontradoPorSkuYSucursal(){
         // GIVEN
         String sku = "PR0001";
         String codSucursal = "SU0001";
@@ -154,7 +154,8 @@ public class InventarioServiceTest {
         when(invRepo.findBySkuAndCodSucursal(sku, codSucursal)).thenReturn(Optional.empty());
 
         // WHEN Y THEN
-        assertThrows(ResourceNotFoundException.class, () -> invService.obtenerInventarioDetailPorSku(sku, codSucursal));
+        ResourceNotFoundException ex = assertThrows(ResourceNotFoundException.class, () -> invService.obtenerInventarioDetailPorSku(sku, codSucursal));
+        assertEquals("Inventario no encontrado para sku: PR0001", ex.getMessage());
         verify(invRepo, times(1)).findBySkuAndCodSucursal(sku, codSucursal);
     }
 
@@ -298,6 +299,23 @@ public class InventarioServiceTest {
         assertEquals(codSucursal, resultado.getContent().getFirst().getCodSucursal());
         verify(movRepo).findByCodSucursalAndFechaBetween(codSucursal, inicio.atStartOfDay(), fin.atTime(LocalTime.MAX), pageable);
         verify(mapper).toMovimientoResponse(movimiento);
+    }
+
+    @Test
+    @DisplayName("obtenerMovimientoPorFecha -> Deberia lanzar BusinessException cuando la fecha inicio es posterior a la de fin")
+    void obtenerMovimientoPorFecha_DeberiaLanzarException_CuandoFechasSonInversas() {
+        // GIVEN
+        String codSucursal = "SU0001";
+        LocalDate inicio = LocalDate.now().plusDays(1);
+        LocalDate fin = LocalDate.now();
+        Pageable pageable = PageRequest.of(0, 10);
+
+        // WHEN & THEN
+        BusinessException ex = assertThrows(BusinessException.class, () -> {
+            invService.obtenerMovimientoPorFecha(codSucursal, inicio, fin, pageable);
+        });
+        assertEquals("La fecha de inicio no puede ser posterior a la fecha de fin.", ex.getMessage());
+        verifyNoInteractions(movRepo);
     }
 
     @Test
@@ -453,7 +471,7 @@ public class InventarioServiceTest {
 
     @Test
     @DisplayName("Deberia lanzar ServiceCommunicationException cuando el cliente de sucursales falla por error de red")
-    void registrarRecepcion_DeberiaLanzarCommunicationException_CuandoFeignFalla() {
+    void registrarRecepcion_DeberiaLanzarCommunicationException_CuandoSucursalFeignFalla() {
         // GIVEN
         String runUsuario = "11222333-4";
         String codSucursal = "SU0001";
@@ -467,9 +485,10 @@ public class InventarioServiceTest {
         doThrow(genFException).when(sucursalClient).buscarSucursal(codSucursal);
 
         // WHEN & THEN
-        assertThrows(ServiceCommunicationException.class, () -> {
+        ServiceCommunicationException ex = assertThrows(ServiceCommunicationException.class, () -> {
             invService.registrarRecepcion(recepcionRequest, runUsuario);
         });
+        assertEquals("Error al comunicarse con el servicio de sucursal.", ex.getMessage());
         verify(invRepo, never()).save(any(Inventario.class));
     }
 
@@ -530,6 +549,64 @@ public class InventarioServiceTest {
         assertEquals(EstadoLote.ACTIVO, lote2.getEstado(), "El lote 1 debe seguir ACTIVO");
         verify(invRepo, times(1)).save(inventario);
         verify(movRepo, times(2)).save(any());
+    }
+
+    @Test
+    @DisplayName("procesarVenta -> Deberia lanzar ServiceCommunicationException cuando el cliente Feign de productos falla")
+    void procesarVenta_DeberiaLanzarCommunicationException_CuandoProductoFeignFalla() {
+        // GIVEN
+        String sku = "PR0001";
+        String codSucursal = "SU0001";
+
+        VentaRequest ventaRequest = new VentaRequest();
+        ventaRequest.setCodSucursal(codSucursal);
+        ventaRequest.setRun("11222333-4");
+
+        DetalleVentaRequest detalle = new DetalleVentaRequest();
+        detalle.setSku(sku);
+        detalle.setCantidad(5);
+        ventaRequest.setProductos(List.of(detalle));
+
+        doNothing().when(sucursalClient).buscarSucursal(codSucursal);
+
+        FeignException fex = mock(FeignException.class);
+        when(fex.status()).thenReturn(500);
+        doThrow(fex).when(productoClient).buscarPorSku(sku);
+
+        // WHEN & THEN
+        ServiceCommunicationException ex = assertThrows(ServiceCommunicationException.class, () -> {
+            invService.procesarVenta(ventaRequest);
+        });
+        assertEquals("Error al comunicarse con el servicio de productos.", ex.getMessage());
+        verify(invRepo, never()).save(any(Inventario.class));
+    }
+
+    @Test
+    @DisplayName("procesarVenta -> Deberia lanzar ResourceNotFoundException cuando no existe registro de inventario para el SKU solicitado")
+    void procesarVenta_DeberiaLanzarResourceNotFound_CuandoInventarioNoExiste() {
+        // GIVEN
+        String sku = "PR-NUEVO";
+        String codSucursal = "SU0001";
+
+        VentaRequest ventaRequest = new VentaRequest();
+        ventaRequest.setCodSucursal(codSucursal);
+        ventaRequest.setRun("11222333-4");
+
+        DetalleVentaRequest detalle = new DetalleVentaRequest();
+        detalle.setSku(sku);
+        detalle.setCantidad(5);
+        ventaRequest.setProductos(List.of(detalle));
+
+        doNothing().when(sucursalClient).buscarSucursal(codSucursal);
+        doNothing().when(productoClient).buscarPorSku(sku);
+        when(invRepo.findBySkuAndCodSucursal(sku, codSucursal)).thenReturn(Optional.empty());
+
+        // WHEN & THEN
+        ResourceNotFoundException ex = assertThrows(ResourceNotFoundException.class, () -> {
+            invService.procesarVenta(ventaRequest);
+        });
+        assertEquals("Inventario no encontrado para sku:PR-NUEVO en sucursal: SU0001", ex.getMessage());
+        verify(loteRepo, never()).findByInventarioAndEstadoAndCantidadGreaterThanOrderByFechaVencimientoAsc(any(), any(), anyInt());
     }
 
     @Test
@@ -600,14 +677,39 @@ public class InventarioServiceTest {
     void deberiaLanzarResourceNotFoundCuandoLoteNoExiste(){
         String sku = "SKU0001";
         String codSucursal = "SU0001";
-        String codLote = "LOTE0001";
+        String codLote = "L1";
 
         when(loteRepo.findByCodLoteAndInventario_SkuAndInventario_CodSucursal(codLote, sku, codSucursal)).thenReturn(List.of());
 
         //WHEN Y THEN
-        assertThrows(ResourceNotFoundException.class, () -> {
+        ResourceNotFoundException ex = assertThrows(ResourceNotFoundException.class, () -> {
             invService.cambiarEstadoLote(sku, codSucursal, codLote, EstadoLote.DEFECTUOSO);});
+        assertEquals("Lote no encontrado: L1 para sku: SKU0001 en sucursal: SU0001", ex.getMessage());
         verify(loteRepo).findByCodLoteAndInventario_SkuAndInventario_CodSucursal(codLote, sku, codSucursal);
+    }
+
+    @Test
+    @DisplayName("cambiarEstadoLote -> Deberia lanzar BusinessException al intentar activar un lote que tiene cantidad cero")
+    void cambiarEstadoLote_DeberiaLanzarBusinessException_CuandoLoteEstaVacio() {
+        // GIVEN
+        String sku = "PR0001";
+        String codSucursal = "SU0001";
+        String codLote = "LO-AGOTADO";
+
+        Lote loteVacio = new Lote();
+        loteVacio.setCodLote(codLote);
+        loteVacio.setCantidad(0);
+        loteVacio.setEstado(EstadoLote.AGOTADO);
+
+        when(loteRepo.findByCodLoteAndInventario_SkuAndInventario_CodSucursal(codLote, sku, codSucursal))
+                .thenReturn(List.of(loteVacio));
+
+        // WHEN & THEN
+        BusinessException ex = assertThrows(BusinessException.class, () -> {
+            invService.cambiarEstadoLote(sku, codSucursal, codLote, EstadoLote.ACTIVO);
+        });
+        assertTrue(ex.getMessage().contains("No se puede cambiar el estado a ACTIVO si alguno de los lotes"));
+        verify(invRepo, never()).save(any(Inventario.class));
     }
 
     @Test
@@ -646,10 +748,9 @@ public class InventarioServiceTest {
         when(invRepo.findBySkuAndCodSucursal(sku, codSucursal)).thenReturn(Optional.of(inventario));
 
         // WHEN & THEN
-        assertThrows(BusinessException.class, () -> {
-        invService.eliminarInventario(sku, codSucursal);
+        BusinessException ex = assertThrows(BusinessException.class, () -> {invService.eliminarInventario(sku, codSucursal);
         });
-
+        assertEquals("No se puede eliminar un inventario con stock activo: 5 unidades.", ex.getMessage());
         verify(invRepo, never()).delete(any(Inventario.class));
     }
 }
